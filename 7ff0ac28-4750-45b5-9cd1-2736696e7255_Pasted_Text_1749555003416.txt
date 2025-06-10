@@ -1,0 +1,4763 @@
+Tematy prezentacji:
+1. Wprowadzenie:
+rozwój grafiki
+standardy wymiarów ekranu
+grafika w geodezji
+2. Tworzenie grafiki trójwymiarowej
+przestrzenie barw
+bufor ramki
+interfejs programowania aplikacji - API
+tworzenie grafiki i pojęcie czasu rzeczywistego
+3. Narzędzia programowe wyższego poziomu do tworzenia
+grafiki
+grafika statyczna - obrazy
+grafika dynamiczna - animacje
+grafika interaktywna - prezentacje interaktywne i gry
+Tematy prezentacji:
+4. Układy współrzędnych w grafice
+układy płaskie - ekranu, tekstury, kamery
+układy trójwymiarowe
+transformacje między układami
+rzut ortogonalny i środkowy
+5. Obiekty tworzące grafikę - przykłady z OpenGL
+przygotowanie kontekstu grafiki
+punktowe
+liniowe - łamane i krzywe
+powierzchniowe
+kubaturowe
+listy obiektów
+6. Cechy obiektów
+barwa
+normalne
+tekstura
+mipmapy, bumpmapy i normalmapy
+Tematy prezentacji:
+7. Prezentacja obiektów
+cieniowanie
+oświetlenie
+mgła
+8. Algorytmy wykorzystywane w grafice płaskiej
+antyaliazing
+wypełnianie wielokątów
+podział siatki punktów na trójkąty
+9. Algorytmy wykorzystywane w grafice trójwymiarowej
+rzut ortogonalny i środkowy - geometria
+zasłanianie obiektów
+śledzenie promieni
+Tematy prezentacji:
+10. Techniki przyspieszania wyświetlania
+listy obiektów
+zbiory VAO i VBO
+działanie teselacji
+język GLSL
+11. Format plików danych do prezentacji grafiki
+plik *.obj
+12. Podsumowanie
+Tematy ćwiczeń:
+1. Przygotowanie i budowa kontekstu grafiki
+2. Elementarne obiekty, ich barwa i tekstura, listy wyświetlania
+3. Transformacja obiektów, animacja i obsługa działań użytkownika
+4. Oświetlenie i mgła
+5. Wyświetlanie obiektów złożonych
+(porównanie standardu, list wyświetlania
+oraz tablic i buforów - VAO, VBO)
+6. Prezentacja terenu z SRTM z dodatkowymi elementami
+(np. drzewa, oświetlenie i mgła)
+(7.) Prezentacja animacji procesu budowy obiektu erchitektonicznego
+na tle otoczenia topograficznegoTematy ćwiczeń:
+1. Przygotowanie i budowa kontekstu grafiki
+2. Elementarne obiekty, ich barwa i tekstura, listy wyświetlania
+3. Transformacja obiektów, animacja i obsługa działań użytkownika
+Zadanie 1: Prezentacja animacji o kilku stopniach swobody
+4. Oświetlenie i mgła
+5. Wyświetlanie obiektów złożonych
+(porównanie standardu, list wyświetlania
+oraz tablic i buforów - VAO, VBO)
+6. Prezentacja terenu z SRTM z dodatkowymi elementami
+(np. drzewa, oświetlenie i mgła)
+Zadanie 2: Prezentacja terenu w formie spaceru lub lotu
+(7.) Prezentacja animacji procesu budowy obiektu erchitektonicznego
+na tle otoczenia topograficznego
+Tematy prezentacji:
+Rozwój grafiki komputerowej 3D
+Standardy wymiarów obrazu
+Grafika w geodezji
+Rozwój grafiki komputerowej
+Pierwszy oscyloskop
+Tektronix 511 rok 1948
+Oscyloskop grafiki 1950
+Ben Laposky
+Rozwój grafiki komputerowej
+UNIVAC 1951 (Universal Automatic Computer)
+pierwszy komputer cyfrowy
+Rozwój grafiki komputerowej
+Pióro świetlne 1955
+oscyloskopRozwój grafiki komputerowej
+AKAT-1 1959
+Komputer analogowy z wyświetlaczem oscyloskopowym
+(tranzystorowy analizator równań różniczkowych)
+Jacek Karpiński
+Rozwój grafiki komputerowej
+PDP-1 (Programmed Data Processor) 1959
+wyświetlacz 16ADP7 był wykorzystywany w systemach radarowych
+Rozwój grafiki komputerowej
+Western Electric AT&T Bell Labs 1968
+wyświetlacz z urządzeniem wskazującym
+Rozwój grafiki komputerowej
+Wyświetlacz oscyloskopu Tektronix 561 zastosowany pierwszy raz
+w 1968 roku jako monitor 601.
+Terminal Tektronix 4002, 4006, 4010, 4014 do komputera PDP-8, 11
+Rozwój grafiki komputerowej
+Edwin Catmull i Fred Parke University of Utah 1972
+animacja modelu dłoni z wypełnieniem i cieniowaniemRozwój grafiki komputerowej
+Evans & Sutherland CT5 flight simulator 1981, komputer PDP-11
+symulator lotu
+Rozwój grafiki komputerowej
+Rozwój kart graficznych
+sterowniki graficzne:
+● MDA: Monochrome Display Adapter 1981
+● HGA: Hercules Graphics Adapter 1982 (+ printer port)
+● CGA: Colour Graphics Adapter 1981
+● EGA: Enhanced Graphics Adapter 1984
+● PGA: Professional Graphics Controller 1984
+● VGA: Video Graphics Array 1987 (+mysz +IBM PS/2)
+● MCGA: Multi-Colour Graphics Array 1987 (IBM PS/2 m30)
+● SVGA: Super VGA 1987
+● XGA: Extended Graphics Array 1990
+Rozwój grafiki komputerowej
+Przykłady sterowników:
+HGA: Hercules Graphics Adapter
+wyposażony w port drukarki
+2 barwy 720 x 350
+64 KB RAM
+Rozwój grafiki komputerowej
+Przykłady sterowników:
+CGA: Colour Graphics Adapter
+2 barwy 640 x 200
+4 barwy 4 zestawy 320 x 200
+16 KB RAM
+Rozwój grafiki komputerowej
+Przykłady sterowników:
+EGA: Enhanced Graphics Adapter
+16 barw z 64 640 x 350
+16 barw z 64 640 x 200
+16 barw z 64 320 x 200
+64 - 128 KB RAM
+Rozwój grafiki komputerowej
+Przykłady sterowników:
+VGA: Video Graphics Array
+wyposażony w port myszy
+16 barw z 18 bit (262144) 640 x 480
+16 barw z 64 640 x 350
+16 barw z 64 640 x 200
+256 barw z 18 bit (262144) 320 x 200
+256 - 512 KB RAMRozwój grafiki komputerowej
+Ogólny schemat sterowania grafiką
+procesor zapisuje bezpośrednio w pamięci karty
+lub pośrednio przez procesor zainstalowany w karcie
+Rozwój grafiki komputerowej
+Ogólny schemat sterowania grafiką
+procesor zapisuje bezpośrednio w pamięci karty
+lub pośrednio przez procesor zainstalowany w karcie
+GPU:
+Graphics
+Processing
+Unit
+Rozwój grafiki komputerowej
+Akceleratory graficzne przeznaczone dla społeczeństwa
+● S3 911: akceleracja 2D 1991
+● Sega Model 1: akceleracja 3D 1992
+● S3 ViRGE: akceleracja 2D/3D 1995
+● Voodoo: akceleracja 3D 1996
+● ATI Rage: akceleracja 2D/3D 1996
+Rozwój grafiki komputerowej
+Akceleratory graficzne przeznaczone dla społeczeństwa
+● S3 911: akceleracja 2D 1991
+● Sega Model 1: akceleracja 3D 1992
+● S3 ViRGE: akceleracja 2D/3D 1995
+● Voodoo: akceleracja 3D 1996 640x480, 800x600
+● ATI Rage: akceleracja 2D/3D 1996
+Voodoo 1
+Voodoo 2
+Rozwój grafiki komputerowej
+Akceleratory graficzne przeznaczone dla społeczeństwa
+● S3 911: akceleracja 2D 1991
+● Sega Model 1: akceleracja 3D 1992
+● S3 ViRGE: akceleracja 2D/3D 1995
+● Voodoo: akceleracja 3D 1996 640x480, 800x600
+● ATI Rage: akceleracja 2D/3D 1996
+Voodoo 1
+Voodoo 2
+korekcja perspektywy,
+filtrowanie biliniowe tekstur,
+Level of detail (LOD) MIP mapping,
+korekcja sub-pikselowa,
+Cieniowanie Gourauda,
+Anti-aliasing,
+16-bitowy bufor głębokości,
+Alpha blending (efekt przezroczystości),
+Efekt mgły,
+Nakładanie wielu tekstur, ich przenikanie
+i animowanie.Rozwój grafiki komputerowej
+Akceleratory graficzne przeznaczone dla społeczeństwa
+● S3 911: akceleracja 2D 1991
+● Sega Model 1: akceleracja 3D 1992
+● S3 ViRGE: akceleracja 2D/3D 1995
+● Voodoo: akceleracja 3D 1996 640x480, 800x600
+● ATI Rage: akceleracja 2D/3D 1996
+Rozwój grafiki komputerowej
+Porównanie odwzorowania obiektów w grafice standardowej
+1987 198
+9
+199
+0
+199
+7
+Accolade Test Drive
+Rozwój grafiki komputerowej
+Porównanie odwzorowania obiektów
+w interaktywnej grafice komputerowej
+(przynajmniej 24 ramki / sekundę)
+1996 2015
+Core Design, Crystal Dynamics, Eidos Interactive Tomb Raider
+Rozwój grafiki komputerowej
+Porównanie prędkości przetwarzania CPU i GPU na przestrzeni lat
+Rozwój grafiki komputerowej
+Porównanie prędkości przetwarzania CPU i GPU na przestrzeni lat
+CPU
+GPU
+GFLOPS
+skala
+logarytmiczna
+Rozwój grafiki komputerowej
+Porównanie prędkości przetwarzania CPU i GPU na przestrzeni lat
+Komunikacja Obliczenia
+https://www.nextplatform.com/2019/07/10/a-decadeof-accelerated-computing-augurs-well-for-gpus/Rozwój grafiki komputerowej
+Przykładowe porównanie liczby jednostek obliczeniowych CPU i GPU
+https://htlcomputer.com.vn/vi-sao-chung-ta-lai-dung-gpu-thay-vi-cpu-de-xu-ly-do-hoa/
+Rozwój grafiki komputerowej
+Przykładowe porównanie liczby jednostek obliczeniowych CPU i GPU
+https://htlcomputer.com.vn/vi-sao-chung-ta-lai-dung-gpu-thay-vi-cpu-de-xu-ly-do-hoa/
+CPU (Coffee Lake) GPU (Turing)
+Rozwój grafiki komputerowej
+Porównanie CPU i GPU
+https://linustechtips.com/topic/1008704-gpu-instruction-sets/
+CPU są bardziej nastawione na osiągnięcie wysokiej przepustowości
+instrukcji, podczas gdy GPU są bardziej skierowane na osiągnięcie
+wysokiej przepustowości danych.
+Rozwój grafiki komputerowej
+Porównanie CPU i GPU
+https://linustechtips.com/topic/1008704-gpu-instruction-sets/
+CPU są bardziej nastawione na osiągnięcie wysokiej przepustowości
+instrukcji, podczas gdy GPU są bardziej skierowane na osiągnięcie
+wysokiej przepustowości danych.
+Procesory CPU (generalnie) nie wykonują zadań wrażliwych na czas.
+Układy GPU muszą mieć niskie opóźnienia, zwłaszcza jeśli chcą
+obsługiwać VR.
+Rozwój grafiki komputerowej
+Porównanie CPU i GPU
+https://linustechtips.com/topic/1008704-gpu-instruction-sets/
+CPU są bardziej nastawione na osiągnięcie wysokiej przepustowości
+instrukcji, podczas gdy GPU są bardziej skierowane na osiągnięcie
+wysokiej przepustowości danych.
+Procesory CPU (generalnie) nie wykonują zadań wrażliwych na czas.
+Układy GPU muszą mieć niskie opóźnienia, zwłaszcza jeśli chcą
+obsługiwać VR.
+Procesory CPU dbają o zachowanie separacji pomiędzy wieloma
+„aktywnymi” programami. Układy GPU (sprzęt) uruchamiają pojedynczy
+program na raz.
+Rozwój grafiki komputerowej
+Porównanie CPU i GPU
+https://linustechtips.com/topic/1008704-gpu-instruction-sets/
+CPU są bardziej nastawione na osiągnięcie wysokiej przepustowości
+instrukcji, podczas gdy GPU są bardziej skierowane na osiągnięcie
+wysokiej przepustowości danych.
+Procesory CPU (generalnie) nie wykonują zadań wrażliwych na czas.
+Układy GPU muszą mieć niskie opóźnienia, zwłaszcza jeśli chcą
+obsługiwać VR.
+Procesory CPU dbają o zachowanie separacji pomiędzy wieloma
+„aktywnymi” programami. Układy GPU (sprzęt) uruchamiają pojedynczy
+program na raz.
+Procesory CPU obsługują wiele typów operacji wejścia/wyjścia. Układy
+GPU obsługują tylko kilka typów operacji wejścia/wyjścia.Rozwój grafiki komputerowej
+Porównanie odwzorowania obiektów obecnie
+w grafice standardowej i komputerowej (1 ramka na wiele godzin)
+Grafika standardowa: Gottfried Helnwein Grafika komputerowa: Piotr Fox Wysocki
+Rozwój grafiki komputerowej
+Porównanie odwzorowania obiektów w grafice interaktywnej 3D
+Prezentacja standardowa:
+wiele elementów
+złożone materiały
+skomplikowane oświetlenie
+atmosfera o zmiennej gęstości
+dążenie do realizmu
+znaczne obciążenie obliczeniowe
+i pamięciowe
+Prezentacja uproszczona
+(typu "low poly"):
+uproszczone elementy
+brak lub uproszczone materiały
+podstawowe oświetlenie
+symboliczność prezentacji
+znaczna szybkość odświeżania
+lepsza możliwość rozbudowy
+elementów niegraficznych
+Rozwój grafiki komputerowej
+Zasada generalizacji obiektów w grafice interaktywnej 3D
+Zmiana szczegółowości prezentacji
+obraz Claude Monet'a "Maki" z 1873 r.
+lepsze wrażenie realizmu
+konieczność przechowywania wielu
+wariantów części krajobrazu,
+o różnym stopniu szczegółowości
+ciągła analiza odległości obiektów
+od obserwatora, w kierunku
+obserwacji
+Rozwój grafiki komputerowej
+Zasada generalizacji obiektów w grafice interaktywnej 3D
+Poprawne zastosowanie zasady
+zmiany szczegółowości prezentacji
+obraz "low poly" z odpowiednią
+generalizacją dalszego planu
+Skutek niezastosowania tej zasady
+obraz "low poly" z nadmierną
+generalizacją w pierwszym planie
+Standardy wymiarów obrazu Standardy wymiarów obrazuStandardy wymiarów obrazu Grafika komputerowa 3D w Geodezji
+Przeznaczeniem grafiki 3D jest prezentacja:
+● rozmieszczenia obiektów topograficznych
+Grafika komputerowa 3D w Geodezji
+Przeznaczeniem grafiki 3D jest prezentacja:
+● rozmieszczenia obiektów topograficznych
+● modeli obiektów architektonicznych i innych podlegających pomiarowi
+Grafika komputerowa 3D w Geodezji
+Przeznaczeniem grafiki 3D jest prezentacja:
+● rozmieszczenia obiektów topograficznych
+● modeli obiektów architektonicznych i innych podlegających pomiarowi
+● zjawisk i procesów zachodzących w środowisku
+Grafika komputerowa 3D w Geodezji
+Przeznaczeniem grafiki 3D jest prezentacja:
+● rozmieszczenia obiektów topograficznych
+● modeli obiektów architektonicznych i innych podlegających pomiarowi
+● zjawisk i procesów zachodzących w środowisku
+● wpasowania koncepcji planistycznych w istniejące obiekty
+Grafika komputerowa 3D w Geodezji
+Przeznaczeniem grafiki 3D jest prezentacja:
+● rozmieszczenia obiektów topograficznych
+● modeli obiektów architektonicznych i innych podlegających pomiarowi
+● zjawisk i procesów zachodzących w środowisku
+● wpasowania koncepcji planistycznych w istniejące obiekty
+● pomiarów o charakterze inwentaryzacyjnym i realizacyjnymGrafika komputerowa 3D w Geodezji
+Przeznaczeniem grafiki 3D jest prezentacja:
+● rozmieszczenia obiektów topograficznych
+● modeli obiektów architektonicznych i innych podlegających pomiarowi
+● zjawisk i procesów zachodzących w środowisku
+● wpasowania koncepcji planistycznych w istniejące obiekty
+● pomiarów o charakterze inwentaryzacyjnym i realizacyjnym
+Google Earth Kair Kennycourt Developments Broward County Florida
+Grafika komputerowa 3D w Geodezji
+Przeznaczeniem grafiki 3D jest prezentacja:
+● rozmieszczenia obiektów topograficznych
+● modeli obiektów architektonicznych i innych podlegających pomiarowi
+● zjawisk i procesów zachodzących w środowisku
+● wpasowania koncepcji planistycznych w istniejące obiekty
+● pomiarów o charakterze inwentaryzacyjnym i realizacyjnym
+Przeznaczenie interaktywnej grafiki 3D:
+● obracanie obiektami trójwymiarowymi w celu ich pokazania z różnych
+stron
+Grafika komputerowa 3D w Geodezji
+Przeznaczeniem grafiki 3D jest prezentacja:
+● rozmieszczenia obiektów topograficznych
+● modeli obiektów architektonicznych i innych podlegających pomiarowi
+● zjawisk i procesów zachodzących w środowisku
+● wpasowania koncepcji planistycznych w istniejące obiekty
+● pomiarów o charakterze inwentaryzacyjnym i realizacyjnym
+Przeznaczenie interaktywnej grafiki 3D:
+● obracanie obiektami trójwymiarowymi w celu ich pokazania z różnych
+stron
+● symulacja przemieszczania się w otoczeniu obiektów, zgodnie z
+określonymi regułami ruchu
+Grafika komputerowa 3D w Geodezji
+Przeznaczeniem grafiki 3D jest prezentacja:
+● rozmieszczenia obiektów topograficznych
+● modeli obiektów architektonicznych i innych podlegających pomiarowi
+● zjawisk i procesów zachodzących w środowisku
+● wpasowania koncepcji planistycznych w istniejące obiekty
+● pomiarów o charakterze inwentaryzacyjnym i realizacyjnym
+Przeznaczenie interaktywnej grafiki 3D:
+● obracanie obiektami trójwymiarowymi w celu ich pokazania z różnych
+stron
+● symulacja przemieszczania się w otoczeniu obiektów, zgodnie z
+określonymi regułami ruchu
+● prezentacja zmian stanu obiektów i ich oddziaływania w czasie
+Grafika komputerowa 3D w Geodezji
+Przeznaczeniem grafiki 3D jest prezentacja:
+● rozmieszczenia obiektów topograficznych
+● modeli obiektów architektonicznych i innych podlegających pomiarowi
+● zjawisk i procesów zachodzących w środowisku
+● wpasowania koncepcji planistycznych w istniejące obiekty
+● pomiarów o charakterze inwentaryzacyjnym i realizacyjnym
+Przeznaczenie interaktywnej grafiki 3D:
+● obracanie obiektami trójwymiarowymi w celu ich pokazania z różnych
+stron
+● symulacja przemieszczania się w otoczeniu obiektów, zgodnie z
+określonymi regułami ruchu
+● prezentacja zmian stanu obiektów i ich oddziaływania w czasie
+● prezentacja zmian oświetlenia obiektów zgodnie z porami dnia i roku
+Grafika komputerowa 3D w GeodezjiGrafika komputerowa 3D
+inż. IV sem. Geoinformatyka
+Zakład Fotogrametrii Teledetekcji i Systemów Informacji
+Przestrzennej
+Zespół Fotogrametrii sala 44, 48, 325, 430
+dr inż. Michał Kowalczyk
+mail: mk.sprawozdania@wp.pl
+Tematy prezentacji:
+Tworzenie grafiki trójwymiarowej
+Głębia barwy
+Bufor ramki
+Interfejs programowania aplikacji - API
+Tworzenie grafiki i pojęcie czasu rzeczywistego
+YUV (ang. Luminance (Y), blue–luminance (U), red–luminance (V)):
+Y – luminacja (dla obrazu monochromatycznego),
+U – przeskalowana składowa niebieska B,
+V – przeskalowana składowa czerwona R.
+Przestrzenie barw addytywnych Przestrzenie barw addytywnych
+HSV (ang. Hue Saturation Value):
+H – odcień światła (ang. Hue) wyrażony kątem na kole barw
+S – nasycenie koloru
+V - wartość lub moc światła białego
+Przestrzenie barw addytywnych (ang. additive)
+RGB (ang. Red Green Blue):
+R – czerwony
+G – zielony
+B - niebieski
+Przestrzeń barw subtraktywnych (ang. subtractive)
+CMYK (ang. Cyan Magenta Yellow Key colour - Black):
+C – Cyjan (błękit, szafir lub turkus)
+M – Magenta (fuksja, karmazyn lub amarant)
+Y - Żółty jasny
+subtraktywne (druk) addytywne (wyświetlanie)Porównanie przestrzeni barw addytywnych i subtraktywnych
+w odniesieniu do obserwacji, odbieranej przez człowieka.
+Przestrzeń barw
+Porównanie przestrzeni barw addytywnych i subtraktywnych
+w odniesieniu do obserwacji, odbieranej przez człowieka.
+Przestrzeń barw Konwersja
+Przestrzeń barw - przeliczenia
+RGB -> YUV
+Y = 0.299R + 0.587G + 0.114B
+U = -0.147R - 0.289G + 0.436B
+V = 0.615R - 0.515G - 0.100B
+YUV -> RGB
+R = Y + 1.140V
+G = Y - 0.395U - 0.581V
+B = Y + 2.032U
+Przestrzeń barw - przeliczenia
+RGB -> HSV
+R' = R/255
+G' = G/255
+B' = B/255
+Cmax = max(R', G', B')
+Cmin = min(R', G', B')
+∆ = Cmax - Cmin
+V = Cmax
+Przestrzeń barw - przeliczenia
+HSV -> RGB
+When 0 ≤ H < 360, 0 ≤ S ≤ 1 and 0 ≤ V ≤ 1:
+C = V × S
+X = C × (1 - |(H / 60°) mod 2 - 1|)
+m = V - C
+Liczba bitów przeznaczonych na zapis pojedynczego piksela ogranicza
+liczbę odcieni podstawowych kolorów, prezentowanych w formie barwy
+na monitorze
+Głębia barwyLiczba bitów przeznaczonych na zapis pojedynczego piksela ogranicza
+liczbę odcieni podstawowych trzech kolorów, prezentowanych w formie
+barwy na monitorze
+Głębia barwy
+bity na kanał odcienie w kanale liczba barw
+1 2 8
+2 4 64
+3 8 512
+4 16 4'096
+5 32 32'768
+6 64 262'144
+8 256 16'777'216
+10 1'024 1'073'741'824
+12 4'096 68'719'476'736
+16 65'536 281'474'976'710'656
+Liczba bitów przeznaczonych na zapis pojedynczego piksela ogranicza
+liczbę odcieni podstawowych kolorów, prezentowanych w formie barwy
+na monitorze
+Głębia barwy
+Zapis pojedynczego piksela obejmuje wartości poszczególnych kanałów
+dla zapisu jasności składowych barwy
+Głębia barwy
+obraz:
+1 bit 8 bitów 16 bitów
+Zapis pojedynczego piksela obejmuje wartości poszczególnych kanałów
+dla zapisu jasności składowych barwy
+Głębia barwy
+Standardowa paleta dla 8 bitów - 256 odcieni
+Zapis pojedynczego piksela obejmuje wartości poszczególnych kanałów
+dla zapisu jasności składowych barwy
+Głębia barwy
+Piksele:
+12 bitów - 4096 odcieni
+15 bitów - 32768 odcieni High Color
+16 bitów - 65536 odcieni High Color
+Zapis pojedynczego piksela obejmuje wartości poszczególnych kanałów
+dla zapisu jasności składowych barwy
+Głębia barwy
+Piksele:
+24 bity - 16777216 odcieni True Color
+32 bity - 16777216 odcieni True Color
+30 bitów - 1073741824 odcieni Deep Color
+30/36/48 lub z alfa 40/48/64 Deep ColorZapis pojedynczego piksela obejmuje wartości poszczególnych kanałów
+dla zapisu jasności składowych barwy
+Głębia barwy
+Piksele:
+24 bity - 16777216 odcieni True Color
+32 bity - 16777216 odcieni True Color
+30 bitów - 1073741824 odcieni Deep Color
+30/36/48 lub z alfa 40/48/64 Deep Color
+Zapis pojedynczego piksela obejmuje wartości poszczególnych kanałów
+dla zapisu jasności składowych barwy
+Głębia barwy
+Piksele:
+24 bity - 16777216 odcieni True Color
+32 bity - 16777216 odcieni True Color
+30 bitów - 1073741824 odcieni Deep Color
+30/36/48 lub z alfa 40/48/64 Deep Color
+YUV Y410
+10 bitów na kanał
+YUV Y416
+16 bitów na kanał
+Część pamięci RAM karty graficznej, przechowująca piksele, które mają
+być wyświetlone na ekranie
+Wielkość bufora ramki zależy od wielkości okna, w którym ma być
+wyświetlana grafika i od liczby możliwych do zapisania barw - głębii
+bitowej pikseli.
+Sprzęt - bufor ramki
+Część pamięci RAM karty graficznej przechowująca piksele, które mają
+być wyświetlone na ekranie
+Wielkość bufora ramki zależy od wielkości okna, w którym ma być
+wyświetlana grafika i od liczby możliwych do zapisania barw - głębii
+bitowej pikseli
+Sprzęt - bufor ramki
+DAC - Digital to Analog Converter
+Toby Howard - OpenGL Tutorial and Reference Manual
+Pamięć przechowująca piksele, które mają być wyświetlone na ekranie
+Wielkość bufora ramki zależy od wielkości okna, w którym ma być
+wyświetlana grafika i od liczby możliwych do zapisania barw - głębii
+bitowej pikseli
+Najczęściej stosuje się dwa bufory ramki
+● Bufor przedni (front) przeznaczony do wyświetlania
+● Bufor tylny (back) przeznaczony do rysowania
+● Po zakończeniu rysowania, bufory zamieniane sa miejscami -
+podwójne buforowanie
+Sprzęt - bufor ramki
+Pamięć przechowująca piksele, które mają być wyświetlone na ekranie
+Wielkość bufora ramki zależy od wielkości okna, w którym ma być
+wyświetlana grafika i od liczby możliwych do zapisania barw - głębii
+bitowej pikseli
+Najczęściej stosuje się dwa bufory ramki
+● Bufor przedni (front) przeznaczony do wyświetlania
+● Bufor tylny (back) przeznaczony do rysowania
+● Po zakończeniu rysowania, bufory zamieniane sa miejscami -
+podwójne buforowanie
+Sprzęt - bufor ramki
+DAC - Digital to Analog Converter
+Toby Howard - OpenGL Tutorial and Reference ManualPamięć przechowująca piksele, które mają być wyświetlone na ekranie
+Wielkość bufora ramki zależy od wielkości okna, w którym ma być
+wyświetlana grafika i od liczby możliwych do zapisania barw - głębii
+bitowej pikseli
+Najczęściej stosuje się dwa bufory ramki
+● Bufor przedni (front) przeznaczony do wyświetlania
+● Bufor tylny (back) przeznaczony do rysowania
+● Po zakończeniu rysowania, bufory zamieniane sa miejscami -
+podwójne buforowanie
+W przypadku wyświetlania obrazu trójwymiarowego w trybie stereo,
+wykorzystywane są cztery bufory - po dwa dla każdego oka
+Sprzęt - bufor ramki
+Pamięć przechowująca piksele, które mają być wyświetlone na ekranie.
+Sprzęt - bufor ramki
+1. Zawiera numery barw,
+zapisanych w tabeli LuT
+D/A - przetwornik cyfrowo-analogowy (dla monitorów analogowych)
+Pamięć przechowująca piksele, które mają być wyświetlone na ekranie.
+Sprzęt - bufor ramki
+2. Zawiera wszystkie
+wartości pikseli
+D/A - przetwornik cyfrowo-analogowy (dla monitorów analogowych)
+Mux - field selection multiplexer (selektywny wskaźnik pola)
+Pamięć przechowująca piksele, które mają być wyświetlone na ekranie.
+Sprzęt - bufor ramki
+Pojedyncze, podwójne i potrójne buforowanie przesyłu obrazu
+Więcej buforów = więcej czasu na narysowanie pojedynczej ramki
+Interfejs programowania aplikacji - API
+Interfejs programowania aplikacji, interfejs programistyczny aplikacji,
+API (ang. application programming interface) – sposób, rozumiany jako ściśle
+określony zestaw reguł i ich opisów, w jaki programy komputerowe komunikują
+się między sobą.
+Interfejs programowania aplikacji - API
+Interfejs programowania aplikacji, interfejs programistyczny aplikacji,
+API (ang. application programming interface) – sposób, rozumiany jako ściśle
+określony zestaw reguł i ich opisów, w jaki programy komputerowe komunikują
+się między sobą.
+Definiuje się go na poziomie kodu źródłowego dla składników
+oprogramowania, na przykład aplikacji, bibliotek, systemu operacyjnego.
+Zadaniem interfejsu programowania aplikacji jest dostarczenie odpowiednich
+specyfikacji podprogramów, struktur danych, klas obiektów i wymaganych
+protokołów komunikacyjnych.Interfejs programowania aplikacji - API
+Przykłady API przeznaczonych do tworzenia grafiki:
+Direct3D (a subset of DirectX)
+Glide
+Mantle developed by AMD.
+Metal developed by Apple.
+OpenGL and the OpenGL Shading Language
+OpenGL ES 3D API for embedded devices
+QuickDraw 3D developed by Apple Computer starting in 1995,
+abandoned in 1998
+RenderMan
+RenderWare
+Vulkan
+LibGCM
+Interfejs programowania aplikacji - API
+OpenGL (ang. Open Graphics Library) – specyfikacja otwartego i
+uniwersalnego API do tworzenia grafiki. Zestaw funkcji składa się z 250
+podstawowych wywołań, umożliwiających budowanie złożonych
+trójwymiarowych scen z podstawowych figur geometrycznych.
+Interfejs programowania aplikacji - API
+OpenGL (ang. Open Graphics Library) – specyfikacja otwartego i
+uniwersalnego API do tworzenia grafiki. Zestaw funkcji składa się z 250
+podstawowych wywołań, umożliwiających budowanie złożonych
+trójwymiarowych scen z podstawowych figur geometrycznych.
+Głównym celem jest tworzenie grafiki za pośrednictwem sprzętu w postaci
+GPU (Graphics Processing Unit), wykorzystując przyspieszenie sprzętowe.
+Interfejs programowania aplikacji - API
+OpenGL (ang. Open Graphics Library) – specyfikacja otwartego i
+uniwersalnego API do tworzenia grafiki. Zestaw funkcji składa się z 250
+podstawowych wywołań, umożliwiających budowanie złożonych
+trójwymiarowych scen z podstawowych figur geometrycznych.
+Głównym celem jest tworzenie grafiki za pośrednictwem sprzętu w postaci
+GPU (Graphics Processing Unit), wykorzystując przyspieszenie sprzętowe.
+Dodatkowo jest wykorzystywany do GPGPU (ang. general-purpose computing
+on graphics processing units) – obliczenia ogólnego przeznaczenia na
+układach GPU.
+Interfejs programowania aplikacji - API
+OpenGL (ang. Open Graphics Library) – specyfikacja otwartego i
+uniwersalnego API do tworzenia grafiki. Zestaw funkcji składa się z 250
+podstawowych wywołań, umożliwiających budowanie złożonych
+trójwymiarowych scen z podstawowych figur geometrycznych.
+Głównym celem jest tworzenie grafiki za pośrednictwem sprzętu w postaci
+GPU (Graphics Processing Unit), wykorzystując przyspieszenie sprzętowe.
+Dodatkowo jest wykorzystywany do GPGPU (ang. general-purpose computing
+on graphics processing units) – obliczenia ogólnego przeznaczenia na
+układach GPU.
+OpenCL (ang. Open Computing Language) – framework (platforma
+programistyczna – szkielet do budowy aplikacji) wspomagający pisanie
+aplikacji działających na heterogenicznych platformach składających się z
+różnego rodzaju jednostek obliczeniowych (m.in. CPU, GPU).
+Interfejs programowania aplikacji - API
+OpenGL (ang. Open Graphics Library) – specyfikacja otwartego i
+uniwersalnego API do tworzenia grafiki. Zestaw funkcji składa się z 250
+podstawowych wywołań, umożliwiających budowanie złożonych
+trójwymiarowych scen z podstawowych figur geometrycznych.
+Głównym celem jest tworzenie grafiki za pośrednictwem sprzętu w postaci
+GPU (Graphics Processing Unit), wykorzystując przyspieszenie sprzętowe.
+Dodatkowo jest wykorzystywany do GPGPU (ang. general-purpose computing
+on graphics processing units) – obliczenia ogólnego przeznaczenia na
+układach GPU.
+OpenCL (ang. Open Computing Language) – framework (platforma
+programistyczna – szkielet do budowy aplikacji) wspomagający pisanie
+aplikacji działających na heterogenicznych platformach składających się z
+różnego rodzaju jednostek obliczeniowych (m.in. CPU, GPU).
+Główną zaletą technologii OpenCL jest to, że można użyć jednego otwartego
+standardu zamiast zamkniętych współpracujących ze sprzętem tylko jednego
+producenta (np. CUDA tylko dla kart graficznych produkowanych przez firmę
+Nvidia).Interfejs programowania aplikacji - API
+Zastosowanie do generowania grafiki interaktywnej
+silniki do tworzenia gier i symulacji:
+Tworzenie grafiki i pojęcie czasu rzeczywistego
+Pojęcie czasu rzeczywistego dotyczy w grafice możliwości odtwarzania
+pokazywanej sceny w tempie przynajmniej 30-tu razy na sekundę lub zgodnie
+ze standardem kina 24 klatki na sekundę.
+Tworzenie grafiki i pojęcie czasu rzeczywistego
+Pojęcie czasu rzeczywistego dotyczy w grafice możliwości odtwarzania
+pokazywanej sceny w tempie przynajmniej 30-tu razy na sekundę lub zgodnie
+ze standardem kina 24 klatki na sekundę.
+Dla osiągnięcia tego celu każdy reprezentowany obiekt jest dzielony na
+elementarne części, zazwyczaj trójkąty.
+Tworzenie grafiki i pojęcie czasu rzeczywistego
+Pojęcie czasu rzeczywistego dotyczy w grafice możliwości odtwarzania
+pokazywanej sceny w tempie przynajmniej 30-tu razy na sekundę lub zgodnie
+ze standardem kina 24 klatki na sekundę.
+Dla osiągnięcia tego celu każdy reprezentowany obiekt jest dzielony na
+elementarne części, zazwyczaj trójkąty.
+Następnie każdy trójkąt jest przesuwany, obracany i skalowany do pożądanej
+lokalizacji i postaci.
+Tworzenie grafiki i pojęcie czasu rzeczywistego
+Pojęcie czasu rzeczywistego dotyczy w grafice możliwości odtwarzania
+pokazywanej sceny w tempie przynajmniej 30-tu razy na sekundę lub zgodnie
+ze standardem kina 24 klatki na sekundę.
+Dla osiągnięcia tego celu każdy reprezentowany obiekt jest dzielony na
+elementarne części, zazwyczaj trójkąty.
+Następnie każdy trójkąt jest przesuwany, obracany i skalowany do pożądanej
+lokalizacji i postaci.
+Kolejną czynnością jest podział każdego trójkąta na najmniejsze jednostki,
+zwane fragmentami.
+Tworzenie grafiki i pojęcie czasu rzeczywistego
+Pojęcie czasu rzeczywistego dotyczy w grafice możliwości odtwarzania
+pokazywanej sceny w tempie przynajmniej 30-tu razy na sekundę lub zgodnie
+ze standardem kina 24 klatki na sekundę.
+Dla osiągnięcia tego celu każdy reprezentowany obiekt jest dzielony na
+elementarne części, zazwyczaj trójkąty.
+Następnie każdy trójkąt jest przesuwany, obracany i skalowany do pożądanej
+lokalizacji i postaci.
+Kolejną czynnością jest podział każdego trójkąta na najmniejsze jednostki,
+zwane fragmentami.
+Fragmenty są rysowane na obrazie za pomocą lokalnej barwy, obliczanej na
+podstawie wielu kroków, zależnie od usytuowania danego miejsca względem
+innych obiektów, oświetlenia, materiałów zawartych w całej pokazywanej
+scenie i atmosfery ją otaczającej.Tworzenie grafiki i pojęcie czasu rzeczywistegoGrafika komputerowa 3D
+inż. IV sem. Geoinformatyka
+Zakład Fotogrametrii Teledetekcji i Systemów Informacji
+Przestrzennej
+Zespół Fotogrametrii sala 48, 325, 430
+dr inż. Michał Kowalczyk
+mail: mk.sprawozdania@wp.pl
+Tematy prezentacji:
+Narzędzia programowe wyższego poziomu do tworzenia grafiki
+grafika statyczna - obrazy
+grafika dynamiczna - animacje
+grafika interaktywna - prezentacje interaktywne i gry
+Grafika statyczna
+Geometria - 3D Studio Max
+Grafika statyczna
+Geometria - Maya
+Grafika statyczna
+Geometria - Blender
+Grafika statyczna
+Tworzenie materiałów statycznych - Marmoset Co ToolbagGrafika statyczna
+Tworzenie materiałów statycznych - Marmoset Co Toolbag
+Jasność
+i barwa
+Odbicie
+Chropowatość
+Rozkład
+normalnych
+Grafika statyczna
+Tworzenie materiałów statycznych - Marmoset Co Toolbag
+Jasność
+i barwa
+Grafika statyczna
+Tworzenie materiałów statycznych - Marmoset Co Toolbag
+Chropowatość
+Grafika statyczna
+Tworzenie materiałów statycznych - Marmoset Co Toolbag
+Odbicie
+Grafika statyczna
+Tworzenie materiałów statycznych - Blender (pipeline editor)
+(szkło)
+Grafika statyczna
+Tworzenie materiałów statycznych - Blender
+(metal)Grafika statyczna
+Tworzenie materiałów statycznych - Blender
+(metal)
+Geometria Rezultat
+Grafika statyczna
+Oświetlenie obiektów, wykonanych z materiałów statycznych
+Marmoset Co Toolbag
+Grafika dynamiczna
+Animacje - Blender
+Grafika dynamiczna
+Animacje - Blender
+Grafika dynamiczna
+Animacje - Maya Graph Editor Redux
+Grafika dynamiczna
+Animacje - Maya Graph Editor Redux
+Translacja i skalowanie wzdłuż osi X, Y i Z
+obracanie wokół osi X, Y i ZGrafika dynamiczna
+Animacje - Tworzenie zmiennych materiałów - Blender
+Grafika dynamiczna
+Animacje - Tworzenie zmiennych materiałów - Blender
+Transformacja parametru materiału w czasie
+Grafika interaktywna
+Interpretacja akcji użytkownika - Blender Game Engine
+Grafika interaktywna
+Interpretacja akcji użytkownika - Blender Game Engine
+Grafika interaktywna
+Interpretacja akcji użytkownika - Blender Game Engine
+Grafika interaktywna
+Interpretacja akcji użytkownika - Blender Game Engine
+Akcja użytkownika działanie interpretacyjne skryptu reakcja w transformacji
+obiektów
+(ruch i przyciski myszy)Grafika interaktywna
+Unreal Engine
+Grafika interaktywna
+Unity
+Elementy składowe grafiki 3D:
+Grafika statyczna - obrazy:
+Elementy składowe grafiki 3D:
+Grafika statyczna - obrazy:
+● geometria obiektów z optymalizacją
+Elementy składowe grafiki 3D:
+Grafika statyczna - obrazy:
+● geometria obiektów z optymalizacją
+● SketchUp plugin: Artisan Organic ToolSet
+Elementy składowe grafiki 3D:
+Grafika statyczna - obrazy:
+● geometria obiektów z optymalizacjąElementy składowe grafiki 3D:
+Grafika statyczna - obrazy:
+● geometria obiektów z optymalizacją
+● punkty obserwacji z określonym odwzorowaniem (rzutem)
+Elementy składowe grafiki 3D:
+Grafika statyczna - obrazy:
+● geometria obiektów z optymalizacją
+● punkty obserwacji z określonym odwzorowaniem (rzutem)
+● materiały - mapy:
+Elementy składowe grafiki 3D:
+Grafika statyczna - obrazy:
+● geometria obiektów z optymalizacją
+● punkty obserwacji z określonym odwzorowaniem (rzutem)
+● materiały - mapy:
+● barwa i przezroczystość - tekstura
+● odbicie, pochłanianie, rozpraszenie i emisja światła
+● ustawienie i transformacja na obiektach
+Elementy składowe grafiki 3D:
+Grafika statyczna - obrazy:
+● geometria obiektów z optymalizacją
+● punkty obserwacji z określonym odwzorowaniem (rzutem)
+● materiały - mapy:
+● barwa i przezroczystość - tekstura
+● odbicie, pochłanianie, rozpraszenie i emisja światła
+● ustawienie i transformacja na obiektach
+● oświetlenie
+● ustawienie żródeł światła względem sceny
+● barwa otoczenia, odbicie, rozproszenie, mapa
+Elementy składowe grafiki 3D:
+Grafika statyczna - obrazy:
+● geometria obiektów z optymalizacją
+● punkty obserwacji z określonym odwzorowaniem (rzutem)
+● materiały - mapy:
+● barwa i przezroczystość - tekstura
+● odbicie, pochłanianie, rozpraszenie i emisja światła
+● ustawienie i transformacja na obiektach
+● oświetlenie
+● ustawienie żródeł światła względem sceny
+● barwa otoczenia, odbicie, rozproszenie, mapa
+● atmosfera - mgła
+● barwa i przezroczystość
+● struktura - mapa
+Elementy składowe grafiki 3D:
+Grafika statyczna - obrazy:
+● geometria obiektów z optymalizacją
+● punkty obserwacji z określonym odwzorowaniem (rzutem)
+● materiały - mapy:
+● barwa i przezroczystość - tekstura
+● odbicie, pochłanianie, rozpraszenie i emisja światła
+● ustawienie i transformacja na obiektach
+● oświetlenie
+● ustawienie żródeł światła względem sceny
+● barwa otoczenia, odbicie, rozproszenie, mapa
+● atmosfera - mgła
+● barwa i przezroczystość
+● struktura - mapa
+Grafika dynamiczna - animacje:
+● statyczna +
+● trajektorie ruchu ze zmianami prędkości
+● obroty, skalowanie i zmiany postaci - kształtu obiektów w czasie
+● (w formie trajektorii)
+● opis zmian pokrycia obiektów materiałami w czasieElementy składowe grafiki 3D:
+Grafika statyczna - obrazy:
+● geometria obiektów z optymalizacją
+● punkty obserwacji z określonym odwzorowaniem (rzutem)
+● materiały - mapy:
+● barwa i przezroczystość - tekstura
+● odbicie, pochłanianie, rozpraszenie i emisja światła
+● ustawienie i transformacja na obiektach
+● oświetlenie
+● ustawienie żródeł światła względem sceny
+● barwa otoczenia, odbicie, rozproszenie, mapa
+● atmosfera - mgła
+● barwa i przezroczystość
+● struktura - mapa
+Grafika dynamiczna - animacje:
+● statyczna +
+● trajektorie ruchu ze zmianami prędkości
+● obroty, skalowanie i zmiany postaci - kształtu obiektów w czasie
+● (w formie trajektorii)
+● opis zmian pokrycia obiektów materiałami w czasie
+Grafika interaktywna - prezentacje interaktywne i gry:
+● dynamiczna +
+● interpretacja działań użytkownika i reakcja w formie zmian wszystkich
+poprzednich parametrów tworzenia grafiki
+(zwłaszcza transformacje obiektów i punktów obserwacji)
+● optymalizacja dla redukcji opóźnień w bieżącym tworzeniu ramekGrafika komputerowa 3D
+inż. IV sem. Geoinformatyka
+Zakład Fotogrametrii Teledetekcji i Systemów Informacji
+Przestrzennej
+Zespół Fotogrametrii sala 48, 325, 430
+dr inż. Michał Kowalczyk
+mail: mk.sprawozdania@wp.pl
+Tematy prezentacji:
+Układy współrzędnych w grafice
+układy płaskie - ekranu, tekstury
+układy trójwymiarowe - kamery, obiektu
+transformacje między układami
+rzut ortogonalny i środkowy
+Obszaru ekranu kontrolki
+Układy współrzędnych płaskich
+Tekstury Obrazu
+Układy współrzędnych płaskich
+width: szerokość, height: wysokość
+pozycja (i,j) w teksturze:
+s = i/obraz.width
+t = (obraz.height-j)
+/obraz.height
+(0,0) i
+j
+(width,height)
+Układy współrzędnych trójwymiarowych
+LHS – Left Hand System RHS – Right Hand System
+CW – Clockwise System CCW – Counter Clockwise System
+Reguła lewej dłoni Reguła prawej dłoni
+Zgodnie z zegarem Przeciwnie do zegara
+Układ współrzędnych trójwymiarowych
+OpenGL
+RHS – Right Hand System
+CCW – Counter Clockwise System
+Reguła prawej dłoni
+Przeciwnie do zegara
+https://www.ntu.edu.sg/home/ehchua/programming/opengl/CG_BasicsTheory.htmlPrzekształcenie liniowe
+Przekształca prostą w: prostą lub punkt
+Przekształcenie liniowe
+Przekształca prostą w: prostą lub punkt
+Zakładając że U i V są przestrzeniami liniowymi nad ciałem K
+to funkcja A:U → V jest liniowa jeżeli:
+Przekształcenie liniowe
+Przekształca prostą w: prostą lub punkt
+Zakładając że U i V są przestrzeniami liniowymi nad ciałem K
+to funkcja A:U → V jest liniowa jeżeli:
+Zachowuje dodawanie wektorów - addytywne:
+A(x+y) = A(x) + A(y)
+Przekształcenie liniowe
+Przekształca prostą w: prostą lub punkt
+Zakładając że U i V są przestrzeniami liniowymi nad ciałem K
+to funkcja A:U → V jest liniowa jeżeli:
+Zachowuje dodawanie wektorów - addytywne:
+A(x+y) = A(x) + A(y)
+Zachowuje mnożenie przez skalar - jednorodne:
+A(cx) = cA(x)
+Przekształcenie liniowe
+Przekształca prostą w: prostą lub punkt
+Zakładając że U i V są przestrzeniami liniowymi nad ciałem K
+to funkcja A:U → V jest liniowa jeżeli:
+Zachowuje dodawanie wektorów - addytywne:
+A(x+y) = A(x) + A(y)
+Zachowuje mnożenie przez skalar - jednorodne:
+A(cx) = cA(x)
+Połączenie obu właściwości daje warunek liniowości:
+A(cx+dy) = cA(x) + dA(y)
+Przekształcenie liniowe
+(liczba parametrów)
+Transformacja konforemna:
+Obroty ( 3 )
+Skalowanie ( 1 )
+Translacja ( 3 )Przekształcenie liniowe
+(liczba parametrów)
+Transformacja konforemna:
+Obroty ( 3 )
+Skalowanie ( 1 )
+Translacja ( 3 )
+Transformacja afiniczna:
+Obroty ( 3 )
+Skalowanie ( 3 )
+Translacja ( 3 )
+Obrót punktu o kąt κ
+(x,y)
+(x',y')
+x
+y
+x
+'
+=x⋅cos(κ )y⋅sin (κ )
+y
+'
+=x⋅sin (κ )+ y⋅cos(κ )
+Obrót punktu o kąt κ
+(x,y)
+(x',y')
+x
+y
+x
+'
+=x⋅cos(κ )y⋅sin (κ )
+y
+'
+=x⋅sin (κ )+ y⋅cos(κ )
+Obrót punktu o kąt κ
+(x,y)
+(x',y')
+x
+y
+P=[xy] P '=[x ' y ']
+x
+'
+=x⋅cos(κ )y⋅sin (κ )
+y
+'
+=x⋅sin (κ )+ y⋅cos(κ )
+Obrót punktu o kąt κ
+(x,y)
+(x',y')
+x
+y
+[x ' y ']=[cos sin((κκ)) cos sin(( κκ))]
+P=[xy] P ' =[x ' y ']
+[x y]
+x
+'
+=x⋅cos(κ )y⋅sin (κ )
+y
+'
+=x⋅sin (κ )+ y⋅cos(κ )
+Obrót punktu o kąt κ
+(x,y)
+(x',y')
+x
+y
+[x ' y ']=[cos sin((κκ)) cos sin(( κκ))]
+P=[xy] P ' =[x ' y ']
++ [x y]x
+'
+=x⋅cos(κ )y⋅sin (κ )
+y
+'
+=x⋅sin (κ )+ y⋅cos(κ )
+Obrót punktu o kąt κ
+(x,y)
+(x',y')
+x
+y
+[x ' y ']=[cos sin((κκ)) cos sin(( κκ))]
+P=[xy] P ' =[x ' y ']
+[x y]
++
+x
+'
+=x⋅cos(κ )y⋅sin (κ )
+y
+'
+=x⋅sin (κ )+ y⋅cos(κ )
+Obrót punktu o kąt κ
+(x,y)
+(x',y')
+x
+y
+[x ' y ']=[cos sin((κκ)) cos sin(( κκ))]
+P=[xy] P ' =[x ' y ']
+[x y]
+x
+'
+=x⋅cos(κ )y⋅sin (κ )
+y
+'
+=x⋅sin (κ )+ y⋅cos(κ )
+Obrót punktu o kąt κ
+(x,y)
+(x',y')
+x
+y
+[x ' y ']=[x x⋅ ⋅cos sin ((κκ)+ )yy⋅⋅cos sin ( (κ κ ) )]
+P=[xy] P ' =[x ' y ']
+x
+'
+=x⋅cos(κ )y⋅sin (κ )
+y
+'
+=x⋅sin (κ )+ y⋅cos(κ )
+Obrót punktu o kąt κ
+(x,y)
+(x',y')
+x
+y
+P=[xy] P ' =[x ' y ']
+R
+P ' =Rz(κ)⋅P z(κ )=[cos sin((κκ)) cos sin((κκ))]
+[x ' y ']=[cos sin((κκ)) cos sin((κκ))] [x y]
+R
+P ' =S+ Rz(κ )⋅P z(κ )=[cos sin((κκ)) cos sin((κκ))]
+[x ' y ']=[xys s]+[cos sin ((κκ)) cos sin((κκ))]⋅[x y]
+R
+z=[R R11 21 R R12 22]
+x
+'
+=x⋅cos(κ )y⋅sin (κ )
+y
+'
+=x⋅sin (κ )+ y⋅cos(κ )
+Obrót punktu o kąt κ
+x
+y
+R
+z(κ )=[cos sin((κκ)) cos sin((κκ))]Obrót punktu o kąty ω ,φ ,κ wokół osi X, Y, Z
+kąty Eulera:
+obroty wokół osi X, Y, Z
+pomiędzy dwoma jednoskrętnymi układami kartezjańskimi
+w przestrzeni euklidesowej
+R
+z(κ)=[cos sin0 0 1 ((κκ)) cos sin((κκ)) 0 0]
+R
+y(ϕ)=[cos sin0 1 0 ((ϕϕ)) 0 sin 0 cos((ϕϕ))]
+R
+x(ω )=[1 0 0 0 cos 0 sin((ωω)) cos sin((ωω))]
+R
+z(κ )=[cos sin((κκ)) cos sin((κκ))]
+Obrót punktu o kąty ω ,φ ,κ wokół osi X, Y, Z
+[cos sin ((ωω))sin sin((κκcos ) )+(ϕ cos sin )cos ( (ω ω() )κsin sin )  ( (ϕ ϕ ) )cos cos( (κ κ ) ) cos sin ((ωω))cos cos((κκcos )+ )(cos sin ϕ )sin ( (ω ω ) )(κsin sin) ( (ϕ ϕ ) )sin sin ( (κ κ )  ) cos sin(sin (ωω)()cos ϕcos ) ((ϕϕ))]
+A
+xyz(ω ,ϕ ,κ )=Rx(ω )⋅Ry(ϕ)⋅Rz(κ)
+Obrót punktu o kąty ω ,φ ,κ wokół osi X, Y, Z
+A : ortogonalna macierz obrotów
+A
+xyz(ω ,ϕ ,κ )
+A
+xyz(ω ,ϕ ,κ )=[a a a11 21 31 aa a12 22 32 a a a13 23 33]
+A
+xyz(ω ,ϕ ,κ )=Rx(ω )⋅Ry(ϕ)⋅Rz(κ)
+Obrót punktu o kąty ω ,φ ,κ wokół osi X, Y, Z
+A
+xyz(ω ,ϕ ,κ )
+[a a a11 21 31 a a a12 22 32 a a a13 23 33]
+A
+xyz(ω ,ϕ ,κ )=Rx(ω )⋅Ry(ϕ)⋅Rz(κ)
+Obrót punktu o kąty ω ,φ ,κ wokół osi X, Y, Z
+A
+xyz(ω ,ϕ ,κ )=[a a a11 21 31 aa a12 22 32 a a a13 23 33]
+AT A=E ,det A=1 E - macierz jednostkowa
+T - transpoza macierzy
+det - wyznacznik macierzy
+Obrót punktu o kąty ω ,φ ,κ wokół osi X, Y, Z
+translacja i skalowanie
+A
+xyz(ω ,ϕ ,κ )=[a a a11 21 31 aa a12 22 32 a a a13 23 33]
+P ' =S+ k⋅A
+xyz⋅P S - wektor translacji
+k - współczynnik skali
+P=[x y z] S=[x y zs s s] P '=[x ' y ' z ']Obrót punktu o kąty ω ,φ ,κ wokół osi X, Y, Z
+translacja i skalowanie
+P ' =S+ k⋅A
+xyz⋅P S - wektor translacji
+k - współczynnik skali
+Skalowanie, translacja i obrót punktu o kąt κ
+wokół osi Z
+skalowanie
+translacja
+i obrót punktu
+glRotatef ( θ, x, y, z)
+glRotatef ( θ, x, y, z)
+obrót zgodnie z regułą śruby prawoskrętnej
+o kąt θ wokół wektora [ x, y, z]
+x2·(1-cosθ)+cosθ x·y·(1-cosθ)-z·sinθ x·z·(1-cosθ)+y·sinθ 0
+x·y·(1-cosθ)+z·sinθ y2·(1-cosθ)+cosθ y·z·(1-cosθ)-x·sinθ 0
+x·z·(1-cos)-y·sinθ y·z·(1-cosθ)+x·sinθ z2·(1-cosθ)+cosθ 0
+0 0 0 1Kolejność etapów transformacji jest istotna Kolejność etapów transformacji jest istotna
+oczekiwane obrócenie obiektu względem jego środka
+Kolejność etapów transformacji jest istotna Kolejność etapów transformacji jest istotna
+Kolejność etapów transformacji jest istotna Kolejność etapów transformacji jest istotna
+?Kolejność etapów transformacji jest istotna
+najpierw przesunięcie osi obrotu
+do początku układu współrzędnych,
+potem obrót i ponowne przesunięcie do pierwotnej pozycji
+Kolejność etapów transformacji jest istotna
+Kolejność etapów transformacji jest istotna Kolejność etapów transformacji jest istotna
+Kolejność etapów transformacji jest istotna Użyteczne zagadnienia z geometrii analitycznej
+długość wektora
+|a| = √(a12+a22+...+an2)
+|a| = √(x2+y2+z2)Użyteczne zagadnienia z geometrii analitycznej
+długość wektora
+|a| = √(a12+a22+...+an2)
+|a| = √(x2+y2+z2)
+normalizacja wektora
+a = [ x / |a|, y / |a|, z / |a| ] |a| = 1
+Użyteczne zagadnienia z geometrii analitycznej
+długość wektora
+|a| = √(a12+a22+...+an2)
+|a| = √(x2+y2+z2)
+normalizacja wektora
+a = [ x / |a|, y / |a|, z / |a| ] |a| = 1
+iloczyn skalarny
+a·b = a
+1b1+a2b2+...+anbn
+a·b = |a| |b| cosθ
+gdzie θ kąt między wektorami
+iloczyn rzutu wektora a na b
+przez długość wektora b
+Użyteczne zagadnienia z geometrii analitycznej
+iloczyn wektorowy
+a ˣ b = [ a2b3-a3b2, a3b1-a1b3, a1b2-a2b1 ]
+wektor prostopadły do a i b
+Użyteczne zagadnienia z geometrii analitycznej
+iloczyn wektorowy
+a ˣ b = [ a2b3-a3b2, a3b1-a1b3, a1b2-a2b1 ]
+wektor prostopadły do a i b
+|a ˣ b| = |a| |b| sinθ gdzie θ kąt między wektorami
+pole powierzchni równoległoboku rozpiętego na a i b
+Obserwacja pola wyświetlania
+Układy współrzędnych trójwymiarowych
+Projekcja ortogonalna
+Układy współrzędnych trójwymiarowychProjekcja aksonometryczna - rzut równoległy
+Układy współrzędnych trójwymiarowych
+Arrow Heads
+Projekcja aksonometryczna - rzut równoległy
+Układy współrzędnych trójwymiarowych
+Arrow Heads
+linie równoległe w
+przestrzeni
+pozostają równoległymi
+w rzucie
+Projekcja aksonometryczna - rzut równoległy
+Układy współrzędnych trójwymiarowych
+Arrow Heads
+linie równoległe w
+przestrzeni
+pozostają równoległymi
+w rzucie
+skala jest zachowana
+stała w określonym
+kierunku
+Projekcja ortogonalna
+Układy współrzędnych trójwymiarowych
+Układy współrzędnych trójwymiarowych
+Projekcja perspektywiczna - rzut środkowy
+Układy współrzędnych trójwymiarowychProjekcja perspektywiczna - rzut środkowy
+Układy współrzędnych trójwymiarowych
+Willy Nilly Knight
+Projekcja perspektywiczna - rzut środkowy
+Układy współrzędnych trójwymiarowych
+Willy Nilly Knight
+linie równoległe w
+przestrzeni
+mają wspólny punkt
+zbiegu w rzucie
+Projekcja perspektywiczna - rzut środkowy
+Układy współrzędnych trójwymiarowych
+preVision3D
+linie równoległe w
+przestrzeni
+mają wspólny punkt
+zbiegu w rzucie
+Projekcja perspektywiczna
+- rzut środkowy
+Układy współrzędnych trójwymiarowych
+Układy współrzędnych trójwymiarowych
+Projekcja perspektywiczna - rzut środkowy
+Transformacją z rzutu środkowego do ortogonalnego zajmuje się
+fotogrametria
+Układy współrzędnych trójwymiarowychProjekcja perspektywiczna - rzut środkowy
+Transformacją z rzutu środkowego do ortogonalnego zajmuje się
+fotogrametria
+Układy współrzędnych trójwymiarowych
+Aimé Laussedat - 1859 - fort Vincennes - początki fotogrametriiGrafika komputerowa 3D
+inż. IV sem. Geoinformatyka
+Zakład Fotogrametrii Teledetekcji i Systemów Informacji
+Przestrzennej
+Zespół Fotogrametrii sala 48, 325, 430
+dr inż. Michał Kowalczyk
+mail: mk.sprawozdania@wp.pl
+Tematy prezentacji:
+Obiekty tworzące grafikę - przykłady z OpenGL
+przygotowanie kontekstu grafiki
+punktowe
+liniowe - łamane
+powierzchniowe
+sterowanie wyświetlaniem
+Przygotowanie kontekstu grafiki
+moduły:
+gl : zawiera główne funkcje jak rysowanie wielokątów, stosowanie
+transformacji, ustawianie barw i materiałów. Procedury zaczynają się
+zawsze od gl...
+Przygotowanie kontekstu grafiki
+moduły:
+gl : zawiera główne funkcje jak rysowanie wielokątów, stosowanie
+transformacji, ustawianie barw i materiałów. Procedury zaczynają się
+zawsze od gl...
+glu : zawiera użytki OpenGL, Zawarte w nim procedury mogą być
+zastąpione przez gl. Nazwy zaczynają się od glu...
+Przygotowanie kontekstu grafiki
+moduły:
+gl : zawiera główne funkcje jak rysowanie wielokątów, stosowanie
+transformacji, ustawianie barw i materiałów. Procedury zaczynają się
+zawsze od gl...
+glu : zawiera użytki OpenGL, Zawarte w nim procedury mogą być
+zastąpione przez gl. Nazwy zaczynają się od glu...
+glext : zawiera bieżące rozszerzenia OpenGL. Informacje o wersji
+zainstalowanej są zawarte w funkcji Load_GL_version_X_Y (zwraca
+prawdę lub fałsz)
+Przygotowanie kontekstu grafiki
+moduły:
+gl : zawiera główne funkcje jak rysowanie wielokątów, stosowanie
+transformacji, ustawianie barw i materiałów. Procedury zaczynają się
+zawsze od gl...
+glu : zawiera użytki OpenGL, Zawarte w nim procedury mogą być
+zastąpione przez gl. Nazwy zaczynają się od glu...
+glext : zawiera bieżące rozszerzenia OpenGL. Informacje o wersji
+zainstalowanej są zawarte w funkcji Load_GL_version_X_Y (zwraca
+prawdę lub fałsz)
+glut : funkcje pomagające w stworzeniu okna OpenGL i
+upraszczające tworzenie rysunku, niektóre systemy nie posiadają
+glut.dllPrzygotowanie kontekstu grafiki
+moduły:
+gl : zawiera główne funkcje jak rysowanie wielokątów, stosowanie
+transformacji, ustawianie barw i materiałów. Procedury zaczynają się
+zawsze od gl...
+glu : zawiera użytki OpenGL, Zawarte w nim procedury mogą być
+zastąpione przez gl. Nazwy zaczynają się od glu...
+glext : zawiera bieżące rozszerzenia OpenGL. Informacje o wersji
+zainstalowanej są zawarte w funkcji Load_GL_version_X_Y (zwraca
+prawdę lub fałsz)
+glut : funkcje pomagające w stworzeniu okna OpenGL i upraszczające
+tworzenie rysunku, niektóre systemy nie posiadają glut.dll
+dglOpenGL : podobnie do glext zawiera bieżące rozszerzenia
+OpenGL - tłumaczenie nagłówka bieżącej biblioteki funkcji OpenGL.
+Przygotowanie kontekstu grafiki
+Inicjalizacja podłączenia okna OpenGL do urządzenia
+var
+DC:HDC; //Device Context
+RC:HGLRC; //Rendering Context
+begin
+DC:= GetDC(Handle); //funkcja dostarcza uchwyt do
+kontekstu urządzenia (DC) dla obszaru okna użytkownika.
+Kontekst wyświetlania urządzenia może być wykorzystany
+przez różne interfejsy obsługi grafiki (GDI)
+...
+end;
+Kontekst urządzenia - zestaw graficzny podobnie jak
+kartka i przybory do rysowania
+Przygotowanie kontekstu grafiki
+Inicjalizacja podłączenia okna OpenGL do urządzenia
+var
+DC:HDC; //Device Context
+RC:HGLRC; //Rendering Context
+begin
+DC:= GetDC(Handle); //funkcja dostarcza uchwyt do
+kontekstu urządzenia (DC) dla obszaru okna użytkownika.
+Kontekst wyświetlania urządzenia może być wykorzystany
+przez różne interfejsy obsługi grafiki (GDI)
+RC:= wglCreateContext(DC); //funkcja tworzy nowy kontekst
+wyświetlania (renderowania), realizowanego przez OpenGL.
+Parametrem jest uzyskany wcześniej uchwyt do kontekstu
+urządzenia
+...
+end;
+Przygotowanie kontekstu grafiki
+Inicjalizacja podłączenia okna OpenGL do urządzenia
+var
+DC:HDC; //Device Context
+RC:HGLRC; //Rendering Context
+begin
+DC:= GetDC(Handle); //funkcja dostarcza uchwyt do
+kontekstu urządzenia (DC) dla obszaru okna użytkownika.
+Kontekst wyświetlania urządzenia może być wykorzystany
+przez różne interfejsy obsługi grafiki (GDI)
+RC:= wglCreateContext(DC); //funkcja tworzy nowy kontekst
+wyświetlania (renderowania), realizowanego przez OpenGL.
+Parametrem jest uzyskany wcześniej uchwyt do kontekstu
+urządzenia
+wglMakeCurrent(DC, RC); //funkcja sprawia, że wskazany
+kontekst wyświetlania OpenGL staje się aktualny dla
+działających wątków. Parametrami są uchwyty do kontekstu
+urządzenia i kontekstu wyświetlania (renderingu) OpenGL
+end;
+Przygotowanie kontekstu grafiki
+Inicjalizacja podłączenia okna OpenGL do urządzenia
+var
+DC:HDC; //Device Context
+RC:HGLRC; //Rendering Context
+begin
+DC := GetDC(Handle);
+RC := wglCreateContext(DC);
+wglMakeCurrent(DC, RC);
+end;
+Przygotowanie kontekstu grafiki
+Inicjalizacja podłączenia okna OpenGL do urządzenia
+var
+DC:HDC; //Device Context
+RC:HGLRC; //Rendering Context
+begin
+DC := GetDC(Handle);
+SetupPixelFormat(DC); // wywołanie procedury
+odpowiedzialnej za ustawienie formatu pikseli
+RC := wglCreateContext(DC);
+wglMakeCurrent(DC, RC);
+GLInit; // wywołanie procedury inicjalizującej
+maszynę stanów OpenGL
+end;Przygotowanie kontekstu grafiki
+Procedura definiująca sposób wyświetlania i strukturę barwy
+procedure SetupPixelFormat(DC:HDC);
+const
+pfd:TPIXELFORMATDESCRIPTOR = (
+nSize:sizeof(TPIXELFORMATDESCRIPTOR);
+nVersion:1;
+dwFlags:PFD_SUPPORT_OPENGL or PFD_DRAW_TO_WINDOW or PFD_DOUBLEBUFFER;
+iPixelType:PFD_TYPE_RGBA;
+cColorBits:24;
+cRedBits:0; cRedShift:0;
+cGreenBits:0; cGreenShift:0;
+cBlueBits:0; cBlueShift:0;
+cAlphaBits:0; cAlphaShift:0;
+cAccumBits: 0;
+cAccumRedBits: 0;cAccumGreenBits: 0;cAccumBlueBits: 0;
+cAccumAlphaBits: 0;
+cDepthBits:16;
+cStencilBits:0;
+cAuxBuffers:0;
+iLayerType:PFD_MAIN_PLANE;
+bReserved: 0;
+dwLayerMask: 0;
+dwVisibleMask: 0;
+dwDamageMask: 0;);
+var pixelFormat:integer;
+begin
+pixelFormat := ChoosePixelFormat(DC, @pfd);
+if (pixelFormat = 0) then exit;
+if (SetPixelFormat(DC, pixelFormat, @pfd) <> TRUE) then exit;
+end;
+Przygotowanie kontekstu grafiki
+Procedura definiująca sposób wyświetlania i strukturę barwy
+procedure SetupPixelFormat(DC:HDC);
+const
+pfd:TPIXELFORMATDESCRIPTOR = (
+nSize:sizeof(TPIXELFORMATDESCRIPTOR); //rozmiar struktury
+nVersion:1; // zawsze wartość 1
+dwFlags:PFD_SUPPORT_OPENGL or PFD_DRAW_TO_WINDOW
+or PFD_DOUBLEBUFFER; //znaczniki właściwości bufora pikseli
+iPixelType:PFD_TYPE_RGBA; //typ danych piksela
+cColorBits:24; //liczba bitów piksela
+cRedBits:0; cRedShift:0;
+cGreenBits:0; cGreenShift:0; //liczba bitów oraz przesunięcie bitów RGBA
+cBlueBits:0; cBlueShift:0;
+cAlphaBits:0; cAlphaShift:0;
+cAccumBits: 0;
+cAccumRedBits: 0;cAccumGreenBits: 0;cAccumBlueBits: 0;
+cAccumAlphaBits: 0; //liczba bitów akumulacji RGBA
+cDepthBits:16; //liczba bitów bufora głębi
+cStencilBits:0; //liczba bitów bufora powielania
+cAuxBuffers:0; //liczba buforów pomocniczych
+iLayerType:PFD_MAIN_PLANE;
+bReserved: 0;
+dwLayerMask: 0;
+dwVisibleMask: 0;
+dwDamageMask: 0;);
+var pixelFormat:integer;
+begin
+pixelFormat := ChoosePixelFormat(DC, @pfd);
+if (pixelFormat = 0) then exit;
+if (SetPixelFormat(DC, pixelFormat, @pfd) <> TRUE) then exit;
+end;
+Przygotowanie kontekstu grafiki
+Procedura podająca początkowe parametry wyświetlania
+okna OpenGL - przykład
+procedure GLInit();
+begin
+//ustawienie sposobu wykonywania przekształceń w OpenGL
+glMatrixMode(GL_PROJECTION); //macierz rzutowania
+//parametry rzutowania perspektywicznego
+glFrustum(-0.1, 0.1, -0.1, 0.1, 0.3, 25.0);
+//ponowne ustawienie sposobu wykonywania przekształceń w OpenGL
+glMatrixMode(GL_MODELVIEW); //macierz modelowania
+//usunięcie ukrytych powierzchni
+glEnable(GL_DEPTH_TEST);
+//ustawienie kierunku tworzenia wierzchołków wielokątów
+glFrontFace(GL_CCW);
+//ukrywanie tylnych ścian
+glCullFace(GL_BACK);
+end;
+Przygotowanie kontekstu grafiki
+Inicjalizacja podłączenia okna OpenGL do urządzenia
+wykorzystanie modułu dglOpenGL
+var
+DC:HDC; //Device Context
+RC:HGLRC; //Rendering Context
+begin
+DC := GetDC(Handle);
+if not InitOpenGL then Application.Terminate;
+RC := CreateRenderingContext(DC,
+[opDoubleBuffered],
+32,
+24,
+0,0,0,
+0);
+ActivateRenderingContext(DC, RC);
+SetupGL;
+InitOpenGL;
+end;
+Przygotowanie kontekstu grafiki
+Procedura podająca początkowe parametry wyświetlania
+okna OpenGL - przykład
+procedure SetupGL;
+begin
+glClearColor(0, 0, 0, 0);
+glEnable(GL_DEPTH_TEST);
+glEnable(GL_CULL_FACE);
+end;
+Przygotowanie kontekstu grafiki
+Procedura podająca początkowe parametry wyświetlania
+okna OpenGL - przykład
+procedure SetupGL;
+begin
+glClearColor(0, 0, 0, 0); //barwa czyszczenia - czarna
+glEnable(GL_DEPTH_TEST); //włączenie testowania głębokości
+glEnable(GL_CULL_FACE); //wyłączenie wyświetlania tyłu
+end;Przygotowanie kontekstu grafiki
+Zakończenie podłączenia okna OpenGL do urządzenia
+wykorzystanie modułu dglOpenGL
+var
+DC:HDC; //Device Context
+RC:HGLRC; //Rendering Context
+begin
+DeactivateRenderingContext;
+DestroyRenderingContext(RC);
+ReleaseDC(Handle, DC);
+end;
+Typy danych w OpenGL
+Zmienne i stałe Wskaźniki
+GLenum = Cardinal; PGLenum = ^GLenum;
+GLboolean = Byte; PGLboolean = ^GLboolean;
+GLbitfield = Cardinal; PGLbitfield = ^GLbitfield;
+GLbyte = ShortInt; PGLbyte = ^GLbyte;
+GLshort = SmallInt; PGLshort = ^GLshort;
+GLint = Integer; PGLint = ^GLint;
+GLsizei = Integer; PGLsizei = ^GLsizei;
+GLubyte = Byte; PGLubyte = ^GLubyte;
+GLushort = Word; PGLushort = ^GLushort;
+GLuint = Cardinal; PGLuint = ^GLuint;
+GLfloat = Single; PGLfloat = ^GLfloat;
+GLclampf = Single; PGLclampf = ^GLclampf;
+GLdouble = Double; PGLdouble = ^GLdouble;
+GLclampd = Double; PGLclampd = ^GLclampd;
+{ GLvoid = void; } PGLvoid = Pointer;
+PPGLvoid = ^PGLvoid;
+Typy danych w Pascalu Typy danych w Pascalu
+Typy danych w C
+Konstrukcja nazw procedur w OpenGL
+glVertex3f( , , );
+biblioteka działanie liczba i typ danychKonstrukcja nazw procedur w OpenGL
+glVertex3f( , , );
+biblioteka działanie liczba i typ danych
+Typy danych w oznaczeniach
+Type Descriptor Corresponding GL Type
+b byte
+s short
+i int
+i64 int64
+f float
+d double
+ub ubyte
+us ushort
+ui uint
+ui64 uint64
+Konstrukcja nazw procedur w OpenGL
+glVertex3f( , , );
+TglVertex2d = procedure(x: GLdouble; y: GLdouble);
+TglVertex2dv = procedure(const v: PGLdouble);
+TglVertex2f = procedure(x: GLfloat; y: GLfloat);
+TglVertex2fv = procedure(const v: PGLfloat);
+TglVertex2i = procedure(x: GLint; y: GLint);
+TglVertex2iv = procedure(const v: PGLint); cl;
+TglVertex2s = procedure(x: GLshort; y: GLshort);
+TglVertex2sv = procedure(const v: PGLshort);
+TglVertex3d = procedure(x: GLdouble; y: GLdouble; z: GLdouble);
+TglVertex3dv = procedure(const v: PGLdouble);
+TglVertex3f = procedure(x: GLfloat; y: GLfloat; z: GLfloat);
+TglVertex3fv = procedure(const v: PGLfloat); ;
+TglVertex3i = procedure(x: GLint; y: GLint; z: GLint);
+TglVertex3iv = procedure(const v: PGLint);
+TglVertex3s = procedure(x: GLshort; y: GLshort; z: GLshort);
+TglVertex3sv = procedure(const v: PGLshort);
+TglVertex4d = procedure(x: GLdouble; y: GLdouble; z: GLdouble; w: GLdouble);
+TglVertex4dv = procedure(const v: PGLdouble);
+TglVertex4f = procedure(x: GLfloat; y: GLfloat; z: GLfloat; w: GLfloat);
+TglVertex4fv = procedure(const v: PGLfloat);
+TglVertex4i = procedure(x: GLint; y: GLint; z: GLint; w: GLint);
+TglVertex4iv = procedure(const v: PGLint);
+TglVertex4s = procedure(x: GLshort; y: GLshort; z: GLshort; w: GLshort);
+TglVertex4sv = procedure(const v: PGLshort);
+TglVertexPointer = procedure(size: GLint; _type: GLenum; stride: GLsizei;
+const _pointer: PGLvoid);
+Podstawowe obiekty w OpenGL Podstawowe obiekty w OpenGL
+Podstawowe obiekty w OpenGL
+// narysowanie
+dwóch trójkątów:
+V
+0,V1,V2 oraz V3,V4,V5 :
+glBegin(GL_TRIANGLES);
+glVertex3f(xv0,yv0,zv0);
+glVertex3f(xv1,yv1,zv1);
+glVertex3f(xv2,yv2,zv2);
+glVertex3f(xv3,yv3,zv3);
+glVertex3f(xv4,yv4,zv4);
+glVertex3f(xv5,yv5,zv5);
+glEnd;
+Podstawowe obiekty w OpenGL
+glBegin(GLenum mode);
+...
+glEnd();
+Dozwolone wartości
+mode:
+mode = GL_POINTS,
+GL_LINES,
+GL_LINE_STRIP,
+GL_LINE_LOOP,
+GL_TRIANGLES,
+GL_TRIANGLE_STRIP,
+GL_TRIANGLE_FAN,
+GL_QUADS,
+GL_QUAD_STRIP,
+GL_POLYGON.Podstawowe obiekty w OpenGL
+glBegin(GLenum mode);
+...
+glEnd();
+Dozwolone wartości
+mode:
+mode = GL_POINTS, punkty
+GL_LINES, odcinki
+GL_LINE_STRIP, łamana
+GL_LINE_LOOP, łamana zamknięta
+GL_TRIANGLES, trójkąty
+GL_TRIANGLE_STRIP, szereg trójkątów
+GL_TRIANGLE_FAN, wachlarz trójkątów
+GL_QUADS, czworokąty
+GL_QUAD_STRIP, szereg czworokątów
+GL_POLYGON. wielobok
+Podstawowe obiekty w OpenGL
+glBegin(GLenum mode);
+...
+glEnd();
+Dozwolone wartości
+mode:
+mode = GL_POINTS,
+GL_LINES,
+GL_LINE_STRIP,
+GL_LINE_LOOP,
+GL_TRIANGLES,
+GL_TRIANGLE_STRIP,
+GL_TRIANGLE_FAN,
+GL_QUADS,
+GL_QUAD_STRIP,
+GL_POLYGON.
+Dozwolone funkcje i procedury
+wewnątrz klamry
+glBegin - glEnd:
+glVertex,
+glColor,
+glSecondaryColor,
+glIndex,
+glNormal,
+glFogCoord,
+glTexCoord,
+glMultiTexCoord,
+glVertexAttrib,
+glEvalCoord,
+glEvalPoint,
+glArrayElement,
+glMaterial
+glEdgeFlag
+glCallList (polecenia sterujące)
+glCallLists (polecenia sterujące)
++ wszystkie z kompilatora
+Podstawowe obiekty w OpenGL Element i barwa
+glVertex3f(x: GLfloat; y: GLfloat; z: GLfloat);
+wyświetlenie pojedynczego węzła (werteksu) obiektu
+elementarnego o współrzędnych typu single x,y,z
+Podstawowe obiekty w OpenGL Element i barwa
+glVertex3f(x: GLfloat; y: GLfloat; z: GLfloat);
+wyświetlenie pojedynczego węzła (werteksu) obiektu
+elementarnego o współrzędnych typu single x,y,z
+glColor3f(red, green, blue: TGLfloat);
+nadanie barwy o składowych red,green,blue (RGB)
+Podstawowe obiekty w OpenGL Element i barwa
+glVertex3f(x: GLfloat; y: GLfloat; z: GLfloat);
+wyświetlenie pojedynczego węzła (werteksu) obiektu
+elementarnego o współrzędnych typu single x,y,z
+glColor3f(red, green, blue: TGLfloat);
+nadanie barwy o składowych red,green,blue (RGB)
+glColor3fv(v: PGLfloat);
+nadanie barwy o składowych red,green,blue (RGB)
+odczytanych ze wskazanego elementu tablicy
+Podstawowe obiekty w OpenGL Element i barwa
+glVertex3f(x: GLfloat; y: GLfloat; z: GLfloat);
+wyświetlenie pojedynczego węzła (werteksu) obiektu
+elementarnego o współrzędnych typu single x,y,z
+glColor3f(red, green, blue: TGLfloat);
+nadanie barwy o składowych red,green,blue (RGB)
+glColor3fv(v: PGLfloat);
+nadanie barwy o składowych red,green,blue (RGB)
+odczytanych ze wskazanego elementu tablicy
+glColor4f(red, green, blue, alpha: TGLfloat);
+nadanie barwy o składowych red,green,blue,alpha (RGBA)
+alpha oznacza przezroczystośćPodstawowe obiekty w OpenGL
+Grubość i inne cechy elementów
+glPointSize(GLfloat size);
+określa średnicę rysowanego punktu (domyślnie 1)
+Podstawowe obiekty w OpenGL
+Grubość i inne cechy elementów
+glPointSize(GLfloat size);
+określa średnicę rysowanego punktu (domyślnie 1)
+glLineWidth(GLfloat width);
+określa grubość rysowanej linii (domyślnie 1)
+Podstawowe obiekty w OpenGL
+Grubość i inne cechy elementów
+glPointSize(GLfloat size);
+określa średnicę rysowanego punktu (domyślnie 1)
+glLineWidth(GLfloat width);
+określa grubość rysowanej linii (domyślnie 1)
+glEnable(GL_LINE_SMOOTH);
+włączenie wygładzania linii (może być zastapione przez
+włączenie MultiSampling'u okna OpenGL)
+Podstawowe obiekty w OpenGL
+Grubość i inne cechy elementów
+glPointSize(GLfloat size);
+określa średnicę rysowanego punktu (domyślnie 1)
+glLineWidth(GLfloat width);
+określa grubość rysowanej linii (domyślnie 1)
+glEnable(GL_LINE_SMOOTH);
+włączenie wygładzania linii (może być zastapione przez
+włączenie MultiSampling'u okna OpenGL)
+glLineStipple(GLint factor, GLushort pattern);
+określa sposób rysowania linii przerywanej
+pattern określa wzór 16-to bitowy (domyślnie 1),
+factor określa powiększenie wzoru [1-256] (domyślnie 1)
+Podstawowe obiekty w OpenGL
+Grubość i inne cechy elementów
+glPointSize(GLfloat size);
+określa średnicę rysowanego punktu (domyślnie 1)
+glLineWidth(GLfloat width);
+określa grubość rysowanej linii (domyślnie 1)
+glEnable(GL_LINE_SMOOTH);
+włączenie wygładzania linii (może być zastapione przez
+włączenie MultiSampling'u okna OpenGL)
+glLineStipple(GLint factor, GLushort pattern);
+określa sposób rysowania linii przerywanej
+pattern określa wzór 16-to bitowy (domyślnie 1),
+factor określa powiększenie wzoru [1-256] (domyślnie 1)
+glEnable(GL_LINE_STIPPLE);
+włączenie rysowania linii przerywanej (posiadającej wzór)
+Podstawowe obiekty w OpenGL Strony obiektu
+glFrontFace(GLenum mode);
+strona wierzchnia obiektu zależnie od kierunku zapisu
+mode: GL_CW zgodnie z zegarem
+GL_CCW przeciwnie do zegara (domyślne)Podstawowe obiekty w OpenGL Strony obiektu
+glFrontFace(GLenum mode);
+strona wierzchnia obiektu zależnie od kierunku zapisu
+mode: GL_CW zgodnie z zegarem
+GL_CCW przeciwnie do zegara (domyślne)
+glCullFace(GLenum mode);
+która strona obiektu może nie być wyświetlana (należy
+uruchomić glEnable(GL_CULL_FACE))
+mode: GL_FRONT przednia
+GL_BACK tylna (domyślne)
+GL_FRONT_AND_BACK obie strony
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Przygotowanie tła
+glClearColor(red, green, blue, alpha: TGLclampf);
+//barwa czyszczenia pola wyświetlania, bufora barwy - RGBA
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Przygotowanie tła
+glClearColor(red, green, blue, alpha: TGLclampf);
+//barwa czyszczenia pola wyświetlania, bufora barwy - RGBA
+glClear(GLbitfield mask);
+// określa który bufor ma być czyszczony do wartości
+wyspecyfikowanych przez funkcje:
+glClearColor, glClearIndex, glClearDepth, glClearStencil,
+glClearAccum.
+Dozwolone wartości mask:
+mask = GL_COLOR_BUFFER_BIT, bufor barwy
+GL_DEPTH_BUFFER_BIT, bufor głębii (z)
+GL_ACCUM_BUFFER_BIT, bufor akumulacji
+GL_STENCIL_BUFFER_BIT bufor szablonu
+bufory można łączyć za pomocą operatora "OR" (lub)
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Odwzorowanie
+glViewport(GLint x, GLint y, GLsizei width, GLsizei height);
+//zakres odwzorowania w oknie kontrolki, wymaga odświeżenia
+mimo zmiany rozmiaru realizowanej przez zdarzenie Resize
+x, y : współrzędne lewego górnego narożnika (piksele)
+width, height : wymiary szerokości i wysokości (piksele)
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Odwzorowanie
+glOrtho(left, right, bottom, top, zNear, zFar: TGLdouble);
+//odwzorowanie ortogonalne o parametrach wymienionych kolejno
+w zakresach: lewy, prawy, dolny, górny, bliski, daleki
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Odwzorowanie
+glOrtho(left, right, bottom, top, zNear, zFar: TGLdouble);
+//odwzorowanie ortogonalne o parametrach wymienionych kolejno
+w zakresach: lewy, prawy, dolny, górny, bliski, daleki
+glFrustum(left, right, bottom, top, zNear, zFar: TGLdouble);
+//odwzorowanie w rzucie środkowym o parametrach wymienionych
+w zakresach: lewy, prawy, dolny, górny, bliski, dalekiFunkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Odwzorowanie
+glOrtho(left, right, bottom, top, zNear, zFar: TGLdouble);
+//odwzorowanie ortogonalne o parametrach wymienionych kolejno
+w zakresach: lewy, prawy, dolny, górny, bliski, daleki
+glFrustum(left, right, bottom, top, zNear, zFar: TGLdouble);
+//odwzorowanie w rzucie środkowym o parametrach wymienionych
+w zakresach: lewy, prawy, dolny, górny, bliski, daleki
+gluLookAt(eyex, eyey, eyez, centerx, centery, centerz, upx,
+upy, upz: TGLdouble);
+//ustawienie punktu obserwacji modelu o parametrach podanych
+jako eye: pozycja obserwatora, center: pozycja celu
+obserwacji, up: wektor pokazujący górę kamery (nierównoległy
+do linii eye-center)
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Odwzorowanie
+glOrtho(left, right, bottom, top, zNear, zFar: TGLdouble);
+//odwzorowanie ortogonalne o parametrach wymienionych kolejno
+w zakresach: lewy, prawy, dolny, górny, bliski, daleki
+glFrustum(left, right, bottom, top, zNear, zFar: TGLdouble);
+//odwzorowanie w rzucie środkowym o parametrach wymienionych
+w zakresach: lewy, prawy, dolny, górny, bliski, daleki
+gluLookAt(eyex, eyey, eyez, centerx, centery, centerz, upx,
+upy, upz: TGLdouble);
+//ustawienie punktu obserwacji modelu o parametrach podanych
+jako eye: pozycja obserwatora, center: pozycja celu
+obserwacji, up: wektor pokazujący górę kamery (nierównoległy
+do linii eye-center)
+gluPerspective(fovy, aspect, zNear, zFar: TGLdouble);
+//ustala macierz projekcji perspektywicznej o parametrach:
+fovy: rozwartość kąta pionowego, aspect: stosunek x/y
+(szerokość/wysokość), zakres bliski i daleki wyświetlania
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Przekształcenia macierzowe
+glMatrixMode(GLenum mode);
+// określa która macierz przekształceń jest aktywna
+(który stos)
+Dozwolone wartości mode:
+mode = GL_MODELVIEW, modelu (domyślna wartość inicjalna)
+GL_PROJECTION, projekcji
+GL_TEXTURE. tekstury
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Przekształcenia macierzowe
+glMatrixMode(GLenum mode);
+// określa która macierz przekształceń jest aktywna
+(który stos)
+Dozwolone wartości mode:
+mode = GL_MODELVIEW, modelu (domyślna wartość inicjalna)
+GL_PROJECTION, projekcji
+GL_TEXTURE. tekstury
+glLoadIdentity;
+// zamienia aktualną macierz (stan) przekształceń
+na macierz jednostkową (powrót do stanu początkowego)
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Przekształcenia macierzowe
+glMatrixMode(GLenum mode);
+// określa która macierz przekształceń jest aktywna
+(który stos)
+Dozwolone wartości mode:
+mode = GL_MODELVIEW, modelu (domyślna wartość inicjalna)
+GL_PROJECTION, projekcji
+GL_TEXTURE. tekstury
+glLoadIdentity;
+// zamienia aktualną macierz (stan) przekształceń
+na macierz jednostkową (powrót do stanu początkowego)
+glLoadMatrixf(m: PGLfloat);
+// ładuje macierz przekształcenia wskazaną przez m
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Przekształcenia macierzowe
+glPushMatrix;
+// otwarcie nawiasu dla zbioru przekształceń z których
+planowane jest wycofanie się do stanu poprzedniegoFunkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Przekształcenia macierzowe
+glPushMatrix;
+// otwarcie nawiasu dla zbioru przekształceń z których
+planowane jest wycofanie się do stanu poprzedniego
+glPopMatrix;
+// zamknięcie nawiasu dla zbioru przekształceń i wycofanie
+się do pozycji przed pojawieniem się polecenia
+glPushMatrix, odpowiadającego temu poleceniu glPopMatrix
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Przekształcenia macierzowe
+glPushMatrix;
+// otwarcie nawiasu dla zbioru przekształceń z których
+planowane jest wycofanie się do stanu poprzedniego
+glPopMatrix;
+// zamknięcie nawiasu dla zbioru przekształceń i wycofanie
+się do pozycji przed pojawieniem się polecenia
+glPushMatrix, odpowiadającego temu poleceniu glPopMatrix
+glPushMatrix;
+tr...
+glPushMatrix;
+tr...
+glPopMatrix;
+tr...
+glPushMatrix;
+tr...
+glPopMatrix;
+tr...
+glPopMatrix;
+Strzałki o tej samej barwie
+wskazują ten sam stan przekształceń
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Przekształcenia macierzowe
+glTranslatef(GLfloat x, GLfloat y, GLfloat z);
+// przemieszczenie obiektu, następującego po wywołaniu
+funkcji, o wektor [x,y,z]
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Przekształcenia macierzowe
+glTranslatef(GLfloat x, GLfloat y, GLfloat z);
+// przemieszczenie obiektu, następującego po wywołaniu
+funkcji, o wektor [x,y,z]
+glScalef(GLfloat x, GLfloat y, GLfloat z);
+// skalowanie obiektu, następującego po wywołaniu funkcji,
+za pomocą współczynników x,y,z, wzdłuż osi X,Y,Z
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Przekształcenia macierzowe
+glTranslatef(GLfloat x, GLfloat y, GLfloat z);
+// przemieszczenie obiektu, następującego po wywołaniu
+funkcji, o wektor [x,y,z]
+glScalef(GLfloat x, GLfloat y, GLfloat z);
+// skalowanie obiektu, następującego po wywołaniu funkcji,
+za pomocą współczynników x,y,z, wzdłuż osi X,Y,Z
+glRotatef(GLfloat angle, GLfloat x, GLfloat y, GLfloat z);
+// obrócenie obiektu, następującego po wywołaniu funkcji,
+o kąt angle, wokół wektora [x,y,z], zgodnie z regułą śruby
+prawoskrętnej
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Przekształcenia macierzowe
+glTranslatef(GLfloat x, GLfloat y, GLfloat z);
+// przemieszczenie obiektu, następującego po wywołaniu
+funkcji, o wektor [x,y,z]
+glScalef(GLfloat x, GLfloat y, GLfloat z);
+// skalowanie obiektu, następującego po wywołaniu funkcji,
+za pomocą współczynników x,y,z, wzdłuż osi X,Y,Z
+glRotatef(GLfloat angle, GLfloat x, GLfloat y, GLfloat z);
+// obrócenie obiektu, następującego po wywołaniu funkcji,
+o kąt angle, wokół wektora [x,y,z], zgodnie z regułą śruby
+prawoskrętnej
+Uwaga:
+Funkcje te (Translate, Scale, Rotate)
+nie mogą być wykorzystane między glBegin a glEndFunkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Przekształcenia macierzowe
+Transformacje obiektu do obrazu w oknie
+NDC - Normalized Device Coordinates
+(znormalizowane współrzędne urządzenia)
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Włączanie i wyłączanie
+glEnable(GLenum cap);
+// włączenie działania oznaczonego symbolicznie w cap
+glDisable(GLenum cap);
+// wyłączenie działania oznaczonego symbolicznie w cap
+Przykładowe oznaczenia cap:
+GL_ALPHA_TEST badanie przezroczystości
+GL_BLEND łączenie barw z zawartością bufora
+GL_CULL_FACE tylna część obiektów
+GL_DEPTH_TEST kontrola zasłaniania
+GL_FOG mgła
+GL_LIGHTi światło nr i
+GL_LIGHTING oświetlenie
+GL_LINE_SMOOTH wygładzanie linii
+GL_LINE_STIPPLE stosowanie wzorca linii
+...Grafika komputerowa 3D
+inż. IV sem. Geoinformatyka
+Zakład Fotogrametrii Teledetekcji i Systemów Informacji
+Przestrzennej
+Zespół Fotogrametrii sala 48, 325, 430
+dr inż. Michał Kowalczyk
+mail: mk.sprawozdania@wp.pl
+Tematy prezentacji:
+Wyświetlanie obiektów
+podsumowanie transformacji
+listy obiektów
+barwa
+normalne
+tekstura
+mipmapy, bumpmapy i normalmapy
+Kolejność wykonywania poszczególnych działań:
+glMatrixMode(GL_PROJECTION)
+komponowanie macierzy projekcji:
+glLoadIdentity //wstępne przygotowanie macierzy
+gluPerspective,gluOrtho //rodzaj odwzorowania
+glMatrixMode(GL_MODELVIEW)
+komponowanie macierzy obrazu modelu:
+glLoadIdentity //wstępne przygotowanie macierzy
+gluLookAt //punkt widzenia
+glCearColor
+glClear //czyszczenie buforów
+glEnable, glDisable //ustawienia, dotyczą dalszych działań
+glRotate,glTranslate,glScale //transformacje
+//wykonywane od ostatniej do pierwszej na dalszych obiektach
+opis obiektu: normalne, barwa, werteksy
+Macierzowo: M.Projekcji * M.ObrazuModelu * Obiekt
+Podsumowanie transformacji
+transformacja A
+transformacja B
+transformacja C
+opis obiektu 1
+transformacja D
+transformacja E
+transformacja F
+opis obiektu 2
+Podsumowanie transformacji
+Przykład kolejności wykonywania poszczególnych działań:
+glPushMatrix
+transformacja A
+transformacja B
+transformacja C
+opis obiektu 1
+glPopMatrix
+transformacja D
+transformacja E
+transformacja F
+opis obiektu 2
+transformacja A
+transformacja B
+transformacja C
+opis obiektu 1
+transformacja D
+transformacja E
+transformacja F
+opis obiektu 2
+Wykonywane transformacje:
+Obiekt 1: C, B, A
+Obiekt 2: F, E, D, C, B, A
+Macierzowo:
+Obiekt1: A*B*C*Obiekt1
+Obiekt2: A*B*C*D*E*F*Obiekt2
+Podsumowanie transformacji
+Przykład kolejności wykonywania poszczególnych działań:
+glPushMatrix
+transformacja A
+transformacja B
+transformacja C
+opis obiektu 1
+glPopMatrix
+transformacja D
+transformacja E
+transformacja F
+opis obiektu 2
+Wykonywane transformacje:
+Obiekt 1: C, B, A
+Obiekt 2: F, E, D
+Macierzowo:
+Obiekt1: A*B*C*Obiekt1
+Obiekt2: D*E*F*Obiekt2
+glNewList(GLuint list, GLenum mode);
+//tworzy nową listę obiektów lub zamienia z istniejącą o
+podanym przez użytkownika numerze list, w trybie podanym
+przez mode:
+mode = GL_COMPILE sama kompilacja
+GL_COMPILE_AND_EXECUTE kompilacja i wykonanie
+Listy obiektów w OpenGLglNewList(GLuint list, GLenum mode);
+//tworzy nową listę obiektów lub zamienia z istniejącą o
+podanym przez użytkownika numerze list, w trybie podanym
+przez mode:
+mode = GL_COMPILE sama kompilacja
+GL_COMPILE_AND_EXECUTE kompilacja i wykonanie
+glEndList;
+//zamyka tworzoną nową listę obiektów
+Listy obiektów w OpenGL
+glNewList(GLuint list, GLenum mode);
+//tworzy nową listę obiektów lub zamienia z istniejącą o
+podanym przez użytkownika numerze list, w trybie podanym
+przez mode:
+mode = GL_COMPILE sama kompilacja
+GL_COMPILE_AND_EXECUTE kompilacja i wykonanie
+glEndList;
+//zamyka tworzoną nową listę obiektów
+glCallList(GLuint list);
+//powoduje wykonanie (wyświetlenie), uprzednio
+zapamiętanej pod numerem list, listy obiektów
+Listy obiektów w OpenGL
+glGenLists(GLsizei range);
+//tworzy określoną w range liczbę nowych list obiektów
+Listy obiektów w OpenGL
+glGenLists(GLsizei range);
+//tworzy określoną w range liczbę nowych list obiektów
+glCallLists(GLsizei n, GLenum type, const GLvoid * lists);
+//wyświetla n list z tablicy lists o typie danych type
+dopuszczalne stałe type: GL_BYTE,
+GL_UNSIGNED_BYTE,
+GL_SHORT,
+GL_UNSIGNED_SHORT,
+GL_INT,
+GL_UNSIGNED_INT,
+GL_FLOAT,
+GL_2_BYTES,
+GL_3_BYTES,
+GL_4_BYTES
+Listy obiektów w OpenGL
+glListBase(GLuint base);
+//tworzy oznaczenie początku dla glCallLists, base oznacza
+pierwszą wyświetlaną listę
+Listy obiektów w OpenGL
+glListBase(GLuint base);
+//tworzy oznaczenie początku dla glCallLists, base oznacza
+pierwszą wyświetlaną listę
+glDeleteLists(GLuint list, GLsizei range);
+//kasuje listy począwszy od list, w zakresie range
+Listy obiektów w OpenGLZastosowanie glCallList C:
+// create one display list
+GLuint index = glGenLists(1);
+// compile the display list, store a triangle in it
+glNewList(index, GL_COMPILE);
+glBegin(GL_TRIANGLES);
+glVertex3fv(v0);
+glVertex3fv(v1);
+glVertex3fv(v2);
+glEnd();
+glEndList();
+...
+// draw the display list
+glCallList(index);
+...
+// delete it if it is not used any more
+glDeleteLists(index, 1);
+Listy obiektów w OpenGL
+Zastosowanie glCallList Pascal:
+const
+LIST_OBJECT = 1;
+procedure CreateList;
+begin
+glNewList(LIST_OBJECT, GL_COMPILE);
+glBegin(GL_TRIANGLES);
+glVertex3f(0, 0.5, 0);
+glVertex3f(-0.5, -0.5, 0.5);
+glVertex3f(0.5, -0.5, 0.5);
+glEnd;
+glBegin(GL_QUADS);
+glVertex3f(-0.5, -0.5, 0.5);
+glVertex3f(0.5, -0.5, 0.5);
+glVertex3f(0.5, -0.5, -0.5);
+glVertex3f(-0.5, -0.5, -0.5);
+glEnd;
+glEndList;
+end;
+Listy obiektów w OpenGL
+Zastosowanie glCallList Pascal:
+procedure DrawGLScene; cdecl;
+begin
+glClear(GL_COLOR_BUFFER_BIT or GL_DEPTH_BUFFER_BIT);
+glLoadIdentity;
+glTranslatef(-2, 0, -5);
+glRotatef(40, 1, 0, 1);
+glCallList(LIST_OBJECT);
+glLoadIdentity;
+glTranslatef(1, -2, -10);
+glRotatef(62, 0, 1, 0);
+glCallList(LIST_OBJECT);
+GLBox1.SwapBuffers;
+end;
+Listy obiektów w OpenGL
+Zastosowanie glCallList Pascal:
+procedure GLKeyboard(Key: Byte); cdecl;
+begin
+if Key = 27 then // Esc - Escape key
+begin
+glDeleteLists(LIST_OBJECT, 1);
+Halt(0);
+end;
+end;
+Listy obiektów w OpenGL
+Zastosowanie glCallLists C:
+GLuint index = glGenLists(10); // create 10 display lists
+GLubyte lists[10]; // allow maximum 10 lists to be rendered
+glNewList(index, GL_COMPILE); // compile the first one
+...
+glEndList();
+... // compile more display lists
+glNewList(index+9, GL_COMPILE); // compile the last (10th)
+...
+glEndList();
+...
+// draw odd placed display lists only (1st, 3rd, 5th, 7th, 9th)
+lists[0]=0; lists[1]=2; lists[2]=4; lists[3]=6; lists[4]=8;
+glListBase(index); // set base offset
+glCallLists(5, GL_UNSIGNED_BYTE, lists);
+Listy obiektów w OpenGL
+Zastosowanie glCallLists Pascal:
+deklaracje zmiennych globalnych
+tablicę można zadeklarować otwartą
+ale wtedy przed użyciem ustawić jej długość
+poleceniem SetLength(listy,501);
+jeżeli ma być takiego samego rozmiaru
+var
+Form1: TForm1;
+listy: array[0..500] of byte;
+index: integer;
+Listy obiektów w OpenGLZastosowanie glCallLists Pascal:
+procedura zapamiętująca
+procedure Zrob_listy;
+var i:integer;
+begin
+index:=500;
+for i:=1 to index do //numery list od 1
+begin
+glNewList(i,GL_COMPILE);
+glBegin(GL_TRIANGLES);
+glColor3f(1, 0, 0);
+glVertex3f(random,random,random);//random: losowanie z [0-1]
+glColor3f(0, 1, 0);
+glVertex3f(random,random,random);
+glColor3f(0, 0, 1);
+glVertex3f(random,random,random);
+glEnd;
+glEndList;
+listy[i-1]:=i;
+end;
+end;
+Listy obiektów w OpenGL
+Zastosowanie glCallLists Pascal:
+zapamiętanie i narysowanie list
+procedure TForm1.OpenGLControl1Resize(Sender: TObject);
+begin
+[...]
+Zrob_listy; // wywołanie procedury zapamiętującej listy
+[...]
+end;
+procedure TForm1.OpenGLControl1Paint(Sender: TObject);
+begin
+[...]
+glListBase(0); // ustawienie numeru listy początkowej
+glCallLists(50,GL_BYTE,@listy); // wyświetlenie 50 list z 500
+// typ GL_BYTE musi być taki sam jak tablicy listy
+[...]
+OpenGLControl1.SwapBuffers;
+end;
+Listy obiektów w OpenGL
+Zastosowanie glCallLists Pascal:
+kasowanie list przy wyłączeniu
+procedure TForm1.FormClose(Sender: TObject; var CloseAction:
+TCloseAction);
+begin
+glDeleteLists(1,500); // kasuje 500 list, zaczynając od 1
+end;
+Listy obiektów w OpenGL
+Taktyka wyświetlania list dla obiektów złożonych i
+znacznej wielkości:
+Listy obiektów w OpenGL
+Taktyka wyświetlania list dla obiektów złożonych i
+znacznej wielkości:
+● Powinny być wytworzone listy o zmiennej dokładności
+odwzorowania (tak jak piramida obrazów)
+Listy obiektów w OpenGL
+Taktyka wyświetlania list dla obiektów złożonych i
+znacznej wielkości:
+● Powinny być wytworzone listy o zmiennej dokładności
+odwzorowania (tak jak piramida obrazów)
+● Powinny być wyświetlane zgodnie z regułą generalizacji
+przedstawienia obiektów, zależnej od odległości
+obserwatora do nich
+Listy obiektów w OpenGLTaktyka wyświetlania list dla obiektów złożonych i
+znacznej wielkości:
+● Powinny być wytworzone listy o zmiennej dokładności
+odwzorowania (tak jak piramida obrazów)
+● Powinny być wyświetlane zgodnie z regułą generalizacji
+przedstawienia obiektów, zależnej od odległości
+obserwatora do nich
+Listy obiektów w OpenGL
+obserwator
+Taktyka wyświetlania list dla obiektów złożonych i
+znacznej wielkości:
+● Powinny być wytworzone listy o zmiennej dokładności
+odwzorowania (tak jak piramida obrazów)
+● Powinny być wyświetlane zgodnie z regułą generalizacji
+przedstawienia obiektów, zależnej od odległości
+obserwatora do nich
+Listy obiektów w OpenGL
+0
+Taktyka wyświetlania list dla obiektów złożonych i
+znacznej wielkości:
+● Powinny być wytworzone listy o zmiennej dokładności
+odwzorowania (tak jak piramida obrazów)
+● Powinny być wyświetlane zgodnie z regułą generalizacji
+przedstawienia obiektów, zależnej od odległości
+obserwatora do nich
+Listy obiektów w OpenGL
+0
+11
+1 1
+1
+1 1 1
+Taktyka wyświetlania list dla obiektów złożonych i
+znacznej wielkości:
+● Powinny być wytworzone listy o zmiennej dokładności
+odwzorowania (tak jak piramida obrazów)
+● Powinny być wyświetlane zgodnie z regułą generalizacji
+przedstawienia obiektów, zależnej od odległości
+obserwatora do nich
+Listy obiektów w OpenGL
+0
+11
+1 1
+1
+1 1 1
+2 3
+2 2
+2
+2 2
+2 2
+2 2 2
+3 3
+2
+3
+Barwa w OpenGL
+Barwa jest skojarzona z punktami załamania obiektu
+następującymi po poleceniach zmieniających barwę.
+Jeżeli dany obiekt ma różne przyporządkowane barwy to
+między narożnymi punktami nastąpią płynne przejścia
+wartości barw
+Barwa w OpenGL
+Barwa jest skojarzona z punktami załamania obiektu
+następującymi po poleceniach zmieniających barwę.
+Jeżeli dany obiekt ma różne przyporządkowane barwy to
+między narożnymi punktami nastąpią płynne przejścia
+wartości barw.
+glColor3f(red, green, blue: TGLfloat);
+nadanie barwy o składowych red,green,blue (RGB)
+glColor3fv(v: PGLfloat);
+nadanie barwy o składowych red,green,blue (RGB)
+odczytanych ze wskazanego elementu tablicy
+glColor4f(red, green, blue, alpha: TGLfloat);
+nadanie barwy o składowych red,green,blue,alpha (RGBA)
+alpha oznacza przezroczystośćNormalne do powierzchni w OpenGL
+Normalne do powierzchni służą do określenia
+w jaki sposób powierzchnia zostanie
+przedstawiona przez odbicie światła.
+Nie zwiększają one liczby detali definiujących
+model obiektu.
+Normalne do powierzchni w OpenGL
+Normalne do powierzchni służą do określenia w jaki
+sposób powierzchnia zostanie przedstawiona przez
+odbicie światła.
+Nie zwiększają one liczby detali definiujących model
+obiektu.
+glNormal3f(GLfloat nx, GLfloat ny, GLfloat nz);
+normalna do powierzchni, o współrzędnych wektora
+[nx,ny,nz], w punkcie określonym w funkcji glVertex,
+następującej po glNormal. Ważny jest kierunek wektora,
+więc jego parametry są zwykle znormalizowane
+(długość wektora równa 1).
+Normalne do powierzchni w OpenGL
+glNormal3f(GLfloat nx, GLfloat ny, GLfloat nz);
+normalna do powierzchni
+Normalne do powierzchni w OpenGL
+glNormal3f(GLfloat nx, GLfloat ny, GLfloat nz);
+normalna do powierzchni
+ostre krawędzie wygładzone krawędzie
+Normalne do powierzchni w OpenGL
+glNormal3f(GLfloat nx, GLfloat ny, GLfloat nz);
+normalna do powierzchni
+ostre krawędzie wygładzone krawędzie
+wspólna normalna osobna normalna
+dla całego trojkąta dla każdego rogu trójkąta
+i wspólna dla wspólnego
+rogu przylegającego trójkąta
+Normalne do powierzchni w OpenGL
+glNormal3f(GLfloat nx, GLfloat ny, GLfloat nz);
+normalna do powierzchni
+ostre krawędzie wygładzone krawędzie
+wspólna normalna osobna normalna
+dla całego trojkąta dla każdego rogu trójkąta
+i wspólna dla wspólnego
+rogu przylegającego trójkątaNormalne do powierzchni w OpenGL
+glNormal3f(GLfloat nx, GLfloat ny, GLfloat nz);
+normalna do powierzchni
+ostre krawędzie wygładzone krawędzie
+wspólna normalna osobna normalna
+dla całego trojkąta dla każdego rogu trójkąta
+i wspólna dla wspólnego
+rogu przylegającego trójkąta
+Normalne do powierzchni w OpenGL
+glNormal3f(GLfloat nx, GLfloat ny, GLfloat nz);
+normalna do powierzchni
+Normalne symulują kształt bardziej skomplikowanej
+powierzchni niż to wynika z liczby załamań (werteksów)
+Normalne do powierzchni w OpenGL
+glNormal3f(GLfloat nx, GLfloat ny, GLfloat nz);
+normalna do powierzchni
+Rodzaje cieniowania, symulowanego przez normalne
+do powierzchni
+Zadaniem teksturowania jest pokrywanie modeli
+obiektów wzorem, który ma zazwyczaj naśladować
+pokrycie obiektów, występujące w rzeczywistości.
+Tekstury w OpenGL
+Zadaniem teksturowania jest pokrywanie modeli
+obiektów wzorem, który ma zazwyczaj naśladować
+pokrycie obiektów, występujące w rzeczywistości.
+Teksturowanie także służy do zamaskowania
+uproszczonego charakteru kształtu prezentowanego
+modelu.
+Tekstury w OpenGL
+Zadaniem teksturowania jest pokrywanie modeli
+obiektów wzorem, który ma zazwyczaj naśladować
+pokrycie obiektów, występujące w rzeczywistości.
+Teksturowanie także służy do zamaskowania
+uproszczonego charakteru kształtu prezentowanego
+modelu.
+Jeżeli tekstura ma niewielki rozmiar, a występuje
+potrzeba pokrycia nią większej powierzchni, to
+powinna mieć początek podobny do końca (w kierunku
+lewy-prawy i góra-dół):
+Tekstury w OpenGLJeżeli tekstura ma niewielki rozmiar, a występuje
+potrzeba pokrycia nią większej powierzchni, to
+powinna mieć początek podobny do końca (w kierunku
+lewy-prawy i góra-dół):
+Tekstury w OpenGL
+Jeżeli tekstura ma niewielki rozmiar, a występuje
+potrzeba pokrycia nią większej powierzchni, to
+powinna mieć początek podobny do końca
+(w kierunku lewy-prawy i góra-dół):
+Tekstury w OpenGL
+Jeżeli tekstura ma niewielki rozmiar, a występuje
+potrzeba pokrycia nią większej powierzchni, to
+powinna mieć początek podobny do końca
+(w kierunku lewy-prawy i góra-dół):
+Tekstury w OpenGL
+Zadaniem teksturowania jest pokrywanie modeli
+obiektów wzorem, który ma zazwyczaj naśladować
+pokrycie obiektów, występujące w rzeczywistości.
+Tekstury w OpenGL
+glEnable(GLenum cap);
+// włączenie działania oznaczonego symbolicznie w cap
+glDisable(GLenum cap);
+// wyłączenie działania oznaczonego symbolicznie w cap
+Oznaczenia cap dla tekstur:
+GL_TEXTURE_1D
+GL_TEXTURE_2D
+GL_TEXTURE_3D
+GL_TEXTURE_CUBE_MAP
+...
+Zadaniem teksturowania jest pokrywanie modeli
+obiektów wzorem, który ma zazwyczaj naśladować
+pokrycie obiektów, występujące w rzeczywistości.
+Tekstury w OpenGL
+glGenTextures(GLsizei n, GLuint * textures);
+wytworzenie n tekstur na podstawie nazw,
+zawartych w tablicy textures,
+której adres jest podany w drugim argumencie funkcji
+Zadaniem teksturowania jest pokrywanie modeli
+obiektów wzorem, który ma zazwyczaj naśladować
+pokrycie obiektów, występujące w rzeczywistości.
+Tekstury w OpenGL
+glGenTextures(GLsizei n, GLuint * textures);
+wytworzenie n tekstur na podstawie nazw,
+zawartych w tablicy textures,
+której adres jest podany w drugim argumencie funkcji
+glBindTexture(GLenum target,GLuint texture);
+wytworzenie lub wykorzystanie aktywnej tekstury typu
+target o nazwie texture
+opcje podania typu target:
+GL_TEXTURE_2D
+GL_TEXTURE_CUBE_MAPTekstury w OpenGL
+glTexParameteri(GLenum target,GLenum pname,GLint param);
+przyporządkowanie parametru pname o wartości param do
+tekstury typu target.
+Tekstury w OpenGL
+glTexParameteri(GLenum target,GLenum pname,GLint param);
+przyporządkowanie parametru pname o wartości param do
+tekstury typu target.
+target: GL_TEXTURE_2D
+GL_TEXTURE_CUBE_MAP
+Tekstury w OpenGL
+glTexParameteri(GLenum target,GLenum pname,GLint param);
+przyporządkowanie parametru pname o wartości param do
+tekstury typu target.
+target: GL_TEXTURE_2D
+GL_TEXTURE_CUBE_MAP
+pname: GL_TEXTURE_MIN_FILTER
+obszar piksela sceny większy niż piksel tekstury
+GL_TEXTURE_MAG_FILTER
+obszar piksela sceny mniejszy lub równy
+od piksela tekstury
+Tekstury w OpenGL
+glTexParameteri(GLenum target,GLenum pname,GLint param);
+przyporządkowanie parametru pname o wartości param do
+tekstury typu target.
+target: GL_TEXTURE_2D
+GL_TEXTURE_CUBE_MAP
+pname: GL_TEXTURE_MIN_FILTER
+obszar piksela sceny większy niż piksel tekstury
+GL_TEXTURE_MAG_FILTER
+obszar piksela sceny mniejszy lub równy
+od piksela tekstury
+GL_TEXTURE_WRAP_S
+sposób odwzorowania tekstury wzdłuż osi S
+GL_TEXTURE_WRAP_T
+sposób odwzorowania tekstury wzdłuż osi T
+Tekstury w OpenGL
+glTexParameteri(GLenum target,GLenum pname,GLint param);
+przyporządkowanie parametru pname o wartości param do
+tekstury typu target.
+target: GL_TEXTURE_2D
+GL_TEXTURE_CUBE_MAP
+param:
+pname: GL_TEXTURE_MIN_FILTER
+GL_NEAREST, GL_LINEAR,
+GL_NEAREST_MIPMAP_NEAREST,
+GL_LINEAR_MIPMAP_NEAREST,
+GL_NEAREST_MIPMAP_LINEAR,
+GL_LINEAR_MIPMAP_LINEAR
+GL_TEXTURE_MAG_FILTER
+GL_NEAREST, GL_LINEAR
+GL_TEXTURE_WRAP_S
+GL_CLAMP_TO_EDGE, GL_CLAMP_TO_BORDER
+GL_MIRRORED_REPEAT,
+GL_REPEAT (domyślne)
+GL_TEXTURE_WRAP_T
+... tak jak dla WRAP_S
+Tekstury w OpenGL
+glTexParameteri(GLenum target,GLenum pname,GLint param);
+przyporządkowanie parametru pname o wartości param do
+tekstury typu target.
+param:
+pname: GL_TEXTURE_MIN_FILTER
+GL_NEAREST, GL_LINEAR,Tekstury w OpenGL
+glTexParameteri(GLenum target,GLenum pname,GLint param);
+przyporządkowanie parametru pname o wartości param do
+tekstury typu target.
+param:
+pname: GL_TEXTURE_WRAP_S (T)
+GL_CLAMP_TO_EDGE, GL_CLAMP_TO_BORDER
+GL_MIRRORED_REPEAT,
+GL_REPEAT (domyślne)
+Tekstury w OpenGL
+glTexImage2D(GLenum target, GLint level, GLint
+internalFormat, GLsizei width, GLsizei height,
+GLint border, GLenum format, GLenum type,
+const GLvoid * data);
+Specyfikuje obraz dwuwymiarowej tekstury
+Tekstury w OpenGL
+glTexImage2D(GLenum target, GLint level, GLint
+internalFormat, GLsizei width, GLsizei height,
+GLint border, GLenum format, GLenum type,
+const GLvoid * data);
+Specyfikuje obraz dwuwymiarowej tekstury
+target: rodzaj tekstury
+level: poziom detali - spośród zredukowanych wersji
+tekstury
+internalFormat: liczba komponentów barwy w teksturze
+width: szerokośc tekstury (niektóre wersje 2^n+b)
+height: wysokość tekstury (niektóre wersje 2^n+b)
+border: grubość obramowania - 0 lub 1
+format: format danych pojedynczego piksela
+type: typ danych piksela
+data: wskaźnik do danych obrazowych tekstury w pamięci
+Tekstury w OpenGL
+Funkcja inicjalizująca teksturę:
+function CreateTexture(Width,Height:Integer; pData:Pointer):GLUInt;
+var Texture:GLuint;
+begin
+glEnable(GL_TEXTURE_2D);
+glGenTextures(1,@Texture);
+glBindTexture(GL_TEXTURE_2D,Texture);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+glTexImage2D(GL_TEXTURE_2D,0,3,Width,Height,0,
+GL_BGR,GL_UNSIGNED_BYTE,pData);
+Result:=Texture;
+end;
+Tekstury w OpenGL
+Funkcja inicjalizująca teksturę:
+function CreateTexture(Width,Height:Integer; pData:Pointer):GLUInt;
+var Texture:GLuint;
+begin
+glEnable(GL_TEXTURE_2D);
+glGenTextures(1,@Texture);
+glBindTexture(GL_TEXTURE_2D,Texture);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+glTexImage2D(GL_TEXTURE_2D,0,3,Width,Height,0,
+GL_BGR,GL_UNSIGNED_BYTE,pData);
+Result:=Texture;
+end;
+Tekstury w OpenGL
+Funkcja inicjalizująca teksturę:
+function CreateTexture(Width,Height:Integer; pData:Pointer):GLUInt;
+var Texture:GLuint;
+begin
+glEnable(GL_TEXTURE_2D);
+glGenTextures(1,@Texture);
+glBindTexture(GL_TEXTURE_2D,Texture);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+glTexImage2D(GL_TEXTURE_2D,0,4,Width,Height,0,
+GL_BGRA,GL_UNSIGNED_BYTE,pData);
+Result:=Texture;
+end;
+Wersja z przezroczystością - np. trawa, siatka, elementy
+ażurowe. Wtedy typ danych pod pData musi być również 4-ro
+bajtowy.
+Należy uruchomić mieszanie barw w czasie wyświetlania
+(ang. Blending)Tekstury w OpenGL
+Funkcja inicjalizująca teksturę:
+function CreateTexture(Width,Height:Integer; pData:Pointer):GLUInt;
+var Texture:GLuint;
+begin
+glEnable(GL_TEXTURE_2D);
+glGenTextures(1,@Texture);
+glBindTexture(GL_TEXTURE_2D,Texture);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+glTexImage2D(GL_TEXTURE_2D,0,3,Width,Height,0,
+GL_BGR,GL_UNSIGNED_BYTE,pData);
+Result:=Texture;
+end;
+Użycie funkcji inicjalizującej teksturę w zdarzeniu OnActivate,
+założenie obecności wypełnionej bitmapy bmp:
+var pbuf:PInteger; //wskaźnik do bufora bitmapy (danych)
+texture:GLuint; //numer tekstury
+pbuf:=PInteger(bmp.RawImage.Data); //wskaźnik do danych bitmapy
+texture:=CreateTexture(bmp.Width,bmp.Height,pbuf);
+Tekstury w OpenGL
+Wykorzystanie funkcji inicjalizującej teksturę:
+Wczytanie pliku jpg i zamiana na bitmapę:
+var tex1,tex2:GLuint;
+bmp1,bmp2:TBitmap;
+tab: array of record x,y,z:single end; //tablica do werteksów
+procedure JpgBmp(nazwa:String; bmp:TBitmap);
+var pic:TPicture;
+begin
+pic:=TPicture.Create;
+try
+pic.LoadFromFile(nazwa);
+bmp.PixelFormat:=pf24bit;
+bmp.Width:=Pic.Graphic.Width;
+bmp.Height:=Pic.Graphic.Height;
+bmp.Canvas.Draw(0,0,Pic.Graphic);
+finally
+FreeAndNil(pic);
+end;
+end;
+Tekstury w OpenGL
+Wykorzystanie funkcji inicjalizującej teksturę:
+Załadowanie tekstury z pliku bmp lub jpg:
+procedure LoadTexture(NazPliku:string;
+var bmp:TBitmap; var texture: GLuint);
+var st:string;
+pbuf:PInteger;
+begin
+if bmp<>nil then bmp.Free;
+bmp:=TBitmap.Create;
+st:=copy(NazPliku,Length(NazPliku)-2,3);
+if st='jpg' then JpgBmp(NazPliku,bmp)
+else bmp.LoadFromFile(NazPliku);
+pbuf:=PInteger(bmp.RawImage.Data);
+texture:=CreateTexture(bmp.Width,bmp.Height,pbuf);
+end;
+Przykład użycia procedury w zdarzeniu formy OnActivate:
+procedure TForm1.FormActivate(Sender: TObject);
+begin
+LoadTexture('zd1_1024.jpg',bmp1,tex1);
+end;
+Tekstury w OpenGL
+glTexCoord2f(GLfloat s, GLfloat t);
+glTexCoord3f(GLfloat s, GLfloat t, GLfloat r);
+glTexCoord4f(GLfloat s, GLfloat t, GLfloat r, GLfloat q);
+glTexCoord4d(GLdouble s, GLdouble t, GLdouble r, GLdouble q);
+Specyfikuje współrzędne tekstury s, t, r, q
+nie wszystkie są potrzebne w każdej odmianie funkcji glTexCoord.
+Funkcja glTexCoord jest używana między poleceniami
+glBegin i glEnd jako cecha werteksu (punktu załamania obiektu).
+Współrzędne werteksu muszą być poprzedzone lokalizacją miejsca
+na teksturze.
+Tekstury Obrazu
+Układy współrzędnych płaskich
+width: szerokość, height: wysokość
+pozycja (i,j) w teksturze:
+s = i/obraz.width
+t = (obraz.height-j)
+/obraz.height
+(0,0) i
+j
+(width,height)
+Tekstury w OpenGL
+Funkcja lokalizująca teksturę na obiekcie:
+procedure Trojkaty_rysowanie; //procedura wyswietlająca
+zapamiętane trójkąty w tablicy tab
+var i,maks,reszta:integer;
+begin
+glBegin(GL_TRIANGLES); //rysowane będą trójkąty
+maks:=Length(tab);
+for i:=0 to maks-1 do with tab[i] do
+begin
+reszta:=(i mod 3); //reszta z dzielenia i przez 3
+case reszta of
+0: glTexCoord2f(0,0);
+1: glTexCoord2f(0.9,0);
+2: glTexCoord2f(0.9,0.9)
+end;
+glVertex3f(x,y,z) //współrzędne werteksu
+(narożnika trójkąta) z elementu i tablicy tab
+end;
+glEnd; //koniec rysowania (trójkątów)
+end;Tekstury w OpenGL
+Mipmapy: piramida obrazów
+Tekstury w OpenGL
+Mipmapy: piramida obrazów
+Tekstury w OpenGL
+Mipmapy: piramida obrazów
+Tekstury w OpenGL
+Mipmapy: piramida obrazów
+Zastosowanie poszczególnych poziomów piramidy
+w zależności od odległości do obserwatora
+Tekstury w OpenGL
+Mipmapy: piramida obrazów
+Filtrowanie
+Tekstury w OpenGL
+Mipmapy: piramida obrazów
+Filtrowanie:
+dwuliniowe trójliniowe anizotropiczne
+(bilinear) (trilinear) (anisotropic)
+interpolacja
+do: tekstura tekstura tekstura
+poziomy powierzchnia
+piramidy obiektuTekstury w OpenGL
+Mipmapy: piramida obrazów
+Filtrowanie:
+dwuliniowe trójliniowe anizotropiczne
+(bilinear) (trilinear) (anisotropic)
+interpolacja
+do: tekstura tekstura tekstura
+Tekstury w OpenGL
+Mipmapy: piramida obrazów
+Filtrowanie:
+dwuliniowe trójliniowe anizotropiczne
+(bilinear) (trilinear) (anisotropic)
+interpolacja
+do: tekstura tekstura tekstura
+Tekstury w OpenGL
+Mipmapy: piramida obrazów
+Filtrowanie:
+dwuliniowe trójliniowe anizotropowe
+(bilinear) (trilinear) (anisotropic)
+interpolacja
+do: tekstura tekstura tekstura
+poziomy powierzchnia
+piramidy obiektu
+Tekstury w OpenGL
+Mipmapy: piramida obrazów
+Filtrowanie:
+dwuliniowe trójliniowe anizotropowe
+(bilinear) (trilinear) (anisotropic)
+interpolacja
+do: tekstura tekstura tekstura
+poziomy powierzchnia
+piramidy obiektu
+wykazujące odmienne właściwości,
+w zależności od kierunku (z chemii)
+Tekstury w OpenGL
+Mipmapy: piramida obrazów
+Filtrowanie
+Tekstury w OpenGL
+Mipmapy: piramida obrazów
+Przykład zastosowania w grze GTATekstury w OpenGL
+Mipmapy: piramida obrazów
+Przykład wykonania mipmap w definicji tekstury:
+function CreateTexture(Width,Height:Integer; pData:Pointer):GLUInt;
+var Texture:GLuint;
+begin
+glEnable(GL_TEXTURE_2D);
+glGenTextures(1,@Texture);
+glBindTexture(GL_TEXTURE_2D,Texture);
+//glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,GL_LINEAR_MIPMAP_LINEAR);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_BASE_LEVEL,0);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAX_LEVEL,3);
+glTexImage2D(GL_TEXTURE_2D,0,3,Width,Height,0,GL_RGB,GL_UNSIGNED_BYTE,pData);
+glGenerateMipmap(GL_TEXTURE_2D); //procedura z dglOpenGL
+Result:=Texture;
+end;
+Tekstury w OpenGL
+Mipmapy: piramida obrazów
+Przykład wykonania mipmap w definicji tekstury:
+function CreateTexture(Width,Height:Integer; pData:Pointer):GLUInt;
+var Texture:GLuint;
+begin
+glEnable(GL_TEXTURE_2D);
+glGenTextures(1,@Texture);
+glBindTexture(GL_TEXTURE_2D,Texture);
+//glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,GL_LINEAR_MIPMAP_LINEAR);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_BASE_LEVEL,0);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAX_LEVEL,3);
+glTexImage2D(GL_TEXTURE_2D,0,3,Width,Height,0,GL_RGB,GL_UNSIGNED_BYTE,pData);
+glGenerateMipmap(GL_TEXTURE_2D); //procedura z dglOpenGL
+Result:=Texture;
+end;
+Tekstury w OpenGL
+Mipmapy: piramida obrazów
+Przykład wykonania mipmap w definicji tekstury:
+function CreateTexture(Width,Height:Integer; pData:Pointer):GLUInt;
+var Texture:GLuint;
+begin
+glEnable(GL_TEXTURE_2D);
+glGenTextures(1,@Texture);
+glBindTexture(GL_TEXTURE_2D,Texture);
+//glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,GL_LINEAR_MIPMAP_LINEAR);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_BASE_LEVEL,0); //poziom dolny
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAX_LEVEL,3); //poziom górny
+glTexImage2D(GL_TEXTURE_2D,0,3,Width,Height,0,GL_RGB,GL_UNSIGNED_BYTE,pData);
+glGenerateMipmap(GL_TEXTURE_2D); //procedura z dglOpenGL
+Result:=Texture;
+end;
+Tekstury w OpenGL
+Mipmapy: piramida obrazów
+Uruchomienie modułu dglOpenGL:
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+InitOpenGL;
+OpenGLControl1.MakeCurrent;
+ReadImplementationProperties;
+ReadExtensions;
+...
+end;
+Tekstury w OpenGL
+Mipmapy: piramida obrazów
+Uruchomienie modułu dglOpenGL:
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+InitOpenGL;
+OpenGLControl1.MakeCurrent;
+ReadImplementationProperties;
+ReadExtensions;
+...
+end;
+Tekstury w OpenGL
+Bumpmap
+Normalmap
+(Heightmap)
+Symulacja odbicia światła na obiekcie
+bardziej skomplikowanym niż modelowany rozkład werteksów.Tekstury w OpenGL
+Bumpmap - mapa nierówności
+Tekstura wyposażona w oznaczenia wysokości
+Tekstury w OpenGL
+Normalmap
+Tekstura wyposażona w wektory normalnych
+do symulowanej powierzchni, krawędź i rzeczywisty kształt
+bryły pozostają takie jak rozkład werteksów modelu
+Tekstury w OpenGL
+Heightmap
+Kształt obiektu odtworzony zgodnie z oryginałem
+Tekstury w OpenGL
+Porównanie heightmap i normalmap
+Tekstury w OpenGL
+Łączenie tekstur za pośrednictwem tekstury
+(nazwanej tu 'Blend Mask'), określającej które fragmenty są
+brane z której tekstury:
+Tekstury w OpenGL
+Funkcja inicjalizująca teksturę:
+function CreateTexture(Width,Height:Integer; pData:Pointer):GLUInt;
+var Texture:GLuint;
+begin
+glEnable(GL_TEXTURE_2D);
+glGenTextures(1,@Texture);
+glBindTexture(GL_TEXTURE_2D,Texture);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+glTexImage2D(GL_TEXTURE_2D,0,4,Width,Height,0,
+GL_BGRA,GL_UNSIGNED_BYTE,pData);
+Result:=Texture;
+end;
+Wersja z przezroczystością - np. trawa, siatka, elementy
+ażurowe. Wtedy typ danych pod pData musi być również 4-ro
+bajtowy.
+Należy uruchomić mieszanie barw w czasie wyświetlania
+(ang. Blending)Tekstury w OpenGL
+Uruchomienie mieszania barw w czasie wyświetlania
+(ang. Blending)
+glEnable(GL_ALPHA_TEST); //badanie przezroczystości
+glEnable(GL_BLEND); //włączenie mieszania
+glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+//funkcja mieszania materiału z buforem barwy
+Tekstury w OpenGL
+Uruchomienie mieszania barw w czasie wyświetlania
+(ang. Blending)
+glBlendFunc( GLenum sfactor, GLenum dfactor);
+sfactor - współczynnik udziału nakładanego źródłowego
+materiału (SRC - ang. source)
+dfactor - współczynnik udziału bufora podłoża - celu,
+na który jest nakładany materiał
+(DST - ang. destination
+Tekstury w OpenGL
+Uruchomienie mieszania barw w czasie wyświetlania
+(ang. Blending)
+glBlendFunc( GLenum sfactor, GLenum dfactor);
+sfactor - współczynnik udziału nakładanego źródłowego
+materiału (SRC - ang. source)
+dfactor - współczynnik udziału bufora podłoża - celu,
+na który jest nakładany materiał
+(DST - ang. destination
+Wartość barwy = SRC * sfactor + DST * dfactor
+działając odpowiednio dla danego kanału barwy (B, G, R, A)
+Tekstury w OpenGL
+Uruchomienie mieszania barw w czasie wyświetlania
+(ang. Blending)
+glBlendFunc( GLenum sfactor, GLenum dfactor);
+sfactor - współczynnik udziału nakładanego źródłowego
+materiału (SRC - ang. source)
+dfactor - współczynnik udziału bufora podłoża - celu,
+na który jest nakładany materiał
+(DST - ang. destination
+Podstawia się predefiniowane stałe pod te parametry:
+GL_ZERO, GL_ONE, GL_SRC_COLOR, GL_ONE_MINUS_SRC_COLOR,
+GL_DST_COLOR, GL_ONE_MINUS_DST_COLOR, GL_SRC_ALPHA,
+GL_ONE_MINUS_SRC_ALPHA, GL_DST_ALPHA, GL_ONE_MINUS_DST_ALPHA.
+GL_CONSTANT_COLOR, GL_ONE_MINUS_CONSTANT_COLOR,
+GL_CONSTANT_ALPHA, and GL_ONE_MINUS_CONSTANT_ALPHA.
+Tekstury w OpenGL
+Uruchomienie mieszania barw w czasie wyświetlania
+(ang. Blending)
+glBlendFunc( GLenum sfactor, GLenum dfactor);
+sfactor - współczynnik udziału nakładanego źródłowego
+materiału (SRC - ang. source)
+dfactor - współczynnik udziału bufora podłoża - celu,
+na który jest nakładany materiał
+(DST - ang. destination
+Podstawia się predefiniowane stałe pod te parametry:
+GL_ZERO, GL_ONE, GL_SRC_COLOR, GL_ONE_MINUS_SRC_COLOR,
+GL_DST_COLOR, GL_ONE_MINUS_DST_COLOR, GL_SRC_ALPHA,
+GL_ONE_MINUS_SRC_ALPHA, GL_DST_ALPHA, GL_ONE_MINUS_DST_ALPHA.
+GL_CONSTANT_COLOR, GL_ONE_MINUS_CONSTANT_COLOR,
+GL_CONSTANT_ALPHA, and GL_ONE_MINUS_CONSTANT_ALPHA.
+Inicjalne wartości dla parametrów są ustalone na:
+dla sfactor: GL_ONE, dla dfactor: GL_ZERO
+szczegóły na stronie: https://www.khronos.org
+Tekstury w OpenGLGrafika komputerowa 3D
+inż. IV sem. Geoinformatyka
+Zakład Fotogrametrii Teledetekcji i Systemów Informacji
+Przestrzennej
+Zespół Fotogrametrii sala 48, 325, 430
+dr inż. Michał Kowalczyk
+mail: mk.sprawozdania@wp.pl
+Tematy prezentacji:
+Prezentacja obiektów
+cieniowanie
+oświetlenie
+mgła
+Cieniowanie obiektów Nieprawidłowa transformacja normalnej do powierzchni
+Rzutowanie światła
+Równoległe Centralne (środkowe)
+Światło otoczenia (ambient light)Światło rozproszone (diffuse light) Światło rozproszone (diffuse light)
+Prawo odbicia światła
+Światło rozproszone (diffuse light)
+Prawo odbicia światła Rozpraszanie
+na nierównej powierzchni
+Światło rozproszone (diffuse light)
+Prawo odbicia światła Rozpraszanie
+na nierównej powierzchni
+Światło rozproszone (diffuse light)
+Zmiana wielkości odbicia
+wraz ze zmianą kierunku promieni padających na powierzchnię
+Światło odbite kierunkowo - lustrzanie (specular light)
+Jasność zależna od kierunku obserwacjiŚwiatło odbite kierunkowo - lustrzanie (specular light)
+Jasność zależna od kierunku obserwacji
+Światło odbite kierunkowo - lustrzanie (specular light)
+Jasność zależna od kierunku obserwacji
+Światło odbite kierunkowo - lustrzanie (specular light)
+Jasność zależna od kierunku obserwacji
+Światło odbite kierunkowo - lustrzanie (specular light)
+Cieniowanie obiektów w zależności od rodzaju powierzchni
+parametr GL_SPOT_EXPONENT
+Połączenie kilku metod odwzorowania odbicia światła Połączenie kilku metod odwzorowania odbicia światłaPołączenie kilku metod odwzorowania odbicia światła Prezentacja oświetlonego obiektu
+Prezentacja oświetlonego obiektu Prezentacja źródła światła w formie świecącego materiału
+(emissive material)
+Prezentacja źródła światła w formie świecącego materiału
+(emissive material)
+Przygotowanie prezentacji oświetlenia sceny
+oświetlenie - źródła światła
+materiały - reakcja otoczenia na oświetlenieFunkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Włączanie i wyłączanie
+glEnable(GLenum cap);
+// włączenie działania oznaczonego symbolicznie w cap
+glDisable(GLenum cap);
+// wyłączenie działania oznaczonego symbolicznie w cap
+Oznaczenia cap:
+GL_LIGHTi światło nr i (od 0 do 7)
+GL_LIGHTING oświetlenie
+Należy włączyć ogólnie oświetlenie oraz określone światło.
+OpenGL pozwala na 8 źródeł światła na scenie.
+Przygotowanie prezentacji oświetlenia sceny
+glLightfv(GLenum light, GLenum pname, const GLfloat * params);
+określa wartości parametrów związanych z oświetleniem
+Przygotowanie prezentacji oświetlenia sceny
+glLightfv(GLenum light, GLenum pname, const GLfloat * params);
+określa wartości parametrów związanych z oświetleniem
+light: nazwa światła: GL_LIGHTi od 0 do 7
+Przygotowanie prezentacji oświetlenia sceny
+glLightfv(GLenum light, GLenum pname, const GLfloat * params);
+określa wartości parametrów związanych z oświetleniem
+light: nazwa światła: GL_LIGHTi od 0 do 7
+pname: nazwa parametru:
+GL_AMBIENT światło otoczenia
+GL_DIFFUSE światło rozproszone
+GL_SPECULAR światło odbite lustrzanie
+GL_POSITION położenie źródła światła
+GL_SPOT_CUTOFF zakres kątowy odbicia
+GL_SPOT_DIRECTION kierunek świecenia
+GL_SPOT_EXPONENT wymiary plamy odbicia
+GL_CONSTANT_ATTENUATION stała jasność z odległością
+GL_LINEAR_ATTENUATION liniowy spadek jasności
+GL_QUADRATIC_ATTENUATION kwadratowy spadek jasności
+parametry ze SPOT dotyczą światła odbitego (Specular)
+Przygotowanie prezentacji oświetlenia sceny
+glLightfv(GLenum light, GLenum pname, const GLfloat * params);
+określa wartości parametrów związanych z oświetleniem
+light: nazwa światła: GL_LIGHTi od 0 do 7
+pname: nazwa parametru:
+GL_AMBIENT światło otoczenia
+GL_DIFFUSE światło rozproszone
+GL_SPECULAR światło odbite lustrzanie
+GL_POSITION położenie źródła światła
+GL_SPOT_CUTOFF zakres kątowy odbicia
+GL_SPOT_DIRECTION kierunek świecenia
+GL_SPOT_EXPONENT wymiary plamy odbicia
+GL_CONSTANT_ATTENUATION stała jasność z odległością
+GL_LINEAR_ATTENUATION liniowy spadek jasności
+GL_QUADRATIC_ATTENUATION kwadratowy spadek jasności
+parametry ze SPOT dotyczą światła odbitego (Specular)
+params: oznacza adres zmiennej lub tablicy wartości
+(mogą być też stałe)
+Przygotowanie prezentacji oświetlenia sceny
+glLightfv(GLenum light, GLenum pname, const GLfloat * params);
+określa wartości parametrów związanych z oświetleniem
+light: nazwa światła: GL_LIGHTi od 0 do 7
+pname: nazwa parametru:
+GL_AMBIENT światło otoczenia
+GL_DIFFUSE światło rozproszone
+GL_SPECULAR światło odbite lustrzanie
+GL_POSITION położenie źródła światła
+GL_SPOT_CUTOFF zakres kątowy odbicia
+GL_SPOT_DIRECTION kierunek świecenia
+GL_SPOT_EXPONENT wymiary plamy odbicia
+GL_CONSTANT_ATTENUATION stała jasność z odległością
+GL_LINEAR_ATTENUATION liniowy spadek jasności
+GL_QUADRATIC_ATTENUATION kwadratowy spadek jasności
+parametry ze SPOT dotyczą światła odbitego (Specular)
+params:
+AmbientLight: array[0..3] of GLfloat = (0.2,0.2,0.2,1);Przygotowanie prezentacji oświetlenia sceny
+glLightfv(GLenum light, GLenum pname, const GLfloat * params);
+określa wartości parametrów związanych z oświetleniem
+-> GL_SPOT_CUTOFF zakres kątowy (1/2) odbicia
+GL_SPOT_DIRECTION kierunek świecenia
+GL_SPOT_EXPONENT wymiary plamy odbicia
+Przygotowanie prezentacji oświetlenia sceny
+glLightfv(GLenum light, GLenum pname, const GLfloat * params);
+określa wartości parametrów związanych z oświetleniem
+GL_SPOT_CUTOFF zakres kątowy odbicia
+GL_SPOT_DIRECTION kierunek świecenia
+-> GL_SPOT_EXPONENT wymiary plamy odbicia
+Przygotowanie prezentacji oświetlenia sceny
+glLightfv(GLenum light, GLenum pname, const GLfloat * params);
+określa wartości parametrów związanych z oświetleniem
+GL_CONSTANT_ATTENUATION stała jasność z odległością
+GL_LINEAR_ATTENUATION liniowy spadek jasności
+-> GL_QUADRATIC_ATTENUATION kwadratowy spadek jasności
+(ang. osłabienie, złagodzenie, rozrzedzenie)
+Przygotowanie prezentacji oświetlenia sceny
+glLightf(GLenum light, GLenum pname, GLfloat param);
+określa wartości parametrów związanych z oświetleniem
+dla pojedynczej wartości
+light: nazwa światła: GL_LIGHTi od 0 do 7
+pname: nazwa parametru:
+GL_SPOT_CUTOFF zakres kątowy odbicia
+GL_SPOT_EXPONENT wymiary plamy odbicia
+GL_CONSTANT_ATTENUATION stała jasność z odległością
+GL_LINEAR_ATTENUATION liniowy spadek jasności
+GL_QUADRATIC_ATTENUATION kwadratowy spadek jasności
+parametry ze SPOT dotyczą światła odbitego (Specular)
+params: oznacza wartość zmiennej lub stałej
+Przygotowanie prezentacji oświetlenia sceny
+glMaterialfv(GLenum face, GLenum pname, const GLfloat * params);
+określa wartości parametrów związanych z definicją
+reakcji sceny na oświetlenie (definicja materiału)
+Przygotowanie prezentacji oświetlenia sceny
+glMaterialfv(GLenum face, GLenum pname, const GLfloat * params);
+określa wartości parametrów związanych z definicją
+reakcji sceny na oświetlenie (definicja materiału)
+face: określa która część obiektów podlega działaniu światła
+GL_FRONT wierzchnia
+GL_BACK spodnia
+GL_FRONT_AND_BACK obie: wierzch i spódPrzygotowanie prezentacji oświetlenia sceny
+glMaterialfv(GLenum face, GLenum pname, const GLfloat * params);
+określa wartości parametrów związanych z definicją
+reakcji sceny na oświetlenie (definicja materiału)
+face: określa która część obiektów podlega działaniu światła
+GL_FRONT wierzchnia
+GL_BACK spodnia
+GL_FRONT_AND_BACK obie: wierzch i spód
+pname: określa nazwę parametru:
+GL_AMBIENT otoczenie
+GL_DIFFUSE rozpraszanie
+GL_SPECULAR odbicie - barwa
+GL_EMISSION emisja światła
+GL_SHININESS odbicie - rozjaśnienie
+GL_AMBIENT_AND_DIFFUSE otoczenie i rozpraszanie
+GL_COLOR_INDEXES barwa wspólna dla reakcji
+na oświetlenie
+Przygotowanie prezentacji oświetlenia sceny
+glMaterialfv(GLenum face, GLenum pname, const GLfloat * params);
+określa wartości parametrów związanych z definicją
+reakcji sceny na oświetlenie (definicja materiału)
+face: określa która część obiektów podlega działaniu światła
+GL_FRONT wierzchnia
+GL_BACK spodnia
+GL_FRONT_AND_BACK obie: wierzch i spód
+pname: określa nazwę parametru:
+GL_AMBIENT otoczenie
+GL_DIFFUSE rozpraszanie
+GL_SPECULAR odbicie - barwa
+GL_EMISSION emisja światła
+GL_SHININESS odbicie - rozjaśnienie
+GL_AMBIENT_AND_DIFFUSE otoczenie i rozpraszanie
+GL_COLOR_INDEXES barwa wspólna dla reakcji
+na oświetlenie
+params: oznacza adres dla pojedynczej zmiennej lub stałej
+lub też tablicy zmiennych lub stałych
+Przygotowanie prezentacji oświetlenia sceny
+glMateriali(GLenum face, GLenum pname, GLint param);
+określa wartości parametru związanego z definicją
+reakcji sceny na oświetlenie (definicja materiału)
+face: określa która część obiektów podlega działaniu światła
+GL_FRONT wierzchnia
+GL_BACK spodnia
+GL_FRONT_AND_BACK obie: wierzch i spód
+pname: określa nazwę parametru:
+GL_SHININESS odbicie - wielkość rozjaśnienia
+params: oznacza wartość zmiennej lub stałej,
+oznaczającej stopień rozjaśnienia
+Przygotowanie prezentacji oświetlenia sceny
+glMateriali(GLenum face, GLenum pname, GLint param);
+określa wartości parametru związanego z definicją
+reakcji sceny na oświetlenie (definicja materiału)
+face: określa która część obiektów podlega działaniu światła
+GL_FRONT wierzchnia
+GL_BACK spodnia
+GL_FRONT_AND_BACK obie: wierzch i spód
+pname: określa nazwę parametru:
+GL_SHININESS odbicie - wielkość rozjaśnienia
+params: oznacza wartość zmiennej lub stałej,
+oznaczającej stopień rozjaśnienia
+Uwaga: glMaterial może być wykorzystany
+między glBegin a glEnd
+Komponent Alpha jest wykorzystywany do obliczeń
+tylko dla materiału diffuse
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Włączanie i wyłączanie
+glEnable(GLenum cap);
+// włączenie działania oznaczonego symbolicznie w cap
+glDisable(GLenum cap);
+// wyłączenie działania oznaczonego symbolicznie w cap
+Oznaczenia cap:
+GL_LIGHTi światło nr i (od 0 do 7)
+GL_LIGHTING oświetlenie
+GL_COLOR_MATERIAL
+Należy włączyć ogólnie oświetlenie oraz określone światło.
+OpenGL pozwala na 8 źródeł światła na scenie.
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Włączanie i wyłączanie
+glEnable(GLenum cap);
+// włączenie działania oznaczonego symbolicznie w cap
+glDisable(GLenum cap);
+// wyłączenie działania oznaczonego symbolicznie w cap
+Oznaczenia cap:
+GL_LIGHTi światło nr i (od 0 do 7)
+GL_LIGHTING oświetlenie
+GL_COLOR_MATERIAL ustawienia materiału śledzą
+wartości bieżącej barwy
+Należy włączyć ogólnie oświetlenie oraz określone światło.
+OpenGL pozwala na 8 źródeł światła na scenie.
+Włączenie GL_COLOR_MATERIAL powoduje uwzględnianie ustawień
+barwy (w przeciwnym wypadku zabarwienie obiektów będzie
+pochodziło wyłącznie od światła i tekstury)Przygotowanie prezentacji oświetlenia sceny
+glColorMaterial(GLenum face, GLenum mode);
+Aktualna barwa jest uwzględniana przez barwę materiału
+Przygotowanie prezentacji oświetlenia sceny
+glColorMaterial(GLenum face, GLenum mode);
+Aktualna barwa jest uwzględniana przez barwę materiału
+face: określa która część materiału śledzi barwę
+GL_FRONT wierzchnia
+GL_BACK spodnia
+GL_FRONT_AND_BACK obie: wierzch i spód (domyślne)
+Przygotowanie prezentacji oświetlenia sceny
+glColorMaterial(GLenum face, GLenum mode);
+Aktualna barwa jest uwzględniana przez barwę materiału
+face: określa która część materiału śledzi barwę
+GL_FRONT wierzchnia
+GL_BACK spodnia
+GL_FRONT_AND_BACK obie: wierzch i spód (domyślne)
+mode: określa które parametry materiału śledzą aktualną barwę
+GL_EMISSION emisyjność (świecenie)
+GL_AMBIENT otoczenie
+GL_DIFFUSE rozpraszanie
+GL_SPECULAR odbicie lustrzane
+GL_AMBIENT_AND_DIFFUSE kombinacja dwóch (domyślne)
+Uwaga: glColorMaterial może być wykorzystany
+między glBegin a glEnd
+Funkcje ustawiania parametrów wyświetlania w OpenGL
+(obecne poza sekcją glBegin - glEnd) Włączanie i wyłączanie
+glEnable(GLenum cap);
+// włączenie działania oznaczonego symbolicznie w cap
+glDisable(GLenum cap);
+// wyłączenie działania oznaczonego symbolicznie w cap
+Oznaczenia cap:
+GL_FOG włącza mgłę
+W celu uruchomienia mgły, należy włączyć ten parametr i
+dalej podać w jaki sposób będzie wyświetlana
+Przygotowanie prezentacji mgły dla sceny
+Mgła służy do:
+● podniesienia realizmu wyświetlanej sceny
+● zamaskowania obiektów znajdujących się w większej odległości
+● ograniczenia liczby koniecznych do wyświetlenia obiektów
+Przygotowanie prezentacji mgły dla sceny
+Mgła służy do:
+● podniesienia realizmu wyświetlanej sceny
+● zamaskowania obiektów znajdujących się w większej odległości
+● ograniczenia liczby koniecznych do wyświetlenia obiektów
+posiada szereg parametrów do ustawieniaPrzygotowanie prezentacji mgły dla sceny
+glFogf(GLenum pname, GLfloat param);
+Określa wartość parametru mgły
+Przygotowanie prezentacji mgły dla sceny
+glFogf(GLenum pname, GLfloat param);
+Określa wartość parametru mgły
+pname: określa który parametr ma być wyznaczony
+GL_FOG_MODE równanie, które wpływa na zagęszczanie mgły
+GL_FOG_DENSITY gęstość mgły dla nieliniowej (domyślnie 1)
+GL_FOG_START odległość rozpoczęcia mgły dla liniowej (0)
+GL_FOG_END odległość zakończenia mgły dla liniowej (1)
+GL_FOG_INDEX numer barwy mgły (domyślnie 0)
+GL_FOG_COORD_SRC sposób obliczania wartości mgły
+w zależności od elementów sceny
+Przygotowanie prezentacji mgły dla sceny
+glFogfv(GLenum pname, const GLfloat * params);
+Określa wartości parametru mgły
+pname: określa który parametr ma być wyznaczony
+GL_FOG_MODE równanie, które wpływa na zagęszczanie mgły
+GL_FOG_DENSITY gęstość mgły dla nieliniowej (domyślnie 1)
+GL_FOG_START odległość rozpoczęcia mgły dla liniowej (0)
+GL_FOG_END odległość zakończenia mgły dla liniowej (1)
+GL_FOG_INDEX numer barwy mgły (domyślnie 0)
+GL_FOG_COORD_SRC sposób obliczania wartości mgły
+w zależności od punktu odniesienia
+i od elementów sceny
+GL_FOG_COLOR barwa mgły (domyslnie 0,0,0,0)
+Przygotowanie prezentacji mgły dla sceny
+glFogfv(GLenum pname, const GLfloat * params);
+Określa wartości parametru mgły
+param:
+pname: określa który parametr ma być wyznaczony
+GL_FOG_MODE równanie, które wpływa na zagęszczanie mgły
+c - odległość od punktu bazowego,
+GL_EXP (domyślne)
+GL_EXP2
+Przygotowanie prezentacji mgły dla sceny
+glFogfv(GLenum pname, const GLfloat * params);
+Określa wartości parametru mgły
+param:
+pname: określa który parametr ma być wyznaczony
+GL_FOG_MODE równanie, które wpływa na zagęszczanie mgły
+Przygotowanie prezentacji mgły dla sceny
+glFogfv(GLenum pname, const GLfloat * params);
+Określa wartości parametru mgły
+pname: określa który parametr ma być wyznaczony
+GL_FOG_COORD_SRC sposób obliczania wartości mgły
+w zależności od punktu odniesienia
+i elementów sceny
+GL_FOG_COORD mgła obliczana według
+domyslnego punktu odniesienia
+GL_FRAGMENT_DEPTH głębokość obiektów jako bazowa
+do obliczenia działania mgłyPrzygotowanie prezentacji mgły dla sceny
+glFogfv(GLenum pname, const GLfloat * params);
+Określa wartości parametru mgłyGrafika komputerowa 3D
+inż. IV sem. Geoinformatyka
+Zakład Fotogrametrii Teledetekcji i Systemów Informacji
+Przestrzennej
+Zespół Fotogrametrii sala 48, 325, 430
+dr inż. Michał Kowalczyk
+mail: mk.sprawozdania@wp.pl
+Tematy prezentacji:
+Technika przyspieszenia realizacji wyświetleń obiektów
+bufor werteksów obiektów VBO
+Algorytmy wykorzystywane w grafice płaskiej
+rysowanie linii
+antyaliazing
+wypełnianie wielokątów
+podział siatki punktów na trójkąty
+Algorytmy wykorzystywane w grafice trójwymiarowej
+zastosowanie bufora głębokości (Z - buffer)
+Bufor werteksów obiektów (VBO - Vertex Buffer Object)
+Rozszerzenie OpenGL, umożliwiające przekazanie do sterownika
+grafiki tablic, zawierających informacje o rysowanych obiektach,
+takie jak:
+werteksy, normalne, barwy, położenie tekstury.
+Zastosowanie bufora werteksów zwiększa szybkość wyświetlania,
+podobnie jak listy obiektów.
+Bufor werteksów obiektów (VBO - Vertex Buffer Object)
+Procedury i funkcje OpenGL
+nie mogą być umieszczone pomiędzy glBegin a glEnd
+Bufor werteksów obiektów (VBO - Vertex Buffer Object)
+Procedury i funkcje OpenGL
+(nie mogą być umieszczone pomiędzy glBegin a glEnd)
+glEnableClientState(GLenum cap);
+glDisableClientState(GLenum cap);
+Włącza lub wyłącza stan klienta właściwości graficznych
+Bufor werteksów obiektów (VBO - Vertex Buffer Object)
+Procedury i funkcje OpenGL
+glEnableClientState(GLenum cap);
+glDisableClientState(GLenum cap);
+Włącza lub wyłącza stan klienta właściwości graficznych
+tablice:
+cap: GL_COLOR_ARRAY barwy
+GL_EDGE_FLAG_ARRAY oznaczenia krawędzi
+GL_FOG_COORD_ARRAY współrzędne mgły
+GL_INDEX_ARRAY oznaczenia numerów barw
+GL_NORMAL_ARRAY normalne
+GL_SECONDARY_COLOR_ARRAY barwy drugorzędne
+GL_TEXTURE_COORD_ARRAY położenia w teksturze
+GL_VERTEX_ARRAY werteksyBufor werteksów obiektów (VBO - Vertex Buffer Object)
+Procedury i funkcje OpenGL
+glColorPointer(GLint size, GLenum type, GLsizei stride,
+const GLvoid * pointer);
+Wskazuje na tablicę barw do wyświetlania
+Bufor werteksów obiektów (VBO - Vertex Buffer Object)
+Procedury i funkcje OpenGL
+glColorPointer(GLint size, GLenum type, GLsizei stride,
+const GLvoid * pointer);
+Wskazuje na tablicę barw do wyświetlania
+size: liczba komponentów na barwę: 3 lub 4
+domyślnie 4
+type: typ danych dla składowej barwy, dopuszczalne:
+GL_BYTE, GL_UNSIGNED_BYTE, GL_SHORT,
+GL_UNSIGNED_SHORT, GL_INT, GL_UNSIGNED_INT,
+GL_FLOAT (domyślny), GL_DOUBLE
+stride: offset (przesunięcie) w bajtach pomiędzy barwami
+domyślnie 0
+pointer: wskaźnik do pierwszego elementu w tablicy
+domyślnie 0
+Bufor werteksów obiektów (VBO - Vertex Buffer Object)
+Procedury i funkcje OpenGL
+glVertexPointer(GLint size, GLenum type, GLsizei stride,
+const GLvoid * pointer);
+Wskazuje na tablicę werteksów do wyświetlania
+Bufor werteksów obiektów (VBO - Vertex Buffer Object)
+Procedury i funkcje OpenGL
+glVertexPointer(GLint size, GLenum type, GLsizei stride,
+const GLvoid * pointer);
+Wskazuje na tablicę werteksów do wyświetlania
+size: liczba współrzędnych werteksu: 2, 3 lub 4
+domyślnie 4
+type: typ danych dla współrzędnej werteksu,
+dopuszczalne:
+GL_SHORT, GL_INT, GL_FLOAT (domyślny), GL_DOUBLE
+stride: offset (przesunięcie) w bajtach
+pomiędzy werteksami, domyślnie 0
+pointer: wskaźnik do pierwszego elementu w tablicy
+domyślnie 0
+Bufor werteksów obiektów (VBO - Vertex Buffer Object)
+Procedury i funkcje OpenGL
+glDrawArrays(GLenum mode, GLint first, GLsizei count);
+Realizuje rysowanie tablic werteksów
+wraz z przypisanymi parametrami (barwy, normalne itp.)
+Bufor werteksów obiektów (VBO - Vertex Buffer Object)
+Procedury i funkcje OpenGL
+glDrawArrays(GLenum mode, GLint first, GLsizei count);
+Realizuje rysowanie tablic werteksów
+wraz z przypisanymi parametrami (barwy, normalne itp.)
+mode: rodzaj elementarnych obiektów:
+GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP,
+GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN,
+GL_TRIANGLES, GL_QUAD_STRIP, GL_QUADS,
+GL_POLYGON
+first: numer początkowego elementu
+we włączonych tablicach
+count: liczba elementów do wyświetleniaBufor werteksów obiektów (VBO - Vertex Buffer Object)
+Przykład zastosowania
+type
+TVertex3f = record X, Y, Z: Single end; //deklaracja
+TColor3f = record R, G, B: Single end; //typów
+Bufor werteksów obiektów (VBO - Vertex Buffer Object)
+Przykład zastosowania
+type
+TVertex3f = record X, Y, Z: Single end; //deklaracja
+TColor3f = record R, G, B: Single end; //typów
+const //deklaracja stałych
+VertexBuffer : array [0..5] of TVertex3f =
+((X: 10; Y: 0.5; Z: 0),
+(X: -10; Y: 10; Z: 0),
+(X: -10; Y: -10; Z: 0),
+(X: 10; Y: 10; Z: 0),
+(X: -10; Y: -10; Z: 0),
+(X: 10; Y: -0.5; Z: 0));
+Bufor werteksów obiektów (VBO - Vertex Buffer Object)
+Przykład zastosowania
+type
+TVertex3f = record X, Y, Z: Single end; //deklaracja
+TColor3f = record R, G, B: Single end; //typów
+const //deklaracja stałych
+VertexBuffer : array [0..5] of TVertex3f =
+((X: 10; Y: 0.5; Z: 0),
+(X: -10; Y: 10; Z: 0),
+(X: -10; Y: -10; Z: 0),
+(X: 10; Y: 10; Z: 0),
+(X: -10; Y: -10; Z: 0),
+(X: 10; Y: -0.5; Z: 0));
+ColorBuffer : array [0..5] of TColor3f =
+((R : 1; G : 0; B : 1),
+(R : 0; G : 0; B : 1),
+(R : 0; G : 1; B : 0),
+(R : 1; G : 0; B : 1),
+(R : 0; G : 1; B : 0),
+(R : 1; G : 1; B : 0));
+Bufor werteksów obiektów (VBO - Vertex Buffer Object)
+Przykład zastosowania
+w procedurze wyświetlającej:
+// włączenie stanu klienta
+glEnableClientState(GL_VERTEX_ARRAY);
+glEnableClientState(GL_COLOR_ARRAY);
+Bufor werteksów obiektów (VBO - Vertex Buffer Object)
+Przykład zastosowania
+w procedurze wyświetlającej:
+// włączenie stanu klienta
+glEnableClientState(GL_VERTEX_ARRAY);
+glEnableClientState(GL_COLOR_ARRAY);
+// podłączenie tablic
+glVertexPointer(3, GL_FLOAT, 0, @VertexBuffer[0]);
+glColorPointer(3, GL_FLOAT, 0, @ColorBuffer[0]);
+Bufor werteksów obiektów (VBO - Vertex Buffer Object)
+Przykład zastosowania
+w procedurze wyświetlającej:
+// włączenie stanu klienta
+glEnableClientState(GL_VERTEX_ARRAY);
+glEnableClientState(GL_COLOR_ARRAY);
+// podłączenie tablic
+glVertexPointer(3, GL_FLOAT, 0, @VertexBuffer[0]);
+glColorPointer(3, GL_FLOAT, 0, @ColorBuffer[0]);
+// wyświetlenie tablic
+glDrawArrays(GL_TRIANGLES, 0, Length(VertexBuffer));Bufor werteksów obiektów (VBO - Vertex Buffer Object)
+Przykład zastosowania
+w procedurze wyświetlającej:
+// włączenie stanu klienta
+glEnableClientState(GL_VERTEX_ARRAY);
+glEnableClientState(GL_COLOR_ARRAY);
+// podłączenie tablic
+glVertexPointer(3, GL_FLOAT, 0, @VertexBuffer[0]);
+glColorPointer(3, GL_FLOAT, 0, @ColorBuffer[0]);
+// wyświetlenie tablic
+glDrawArrays(GL_TRIANGLES, 0, Length(VertexBuffer));
+// wyłączenie stanu klienta
+glDisableClientState(GL_VERTEX_ARRAY);
+glDisableClientState(GL_COLOR_ARRAY);
+Algorytmy wykorzystywane w grafice płaskiej
+antyaliazing
+wypełnianie wielokątów
+podział siatki punktów na trójkąty
+Algorytmy wykorzystywane w grafice płaskiej
+antyaliazing (ang. antialiasing)
+zjawisko w grafice komputerowej,
+polegające na zniekształceniu obrazu
+w wyniku zbyt małej częstości jego próbkowania
+w procesie rasteryzacji.
+Algorytmy wykorzystywane w grafice płaskiej
+antyaliazing (ang. antialiasing)
+Algorytmy wykorzystywane w grafice płaskiej
+antyaliazing (ang. antialiasing)
+Algorytmy wykorzystywane w grafice płaskiej
+antyaliazing (ang. antialiasing)Algorytmy wykorzystywane w grafice płaskiej
+antyaliazing (ang. antialiasing)
+Algorytmy wykorzystywane w grafice płaskiej
+antyaliazing (ang. antialiasing)
+Algorytmy wykorzystywane w grafice płaskiej
+rysowanie linii
+Algorytmy wykorzystywane w grafice płaskiej
+rysowanie linii - graniczna odległość punktów od linii analitycznej
+algorytm Bresenham'a, wartości całkowite,
+analiza kierunku w zależności od nachylenia linii
+Algorytmy wykorzystywane w grafice płaskiej
+rysowanie linii - graniczna odległość punktów od linii analitycznej
+algorytm Bresenham'a, wartości całkowite,
+analiza kierunku w zależności od nachylenia linii
+Jeżeli odległości rzeczywiste to sposób na linię z anyaliazingiem
+Algorytmy wykorzystywane w grafice płaskiej
+wypełnianie wielokątówAlgorytmy wykorzystywane w grafice płaskiej
+wypełnianie wielokątów - wypełnianie do krawędzi
+jpg
+Algorytmy wykorzystywane w grafice płaskiej
+wypełnianie wielokątów - wypełnianie do krawędzi
+jpg
+Algorytmy wykorzystywane w grafice płaskiej
+wypełnianie wielokątów - wypełnianie do krawędzi
+jpg
+Algorytmy wykorzystywane w grafice płaskiej
+wypełnianie wielokątów - wypełnianie do krawędzi
+2 kierunki (4 zwroty)
+Algorytmy wykorzystywane w grafice płaskiej
+wypełnianie wielokątów - wypełnianie do krawędzi
+4 kierunki (8 zwrotów)
+Algorytmy wykorzystywane w grafice płaskiej
+wypełnianie wielokątów - wypełnianie do krawędzi obiektu
+o innej barwie
+w kierunku poziomym lub (i) pionowymAlgorytmy wykorzystywane w grafice płaskiej
+podział wielokątów na trójkąty
+Algorytmy wykorzystywane w grafice płaskiej
+podział wielokątów na trójkąty - siedmiokąt dzielony na 42 sposoby
+Algorytmy wykorzystywane w grafice płaskiej
+podział wielokątów na trójkąty
+Algorytmy wykorzystywane w grafice płaskiej
+podział wielokątów na trójkąty - optymalizacja podziału
+Algorytmy wykorzystywane w grafice płaskiej
+podział wielokątów na trójkąty - maksymalna foremność trójkątów
+Algorytmy wykorzystywane w grafice płaskiej
+podział wielokątów na trójkąty - obcinanie uszu (ang. ear clipping)Algorytmy wykorzystywane w grafice płaskiej
+podział wielokątów na trójkąty - obcinanie uszu (ang. ear clipping)
+poprawienie foremności figur przez dodanie punktów
+Algorytmy wykorzystywane w grafice płaskiej
+podział wielokątów na trójkąty - Seidel - wstępny podział na trapezy
+następnie badanie przynależności do narożników figury
+Algorytmy wykorzystywane w grafice płaskiej
+podział wielokątów na trójkąty - triangulacja Delone (Delaunay)
+Algorytmy wykorzystywane w grafice płaskiej i trójwymiarowej
+podział wielokątów na trójkąty - triangulacja Delone (Delaunay)
+Algorytmy wykorzystywane w grafice płaskiej
+podział wielokątów na trójkąty - porównanie algorytmów
+Algorytmy wykorzystywane w grafice płaskiej
+podział wielokątów na trójkąty - teselacja - podział obrazu
+na elementarne obiektyAlgorytmy wykorzystywane w grafice płaskiej
+podział wielokątów na trójkąty - teselacja - podział obrazu
+na elementarne obiekty
+M.C.Escher: Sky-Water Butterfliesf
+Algorytmy wykorzystywane w grafice trójwymiarowej
+podział wielokątów na trójkąty - teselacja - podział obrazu
+na elementarne obiekty
+Algorytmy wykorzystywane w grafice trójwymiarowej
+podział wielokątów na trójkąty - teselacja - podział obrazu
+na elementarne obiekty
+Algorytmy wykorzystywane w grafice trójwymiarowej
+podział wielokątów na trójkąty - teselacja - podział obrazu
+na elementarne obiekty
+Algorytmy wykorzystywane w grafice trójwymiarowej
+podział wielokątów na trójkąty - teselacja - podział obrazu
+na elementarne obiekty
+Algorytmy wykorzystywane w grafice trójwymiarowej
+zastosowanie bufora głębokości (Z - buffer)
+do analizy widoczności elementów trójwymiarowej scenyAlgorytmy wykorzystywane w grafice trójwymiarowej
+zastosowanie bufora głębokości (Z - buffer)
+Algorytmy wykorzystywane w grafice trójwymiarowej
+zastosowanie bufora głębokości (Z - buffer)
+Algorytmy wykorzystywane w grafice trójwymiarowej
+zastosowanie bufora głębokości (Z - buffer)
+Algorytmy wykorzystywane w grafice trójwymiarowej
+zastosowanie bufora głębokości (Z - buffer)
+Algorytmy wykorzystywane w grafice trójwymiarowej
+zastosowanie bufora głębokości (Z - buffer)Algorytmy wykorzystywane w grafice trójwymiarowej
+zastosowanie bufora głębokości (Z - buffer)
+Zalety:
+● nie wymaga wstępnego sortowania wielokątów
+● działanie może być wykonane szybko, nawet dla wielu poligonów
+● może być wprowadzone sprzętowo dla przyspieszenia
+● nie jest wymagane porównywanie między obiektami
+● może być zastosowane dla obiektów nie będących wielokątami
+● metoda nie jest skomplikowana i nie wymaga dodatkowych struktur
+danych
+Algorytmy wykorzystywane w grafice trójwymiarowej
+zastosowanie bufora głębokości (Z - buffer)
+Wady:
+● nie może być zastosowane dla powierzchni przezroczystych
+● nieopłacalna obliczeniowo jeżeli jest niewiele wielokątów
+● generuje stratę czasu na obliczenia przeznaczone dla obiektów
+przysłoniętych
+Algorytmy wykorzystywane w grafice trójwymiarowejGrafika komputerowa 3D
+inż. IV sem. Geoinformatyka
+Zakład Fotogrametrii Teledetekcji i Systemów Informacji
+Przestrzennej
+Zespół Fotogrametrii sala 48, 325, 430
+dr inż. Michał Kowalczyk
+mail: mk.sprawozdania@wp.pl
+Tematy prezentacji:
+Formaty plików: *.3d, *.xyz, *.pts, *.ptx
+zapis zbiorów punktów
+Format pliku: *.obj
+zapis werteksów, barw, normalnych i pozycji na teksturze
+oraz hierarchia elementów
+Formaty plików zawierających dane wektorowe
+Binarne:
+Zalety: szybkość otwierania i zapisu
+niewielki rozmiar
+Wady: zamknięty lub skomplikowany format
+konieczność edycji w wyspecjalizowanych
+programach
+Formaty plików zawierających dane wektorowe
+Tekstowe (ASCII):
+Zalety: łatwość edycji i korekty
+w edytorze tekstowym
+Wady: długi czas zapisu i otwierania
+znaczny rozmiar
+Binarne:
+Zalety: szybkość otwierania i zapisu
+niewielki rozmiar
+Wady: zamknięty lub skomplikowany format
+konieczność edycji w wyspecjalizowanych
+programach
+Tekstowe formaty plików
+zawierających dane wektorowe
+Punkty: *.3d, *.xyz
+X Y Z
+-0.007305 0.479848 -1.825868
+-0.071243 0.478286 -1.821239
+-0.070341 0.478542 -1.822264
+-0.066610 0.482100 -1.823042
+-0.068491 0.478543 -1.822411
+-0.069345 0.478895 -1.820948
+-0.068445 0.478941 -1.821180
+-0.065629 0.480373 -1.821542
+Tekstowe formaty plików
+zawierających dane wektorowe
+Punkty: *.pts
+Number of points
+X Y Z Intensity value R G B
+342684
+4.246445 -6.426620 -50.214615 -399 66 50 83
+-9.318283 -6.014053 -51.129257 -437 132 141 152
+-4.043655 -14.000992 -65.560776 -332 69 61 85
+-6.693771 -13.897171 -65.007004 -347 74 66 90
+-6.574844 -13.897018 -65.017166 -363 78 69 92
+-6.551651 -13.896622 -65.014236 -356 80 72 94
+-6.482590 -13.906174 -65.046219 -357 76 68 88
+-6.388870 -13.905197 -65.035995 -350 73 65 90Tekstowe formaty plików
+zawierających dane wektorowe
+Punkty: *.pts
+Number of points
+X Y Z Intensity value R G B
+342684
+4.246445 -6.426620 -50.214615 -399 66 50 83
+-9.318283 -6.014053 -51.129257 -437 132 141 152
+-4.043655 -14.000992 -65.560776 -332 69 61 85
+-6.693771 -13.897171 -65.007004 -347 74 66 90
+-6.574844 -13.897018 -65.017166 -363 78 69 92
+-6.551651 -13.896622 -65.014236 -356 80 72 94
+-6.482590 -13.906174 -65.046219 -357 76 68 88
+-6.388870 -13.905197 -65.035995 -350 73 65 90
+Współczynnik odbicia (-2048 ÷ 2047)
+Tekstowe formaty plików
+zawierających dane wektorowe
+Punkty: *.ptx
+PTX point cloud header:
+number of rows
+number of columns
+st1 st2 st3 ; scanner registered position
+sx1 sx2 sx3 ; scanner registered axis 'X'
+sy1 sy2 sy3 ; scanner registered axis 'Y'
+sz1 sz2 sz3 ; scanner registered axis 'Z'
+r11 r12 r13 0 ; transformation matrix
+r21 r22 r23 0 ; this is a simple rotation and translation 4x4 matrix
+r31 r32 r33 0 ; just apply to each point to get the transformed coordinate
+tr1 tr2 tr3 1 ; use double-precision variables
+Tekstowe formaty plików
+zawierających dane wektorowe
+Punkty: *.ptx
+4.148210 12.076586 1.381819 0.461036 89 87 112
+4.147804 12.075443 1.382720 0.458854 89 87 112
+4.148891 12.078566 1.384060 0.461967 87 86 111 End coordinate list (cloud #1)
+40 Scan 40 x 40 degree (cloud #2)
+40
+4.151261 1.736411 -8.110131 Begin transformation (cloud #2)
+-0.434947 -0.017233 -0.900291
+-0.240839 0.965618 0.097871
+0.867650 0.259394 -0.424143
+-0.434947 -0.017233 -0.900291 0
+-0.240839 0.965618 0.097871 0
+0.867650 0.259394 -0.424143 0
+4.151261 1.736411 -8.110131 1
+4.146983 12.074142 1.134998 0.488502 76 74 91 Begin coordinate list (cloud #2)
+4.147541 12.075727 1.136227 0.486915 76 74 91 Format: X Y Z intensity R G B
+4.147919 12.076833 1.137371 0.486976 76 74 91 Intensity range: 0 - 1
+4.148849 12.079544 1.138655 0.485328 76 74 91
+4.146931 12.073991 1.139137 0.486076 76 74 91
+4.148440 12.078399 1.140532 0.488441 79 76 93
+Tekstowe formaty plików
+zawierających dane wektorowe
+Punkty: *.ptx
+40 Scan 40 x 40 degree (cloud #2)
+40
+4.151261 1.736411 -8.110131 Begin transformation (cloud #2)
+-0.434947 -0.017233 -0.900291
+-0.240839 0.965618 0.097871
+0.867650 0.259394 -0.424143
+-0.434947 -0.017233 -0.900291 0
+-0.240839 0.965618 0.097871 0
+0.867650 0.259394 -0.424143 0
+4.151261 1.736411 -8.110131 1
+4.146983 12.074142 1.134998 0.488502 76 74 91 Begin coordinate list (cloud #2)
+4.147541 12.075727 1.136227 0.486915 76 74 91 Format: X Y Z intensity R G B
+4.147919 12.076833 1.137371 0.486976 76 74 91 Intensity range: 0 - 1
+4.148849 12.079544 1.138655 0.485328 76 74 91
+4.146931 12.073991 1.139137 0.486076 76 74 91
+4.148440 12.078399 1.140532 0.488441 79 76 93
+PTX files hold the intensities in a range 0-1
+PTS files are -2048 to 2047 as integers (no fractions)
+Tekstowe formaty plików
+zawierających dane wektorowe
+Punkty: *.ptx
+40 Scan 40 x 40 degree (cloud #2)
+40
+4.151261 1.736411 -8.110131 Begin transformation (cloud #2)
+-0.434947 -0.017233 -0.900291
+-0.240839 0.965618 0.097871
+0.867650 0.259394 -0.424143
+-0.434947 -0.017233 -0.900291 0
+-0.240839 0.965618 0.097871 0
+0.867650 0.259394 -0.424143 0
+4.151261 1.736411 -8.110131 1
+4.146983 12.074142 1.134998 0.488502 76 74 91 Begin coordinate list (cloud #2)
+4.147541 12.075727 1.136227 0.486915 76 74 91 Format: X Y Z intensity R G B
+4.147919 12.076833 1.137371 0.486976 76 74 91 Intensity range: 0 - 1
+4.148849 12.079544 1.138655 0.485328 76 74 91
+4.146931 12.073991 1.139137 0.486076 76 74 91
+4.148440 12.078399 1.140532 0.488441 79 76 93
+PTX files hold the intensities in a range 0-1
+PTS files are -2048 to 2047 as integers (no fractions)
+Tekstowe formaty plików
+zawierających dane wektorowe
+Obiekty: *.obj
+# Komentarz
+# Lista werteksów ( x, y, z [,w]) „w” opcjonalne i domyślnie 1.0
+v 0.123 0.234 0.345 1.0
+v ...
+...
+# Współrzędne na teksturze ( u , v [,w]) wartości pomiędzy 0 i 1,
+# „w” opcjonalne i domyślnie 0
+vt 0.500 1 [0]
+vt ...
+...
+# Normalne ( x, y, z) długości wektorów mogą nie być jednostkowe
+vn 0.707 0.000 0.707
+vn ...
+...Tekstowe formaty plików
+zawierających dane wektorowe
+Obiekty: *.obj
+# Współrzędne na teksturze ( u , v [,w]) wartości pomiędzy 0 i 1,
+# „w” opcjonalne i domyślnie 0
+vt 0.500 1 [0]
+vt ...
+...
+# Normalne ( x, y, z) długości wektorów mogą nie być jednostkowe
+vn 0.707 0.000 0.707
+vn ...
+...
+# Werteksy w przestrzeni parametrów krzywej, powierzchni
+# opisanej wymiernie lub niewymiernie ( u [,v] [,w] )
+vp 0.310000 3.210000 2.100000
+vp ...
+...
+Tekstowe formaty plików
+zawierających dane wektorowe
+Obiekty: *.obj
+# Normalne ( x, y, z) długości wektorów mogą nie być jednostkowe
+vn 0.707 0.000 0.707
+vn ...
+...
+# Werteksy w przestrzeni parametrów krzywej, powierzchni
+# opisanej wymiernie lub niewymiernie ( u [,v] [,w] )
+vp 0.310000 3.210000 2.100000
+Vp ...
+...
+# Definicje powierzchni
+f 1 2 3
+f 3/1 4/2 5/3
+f 6/4/1 3/5/3 7/6/5
+f ...
+...
+Tekstowe formaty plików
+zawierających dane wektorowe
+Obiekty: *.obj
+# Definicje powierzchni
+f 1 2 3
+f 3/1 4/2 5/3
+f 6/4/1 3/5/3 7/6/5
+f ...
+...
+Tekstowe formaty plików
+zawierających dane wektorowe
+Obiekty: *.obj
+# Definicje powierzchni
+f 1 2 3
+f 3/1 4/2 5/3
+f 6/4/1 3/5/3 7/6/5
+f ...
+…
+Werteksy ponumerowane od 1 (musi być ich 3 lub więcej)
+podane są indeksy
+f v1 v2 v3 v4 ....
+Tekstowe formaty plików
+zawierających dane wektorowe
+Obiekty: *.obj
+# Definicje powierzchni
+f 1 2 3
+f 3/1 4/2 5/3
+f 6/4/1 3/5/3 7/6/5
+f ...
+…
+Werteksy ponumerowane od 1 (musi być ich 3 lub więcej)
+podane są indeksy
+f v1 v2 v3 v4 …
+Indeksy werteksów i współrzędnych na teksturze
+(musi być ich 3 lub więcej)
+f v1/vt1 v2/vt2 v3/vt3 …
+Tekstowe formaty plików
+zawierających dane wektorowe
+Obiekty: *.obj
+Werteksy ponumerowane od 1 (musi być ich 3 lub więcej)
+podane są indeksy
+f v1 v2 v3 v4 …
+Indeksy werteksów i współrzędnych na teksturze
+(musi być ich 3 lub więcej)
+f v1/vt1 v2/vt2 v3/vt3 …
+Indeksy werteksów, współrzędnych na teksturze i normalnych
+(musi być ich 3 lub więcej)
+f v1/vt1/vn1 v2/vt2/vn2 v3/vt3/vn3 …Tekstowe formaty plików
+zawierających dane wektorowe
+Obiekty: *.obj
+Werteksy ponumerowane od 1 (musi być ich 3 lub więcej)
+podane są indeksy
+f v1 v2 v3 v4 …
+Indeksy werteksów i współrzędnych na teksturze
+(musi być ich 3 lub więcej)
+f v1/vt1 v2/vt2 v3/vt3 …
+Indeksy werteksów, współrzędnych na teksturze i normalnych
+(musi być ich 3 lub więcej)
+f v1/vt1/vn1 v2/vt2/vn2 v3/vt3/vn3 …
+Indeksy werteksów i normalnych (tekstura jest opcjonalna)
+(musi być ich 3 lub więcej)
+f v1//vn1 v2//vn2 v3//vn3 …
+Tekstowe formaty plików
+zawierających dane wektorowe
+Obiekty: *.obj
+Dołączenie pliku z definicjami materiałów
+mtllib [external .mtl file name]
+...
+Materiał dla następnego elementu
+usemtl [material name]
+...
+Tekstowe formaty plików
+zawierających dane wektorowe
+Obiekty: *.obj
+Dołączenie pliku z definicjami materiałów
+mtllib [external .mtl file name]
+...
+Materiał dla następnego elementu
+usemtl [material name]
+...
+Obiekty i grupy poligonów
+o [object name]
+...
+g [group name]
+...
+Tekstowe formaty plików
+zawierających dane wektorowe
+Obiekty: *.obj
+Obiekty i grupy poligonów
+o [object name]
+...
+g [group name]
+...
+Wygładzanie wielokątów poprzez grupy
+s 1
+...
+# Smooth shading can be disabled as well.
+s off
+...
+Tekstowe formaty plików
+zawierających dane wektorowe
+Obiekty: *.objGrafika komputerowa 3D
+inż. IV sem. Geoinformatyka
+Zakład Fotogrametrii Teledetekcji i Systemów Informacji
+Przestrzennej
+Zespół Fotogrametrii sala 48, 325, 430
+dr inż. Michał Kowalczyk
+mail: mk.sprawozdania@wp.pl
+Tematy prezentacji:
+Algorytmy wykorzystywane w grafice
+podział poligonów na trójkąty
+Język GLSL
+statyczny i dynamiczny proces tworzenia grafiki
+Algorytmy wykorzystywane w grafice płaskiej
+podział wielokątów na trójkąty
+Algorytmy wykorzystywane w grafice płaskiej
+podział wielokątów na trójkąty - siedmiokąt dzielony na 42 sposoby
+Algorytmy wykorzystywane w grafice płaskiej
+podział wielokątów na trójkąty
+Algorytmy wykorzystywane w grafice płaskiej
+podział wielokątów na trójkąty - optymalizacja podziałuPodział wielokątów na trójkąty Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+gluNewTess
+// tworzy nowy obiekt podlegający podziałowi
+// i zwraca do niego wskaźnik
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+gluNewTess
+// tworzy nowy obiekt podlegający podziałowi
+// i zwraca do niego wskaźnik
+gluDeleteTess
+// usuwa z pamięci obiekt podlegający podziałowi
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+gluTessBeginPolygon(GLUtesselator* tess,
+GLvoid* data);
+// rozpoczyna zapamiętywanie poligonu
+// podlegającego podziałowi na trójkąty
+tess: obiekt zadeklarowany w gluNewTess
+data: adres do danych poligonu użytkownika
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+gluTessBeginPolygon(GLUtesselator* tess,
+GLvoid* data);
+gluTessEndPolygon(GLUtesselator* tess);
+// rozpoczyna i kończy zapamiętywanie poligonu
+// podlegającego podziałowi na trójkąty
+tess: obiekt zadeklarowany w gluNewTess
+data: adres do danych poligonu użytkownika
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+gluTessBeginContour(GLUtesselator* tess);
+// rozpoczyna zapamiętywanie konturu
+// poligonu podlegającego podziałowi na trójkąty
+tess: obiekt zadeklarowany w gluNewTessPodział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+gluTessBeginContour(GLUtesselator* tess);
+gluTessEndContour(GLUtesselator* tess);
+// rozpoczyna i kończy zapamiętywanie konturu
+// poligonu podlegającego podziałowi na trójkąty
+tess: obiekt zadeklarowany w gluNewTess
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+gluTessVertex(GLUtesselator* tess,
+GLdouble * location,
+GLvoid* data);
+// opisuje werteks (punkt węzłowy)
+// poligonu podlegającego podziałowi na trójkąty
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+gluTessVertex(GLUtesselator* tess,
+GLdouble * location,
+GLvoid* data);
+// opisuje werteks (punkt węzłowy)
+// poligonu podlegającego podziałowi na trójkąty
+tess: obiekt zadeklarowany w gluNewTess
+location: miejsce wskaźnika w danych
+data: pokrywający wskaźnik do danych werteksu
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+gluTessCallBack(GLUtesselator* tess,
+GLenum which,
+_GLUfuncptr CallBackFunc);
+// wywołuje podział obiektu na trójkąty
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+gluTessCallBack(GLUtesselator* tess,
+GLenum which,
+_GLUfuncptr CallBackFunc);
+// wywołuje podział obiektu na trójkąty
+tess: obiekt zadeklarowany w gluNewTess
+which: podaje rodzaj funkcji wywołania
+CallBackFunc: podaje wywoływaną funkcję
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+gluTessCallBack(GLUtesselator* tess,
+GLenum which,
+_GLUfuncptr CallBackFunc);
+which: podaje rodzaj funkcji wywołania
+GLU_TESS_BEGIN
+GLU_TESS_BEGIN_DATA
+GLU_TESS_EDGE_FLAG
+GLU_TESS_EDGE_FLAG_DATA
+GLU_TESS_VERTEX
+GLU_TESS_VERTEX_DATA
+GLU_TESS_END
+GLU_TESS_END_DATA
+GLU_TESS_COMBINE
+GLU_TESS_COMBINE_DATA
+GLU_TESS_ERROR
+GLU_TESS_ERROR_DATAPodział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+przykładowe wykorzystanie funkcji:
+gluTessCallback(tobj, GLU_TESS_BEGIN, glBegin);
+gluTessCallback(tobj, GLU_TESS_VERTEX, glVertex3dv);
+gluTessCallback(tobj, GLU_TESS_END, glEnd);
+gluTessCallback(tobj, GLU_TESS_COMBINE, myCombine);
+gluTessBeginPolygon(tobj, NULL);
+gluTessBeginContour(tobj);
+gluTessVertex(tobj, v, v);
+...
+gluTessEndContour(tobj);
+gluTessEndPolygon(tobj);
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+gluTessProperty(GLUtesselator* tess,
+GLenum which,
+GLdouble data);
+// określa właściwości podziału obiektu na trójkąty
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+gluTessProperty(GLUtesselator* tess,
+GLenum which,
+GLdouble data);
+// określa właściwości podziału obiektu na trójkąty
+tess: obiekt zadeklarowany w gluNewTess
+which: określa ustawianą właściwość
+data: podaje wartość ustawianej właściwości
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+gluTessProperty(GLUtesselator* tess,
+GLenum which,
+GLdouble data);
+which: określa ustawianą właściwość
+GLU_TESS_WINDING_RULE
+GLU_TESS_BOUNDARY_ONLY
+GLU_TESS_TOLERANCE
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+przykład:
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+przykład:
+type
+rect1 : array [0..3,0..2] of Double =
+((50.0,50.0,0.0),(200.0,50.0,0.0),
+(200.0,200.0,0.0),(50.0, 200.0, 0.0));
+tri1 : array [0..2,0..2] of Double =
+((75.0,75.0,0.0),(125.0,175.0,0.0),
+(175.0,75.0,0.0));Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+przykład:
+type
+rect1 : array [0..3,0..2] of Double =
+((50.0,50.0,0.0),(200.0,50.0,0.0),
+(200.0,200.0,0.0),(50.0, 200.0, 0.0));
+tri1 : array [0..2,0..2] of Double =
+((75.0,75.0,0.0),(125.0,175.0,0.0),
+(175.0,75.0,0.0));
+var
+Form1: TForm1;
+GLBox1: TOpenGLControl;
+tess,tobj: PGLUTesselator;
+startlist: integer;
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+przykład:
+tess:= GLuNewTess();
+gluTessCallback(tobj, GLU_TESS_BEGIN,
+TCallBack(glBegin));
+gluTessCallback(tobj, GLU_TESS_END,
+TCallBack(glEnd));
+gluTessCallback(tobj, GLU_TESS_VERTEX,
+TCallBack(glVertex3dv));
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+przykład:
+startlist:=1;
+glNewList(startList, GL_COMPILE);
+glShadeModel(GL_FLAT);
+gluTessBeginPolygon(tobj, nil);
+gluTessBeginContour(tobj);
+gluTessVertex(tobj, rect1[0], @rect1[0]);
+gluTessVertex(tobj, rect1[1], @rect1[1]);
+gluTessVertex(tobj, rect1[2], @rect1[2]);
+gluTessVertex(tobj, rect1[3], @rect1[3]);
+gluTessEndContour(tobj);
+gluTessBeginContour(tobj);
+gluTessVertex(tobj, tri1[0], @tri1[0]);
+gluTessVertex(tobj, tri1[1], @tri1[1]);
+gluTessVertex(tobj, tri1[2], @tri1[2]);
+gluTessEndContour(tobj);
+gluTessEndPolygon(tobj);
+glEndList();
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+przykład (opcjonalnie):
+procedure MyTessBegin(which: GLEnum);
+{$IFDEF Windows} stdcall; {$else} cdecl; {$endif}
+begin
+glBegin(which);
+end;
+procedure MyTessEnd;
+{$IFDEF Windows} stdcall; {$else} cdecl; {$endif}
+begin
+glEnd(); // The () is required
+end;
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+przykład (opcjonalnie):
+procedure MyTessVertex(data: Pointer);
+{$IFDEF Windows} stdcall; {$else} cdecl; {$endif}
+begin
+glVertex3dv(PGLDouble(data));
+end;
+procedure MyTessError(errorCode:Cardinal);
+{$IFDEF Windows} stdcall; {$else} cdecl; {$endif}
+var st:string;
+begin
+st:=gluErrorString(errorCode);
+form1.Label1.Caption:=('Tessellation Error: %s\n'+st);
+exit;
+end;
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+przykład (opcjonalnie):
+gluTessCallback(tobj, GLU_TESS_BEGIN,
+TCallBack(@MyTessBegin));
+gluTessCallback(tobj, GLU_TESS_END,
+TCallBack(@MyTessEnd));
+gluTessCallback(tobj, GLU_TESS_VERTEX,
+TCallBack(@MyTessVertex));
+gluTessCallback(tobj, GLU_TESS_ERROR,
+TCallBack(@MyTessError));Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+przykład:
+gluTessCallback(tobj, GLU_TESS_BEGIN,
+TCallBack(@MyTessBegin));
+gluTessCallback(tobj, GLU_TESS_END,
+TCallBack(@MyTessEnd));
+gluTessCallback(tobj, GLU_TESS_VERTEX,
+TCallBack(@MyTessVertex));
+gluTessCallback(tobj, GLU_TESS_ERROR,
+TCallBack(@MyTessError));
+gluDeleteTess(tobj);
+glCallList(startlist);
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+przykład:
+Podział wielokątów na trójkąty
+Procedury wykorzystywane do podziału poligonu na trójkąty
+przykład:
+rect1 : array [0..3,0..2] of Double =
+((50.0,50.0,0.0),(200.0,50.0,0.0),
+(200.0,200.0,0.0),(50.0, 200.0, 0.0));
+tri1 : array [0..2,0..2] of Double =
+((75.0,75.0,0.0),(125.0,175.0,0.0),
+(175.0,75.0,0.0));
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+proces statyczny tworzenia grafiki
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+proces dynamiczny tworzenia grafiki (programowalny)Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+podobny do C
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+typy danych:Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Operatory znane z C:
+for
+while
+do - while
+if
+if - else
+?: (selection)
+continue
+break
+return
+return expression
+discard (tylko fragment shader)
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Przykład programu:
+#version version_number
+in type in_variable_name;
+in type in_variable_name;
+out type out_variable_name;
+uniform type uniform_name;
+void main()
+{
+// process input(s) and do some weird graphics stuff
+...
+// output processed stuff to output variable
+out_variable_name = weird_stuff_we_processed;
+}
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Przykład programu: Vertex shader
+-- Vertex
+in vec4 Position;
+out vec3 vPosition;
+void main()
+{
+vPosition = Position.xyz;
+}
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Przykład programu: Vertex shader
+#version 330 core
+layout (location = 0) in vec3 aPos; // the position variable
+has attribute position 0
+out vec4 vertexColor; // specify a color output to the
+fragment shader
+void main()
+{
+gl_Position = vec4(aPos, 1.0); // see how we directly
+give a vec3 to vec4's constructor
+vertexColor = vec4(0.5, 0.0, 0.0, 1.0); // set the output
+variable to a dark-red color
+}
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Przykład programu: Geometry shader
+#version 330 core
+layout (points) in;
+layout (points, max_vertices = 1) out;
+void main() {
+gl_Position = gl_in[0].gl_Position;
+EmitVertex();
+EndPrimitive();
+}
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Przykład programu: Geometry shader - załadowanie
+geometryShader = glCreateShader(GL_GEOMETRY_SHADER);
+glShaderSource(geometryShader, 1, &gShaderCode, NULL);
+glCompileShader(geometryShader);
+...
+glAttachShader(program, geometryShader);
+glLinkProgram(program);Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Przykład programu: Fragment shader
+#version 330 core
+out vec4 FragColor;
+in vec4 vertexColor; // the input variable from the vertex
+shader (same name and same type)
+void main()
+{
+FragColor = vertexColor;
+}
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Przykład programu: Tesselation control shader
+-- TessControl
+layout(vertices = 3) out;
+in vec3 vPosition[];
+out vec3 tcPosition[];
+uniform float TessLevelInner;
+uniform float TessLevelOuter;
+#define ID gl_InvocationID
+void main()
+{
+tcPosition[ID] = vPosition[ID];
+if (ID == 0) {
+gl_TessLevelInner[0] = TessLevelInner;
+gl_TessLevelOuter[0] = TessLevelOuter;
+gl_TessLevelOuter[1] = TessLevelOuter;
+gl_TessLevelOuter[2] = TessLevelOuter;
+}
+}
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Przykład programu: Tesselation evaluation shader
+-- TessEval
+layout(triangles, equal_spacing, cw) in;
+in vec3 tcPosition[];
+out vec3 tePosition;
+out vec3 tePatchDistance;
+uniform mat4 Projection;
+uniform mat4 Modelview;
+void main()
+{
+vec3 p0 = gl_TessCoord.x * tcPosition[0];
+vec3 p1 = gl_TessCoord.y * tcPosition[1];
+vec3 p2 = gl_TessCoord.z * tcPosition[2];
+tePatchDistance = gl_TessCoord;
+tePosition = normalize(p0 + p1 + p2);
+gl_Position = Projection * Modelview * vec4(tePosition,1);
+}
+Algorytmy wykorzystywane w grafice płaskiej
+podział wielokątów na trójkąty - teselacja - podział obrazu
+na elementarne obiekty
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznejJęzyk GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Język GLSL (ang. OpenGL Shading Language)
+język cieniowania dla otwartej biblioteki graficznej
+Literatura
+https://www.khronos.org/
+https://www.khronos.org/registry/OpenGL-Refpages/
+http://wiki.freepascal.org/OpenGL_Tutorial
+http://www.opengl-tutorial.org/
+https://www.opengl.org/sdk/docs/tutorials/TyphoonLabs/
+http://prideout.net/blog/
+https://learnopengl.com/
+https://learnopengl.com/Offline-book
+Mathematics for 3D Game Programming and Computer Graphics
+Third Edition Eric Lengyel
+OpenGL Tutorial and Reference Manual Toby Howard
+Tematy prac inżynierskich
+Wizualizacja otoczenia topograficznego lub architektonicznego
+Budowa wirtualnego pola testowego dla algorytmów
+fotogrametrycznych
+Program do projektowania nalotu dla dronu z uwzględnieniem
+przybliżonego kształtu obiektu
+Program do projektowania tam i elektrowni wodnych na
+podstawie numerycznego modelu terenu
+Program do edycji trójwymiarowej mapy topograficznej
+Wizualizacja rozkładu błędów pomiarowych w przestrzeni
+stereogramu lub grupy zdjęćGrafika komputerowa 3D
+inż. IV sem. Geoinformatyka
+Zakład Fotogrametrii Teledetekcji i Systemów Informacji
+Przestrzennej
+Zespół Fotogrametrii sala 48, 325, 430
+dr inż. Michał Kowalczyk
+mail: mk.sprawozdania@wp.pl
+Tematy prezentacji:
+Algorytmy wykorzystywane w grafice
+rekonstrukcja cieni na scenie
+Algorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+cień to obszar, gdzie źródło światła jest zasłonięte
+Algorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+cień to obszar, gdzie źródło światła jest zasłonięte
+Cienie podnoszą właściwości plastyczne i realizm
+modelowanej sceny
+Uwypuklają kształt obiektów
+i ich wzajemne relacje geometryczne
+Utrudniają identyfikację obiektów, położonych na ich obszarze
+Algorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Warunki powstawania cieni:
+Algorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Warunki powstawania cieni:
+źródło światłaAlgorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Warunki powstawania cieni:
+źródło światła
+obiekty rzucające cień
+Algorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Warunki powstawania cieni:
+źródło światła
+obiekty rzucające cień
+tło, na które pada cień
+Algorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Warunki powstawania cieni:
+źródło światła
+obiekty rzucające cień
+tło, na które pada cień
+tworząc model sceny
+cień należy narysować:
+Algorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Warunki powstawania cieni:
+źródło światła
+obiekty rzucające cień
+tło, na które pada cień
+obowiazuje prostoliniowość
+rozchodzenia się promieni
+świetlnych
+Algorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Warunki powstawania cieni:
+źródło światła
+obiekty rzucające cień
+tło, na które pada cień
+obowiazuje prostoliniowość
+rozchodzenia się promieni
+świetlnych
+Algorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Warunki powstawania cieni:
+źródło światła
+obiekty rzucające cień
+tło, na które pada cień
+obowiazuje prostoliniowość
+rozchodzenia się promieni
+świetlnych
+obszar
+całkowicie
+zasłonięty obszar
+częściowo
+zasłoniętyAlgorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Warunki powstawania cieni:
+źródło światła
+obiekty rzucające cień
+tło, na które pada cień
+obowiazuje prostoliniowość
+rozchodzenia się promieni
+świetlnych
+umbra
+penumbra
+Algorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Warunki powstawania cieni:
+źródło światła
+obiekty rzucające cień
+tło, na które pada cień
+obowiazuje prostoliniowość
+rozchodzenia się promieni
+świetlnych
+z łaciny:
+umbra - cień, mrok
+penumbra - półcień
+antumbra - przedcień
+umbra
+penumbra
+Algorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Warunki powstawania cieni:
+źródło światła
+obiekty rzucające cień
+tło, na które pada cień
+obowiazuje prostoliniowość
+rozchodzenia się promieni
+świetlnych
+z łaciny:
+umbra - cień, mrok
+penumbra - półcień
+antumbra - przedcień
+umbra
+penumbra
+Algorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Warunki powstawania cieni:
+Wikipedia
+Algorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Przypadki rozpatrywane w grafice:
+źródło w nieskończoności
+promienie równoległe
+Algorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Przypadki rozpatrywane w grafice:
+źródło w nieskończoności
+promienie równoległeAlgorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Przypadki rozpatrywane w grafice:
+źródło w nieskończoności źródło punktowe
+promienie równoległe promienie rozbieżne
+Algorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Przypadki rozpatrywane w grafice:
+źródło w nieskończoności źródło punktowe
+promienie równoległe promienie rozbieżne
+Algorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Techniki generowania cieni w OpenGL:
+Wikipedia
+Algorytmy wykorzystywane w grafice trójwymiarowej
+rekonstrukcja cieni na scenie
+Techniki generowania cieni w OpenGL:
+rzutowanie cieni (ang. projected shadows)
+cienie objętościowe (ang. volumetric shadows)
+mapowanie cieni (ang. shadow mapping)
+R. Płoszajczak, 2008
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Techniki generowania cieni w OpenGL:
+rzutowanie cieni (ang. projected shadows)
+założenia: wykorzystanie bufora szablonu
+projekcja na pojedynczą płaszczyznę odniesienia
+R. Płoszajczak, 2008
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Techniki generowania cieni w OpenGL:
+rzutowanie cieni (ang. projected shadows)
+założenia: wykorzystanie bufora szablonu
+projekcja na pojedynczą płaszczyznę odniesienia
+położenia
+płaszczyzny rzutowania
+wzgledem obiektuAlgorytmy wykorzystywane w grafice trójwymiarowej
+Techniki generowania cieni w OpenGL:
+rzutowanie cieni (ang. projected shadows)
+założenia: wykorzystanie bufora szablonu
+projekcja na pojedynczą płaszczyznę odniesienia
+położenia
+płaszczyzny rzutowania
+wzgledem obiektu
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Techniki generowania cieni w OpenGL:
+rzutowanie cieni (ang. projected shadows)
+założenia: wykorzystanie bufora szablonu
+projekcja na pojedynczą płaszczyznę odniesienia
+położenia
+płaszczyzny rzutowania
+wzgledem obiektu
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Techniki generowania cieni w OpenGL:
+rzutowanie cieni (ang. projected shadows)
+założenia: wykorzystanie bufora szablonu
+projekcja na pojedynczą płaszczyznę odniesienia
+położenie płaszczyzny rzutowania wzgledem obiektu
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Techniki generowania cieni w OpenGL:
+rzutowanie cieni (ang. projected shadows)
+założenia: projekcja na pojedynczą płaszczyznę odniesienia
+wykorzystanie bufora szablonu (opcja)
+Zalety:
+nieskomplikowana
+tworzy ostre cienie (niepostrzępione)
+Wady:
+rzut na pojedynczą płaszczyznę
+pracochłonna, w przypadku rzutu na dowolną powierzchnię
+tworzy ostre cienie (mniej realistyczne)
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Techniki generowania cieni w OpenGL:
+rzutowanie cieni (ang. projected shadows)
+działanie procedury:
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Techniki generowania cieni w OpenGL:
+rzutowanie cieni (ang. projected shadows)
+działanie procedury:
+rysowanie sceny: włączenie oświetlenia
+transformacje obiektu
+obiekt z materiałami i barwąAlgorytmy wykorzystywane w grafice trójwymiarowej
+Techniki generowania cieni w OpenGL:
+rzutowanie cieni (ang. projected shadows)
+działanie podstawowej procedury:
+rysowanie sceny: włączenie oświetlenia
+transformacje obiektu
+obiekt z materiałami i barwą
+rysowanie cieni: wyłączenie oświetlenia
+transformacje obiektu
+ustawienie widoku strony oświetlenia
+obiekt czarny bez materiałów
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Techniki generowania cieni w OpenGL:
+rzutowanie cieni (ang. projected shadows)
+działanie procedury z buforem szablonu:
+rysowanie sceny: włączenie oświetlenia
+transformacje obiektu
+obiekt z materiałami i barwą
+rysowanie cieni: wyłączenie oświetlenia
+włączenie szablonu i mieszania barw
+transformacje obiektu
+ustawienie widoku strony oświetlenia
+obiekt czarny bez materiałów z przezroczystością
+pozwala uniknąć efektu nakładania się cieni
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Techniki generowania cieni w OpenGL:
+rzutowanie cieni (ang. projected shadows)
+działanie procedury z buforem szablonu - schemat zastosowania:
+procedure rysuj_tlo_i_cienie(rys_tlo,rys_obiekty:TProcedure; normal,vertex:f3d; lightpos:f4d);
+var ShadMtx:a16f;
+begin
+glClear(GL_STENCIL_BUFFER_BIT);
+glEnable(GL_STENCIL_TEST);
+glStencilFunc(GL_ALWAYS,1,0);
+glStencilOp(GL_KEEP,GL_KEEP,GL_REPLACE);
+glDisable(GL_LIGHT0);
+rys_tlo;
+glEnable(GL_LIGHT0);
+glDisable(GL_DEPTH_TEST);
+glColorMask(GL_FALSE,GL_FALSE,GL_FALSE,GL_FALSE);
+glStencilFunc(GL_EQUAL,1,1);
+glStencilOp(GL_KEEP,GL_KEEP,GL_INCR);
+glPushMatrix;
+ShadMtx:=GenShadMtx(normal,vertex,lightpos);
+glMultMatrixf(@ShadMtx);
+glPushMatrix;
+rys_obiekty;
+glPopMatrix;
+glPopMatrix;
+glColorMask(GL_TRUE,GL_TRUE,GL_TRUE,GL_TRUE);
+rys_tlo;
+glEnable(GL_DEPTH_TEST);
+glDisable(GL_STENCIL_TEST);
+end;
+ciemne tło
+obiekty na zadanej
+płaszczyźnie (projekcji)
+jasne tło
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Techniki generowania cieni w OpenGL:
+rzutowanie cieni (ang. projected shadows)
+działanie procedury z buforem szablonu - schemat zastosowania:
+vertex
+normal
+light
+Rzut obiektów na
+płaszczyznę:
+n*x+d = 0
+gdzie:
+n - normalna do
+płaszczyzny
+d - odleglość światła od
+płaszczyzny
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Techniki generowania cieni w OpenGL:
+rzutowanie cieni (ang. projected shadows)
+działanie procedury z buforem szablonu - schemat zastosowania:
+function GenShadMtx(normal,vertex:f3d; light:f4d):a16f;
+var d,dot:single;
+begin
+d:=-normal.X*vertex.X-normal.Y*vertex.Y-normal.Z*vertex.Z;
+dot:=normal.X*light.X+normal.Y*light.Y+normal.Z*light.Z+d*light.W;
+result[0] := -light.X*normal.X+dot;
+result[4] := -light.X*normal.Y;
+result[8] := -light.X*normal.Z;
+result[12] := -light.X*d;
+result[1] := -light.Y*normal.X;
+result[5] := -light.Y*normal.Y+dot;
+result[9] := -light.Y*normal.Z;
+result[13] := -light.Y*d;
+result[2] := -light.Z*normal.X;
+result[6] := -light.Z*normal.Y;
+result[10] := -light.Z*normal.Z+dot;
+result[14] := -light.Z*d;
+result[3] := -light.W*normal.X;
+result[7] := -light.W*normal.Y;
+result[11] := -light.W*normal.Z;
+result[15] := -light.W*d+dot;
+end;
+vertex
+normal
+light
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Techniki generowania cieni w OpenGL:
+rzutowanie cieni (ang. projected shadows)
+działanie procedury z buforem szablonu - schemat zastosowania:
+procedure TForm1.OpenGLControl1Paint(Sender: TObject);
+var error:LongInt;
+norm,vect:f3d;
+lightpos:f4d;
+begin
+with norm do begin x:=0; y:=0; z:=1 end;
+with vect do begin x:=0; y:=0; z:=pozwoda end;
+with lightpos do begin x:=10; y:=25; z:=25; w:=1 end;
+glMatrixMode(GL_PROJECTION);
+glLoadIdentity;
+gluPerspective(45,Width/Height,0.1,1000);
+glMatrixMode(GL_MODELVIEW);
+glLoadIdentity;
+with poz do gluLookAt(x,y,z,x+xw,y+yw,z+zw,0,0,1);
+OpenGLControl1.Invalidate;
+glClearColor(0.8,0.8,1.0,1);
+glClear(GL_COLOR_BUFFER_BIT or GL_DEPTH_BUFFER_BIT);
+glEnable(GL_DEPTH_test); //badanie zaslaniania - bufor glebokosci
+glEnable(GL_ALPHA_test); //badanie przezroczystosci
+glEnable(GL_BLEND); //wlaczenie mieszania
+glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+glEnable(GL_COLOR_MATERIAL); //uwzglednienie barwy materialu przy oswietleniu
+oswietlenie;
+rysuj_tlo_i_cienie(@rysuj_tlo,@rysuj_obiekty,norm,vect,lightpos);
+rysuj_obiekty;
+OpenGLControl1.SwapBuffers;
+end;Algorytmy wykorzystywane w grafice trójwymiarowej
+Bufor szablonu
+glClear(GL_STENCIL_BUFFER_BIT);
+//czyszczenie bufora szablonu
+glEnable(GL_STENCIL_TEST);
+//włączenie testowania bufora szablonu
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Bufor szablonu
+glClear(GL_STENCIL_BUFFER_BIT);
+//czyszczenie bufora szablonu
+glEnable(GL_STENCIL_TEST);
+//włączenie testowania bufora szablonu
+glStencilFunc(GL_ALWAYS,1,0);
+glStencilOp(GL_KEEP,GL_KEEP,GL_REPLACE);
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Bufor szablonu
+glStencilFunc(GLenum func,GLint ref,GLuint mask);
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Bufor szablonu
+glStencilFunc(GLenum func,GLint ref,GLuint mask);
+func - wybór funkcji testowania
+ref - wartość referencyjna dla testu szablonu
+(początkowo 0)
+mask - podaje maskę która łączy (AND) wartość
+referencyjną z aktualną bufora (początkowo 1)
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Bufor szablonu
+glStencilFunc(GLenum func,GLint ref,GLuint mask);
+func - wybór funkcji testowania
+GL_NEVER, GL_LESS, GL_LEQUAL, GL_GREATER,
+GL_GEQUAL, GL_EQUAL, GL_NOTEQUAL, and GL_ALWAYS.
+(początkowo GL_ALWAYS)
+ref - wartość referencyjna dla testu szablonu
+(początkowo 0)
+mask - podaje maskę która łączy (AND) wartość
+referencyjną z aktualną bufora (początkowo 1)
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Bufor szablonu
+glStencilFunc(GLenum func, GLint ref, GLuint mask);
+func - wybór funkcji testowania
+Test zaliczony jeżeli:
+GL_NEVER nigdy
+GL_LESS (ref & mask) < (stencil & mask)
+GL_LEQUAL (ref & mask) <= (stencil & mask)
+GL_GREATER (ref & mask) > (stencil & mask)
+GL_GEQUAL (ref & mask) >= (stencil & mask)
+GL_EQUAL (ref & mask) = (stencil & mask)
+GL_NOTEQUAL (ref & mask) != (stencil & mask)
+GL_ALWAYS zawszeAlgorytmy wykorzystywane w grafice trójwymiarowej
+Bufor szablonu
+glStencilOp(GLenum sfail,GLenum dpfail,GLenum dppass);
+sfail - akcja, jeżeli test szablonu nie przejdzie
+dpfail - akcja, jeżeli test szablonu przejdzie,
+a test głębokości nie przejdzie
+dppass - akcja, jeżeli oba testy przejdą,
+a test głębokości jest włączony lub wyłączony
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Bufor szablonu
+glStencilOp(GLenum sfail,GLenum dpfail,GLenum dppass);
+sfail, dpfail, dppass:
+możliwe parametry:
+GL_KEEP,
+GL_ZERO,
+GL_REPLACE,
+GL_INCR,
+GL_INCR_WRAP,
+GL_DECR,
+GL_DECR_WRAP, and
+GL_INVERT
+(początkowo GL_KEEP)
+Algorytmy wykorzystywane w grafice trójwymiarowej
+Bufor szablonu
+glStencilOp(GLenum sfail,GLenum dpfail,GLenum dppass);
+sfail, dpfail, dppass:
+możliwe parametry:
+GL_KEEP utrzymuje aktualną wartość
+GL_ZERO ustawia wartość buforu na 0
+GL_REPLACE ustawia wartośc na ref z glStencilFunc
+GL_INCR powiększa wartość bufora
+GL_INCR_WRAP powiększa wartość, jeżeli > maks to 0
+GL_DECR zmniejsza wartość bufora
+GL_DECR_WRAP zmniejsza wartość, jeżeli < 0 to maks
+GL_INVERT odwraca bitowo wartość bufora
+
+o to cały tekst skopioway z prezentacji teraz omow i opracuj te pytania:
+5. Obiekty tworzące grafikę - przykłady z OpenGL
+przygotowanie kontekstu grafiki
+punktowe
+liniowe - łamane i krzywe
+powierzchniowe
+kubaturowe
+listy obiektów
+
+8. Algorytmy wykorzystywane w grafice płaskiej
+antyaliazing
+wypełnianie wielokątów
+podział siatki punktów na trójkąty
+
+9. Algorytmy wykorzystywane w grafice trójwymiarowej
+rzut ortogonalny i środkowy - geometria
+zasłanianie obiektów
+
+10. Techniki przyspieszania wyświetlania
+listy obiektów
+zbiory VAO i VBO
+działanie teselacji
