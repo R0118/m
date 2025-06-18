@@ -1,0 +1,5454 @@
+// 1: HelloApp.java
+// Pakiet, w którym znajduje się klasa HelloApp.
+// Pakiety w Javie służą do logicznego grupowania klas i unikania konfliktów nazw.
+package pl.edu.pw.elka.pag.wprowadzenie;
+
+// Deklaracja publicznej klasy o nazwie HelloApp.
+// Słowo kluczowe `public` oznacza, że klasa jest widoczna dla innych klas w programie.
+// Nazwa klasy musi być zgodna z nazwą pliku źródłowego (HelloApp.java).
+public class HelloApp {
+
+    // Metoda główna programu – punkt wejścia do aplikacji.
+    // `public` oznacza, że metoda może być wywołana spoza klasy.
+    // `static` oznacza, że metoda należy do klasy, a nie do instancji (obiektu).
+    // `void` oznacza, że metoda nie zwraca żadnej wartości.
+    // `String[] args` to argumenty przekazywane do programu z linii komend.
+    public static void main(String[] args) {
+
+        // Wywołanie metody println z klasy System.out, która drukuje tekst na konsoli.
+        // `System.out` to standardowe wyjście (zazwyczaj konsola).
+        // `println` oznacza "print line" – wypisuje tekst i przechodzi do nowej linii.
+        System.out.println("Hello world!");
+    }
+}
+
+//-----------------------------------------------------------------//
+// 2: Dane.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.daneMetody;
+
+// Deklaracja klasy o nazwie Dane.
+// Słowo kluczowe `public` oznacza, że klasa jest dostępna dla innych klas w aplikacji.
+public class Dane {
+
+    // Pole (zmienna instancyjna) typu całkowitego o nazwie `a`.
+    // Modyfikator domyślny (brak `public`, `private`, `protected`) oznacza dostępność w obrębie tego samego pakietu.
+    int a;
+
+    // Prywatne pole typu zmiennoprzecinkowego (float) o nazwie `b`.
+    // Modyfikator `private` ogranicza dostęp tylko do wnętrza tej klasy.
+    // Zmienna ta nie może być używana bezpośrednio z innych klas – wymaga metod dostępów (get/set).
+    private float b;
+}
+
+//-----------------------------------------------------------------//
+// 3: Metody.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.daneMetody;
+
+// Deklaracja publicznej klasy o nazwie Metody.
+// Klasa jest dostępna dla innych klas w projekcie.
+public class Metody {
+
+    // Deklaracja metody o nazwie `metodaA`, która nie zwraca żadnej wartości (typ void).
+    // Modyfikator `public` oznacza, że metoda może być wywoływana z innych klas.
+    // Metoda przyjmuje jeden argument typu `int` o nazwie `b`.
+    public void metodaA(int b) {
+        /* definicja */
+        // Treść metody nie została zaimplementowana (tylko komentarz).
+    }
+
+    // Deklaracja metody o nazwie `metodaB`, która zwraca wartość typu `float`.
+    // Modyfikator `public` – metoda dostępna z innych klas.
+    // Argumentem wejściowym jest liczba zmiennoprzecinkowa `f`.
+    public float metodaB(float f) {
+        /* definicja */
+        // Metoda zwraca wartość typu float. Na razie zwracana jest stała 0.0F.
+        return 0.0F;
+    }
+}
+
+//-----------------------------------------------------------------//
+// 4: Employee.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.employeeManager;
+
+// Import klasy LocalDate z pakietu java.time.
+// Umożliwia reprezentowanie daty (bez czasu) – np. daty urodzenia.
+import java.time.LocalDate;
+
+// Deklaracja klasy `Employee` – reprezentuje pracownika.
+// Modyfikator domyślny (brak `public`) oznacza, że klasa jest widoczna tylko w obrębie tego samego pakietu.
+public class Employee {
+
+    // Pole instancyjne typu String o nazwie `name` – przechowuje imię pracownika.
+    // Zainicjalizowane pustym napisem. Modyfikator dostępu domyślny (pakietowy).
+    String name = "";
+
+    // Pole typu double – przechowuje wynagrodzenie pracownika.
+    // Domyślnie wartość to 0.0.
+    double salary;
+
+    // Pole typu LocalDate – przechowuje datę urodzenia pracownika.
+    // Brak inicjalizacji oznacza, że domyślnie będzie miało wartość null.
+    LocalDate birthDate;
+
+    // Metoda `getDetails` zwraca tekstowy opis pracownika.
+    // Zwracany jest tymczasowy napis – docelowo metoda powinna zwracać informacje o pracowniku.
+    // Modyfikator domyślny – metoda dostępna tylko w obrębie pakietu.
+    String getDetails() {
+        /*...*/
+        return "details...";
+    }
+}
+
+//-----------------------------------------------------------------//
+// 5: Manager.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.employeeManager;
+
+// Import klasy LocalDate z pakietu java.time – służy do reprezentowania daty (bez czasu).
+import java.time.LocalDate;
+
+// Deklaracja klasy `Manager`, która reprezentuje kierownika/przełożonego.
+// Modyfikator domyślny (brak `public`) oznacza, że klasa jest dostępna tylko w obrębie tego samego pakietu.
+public class Manager {
+
+    // Pole typu String przechowujące imię i nazwisko kierownika.
+    // Zainicjalizowane pustym napisem. Modyfikator dostępu domyślny (pakietowy).
+    String name = "";
+
+    // Pole typu double – przechowuje wynagrodzenie kierownika.
+    double salary;
+
+    // Pole typu LocalDate – przechowuje datę urodzenia kierownika.
+    LocalDate birthDate;
+
+    // Pole typu String – przechowuje nazwę działu, którym kieruje Manager.
+    String department;
+
+    // Metoda `getDetails` ma zwracać tekstowy opis kierownika.
+    // Obecnie zwraca jedynie tymczasowy tekst.
+    // Modyfikator dostępu domyślny – metoda dostępna tylko w ramach tego samego pakietu.
+    String getDetails() {
+        /*...*/
+        return "detauls..."; // literówka w słowie "details" – nie wpływa na zrozumienie, ale warto poprawić
+    }
+}
+
+//-----------------------------------------------------------------//
+// 6: Employee.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.employeeManagerEngineer;
+
+// Import klasy LocalDate z pakietu java.time – służy do przechowywania daty (bez czasu).
+import java.time.LocalDate;
+
+// Deklaracja klasy `Employee`, która reprezentuje pracownika.
+// Modyfikator `public` oznacza, że klasa może być używana w innych pakietach.
+public class Employee {
+
+    // Pole instancyjne `name` typu String – przechowuje imię i nazwisko pracownika.
+    // Zainicjalizowane pustym napisem.
+    String name = "";
+
+    // Pole instancyjne `salary` typu double – przechowuje wynagrodzenie pracownika.
+    double salary;
+
+    // Pole instancyjne `birthDate` typu LocalDate – przechowuje datę urodzenia pracownika.
+    LocalDate birthDate;
+
+    // Metoda `getDetails` zwraca tekst zawierający dane pracownika.
+    // Zwracany łańcuch znaków powstaje przez konkatenację poszczególnych pól.
+    // Wartość `birthDate` zostanie automatycznie przekonwertowana do postaci tekstowej (toString()).
+    String getDetails() {
+        /*...*/
+        return "name: " + name + ", salary: " + salary + ", date of births: " + birthDate;
+        // Uwaga: literówka w "births" – powinno być "birth"
+    }
+}
+
+//-----------------------------------------------------------------//
+// 7: Engineer.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.employeeManagerEngineer;
+
+// Klasa `Engineer` dziedziczy po klasie `Employee`.
+// Oznacza to, że `Engineer` automatycznie ma dostęp do pól i metod klasy `Employee`.
+public class Engineer extends Employee {
+
+    // Dodatkowe pole `specialization` typu String – przechowuje specjalizację inżyniera.
+    String specialization;
+
+    // Metoda `getDetails` przesłania metodę o tej samej nazwie z klasy `Employee`.
+    // Dzięki temu klasa `Engineer` może zwracać własny opis obiektu.
+    // W tej wersji zwracana jest tylko specjalizacja.
+    String getDetails() {
+        /*...*/
+        return "specialization: " + specialization;
+    }
+
+    // Uwaga: aktualna wersja `getDetails()` nie uwzględnia danych z klasy bazowej (name, salary itd.).
+    // Można je połączyć z pomocą `super.getDetails()` – jeśli chcesz, mogę to dodać.
+}
+
+//-----------------------------------------------------------------//
+// 8: Manager.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.employeeManagerEngineer;
+
+// Klasa `Manager` dziedziczy po klasie `Employee` – oznacza to, że ma dostęp do pól takich jak `name`, `salary` i `birthDate`.
+public class Manager extends Employee {
+
+    // Dodatkowe pole `department` typu String – przechowuje nazwę działu, którym kieruje manager.
+    String department;
+
+    // Metoda `getDetails` przesłania metodę z klasy `Employee`.
+    // Zamiast zwracać wszystkie dane, zwraca jedynie informację o dziale.
+    String getDetails() {
+        /*...*/
+        return "department: " + department;
+    }
+
+    // Uwaga: podobnie jak w przypadku klasy `Engineer`, ta wersja `getDetails()` ignoruje dane odziedziczone z klasy `Employee`.
+    // Można rozważyć użycie `super.getDetails()` i dopisanie działu:
+    // return super.getDetails() + ", department: " + department;
+}
+
+//-----------------------------------------------------------------//
+// 9: Employee.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.employeeManagerEngineerFull;
+
+import java.time.LocalDate;
+
+// Klasa `Employee` reprezentuje pracownika.
+// Modyfikator domyślny (brak public) oznacza, że klasa jest dostępna tylko w obrębie pakietu.
+class Employee {
+
+    // Pole `name` typu String – przechowuje imię i nazwisko pracownika.
+    // Inicjalizowane pustym łańcuchem znaków.
+    String name = "";
+
+    // Pole `birthDate` typu LocalDate – przechowuje datę urodzenia pracownika.
+    // Inicjalizowane na obecną datę (LocalDate.now()) domyślnie.
+    LocalDate birthDate = LocalDate.now();
+
+    // Pole `salary` typu double – przechowuje wynagrodzenie pracownika.
+    // Domyślnie ustawione na 5500.
+    double salary = 5500;
+
+    // Konstruktor bezargumentowy – pozwala tworzyć obiekt bez podawania parametrów.
+    Employee() {}
+
+    // Konstruktor parametryczny – pozwala ustawić od razu imię oraz pensję przy tworzeniu obiektu.
+    Employee(String name, double salary) {
+        this.name = name;       // `this` odwołuje się do pola klasy (rozróżnienie od parametru)
+        this.salary = salary;
+    }
+
+    // Metoda `getDetails` zwraca tekstowy opis pracownika.
+    // `getClass().getSimpleName()` zwraca nazwę klasy (np. "Employee"), co pozwala na uniwersalne użycie tej metody w klasach dziedziczących.
+    // Zwracany łańcuch zawiera nazwę klasy, imię, datę urodzenia i wynagrodzenie z dopiskiem "zł".
+    String getDetails() {
+        return getClass().getSimpleName() + "[" + name + ", " + birthDate + ", " + salary + "zł]";
+    }
+
+    // Nadpisanie metody `toString()` z klasy Object.
+    // Tutaj zwraca krótszy tekst: "1 " oraz nazwę klasy.
+    // `toString()` jest wywoływana np. przy wypisywaniu obiektu przez `System.out.println`.
+    public String toString() {
+        return "1 " + getClass().getSimpleName();
+    }
+
+    // Metoda `main` – punkt startowy programu.
+    // Tworzy obiekt klasy Employee, ustawia jego pola, a następnie wypisuje szczegóły na konsolę.
+    public static void main(String[] args) {
+        Employee e = new Employee();                       // utworzenie nowego obiektu Employee
+        e.name = "Adam Acki";                              // ustawienie imienia
+        e.birthDate = LocalDate.of(1999, 8, 12);          // ustawienie daty urodzenia (12 sierpnia 1999)
+        e.salary = 6500;                                   // ustawienie wynagrodzenia
+        System.out.println(e.getDetails());                // wypisanie szczegółów obiektu na konsolę
+    }
+}
+
+//-----------------------------------------------------------------//
+// 10: Engineer.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.employeeManagerEngineerFull;
+
+import java.time.LocalDate;
+
+// Klasa Engineer dziedziczy po klasie Employee
+// Oznacza to, że posiada wszystkie pola i metody klasy Employee (name, birthDate, salary, getDetails itp.)
+class Engineer extends Employee {
+
+    // Dodatkowe pole `specialization` przechowujące specjalizację inżyniera
+    String specialization;
+
+    // Adnotacja @Override wskazuje, że metoda getDetails() przesłania metodę z klasy bazowej Employee
+    // Tutaj metoda zwraca tylko specjalizację inżyniera zamiast pełnych danych
+    @Override
+    String getDetails() {
+        return specialization;
+    }
+
+    // Nadpisanie metody toString() – analogicznie jak w klasie Employee,
+    // ale zwraca "2 " oraz nazwę klasy Engineer
+    public String toString() {
+        return "2 " + getClass().getSimpleName();
+    }
+
+    // Metoda main służy do testowania klasy Engineer
+    public static void main(String[] args) {
+        Engineer e = new Engineer(); // Tworzymy obiekt klasy Engineer
+        e.name = "Bartek Backi";    // Ustawiamy imię i nazwisko (pole odziedziczone)
+        e.birthDate = LocalDate.of(1985, 8, 5); // Ustawiamy datę urodzenia (pole odziedziczone)
+        e.salary = 9500;             // Ustawiamy wynagrodzenie (pole odziedziczone)
+        e.specialization = "telekomunikacja"; // Ustawiamy specjalizację (pole klasy Engineer)
+        System.out.println(e.getDetails());    // Wypisujemy specjalizację (wynik metody getDetails)
+    }
+}
+
+//-----------------------------------------------------------------//
+// 11: Manager.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.employeeManagerEngineerFull;
+
+import java.time.LocalDate;
+
+// Klasa Manager dziedziczy po klasie Employee
+class Manager extends Employee {
+
+    // Pole `department` przechowujące nazwę działu
+    String department;
+
+    // Konstruktor parametryczny z trzema argumentami:
+    // name, salary oraz dept (department)
+    // Wywołuje konstruktor klasy bazowej (Employee) przez super(name, salary)
+    // Następnie inicjalizuje własne pole department
+    public Manager(String name, double salary, String dept) {
+        super(name, salary);
+        department = dept;
+    }
+
+    // Konstruktor parametryczny z dwoma argumentami: name i dept
+    // Ustawia domyślną pensję na 4500 i wywołuje konstruktor powyższy
+    public Manager(String name, String dept) {
+        this(name, 4500.0D, dept);
+    }
+
+    // Konstruktor z jednym argumentem dept
+    // Wywołuje niejawnie super() – konstruktor bezargumentowy klasy bazowej
+    // Inicjalizuje tylko pole department
+    public Manager(String dept) {
+        // niejawne wywołanie super();
+        department = dept;
+    }
+
+    // Konstruktor bezargumentowy – nie robi nic (domyślnie wywołuje super())
+    public Manager() {
+    }
+
+    // Przesłonięcie metody getDetails z klasy Employee
+    // Rozszerza zwracany opis o informację o dziale
+    @Override
+    String getDetails() {
+        return super.getDetails() + "\nDepartment: " + department;
+    }
+
+    // Nadpisanie metody toString() – zwraca "3 " oraz nazwę klasy
+    public String toString() {
+        return "3 " + getClass().getSimpleName();
+    }
+
+    // Metoda main do testowania klasy Manager
+    public static void main(String[] args) {
+        Manager m = new Manager(); // tworzymy nowy obiekt Manager
+        m.name = "Jan Kowalski";  // ustawiamy pola odziedziczone z Employee
+        m.birthDate = LocalDate.of(1990, 10, 22);
+        m.salary = 8200;
+        m.department = "IT";      // ustawiamy pole department klasy Manager
+        System.out.println(m.getDetails()); // wypisujemy szczegóły obiektu
+    }
+}
+
+//-----------------------------------------------------------------//
+// 12: Employee.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.employeeManagerEngineerFull_LSPBroken;
+
+import java.time.LocalDate;
+
+// Klasa bazowa Employee
+class Employee {
+    // Pola klasy: imię, data urodzenia, wynagrodzenie
+    String name = "";
+    LocalDate birthDate = LocalDate.now();
+    double salary = 5500;
+
+    // Konstruktor bezargumentowy – domyślne wartości
+    Employee() {}
+
+    // Konstruktor z parametrami do inicjalizacji imienia i pensji
+    Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    // Nadpisanie metody toString() dla czytelnego wyświetlania obiektów
+    public String toString() {
+        return "1 " + getClass().getSimpleName();
+    }
+
+    // Metoda, która wykonuje różne akcje w zależności od rzeczywistego typu obiektu e
+    public void doSomething(Employee e) {
+        // Sprawdzamy czy obiekt jest instancją Managera – rzutujemy i wyświetlamy info
+        if (e instanceof Manager) {
+            Manager m = (Manager) e;
+            System.out.println("Manager: " + m);
+        } 
+        // Sprawdzamy czy obiekt jest instancją Inżyniera – rzutujemy i wyświetlamy dodatkową specjalizację
+        else if (e instanceof Engineer) {
+            Engineer eng = (Engineer) e;
+            System.out.println("Engineer: " + eng + ", specialization: " + eng.getSpecialization());
+        } 
+        // W przeciwnym razie traktujemy obiekt jak zwykłego pracownika
+        else {
+            System.out.println("Plain Employee: " + e);
+        }
+    }
+
+    // Metoda zwracająca podstawowe informacje o obiekcie (klasa, imię, data urodzenia, pensja)
+    String getDetails() {
+        return getClass().getSimpleName() + "[" + name + ", " + birthDate + ", " + salary + "zł]";
+    }
+
+    // Testowanie klasy Employee
+    public static void main(String[] args) {
+        Employee e = new Employee();
+        e.name = "Adam Acki";
+        e.birthDate = LocalDate.of(1999, 8, 12);
+        e.salary = 6500;
+        System.out.println(e.getDetails());
+    }
+}
+
+//-----------------------------------------------------------------//
+// 13: Engineer.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.employeeManagerEngineerFull_LSPBroken;
+
+import java.time.LocalDate;
+
+class Engineer extends Employee {
+    String specialization;
+
+    // Konstruktor klasy Engineer, inicjalizuje pole specialization
+    public Engineer(String specialization) {
+        this.specialization = specialization;
+    }
+
+    // Nadpisanie metody getDetails zwraca specjalizację inżyniera
+    @Override
+    String getDetails() {
+        return specialization;
+    }
+
+    // Getter do pola specialization, zwraca wartość pola specialization
+    String getSpecialization () {
+        return specialization;
+    }
+
+    // Nadpisanie metody toString do celów informacyjnych i identyfikacji klasy
+    public String toString() {
+        return "2 " + getClass().getSimpleName();
+    }
+
+    // Metoda main do testowania działania klasy Engineer
+    public static void main(String[] args) {
+        Engineer e = new Engineer("automotive");  // tworzymy obiekt Engineer z podaną specjalizacją
+        e.name = "Bartek Backi";                  // ustawiamy imię i nazwisko
+        e.birthDate = LocalDate.of(1985, 8, 5);  // ustawiamy datę urodzenia
+        e.salary = 9500;                          // ustawiamy pensję
+        e.specialization = "telekomunikacja";    // zmieniamy specjalizację (nadpisanie poprzedniej)
+        System.out.println(e + " " + e.getDetails()); // wypisujemy informacje o obiekcie i jego szczegóły
+    }
+}
+
+//-----------------------------------------------------------------//
+// 14: Manager.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.employeeManagerEngineerFull_LSPBroken;
+
+import java.time.LocalDate;
+
+class Manager extends Employee {
+    String department;
+
+    // Konstruktor z parametrami name, salary i department - wywołuje konstruktor klasy bazowej
+    public Manager(String name, double salary, String dept) {
+        super(name, salary);
+        department = dept;
+    }
+
+    // Konstruktor z parametrami name i department, domyślna pensja 4500.0
+    public Manager(String name, String dept) {
+        this(name, 4500.0D, dept);
+    }
+
+    // Konstruktor z parametrem department, wywołuje niejawny konstruktor bezparametrowy superklasy
+    public Manager(String dept) {
+        // niejawne wywołanie super();
+        department = dept;
+    }
+
+    // Konstruktor domyślny bez parametrów
+    public Manager() {
+    }
+
+    // Nadpisanie metody getDetails, rozszerza dane zwracane przez klasę bazową o department
+    @Override
+    String getDetails() {
+        return super.getDetails() + "\nDepartment: " + department;
+    }
+
+    // Getter pola department
+    String getDepartment() {
+        return department;
+    }
+
+    // Nadpisanie metody toString do identyfikacji klasy i pola department
+    public String toString() {
+        return "3 " + getClass().getSimpleName() + ", department: " + getDepartment();
+    }
+
+    // Metoda main do testowania klasy Manager
+    public static void main(String[] args) {
+        Manager m = new Manager();
+        m.name = "Jan Kowalski";
+        m.birthDate = LocalDate.of(1990, 10, 22);
+        m.salary = 8200;
+        m.department = "IT";
+        System.out.println(m.getDetails());
+    }
+}
+
+//-----------------------------------------------------------------//
+// 15: Officer_LSPBroken.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.employeeManagerEngineerFull_LSPBroken;
+
+public class Officer_LSPBroken extends Employee {
+
+    // Główna metoda testowa wywołująca metodę doSomething z różnymi typami obiektów
+    public static void main(String[] args) {
+        Employee e = new Employee();
+        e.doSomething(e);                            // Przekazanie zwykłego pracownika
+        e.doSomething(new Engineer("civil engineering"));  // Przekazanie inżyniera z specjalizacją
+        e.doSomething(new Manager("Human resources"));     // Przekazanie menedżera z działem
+        e.doSomething(new Officer_LSPBroken());            // Przekazanie obiektu Officer_LSPBroken (klasa dziedzicząca Employee)
+    }
+}
+
+//-----------------------------------------------------------------//
+// 16: Airplane.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.extendingImplementingFlyer;
+
+// Klasa Airplane dziedziczy po Vehicle i implementuje interfejs Flyer
+public class Airplane extends Vehicle implements Flyer {
+
+    // Nadpisanie metody takeOff z interfejsu Flyer
+    @Override
+    public void takeOff() {
+        // Wypisuje nazwę klasy i informację o starcie
+        System.out.println(getClass().getSimpleName() + " is taking off");
+    }
+
+    // Nadpisanie metody land z interfejsu Flyer
+    @Override
+    public void land() {
+        // Wypisuje nazwę klasy i informację o lądowaniu
+        System.out.println(getClass().getSimpleName() + " is landing");
+    }
+
+    // Nadpisanie metody fly z interfejsu Flyer
+    @Override
+    public void fly() {
+        // Wypisuje nazwę klasy i informację o locie
+        System.out.println(getClass().getSimpleName() + " is flying");
+    }
+}
+
+//-----------------------------------------------------------------//
+// 17: Airport.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.extendingImplementingFlyer;
+
+public class Airport {
+
+    public static void main(String[] args) {
+        Airport metropolisAirport = new Airport();
+
+        Helicopter c = new Helicopter(); // Tworzymy obiekt Helicopter
+        SeaPlane sp = new SeaPlane();     // Tworzymy obiekt SeaPlane
+        Flyer S = Superman.INSTANCE;      // Uzyskujemy instancję Supermana (wzorzec singleton)
+
+        metropolisAirport.setPermissionToLand(c);  // Pozwolenie na lądowanie dla helikoptera
+        metropolisAirport.setPermissionToLand(sp); // Pozwolenie na lądowanie dla wodnosamolotu
+        metropolisAirport.setPermissionToLand(S);  // Pozwolenie na lądowanie dla Supermana
+    }
+
+    // Metoda przyjmująca obiekt implementujący interfejs Flyer i wywołująca metodę land()
+    private void setPermissionToLand(Flyer f) {
+        f.land(); // Wywołanie metody lądowania konkretnego obiektu
+    }
+
+}
+
+//-----------------------------------------------------------------//
+// 18: Animal.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.extendingImplementingFlyer;
+
+public abstract class Animal {
+    // Metoda abstrakcyjna eat() musi zostać zaimplementowana przez klasy dziedziczące
+    public abstract void eat();
+}
+
+//-----------------------------------------------------------------//
+// 19: Bird.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.extendingImplementingFlyer;
+
+public class Bird extends Animal implements Flyer {
+    // Implementacja metody abstrakcyjnej eat() z klasy Animal
+    @Override
+    public void eat() {
+        System.out.println(getClass().getSimpleName() + " is eating");
+    }
+
+    // Implementacja metody takeOff() z interfejsu Flyer
+    @Override
+    public void takeOff() {
+        System.out.println(getClass().getSimpleName() + " is waving its wings and it takes off");
+    }
+
+    // Implementacja metody land() z interfejsu Flyer
+    @Override
+    public void land() {
+        System.out.println(getClass().getSimpleName() + " stops waving its wings and is landing");
+    }
+
+    // Implementacja metody fly() z interfejsu Flyer
+    @Override
+    public void fly() {
+        System.out.println(getClass().getSimpleName() + " is waving its wings and it is flying");
+    }
+}
+
+//-----------------------------------------------------------------//
+// 20: Flyer.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.extendingImplementingFlyer;
+
+// Interfejs definiujący podstawowe zachowania obiektów, które potrafią latać
+public interface Flyer {
+    // Metoda wywoływana, gdy obiekt startuje do lotu
+    void takeOff();
+
+    // Metoda wywoływana, gdy obiekt ląduje
+    void land();
+
+    // Metoda wywoływana, gdy obiekt jest w trakcie lotu
+    void fly();
+}
+
+//-----------------------------------------------------------------//
+// 21: Helicopter.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.extendingImplementingFlyer;
+
+// Klasa Helicopter dziedziczy po klasie Airplane, 
+// dzięki czemu automatycznie dziedziczy implementację metod Flyer i Vehicle
+public class Helicopter extends Airplane {
+    // Brak dodatkowych metod – Helicopter korzysta z zachowań zdefiniowanych w Airplane
+}
+
+//-----------------------------------------------------------------//
+// 22: HomoSapien.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.extendingImplementingFlyer;
+
+// Klasa HomoSapien dziedziczy po abstrakcyjnej klasie Animal
+// Implementuje abstrakcyjną metodę eat, definiując specyficzne zachowanie dla HomoSapien
+public class HomoSapien extends Animal {
+
+    /**
+     * Implementacja metody eat, wyświetla informację o sposobie jedzenia
+     */
+    @Override
+    public void eat() {
+        System.out.println("eats a little");
+    }
+}
+
+//-----------------------------------------------------------------//
+// 23: SeaPlane.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.extendingImplementingFlyer;
+
+// Klasa SeaPlane dziedziczy po klasie Airplane, więc dziedziczy jej implementację metod z interfejsu Flyer
+// Nie dodaje nowych metod ani pól, korzysta z implementacji Airplane
+public class SeaPlane extends Airplane {
+}
+
+//-----------------------------------------------------------------//
+// 24: Superman.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.extendingImplementingFlyer;
+
+public class Superman extends HomoSapien implements Flyer {
+    public static final Superman INSTANCE = new Superman();
+
+    private Superman() {}
+
+    @Override
+    public void takeOff() {
+        System.out.println("SUPERMAN: take off!");
+    }
+
+    @Override
+    public void land() {
+        System.out.println("SUPERMAN: land!");
+    }
+
+    @Override
+    public void fly() {
+        System.out.println("SUPERMAN: fly!");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("SUPERMAN is eating. He eats a lot!");
+    }
+}
+
+//-----------------------------------------------------------------//
+// 25: Vehicle.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.extendingImplementingFlyer;
+
+// Klasa bazowa reprezentująca pojazd
+public class Vehicle {
+}
+
+//-----------------------------------------------------------------//
+// 26: Outer1.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.innerClasses;
+
+// Klasa zewnętrzna posiadająca klasę wewnętrzną
+public class Outer1 {
+    private int size;
+
+    // Klasa wewnętrzna ma dostęp do pól klasy zewnętrznej
+    public class Inner {
+        public void doStuff() {
+            size++; // inkrementacja pola size klasy zewnętrznej
+        }
+    }
+
+    // Metoda tworząca i wywołująca metodę klasy wewnętrznej
+    public void testTheInner() {
+        Inner i = new Inner();
+        i.doStuff();
+    }
+
+    public static void main(String[] a) {
+        Outer1 o1 = new Outer1();
+        o1.testTheInner();
+    }
+}
+
+//-----------------------------------------------------------------//
+// 27: Outer2.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.innerClasses;
+
+// Klasa zewnętrzna z polem 'size' i klasą wewnętrzną
+public class Outer2 {
+    private int size;
+
+    // Klasa wewnętrzna może modyfikować pole klasy zewnętrznej
+    public class Inner {
+        public void doStuff() {
+            size++; // zwiększa wartość pola 'size' klasy Outer2
+        }
+    }
+}
+
+//-----------------------------------------------------------------//
+// 28: Outer3.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.innerClasses;
+
+public class Outer3 {
+    private int size; // pole klasy zewnętrznej
+
+    public class Inner {
+        private int size; // pole klasy wewnętrznej
+
+        public void doStuff(int size) {
+            size++;             // zwiększa lokalny parametr metody
+            this.size++;        // zwiększa pole klasy wewnętrznej
+            Outer3.this.size++; // zwiększa pole klasy zewnętrznej
+        }
+    }
+
+    public static void main(String[] a) {
+        Inner oi3 = new Outer3().new Inner(); // tworzenie instancji klasy wewnętrznej
+        oi3.doStuff(0);                       // wywołanie metody z argumentem 0
+    }
+}
+
+
+//-----------------------------------------------------------------//
+// 29: Outer4.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.innerClasses;
+
+public class Outer4 {
+    private int size = 5; // pole klasy zewnętrznej
+
+    public Object makeTheInner(int localVar) {
+        final int finalLocalVar = 6; // zmienna lokalna oznaczona jako final lub efektywnie finalna
+
+        // Lokalna klasa zdefiniowana wewnątrz metody
+        class Inner {
+            @Override
+            public String toString() {
+                return ("Inner size=" + size + 
+                        // " localVar=" + localVar +  // BŁĄD: zmienna lokalna localVar nie jest finalna ani efektywnie finalna
+                        " finalLocalVar=" + finalLocalVar);
+            }
+        }
+        return new Inner(); // zwraca instancję klasy lokalnej Inner
+    }
+
+    public static void main(String[] args) {
+        Outer4 outer = new Outer4();
+        Object obj = outer.makeTheInner(47);
+        System.out.println("The object is " + obj);
+    }
+}
+
+//-----------------------------------------------------------------//
+// 30: TestInner.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.innerClasses;
+
+public class TestInner {
+    public static void main(String[] args) {
+        Outer2 outer = new Outer2();               // Tworzymy obiekt klasy zewnętrznej
+        Outer2.Inner inner = outer.new Inner();   // Tworzymy obiekt klasy wewnętrznej powiązanej z outer
+        inner.doStuff();                           // Wywołujemy metodę klasy wewnętrznej, która zmienia pole size klasy Outer2
+    }
+}
+
+//-----------------------------------------------------------------//
+// 31: MemoryMonitor.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.memoryMonitor;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.util.Arrays;
+
+/**
+ * <p>Wyświetla liczbę bajtów zaalokowanej i używanej pamięci oraz mały wykres
+ * zmian tych liczb w czasie. Także liczbę aktywnych wątków.</p>
+ * 
+ * <p>Naciśnięcie przycisku myszy wewnątrz komponentu będzie powodować
+ * zatrzymanie/uruchomienie monitorowania.</p>
+ * 
+ * <p><em>Na podstawie MemoryMonitor z JDK Java2D Demo.</em></p>
+ * 
+ * @author Krystian Ignasiak
+ */
+public class MemoryMonitor extends Panel implements Runnable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Wątek uaktualniający dane.
+	 */
+	private Thread kicker;
+
+	/**
+	 * Czas pomiędzy kolejnymi uaktualnieniami wyświetlanych informacji.
+	 * W milisekundach.
+	 */
+	final private int updTime;
+
+	/**
+	 * Bufor. Do podwójnego buforowania.
+	 */
+	private Image buf;
+
+	/**
+	 * Kontekst graficzny bufora.
+	 */
+	private Graphics bufg;
+
+	/**
+	 * Wektor kolejnych stanów pamięci.
+	 */
+	private int[] mem = null;
+
+	/**
+	 * Kolor siatki <em>oscyloskopu</em> monitora.
+	 */
+	final private Color gridColor = new Color(46, 139, 87);
+
+	/**
+	 * Flaga. <code>true</code> gdy zminimalizowano okno.
+	 */
+	private boolean iconified = false;
+
+	/**
+	 * Ustawia flagę zminimalizowania.
+	 */
+	private synchronized void setIconified(boolean iconified) {
+		this.iconified = iconified;
+	}
+
+	/**
+	 * Zwraca flagę zminimalizowania.
+	 */
+	private synchronized boolean isIconified() {
+		return iconified;
+	}
+
+	/**
+	 * Przycisk uruchamiający <em>garbage collector</em>.
+	 */
+	final private Button gcb;
+
+	/**
+	 * Preferowana szerokość monitora.
+	 */
+	private static final int prefWidth = 150;
+
+	/**
+	 * Preferowana wysokość monitora.
+	 */
+	private static final int prefHeight = 100;
+
+	/**
+	 * Rozmiar fontu informacji wyświetlanych tekstowo.
+	 */
+	private static final int fontSize = 14;
+
+	/**
+	 * Dla przyspieszenia obliczeń - rozmiary uzależnione od wielkości użytego
+	 * fontu.
+	 */
+	private static final int fs2 = fontSize << 1;
+	private static final int fs3 = fontSize * 3;
+	private static final int fs4 = fontSize << 2;
+	private static final int fs05 = fontSize >> 1;
+
+	/**
+	 * Szerokość monitora.
+	 */
+	private int w;
+
+	/**
+	 * Wysokość monitora.
+	 */
+	private int h;
+
+	/**
+	 * Odstęp ramki <em>oscyloskopu</em> od lewej krawędzi monitora.
+	 */
+	private static final int x0 = fontSize + (fontSize >> 2) + 1;
+
+	/**
+	 * Odstęp ramki <em>oscyloskopu</em> od górnej krawędzi monitora.
+	 */
+	private int y0;
+
+	/**
+	 * Współrzędna prawej krawędzi ramki <em>oscyloskopu</em>.
+	 */
+	private int xm;
+
+	/**
+	 * Współrzędna dolnej krawędzi ramki <em>oscyloskopu</em>.
+	 */
+	private int ym;
+
+	/**
+	 * Szerokość ramki <em>oscyloskopu</em>.
+	 */
+	private int wm;
+
+	/**
+	 * Wysokość ramki <em>oscyloskopu</em>.
+	 */
+	private int hm;
+
+	/**
+	 * Szerokość oczka ramki <em>oscyloskopu</em>.
+	 */
+	private int gWidth;
+
+	/**
+	 * Wysokość oczka ramki <em>oscyloskopu</em>.
+	 */
+	private int gHeight;
+
+	/**
+	 * Przesunięcie płynącej siatki.
+	 */
+	private int flowGrid = 0;
+
+	/**
+	 * Dla przyspieszenia obliczeń.
+	 */
+	private int xm_wm;
+
+	/**
+	 * Dla przyspieszenia obliczeń.
+	 */
+	private int xm_wm_1;
+
+	/**
+	 * Konstrukcja monitora. Monitorowanie jest uruchamiane natychmiast.
+	 * 
+	 * @param updTime
+	 *            czas pomiędzy kolejnymi uaktualnieniami wyświetlanej
+	 *            informacji.
+	 */
+	public MemoryMonitor(int updTime) {
+		this.updTime = updTime;
+
+		addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				if (kicker == null) {
+					start();
+				} else {
+					stop();
+				}
+			}
+		});
+
+		addComponentListener(new ComponentAdapter() {
+			public void componentResized(ComponentEvent ce) {
+				monitorResized(ce.getComponent().getSize());
+			}
+		});
+
+		setFont(new Font("Serif", Font.PLAIN, fontSize));
+		setBackground(Color.black);
+
+		gcb = new Button("gc");
+		gcb.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				System.gc();
+			}
+		});
+
+		setLayout(null);
+		add(gcb);
+
+		start();
+	}
+
+	/**
+	 * Konstrukcja monitora odświeżającego informacje co 1 sekundę.
+	 * Monitorowanie jest uruchamiane natychmiast.
+	 */
+	public MemoryMonitor() {
+		this(999);
+	}
+
+	/**
+	 * System zawiadamia: dodano komponent do kontenera. Szuka się wśród
+	 * rodziców ramki i dodaje do niej słuchacza zdarzeń okienkowych, który
+	 * wyłączy rysowanie, gdy okno będzie zminimalizowane.
+	 */
+	public void addNotify() {
+		super.addNotify();
+		int recursionLevel = 0;
+		Component c = this;
+		while (!((c = c.getParent()) instanceof Frame)) {
+			if (++recursionLevel > 15) {
+				return;
+			}
+		}
+		try {
+			((Frame) c).addWindowListener(new WindowAdapter() {
+				public void windowIconified(WindowEvent we) {
+					setIconified(true);
+				}
+
+				public void windowDeiconified(WindowEvent we) {
+					setIconified(false);
+				}
+			});
+		} catch (Exception ignore) { // trzeba to przechwycić, bo czasami
+		// nie można dołączyć słuchacza do ramki top-level.
+		}
+	}
+
+	/**
+	 * System zawiadamia: zmieniono rozmiar monitora - trzeba zmienić rozmiar
+	 * bufora.
+	 */
+	private synchronized void monitorResized(Dimension size) {
+		if ((w = size.width) == 0) {
+			return;
+		}
+		if ((h = size.height) == 0) {
+			return;
+		}
+		buf = createImage(w, h);
+		bufg = buf.getGraphics();
+
+		y0 = fontSize + 1;
+		xm = w - (fontSize / 3); // wsp. końca ramki
+		ym = h - fontSize - 1;
+		wm = xm - x0 - 1; // szerokość, wysokość ramki
+		hm = ym - y0 - 1;
+		gWidth = wm / 9; // szerokość, wysokość oczka siatki
+		gHeight = h / 9;
+		xm_wm = xm - wm; // dla zmniejszenia liczby obliczeń
+		xm_wm_1 = xm_wm - 1;
+
+		gcb.setBounds(xm - fs3, ym, fs2, fontSize + 1);
+
+		try {
+			if (mem.length != wm) {
+				int[] t = new int[wm];
+				System.arraycopy(mem, Math.max(0, mem.length - wm), t,
+						Math.max(0, wm - mem.length), Math.min(mem.length, wm));
+				for (int i = 0, x = wm - mem.length; i < x; i++) {
+					t[i] = t[x];
+				}
+				mem = t;
+			}
+		} catch (NullPointerException mem_is_null_so_alloc_mem) {
+			mem = new int[wm];
+			for (int i = 0; i < wm; i++) {
+				mem[i] = getMemoryUsage();
+			}
+			notify(); // czekają na to w run
+		}
+	}
+
+	/**
+	 * Uruchomienie monitorowania.
+	 */
+	public void start() {
+		kicker = new Thread(this);
+		//kicker.setPriority(Thread.MIN_PRIORITY);
+		kicker.setName("MemoryMonitor");
+		kicker.start();
+	}
+
+	/**
+	 * Zatrzymanie monitorowania.
+	 */
+	public synchronized void stop() {
+		kicker = null;
+		repaint();
+		notify();
+	}
+
+	/**
+	 * Dokonuje pomiaru i przesuwa dane.
+	 */
+	private synchronized void nextStep() {
+		System.arraycopy(mem, 1, mem, 0, mem.length - 1);
+		mem[mem.length - 1] = getMemoryUsage();
+		if (++flowGrid >= gWidth) {
+			flowGrid = 0;
+		}
+	}
+
+	/**
+	 * Wrysowuje stan do bufora.
+	 */
+	private synchronized void draw() {
+		bufg.setColor(Color.black);
+		bufg.fillRect(0, 0, w, h);
+
+		bufg.setColor(gridColor); // skala oscyloskopu
+		bufg.drawRect(x0, y0, wm, hm);
+
+		ym -= 2;
+		for (int i = x0 + gWidth - flowGrid; i < xm; i += gWidth) { // poziome
+			bufg.drawLine(i, y0, i, ym);
+		}
+		ym += 2;
+		xm -= 2;
+		for (int i = y0 + gHeight; i < ym; i += gHeight) { // pionowe
+			bufg.drawLine(x0, i, xm, i);
+		}
+		xm += 2;
+
+		bufg.setColor(Color.yellow);
+		bufg.drawString(total + "K allocated", 4, fontSize - 2);
+		bufg.drawString(used + "K used", 4, h - 2);
+		bufg.drawString("" + Thread.activeCount(), 2, fs2);
+		// powyższe można i tak jak poniżej, w zasadzie równoważne
+		// bufg.drawString("" + Thread.currentThread().activeCount(), 2, fs2);
+
+		int ph = (mem[0] * hm) / total;
+		int min = Integer.MAX_VALUE, max = 0, mm;
+		ym--;
+		for (int i = 1; i < wm; i++) {
+			int ah = ((mm = mem[i]) * hm) / total;
+			// bufg.drawLine(xm-wm+i, ym-ah-1, xm-wm+i-1, ym-ph-1);
+			bufg.drawLine(xm_wm + i, ym - ah, xm_wm_1 + i, ym - ph);
+			ph = ah;
+
+			if (mm < min) {
+				min = mm;
+			} else if (mm > max) {
+				max = mm;
+			}
+		}
+		ym++;
+
+		bufg.drawString("" + (min * 100) / total, 2, fs3);
+		bufg.drawString("" + (max * 100) / total, 2, fs4);
+
+		if (kicker == null) {
+			bufg.setColor(Color.red);
+		} else {
+			bufg.setColor(Color.green);
+		}
+		bufg.fillOval(xm - 8, ym + fs05 - 3, 6, 6);
+	}
+
+	/**
+	 * Wątek napędzający całość.
+	 */
+	public void run() {
+		synchronized (this) {
+			while (mem == null) { // poczekaj na zaalokowanie pamięci
+				try {
+					wait();
+				} catch (InterruptedException e) {
+					return;
+				}
+			}
+		}
+
+		while (kicker == Thread.currentThread()) {
+			repaint(); // przerysuj
+			try {
+				Thread.sleep(updTime); // poczekaj
+			} catch (InterruptedException ignore) {
+				break;
+			}
+			nextStep(); // przesuń
+		}
+
+		kicker = null;
+	}
+
+	/**
+	 * Dla uniknięcia mrugania.
+	 */
+	public void update(Graphics g) {
+		paint(g);
+	}
+
+	/**
+	 * Narysowanie zawartości komponentu.
+	 */
+	public void paint(Graphics g) {
+		if (isIconified()) {
+			return;
+		}
+		draw();
+		g.drawImage(buf, 0, 0, this);
+	}
+
+	/**
+	 * Zwraca minimalne wymiary monitora.
+	 */
+	public Dimension getMinimumSize() {
+		return getPreferredSize();
+	}
+
+	/**
+	 * Zwraca maksymalne wymiary monitora.
+	 */
+	public Dimension getMaximumSize() {
+		return getPreferredSize();
+	}
+
+	/**
+	 * Zwraca preferowane wymiary monitora.
+	 */
+	public Dimension getPreferredSize() {
+		return new Dimension(prefWidth, prefHeight);
+	}
+
+	/**
+	 * Test klasy.
+	 */
+	public static void main(String[] s) {
+		MemoryMonitor mm = new MemoryMonitor(125);
+
+		Frame f = new Frame("MemoryMonitor Demo");
+		f.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent we) {
+				System.exit(1);
+			}
+		});
+		f.add(mm);
+		f.pack();
+		f.setVisible(true);
+
+		// przetestuj program z wywołaniem funkcji testujWątki, testujPamięć i bez nich
+		new Thread(MemoryMonitor::testujWątki).start();
+		new Thread(() -> testujPamięć()).start();
+	}
+
+	/**
+	 * Test — funkcja tworzy co 100 ms wątek, który zasypia na losowy czas.
+	 */
+	private static void testujWątki() {
+		while (true) { // ciągle,
+			try {
+				Thread.sleep(100); // co tyle czasu,
+			} catch (InterruptedException e) {
+				break;
+			}
+			new Thread(new Runnable() { // tworzony jest watek,
+				public void run() {
+					try {
+						Thread.sleep((int) (Math.random() * 3000));// który usypia na tyle czasu
+					} catch (InterruptedException ignore) {
+					}
+				}
+			}).start();
+		}
+	}
+
+	/**
+	 * Test — funkcja alokuje co pewien czas obszar pamięci o losowym rozmiarze.
+	 */
+	private static void testujPamięć() {
+		while (true) { // ciągle
+			try {
+				Thread.sleep(1000); // co tyle czasu
+			} catch (InterruptedException e) {
+				break;
+			}
+			int amount = (int) (Math.random() * 950_000_000); // tyle bajtów
+			byte[] t = new byte[amount]; // jest alokowanych
+			Arrays.fill(t, (byte) 123);
+		}
+	}
+
+	/**
+	 * Liczba używanych ostatnio kilobajtów pamięci.
+	 */
+	private int used = 0;
+
+	/**
+	 * Liczba zaalokowanych ostatnio kilobajtów pamięci.
+	 */
+	private int total = 0;
+
+	/**
+	 * Zwraca liczbę używanych kilobajtów pamięci. Jednocześnie ustawia pola
+	 * <code>used</code> i <code>total</code>.
+	 */
+	private int getMemoryUsage() {
+		total = ((int) Runtime.getRuntime().totalMemory()) >> 10;
+		return (used = total
+				- (((int) Runtime.getRuntime().freeMemory()) >> 10));
+	}
+}
+
+//-----------------------------------------------------------------//
+// 32: MemoryMonitor1.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.memoryMonitor;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.util.Timer;
+import java.util.TimerTask;
+
+/**
+ * <p>Wyświetla liczbę bajtów zaalokowanej i używanej pamięci oraz mały wykres
+ * zmian tych liczb w czasie. Także liczbę aktywnych wątków.</p>
+ * 
+ * <p>Inna wersja - opierająca się na klasie Timer. Nie jest thread-safe!</p?
+ * 
+ * <p>Naciśnięcie przycisku myszy wewnątrz komponentu będzie powodować
+ * zatrzymanie/uruchomienie monitorowania.</p>
+ * 
+ * <p><em>Na podstawie MemoryMonitor z JDK Java2D Demo.</em></p>
+ * 
+ * @author Krystian Ignasiak
+ */
+public class MemoryMonitor1 extends Panel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2L;
+
+	/**
+	 * Flaga chwilowego zatrzymania monitorowania pamięci.
+	 */
+	private boolean postpone = false;
+
+	/**
+	 * Bufor. Do podwójnego buforowania.
+	 */
+	private Image buffer;
+
+	/**
+	 * Kontekst graficzny bufora.
+	 */
+	private Graphics bufferGraphics;
+
+	/**
+	 * Wektor kolejnych stanów pamięci.
+	 */
+	private int[] memoryStates = null;
+
+	/**
+	 * Kolor siatki <em>oscyloskopu</em> monitora.
+	 */
+	final private Color gridColor = new Color(46, 139, 87);
+
+	/**
+	 * Flaga. {@code true} gdy zminimalizowano okno.
+	 */
+	private boolean iconified = false;
+
+	/**
+	 * Ustawia flagę zminimalizowania.
+	 */
+	private void setIconified(boolean iconified) {
+		this.iconified = iconified;
+	}
+
+	/**
+	 * Zwraca flagę zminimalizowania.
+	 */
+	private boolean isIconified() {
+		return iconified;
+	}
+
+	/**
+	 * Przycisk uruchamiający <i>garbage collector</i>.
+	 */
+	final private Button gcButton;
+
+	/**
+	 * Preferowana szerokość monitora.
+	 */
+	private static final int preferredWidth = 150;
+
+	/**
+	 * Preferowana wysokość monitora.
+	 */
+	private static final int preferredHeight = 100;
+
+	/**
+	 * Rozmiar fontu informacji wyświetlanych tekstowo.
+	 */
+	private static final int fontSize = 14;
+
+	/**
+	 * Szerokość monitora.
+	 */
+	private int w;
+
+	/**
+	 * Wysokość monitora.
+	 */
+	private int h;
+
+	/**
+	 * Odstęp ramki <em>oscyloskopu</em> od lewej krawędzi monitora.
+	 */
+	private static final int x0 = fontSize + (fontSize >> 2) + 1;
+
+	/**
+	 * Odstęp ramki <em>oscyloskopu</em> od górnej krawędzi monitora.
+	 */
+	private int y0;
+
+	/**
+	 * Współrzędna prawej krawędzi ramki <em>oscyloskopu</em>.
+	 */
+	private int xm;
+
+	/**
+	 * Współrzędna dolnej krawędzi ramki <em>oscyloskopu</em>.
+	 */
+	private int ym;
+
+	/**
+	 * Szerokość ramki <em>oscyloskopu</em>.
+	 */
+	private int wm;
+
+	/**
+	 * Wysokość ramki <em>oscyloskopu</em>.
+	 */
+	private int hm;
+
+	/**
+	 * Szerokość oczka ramki <em>oscyloskopu</em>.
+	 */
+	private int gWidth;
+
+	/**
+	 * Wysokość oczka ramki <em>oscyloskopu</em>.
+	 */
+	private int gHeight;
+
+	/**
+	 * Przesunięcie płynącej siatki.
+	 */
+	private int flowGrid = 0;
+
+	/**
+	 * Konstrukcja monitora. 
+	 * 
+	 * @param updTime
+	 *            czas pomiędzy kolejnymi uaktualnieniami wyświetlanej
+	 *            informacji.
+	 */
+	public MemoryMonitor1(int updTime) {
+
+		addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				postpone = !postpone;
+			}
+		});
+
+		addComponentListener(new ComponentAdapter() {
+			public void componentResized(ComponentEvent ce) {
+				monitorResized(ce.getComponent().getSize());
+			}
+		});
+
+		setFont(new Font("Serif", Font.PLAIN, fontSize));
+		setBackground(Color.black);
+
+		gcButton = new Button("gc");
+		gcButton.addActionListener(ignore -> System.gc());
+
+		setLayout(null);
+		add(gcButton);
+
+		new Timer().scheduleAtFixedRate(new TimerTask() {
+			public void run() {
+				if (postpone) {
+					return;
+				}
+				repaint();
+				nextStep();
+			}
+		}, 1000, updTime);
+	}
+
+	/**
+	 * Konstrukcja monitora odświeżającego informacje co 1 sekundę.
+	 * Monitorowanie jest uruchamiane natychmiast.
+	 */
+	public MemoryMonitor1() {
+		this(1000);
+	}
+
+	/**
+	 * System zawiadamia: dodano komponent do kontenera. Szuka się wśród
+	 * rodziców ramki i dodaje do niej słuchacza zdarzeń okienkowych, który
+	 * wyłączy rysowanie, gdy okno będzie zminimalizowane.
+	 */
+	public void addNotify() {
+		super.addNotify();
+		int recursionLevel = 0;
+		Component c = this;
+		while (!((c = c.getParent()) instanceof Frame)) {
+			if (++recursionLevel > 15) {
+				return;
+			}
+		}
+		try {
+			((Frame) c).addWindowListener(new WindowAdapter() {
+				public void windowIconified(WindowEvent we) {
+					setIconified(true);
+				}
+				public void windowDeiconified(WindowEvent we) {
+					setIconified(false);
+				}
+			});
+		} catch (Exception ignore) { // trzeba to przechwycić, bo czasami
+			// (zwłaszcza w apletach) nie można dołączyć słuchacza
+			// do ramki top-level.
+		}
+	}
+
+	/**
+	 * System zawiadamia: zmieniono rozmiar monitora — trzeba zmienić rozmiar
+	 * bufora.
+	 */
+	private void monitorResized(Dimension size) {
+		if ((w = size.width) == 0) {
+			return;
+		}
+		if ((h = size.height) == 0) {
+			return;
+		}
+		buffer = createImage(w, h);
+		bufferGraphics = buffer.getGraphics();
+
+		y0 = fontSize + 1;
+		xm = w - (fontSize / 3); // współrzędne końca ramki
+		ym = h - fontSize - 1;
+		wm = xm - x0 - 1; // szerokość, wysokość ramki
+		hm = ym - y0 - 1;
+		gWidth = wm / 9; // szerokość, wysokość oczka siatki
+		gHeight = h / 9;
+
+		gcButton.setBounds(xm - fontSize * 3, ym, fontSize << 1, fontSize + 1);
+
+		try {
+			if (memoryStates.length != wm) {
+				int[] t = new int[wm];
+				System.arraycopy(memoryStates, Math.max(0, memoryStates.length - wm), t,
+						Math.max(0, wm - memoryStates.length), Math.min(memoryStates.length, wm));
+				for (int i = 0, x = wm - memoryStates.length; i < x; i++) {
+					t[i] = t[x];
+				}
+				memoryStates = t;
+			}
+		} catch (NullPointerException mem_is_null_so_alloc_mem) {
+			memoryStates = new int[wm];
+			for (int i = 0; i < wm; i++) {
+				memoryStates[i] = getMemoryUsage();
+			}
+		}
+	}
+
+	/**
+	 * Dokonuje pomiaru i przesuwa dane.
+	 */
+	private void nextStep() {
+		System.arraycopy(memoryStates, 1, memoryStates, 0, memoryStates.length - 1);
+		memoryStates[memoryStates.length - 1] = getMemoryUsage();
+		if (++flowGrid >= gWidth) {
+			flowGrid = 0;
+		}
+	}
+
+	/**
+	 * Wrysowuje stan do bufora.
+	 */
+	private void draw() {
+		bufferGraphics.setColor(Color.black);
+		bufferGraphics.fillRect(0, 0, w, h);
+
+		bufferGraphics.setColor(gridColor); // skala oscyloskopu
+		bufferGraphics.drawRect(x0, y0, wm, hm);
+
+		ym -= 2;
+		for (int i = x0 + gWidth - flowGrid; i < xm; i += gWidth) // poziome
+		{
+			bufferGraphics.drawLine(i, y0, i, ym);
+		}
+		ym += 2;
+		xm -= 2;
+		for (int i = y0 + gHeight; i < ym; i += gHeight) // pionowe
+		{
+			bufferGraphics.drawLine(x0, i, xm, i);
+		}
+		xm += 2;
+
+		bufferGraphics.setColor(Color.yellow);
+		bufferGraphics.drawString(total + "K allocated", 4, fontSize - 2);
+		bufferGraphics.drawString(used + "K used", 4, h - 2);
+		bufferGraphics.drawString("" + Thread.activeCount(), 2, fontSize << 1);
+
+		int ph = (memoryStates[0] * hm) / total;
+		int min = Integer.MAX_VALUE, max = 0, mm;
+		ym--;
+		for (int i = 1; i < wm; i++) {
+			int ah = ((mm = memoryStates[i]) * hm) / total;
+			// bufferGraphics.drawLine(xm-wm+i, ym-ah-1, xm-wm+i-1, ym-ph-1);
+			bufferGraphics.drawLine(xm - wm + i, ym - ah, xm - wm - 1 + i, ym - ph);
+			ph = ah;
+
+			if (mm < min) {
+				min = mm;
+			} else if (mm > max) {
+				max = mm;
+			}
+		}
+		ym++;
+
+		bufferGraphics.drawString("" + (min * 100) / total, 2, fontSize * 3);
+		bufferGraphics.drawString("" + (max * 100) / total, 2, fontSize << 2);
+
+		if (postpone) {
+			bufferGraphics.setColor(Color.red);
+		} else {
+			bufferGraphics.setColor(Color.green);
+		}
+		bufferGraphics.fillOval(xm - 8, ym + (fontSize >> 1) - 3, 6, 6);
+	}
+
+	/**
+	 * Dla uniknięcia mrugania.
+	 */
+	public void update(Graphics g) {
+		paint(g);
+	}
+
+	/**
+	 * Narysowanie zawartości komponentu.
+	 */
+	public void paint(Graphics g) {
+		if (isIconified()) {
+			return;
+		}
+		draw();
+		g.drawImage(buffer, 0, 0, this);
+	}
+
+	/**
+	 * Zwraca minimalne wymiary monitora.
+	 */
+	public Dimension getMinimumSize() {
+		return getPreferredSize();
+	}
+
+	/**
+	 * Zwraca maksymalne wymiary monitora.
+	 */
+	public Dimension getMaximumSize() {
+		return getPreferredSize();
+	}
+
+	/**
+	 * Zwraca preferowane wymiary monitora.
+	 */
+	public Dimension getPreferredSize() {
+		return new Dimension(preferredWidth, preferredHeight);
+	}
+
+	/**
+	 * Test klasy.
+	 * @param args nieużywane.
+	 */
+	public static void main(String[] args) {
+		MemoryMonitor1 mm = new MemoryMonitor1(125);
+
+		Frame f = new Frame("MemoryMonitor1 Demo");
+		f.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent we) {
+				System.exit(1);
+			}
+		});
+		f.add(mm);
+		f.pack();
+		f.setVisible(true);
+	}
+
+	/**
+	 * Liczba używanych ostatnio kilobajtów pamięci.
+	 */
+	private int used = 0;
+
+	/**
+	 * Liczba zaalokowanych ostatnio kilobajtów pamięci.
+	 */
+	private int total = 0;
+
+	/**
+	 * Zwraca liczbę używanych kilobajtów pamięci. Jednocześnie ustawia pola
+	 * <code>used</code> i <code>total</code>.
+	 */
+	private int getMemoryUsage() {
+		total = ((int) Runtime.getRuntime().totalMemory()) >> 10;
+		return (used = total
+				- (((int) Runtime.getRuntime().freeMemory()) >> 10));
+	}
+}
+
+//-----------------------------------------------------------------//
+// 33: Nauczyciel.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.osobaStudentNauczyciel;
+
+/**
+ * Klasa reprezentująca nauczyciela, dziedzicząca po klasie Osoba.
+ * Zawiera dodatkowe pole dotyczące tytułu naukowego.
+ */
+public class Nauczyciel extends Osoba {
+    /**
+     * Tytuł naukowy nauczyciela (np. dr, prof.).
+     */
+    String tytułNaukowy;
+}
+
+
+//-----------------------------------------------------------------//
+// 34: Osoba.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.osobaStudentNauczyciel;
+
+/**
+ * Klasa reprezentująca osobę z podstawowymi danymi.
+ */
+public class Osoba {
+    /**
+     * Imię osoby.
+     */
+    private String imię;
+    
+    /**
+     * Nazwisko osoby.
+     */
+    private String nazwisko;
+}
+
+//-----------------------------------------------------------------//
+// 35: Student.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.osobaStudentNauczyciel;
+
+/**
+ * Klasa reprezentująca studenta, rozszerza klasę Osoba.
+ */
+public class Student extends Osoba {
+    /**
+     * Numer indeksu studenta.
+     */
+    int numerIndeksu;
+}
+
+//-----------------------------------------------------------------//
+// 36: Circle.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.shapeCircleSquare;
+
+/**
+ * Klasa reprezentująca koło, rozszerza klasę Shape.
+ */
+public class Circle extends Shape {
+
+    /**
+     * Promień koła.
+     */
+    private final double radius;
+
+    /**
+     * Konstruktor klasy Circle, ustawia promień koła.
+     * @param radius promień koła
+     */
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    /**
+     * Metoda obliczająca pole powierzchni koła.
+     * @return pole powierzchni koła
+     */
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+//-----------------------------------------------------------------//
+// 37: Shape.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.shapeCircleSquare;
+
+/**
+ * Abstrakcyjna klasa reprezentująca figurę geometryczną.
+ * Zawiera abstrakcyjną metodę do obliczania pola powierzchni.
+ */
+public abstract class Shape {
+    /**
+     * Abstrakcyjna metoda do obliczania pola powierzchni figury.
+     * @return pole powierzchni figury
+     */
+    public abstract double calculateArea();
+}
+
+//-----------------------------------------------------------------//
+// 38: Square.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.shapeCircleSquare;
+
+/**
+ * Klasa reprezentująca kwadrat, dziedzicząca po klasie Shape.
+ * Przechowuje długość boku kwadratu i pozwala obliczyć jego pole powierzchni.
+ */
+public class Square extends Shape {
+
+    /**
+     * Długość boku kwadratu.
+     */
+    private double edge;
+
+    /**
+     * Konstruktor klasy Square ustawiający długość boku.
+     * @param edge długość boku kwadratu
+     */
+    public Square(double edge) {
+        this.edge = edge;
+    }
+
+    /**
+     * Metoda obliczająca pole powierzchni kwadratu.
+     * @return pole powierzchni kwadratu
+     */
+    public double calculateArea() {
+        return edge * edge;
+    }
+}
+
+//-----------------------------------------------------------------//
+// 39: ClassicSingleton.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.singleton;
+
+import static pl.edu.pw.elka.pag.GeneralUtil.prn;
+
+/**
+ * Klasa implementująca wzorzec Singleton w klasycznej formie.
+ * Zapewnia istnienie tylko jednej instancji klasy w całym programie.
+ */
+public class ClassicSingleton {
+    /**
+     * Statyczne, finalne pole przechowujące jedyną instancję klasy.
+     * Inicjalizowane przy ładowaniu klasy (early initialization).
+     */
+    private static final ClassicSingleton instance = new ClassicSingleton();
+
+    /**
+     * Prywatny konstruktor zapobiegający tworzeniu obiektów spoza klasy.
+     */
+    private ClassicSingleton() {
+    }
+
+    /**
+     * Metoda zwracająca jedyną instancję klasy.
+     * @return jedyna instancja ClassicSingleton
+     */
+    public static ClassicSingleton getInstance() {
+        return instance;
+    }
+
+    /**
+     * Nadpisanie metody toString dla celów demonstracyjnych.
+     * @return tekstowa reprezentacja obiektu
+     */
+    public String toString() {
+        return super.toString() + " actual toString()";
+    }
+
+    /**
+     * Metoda główna demonstrująca użycie Singletona.
+     * Wyświetla nazwę klasy i jej jedyną instancję.
+     */
+    public static void main(String[] args) {
+        prn("The only object of %s class: %s", getInstance().getClass().getSimpleName(), ClassicSingleton.getInstance());
+    }
+}
+
+//-----------------------------------------------------------------//
+// 40: Kolor.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.singleton;
+
+/**
+ * Enum reprezentujący kolory z przypisanymi wartościami RGB.
+ * Każdy kolor ma trzy składowe: czerwoną, zieloną i niebieską.
+ */
+public enum Kolor {
+    BIAŁY(255, 255, 255), // Definicja koloru biały z wartościami RGB
+    CZERWONY(255, 0, 0);  // Definicja koloru czerwony z wartościami RGB
+
+    private final int red;   // Składowa czerwona koloru
+    private final int green; // Składowa zielona koloru
+    private final int blue;  // Składowa niebieska koloru
+
+    /**
+     * Konstruktor enuma ustawiający wartości RGB dla koloru.
+     */
+    Kolor(int r, int g, int b) {
+        this.red = r;
+        this.green = g;
+        this.blue = b;
+    }
+
+    /**
+     * Zwraca wartość składowej czerwonej.
+     */
+    public int getR() {
+        return red;
+    }
+
+    /**
+     * Zwraca wartość składowej zielonej.
+     */
+    public int getG() {
+        return green;
+    }
+
+    /**
+     * Zwraca wartość składowej niebieskiej.
+     */
+    public int getB() {
+        return blue;
+    }
+
+    /**
+     * Nadpisanie metody toString, wyświetla nazwę koloru oraz jego składniki RGB.
+     */
+    public String toString() {
+        return "[" + name() + " (" + getR() + "," + getG() + "," + getB() + ")]";
+    }
+
+    /**
+     * Metoda main do demonstracji działania enuma Kolor.
+     * Wypisuje kolory na konsolę.
+     */
+    public static void main(String... args) {
+        System.out.println(BIAŁY);
+        System.out.printf("%s%n", CZERWONY);
+    }
+}
+
+//-----------------------------------------------------------------//
+// 41: KolorProsty.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.singleton;
+
+/**
+ * Prosty enum definiujący podstawowe kolory bez dodatkowych parametrów.
+ */
+public enum KolorProsty {
+    BIAŁY,    // Biały kolor
+    CZARNY,   // Czarny kolor
+    ZIELONY,  // Zielony kolor
+    CZERWONY, // Czerwony kolor
+    NIEBIESKI // Niebieski kolor
+}
+
+//-----------------------------------------------------------------//
+// 42: Singleton.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.singleton;
+
+/**
+ * Prosty enum implementujący wzorzec Singleton.
+ * Zapewnia jedną, globalnie dostępną instancję.
+ */
+public enum Singleton {
+    INSTANCE;  // Jedyna instancja Singletona
+}
+
+//-----------------------------------------------------------------//
+// 43: StosSterta.java
+package pl.edu.pw.elka.pag.programowanieObiektowe.stosSterta;
+
+/**
+ * Ilustracja modelu pamięci Javy, stosu i sterty oraz umiejscowienia danych.
+ * @author kmi
+ */
+public class StosSterta {
+    /** Zmienna w obiekcie klasy (na stercie). */
+    int a = 6;
+
+    /**
+     * Metoda obliczająca sumę atrybutu {@link #a} i parametru.
+     * @param b drugi składnik sumy do policzenia (na stosie).
+     * @return sumę atrybutu {@link #a} i parametru (na stosie).
+     */
+    int obliczSumę(int b) {
+        int suma = 0;
+        suma = a + b;
+        return suma;
+    }
+
+    /** @param args argumenty programu, nieużywane (na stosie). */
+    public static void main(String[] args) {
+        StosSterta ss = new StosSterta();
+        int suma = ss.obliczSumę(10);
+        System.out.println("Suma: " + suma);
+    }
+}
+
+//-----------------------------------------------------------------//
+// 44: Incrementer.java
+package pl.edu.pw.elka.pag.programowanieObiektowe;
+
+import static pl.edu.pw.elka.pag.GeneralUtil.prn;
+
+public class Incrementer {
+    /** Prywatne pole przechowujące wartość całkowitą */
+    private int x;
+
+    /** Konstruktor domyślny ustawiający wartość x na 5 */
+    Incrementer() {
+        x = 5;
+    }
+
+    /** Konstruktor inicjujący x wartością podaną jako int */
+    Incrementer(int x) {
+        this.x = x;
+    }
+
+    /** Konstruktor inicjujący x wartością podaną jako double (rzutowanie na int) */
+    Incrementer(double x) {
+        this((int) x);
+    }
+
+    /** Metoda inkrementująca wartość x i zwracająca bieżący obiekt (umożliwia łańcuchowe wywołania) */
+    Incrementer increment() {
+        x++;
+        return this;
+    }
+
+    /** Metoda zwracająca tekstową reprezentację obiektu (wartość x jako String) */
+    public String toString() {
+        return "" + x;
+    }
+
+    /** Metoda główna demonstrująca działanie klasy Incrementer */
+    public static void main(String[] args) {
+        var i = new Incrementer(10);
+        prn(i);
+
+        i.increment().increment().increment().increment();
+        prn(i);
+
+        i = new Incrementer(33.8872);
+        prn(i);
+        i.increment();
+        prn(i);
+    }
+}
+
+//-----------------------------------------------------------------//
+// 45: Nadkl.java
+package pl.edu.pw.elka.pag.programowanieObiektowe;
+
+public class Nadkl {
+
+    /** 
+     * Metoda wypisująca informację o wywołaniu wersji metody z parametrem int 
+     * @param x wartość całkowita przekazywana do metody
+     */
+    void wypisz(int x) {
+        System.out.println("Nadklasa.wypisz(int)");
+    }
+}
+
+//-----------------------------------------------------------------//
+// 46: Nadklasa.java
+package pl.edu.pw.elka.pag.programowanieObiektowe;
+
+class Nadklasa {
+    /** 
+     * Atrybut inicjalizowany przez wywołanie metody podającej wartość
+     */
+    int u = Wartość.podajWartość("Nadklasa.u");
+
+    /**
+     * Metoda wypisująca informację o wywołaniu metody wypisz z klasy Nadklasa
+     */
+    void wypisz() {
+        System.out.println("Nadklasa.wypisz()");
+    }
+
+    /**
+     * Konstruktor klasy Nadklasa, wypisuje tekst i wywołuje metodę wypisz (polimorficznie)
+     */
+    Nadklasa() {
+        System.out.println("Nadklasa()");
+        wypisz(); // wywołanie polimorficzne – jeśli metoda jest nadpisana w podklasie, wywoła jej wersję
+    }
+
+    /**
+     * Metoda main tworząca nowy obiekt klasy Nadklasa
+     */
+    public static void main(String[] args) {
+        new Nadklasa();
+    }
+}
+
+//-----------------------------------------------------------------//
+// 47: NazewnictwoWJavie.java
+package pl.edu.pw.elka.pag.programowanieObiektowe;
+
+/**
+ * Nazwa klasy zaczyna się wielką literą, jeśli składa się z wielu wyrazów, każdy z nich zaczyna się także wielką literą.
+ * W nazwach klas nie używa się (bez ważnych powodów) podkreślników.
+ * 
+ * @author kmi
+ */
+public class NazewnictwoWJavie {
+    /**
+     * Prędkość światła w próżni (w metrach na sekundę). Stałe nazywamy z użyciem tylko wielkich liter,
+     * kolejne wyrazy rozdzielamy podkreślnikami.
+     */
+    public static final long PRĘDKOŚĆ_ŚWIATŁA = 299_792_458;
+    
+    /**
+     * Zwykłe zmienne zaczynają się małą literą, kolejne wyrazy zaczynają się wielką literą (notacja kamelowa, ang.
+     * camelCase)
+     */
+    private int zwykłaZmienna = 1;
+    
+    /**
+     * Nazewnictwo metod, argumentów i zmiennych w metodach jest identyczne, jak zmiennych: początek małą literą, kolejne
+     * wyrazy wielką literą, bez podkreślników.
+     * @param jakiśArgument argument przekazywany do metody
+     * @return wynik obliczeń typu long
+     */
+    public long jakaśMetodaWKlasie(int jakiśArgument) {
+        long zmiennaWMetodzie = jakiśArgument + PRĘDKOŚĆ_ŚWIATŁA + zwykłaZmienna;
+        return zmiennaWMetodzie;
+    }
+    
+    /**
+     * Getter dla zmiennej, zwykłe zasady jak dla metod.
+     * @return wartość pola zwykłaZmienna
+     */
+    public int getZwykłaZmienna() {
+        return zwykłaZmienna;
+    }
+    
+    /**
+     * Wyliczenia są klasami i obowiązują identyczne zasady nazewnictwa. Wyliczane elementy są stałymi, zatem stosuje
+     * się zasady dotyczące stałych.
+     * @author kmi
+     */
+    enum WyliczenieKolorów {
+        ZIELONY,
+        ZIELONY_WPADAJĄCY_W_NIEBIESKI,
+        NIEBIESKI
+    }
+    
+    /**
+     * Nazewnictwo interfejsów takie jak klas.
+     * @author kmi
+     */
+    public interface JakiśInterfejs {
+        /**
+         * Metoda, zwykłe zasady nazywania.
+         * @param parametrMetody argument metody
+         */
+        public void metodaWInterfejsie(int parametrMetody);
+    }
+}
+
+//-----------------------------------------------------------------//
+// 48: NazwaKlasy.java
+package pl.edu.pw.elka.pag.programowanieObiektowe;
+
+public class NazwaKlasy {
+
+    /* definicja klasy */
+
+    public static void main(String... args) {
+        // Utworzenie obiektu klasy NazwaKlasy
+        NazwaKlasy nt = new NazwaKlasy();
+    }
+}
+
+//-----------------------------------------------------------------//
+// 49: Obliczenia.java
+package pl.edu.pw.elka.pag.programowanieObiektowe;
+
+public class Obliczenia {
+
+    // Metoda statyczna zwracająca sumę dwóch liczb całkowitych
+    static int suma(int a, int b) {
+        return a + b;
+    }
+
+    // Metoda statyczna zwracająca różnicę dwóch liczb całkowitych
+    static int różnica(int a, int b) {
+        return a - b;
+    }
+
+    public static void main(String[] args) {
+        int r = 4;
+        int s = 7;
+        // Wywołanie metody suma z klasy Obliczenia i wypisanie wyniku
+        System.out.printf("%d + %d równa się %d%n", r, s, Obliczenia.suma(r, s));
+        // Wywołanie metody różnica (w tej samej klasie można pominąć nazwę klasy) i wypisanie wyniku
+        System.out.printf("%d - %d równa się %d%n", r, s, różnica(r, s));
+    }
+}
+
+
+//-----------------------------------------------------------------//
+// 50: Podkl.java
+package pl.edu.pw.elka.pag.programowanieObiektowe;
+
+class Podkl extends Nadkl {
+
+    // Metoda przeciążona wypisująca informację, że wywołano metodę z argumentem typu float
+    void wypisz(float f) {
+        System.out.println("Podklasa.wypisz(float)");
+    }
+
+    public static void main(String[] args) {
+        Podkl p1 = new Podkl();
+        // Wywołanie metody wypisz z argumentem int — zostanie wywołana metoda z klasy nadrzędnej Nadkl
+        p1.wypisz(1);
+        // Wywołanie metody wypisz z argumentem float — zostanie wywołana metoda z klasy Podkl
+        p1.wypisz(1f);
+    }
+}
+
+
+//-----------------------------------------------------------------//
+// 51: Podklasa.java
+package pl.edu.pw.elka.pag.programowanieObiektowe;
+
+class Podklasa extends Nadklasa {
+    // Pole instancyjne inicjowane przez metodę podającą wartość, symulujące pobranie wartości
+    int v = Wartość.podajWartość("Podklasa.v");
+
+    // Nadpisanie metody wypisz z klasy nadrzędnej, aby wypisać inną informację
+    void wypisz() {
+        System.out.println("Podklasa.wypisz()");
+    }
+
+    // Konstruktor klasy Podklasa wywołujący konstruktor klasy nadrzędnej oraz metodę wypisz (polimorfizm)
+    Podklasa() {
+        super();
+        System.out.println("Podklasa()");
+        wypisz(); // wywołanie polimorficzne – wywoła metodę z tej klasy, nawet podczas budowy obiektu
+    }
+
+    public static void main(String[] args) {
+        new Podklasa(); // utworzenie obiektu klasy Podklasa, co wywoła cały łańcuch konstruktorów i metod
+    }
+}
+
+//-----------------------------------------------------------------//
+// 52: PrzeciazanieMetod.java
+package pl.edu.pw.elka.pag.programowanieObiektowe;
+
+public class PrzeciazanieMetod {
+
+    void f(short b, int i) {
+        System.out.println("short, int");
+    }
+
+    void f(int b, short i) {
+        System.out.println("int, short");
+    }
+
+    public static void main(String... args) {
+        PrzeciazanieMetod pm = new PrzeciazanieMetod();
+        //pm.f(1, 1); // żadna metoda nie pasuje
+        //pm.f((short) 1, (short) 1); // pasują obie
+        pm.f(1, (short) 1); // (int, short)
+        pm.f((char) 1, (byte) 1); // int, short
+    }
+}
+
+//-----------------------------------------------------------------//
+// 53: Stałe.java
+package pl.edu.pw.elka.pag.programowanieObiektowe;
+
+/**
+ * Ilustracja sposobu przechowywania stałych w Javie: definiujemy klasę, w której znajdują się stałe,
+ * jako zmienne publiczne (są dostępne wszędzie), statyczne (istnieją nawet wtedy, gdy nie utworzono żadnego
+ * obiektu tej klasy) i finalne (nie można modyfikować ich wartości).
+ */
+public class Stałe {
+
+    /**
+     * Konstruktor jest prywatny, więc poza tekstem tej klasy nie można tworzyć obiektów tej klasy.
+     */
+    private Stałe() {
+    }
+
+    public static final double STAŁA_PLANCKA = 6.62607015e-34;
+    public static final double STAŁA_BOLTZMANNA = 1.380649e-23;
+
+    /**
+     * Stała instancyjna. Egzemplarz istnieje w każdym obiekcie.
+     */
+    final int a = 2;
+
+    /**
+     * Stała ("globalna", publiczna i statyczna). Istnieje jeden egzemplarz dla wszystkich (ew. utworzonych) obiektów
+     * tej klasy.
+     */
+    public static final int z = 5;
+
+    /**
+     * Funkcja deklaruje kilka zmiennych na różne sposoby. Obejrzyj, gdzie środowisko zgłasza ostrzeżenia (zakładka Problems).
+     */
+    public static void funkcjaZeZmiennymi() {
+        int a;
+        boolean tb = true;
+        double b, c = 4.901;
+        char d = 'a', e = 'z';
+        int i = 34;
+        float l = 4.1f, l1 = (float)1.2;
+        long g = 2332L, g2 = 1l, g3 = 0b101, g4 =07222, g5 = 0x66ABCDEF;
+    }
+
+    public static void konwersjeTypówProstych() {
+        {
+            int a = 7;
+            float f;
+            f = a; // dobrze
+        }
+
+        {
+            int a;
+            double f = 5.58;
+            //a = f; // źle
+        }
+
+        {
+            int a;
+            double f = 5.58;
+            a = (int) f; // dobrze
+        }
+    }
+}
+
+//-----------------------------------------------------------------//
+// 54: TestStałych.java
+package pl.edu.pw.elka.pag.programowanieObiektowe;
+
+// Import statyczny pozwala na używanie STAŁA_PLANCKA bez prefiksu klasy Stałe
+import static pl.edu.pw.elka.pag.programowanieObiektowe.Stałe.STAŁA_PLANCKA;
+
+public class TestStałych {
+
+    // Metoda oblicza rozkład Plancka dla danej częstotliwości f
+    double rozkładPlancka(double f /*, ...*/) {
+        // Wzór zawiera stałą Plancka i potęgę f do trzeciej
+        return 2 * STAŁA_PLANCKA * f * f * f; //...
+    }
+}
+
+//-----------------------------------------------------------------//
+// 55: Thing.java
+package pl.edu.pw.elka.pag.programowanieObiektowe;
+
+import java.io.*;
+import java.util.Properties;
+
+import static pl.edu.pw.elka.pag.GeneralUtil.prn;
+
+public class Thing {
+    // Statyczny licznik, współdzielony przez wszystkie instancje klasy
+    static private int counter = 0;
+
+    // Statyczny blok inicjalizacyjny - wykonywany raz przy ładowaniu klasy
+    static {
+        // Utworzenie obiektu DB i połączenie do bazy "jdbc:sql:counterDataBase"
+        DB db = new DB("jdbc:sql:counterDataBase");
+        db.connect("user", "pass");
+        // Odczytanie aktualnej wartości licznika z "bazy"
+        counter = db.retrieveCounter();
+        db.close();
+
+        // Dodanie hooka na zakończenie działania JVM, który zapisze licznik do bazy
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            db.connect("user", "pass");
+            db.storeCounter(counter);
+            db.close();
+        }));
+    }
+
+    // Przeciążone metody f o różnych sygnaturach
+    void f() { /*...*/ }
+    void f(int a) { /*...*/ }
+    void f(char x) { /*...*/ }
+    float f(float f) { /*...*/
+        return 0;
+    }
+    //void f(float f) { /*...*/ } // Kompilator zgłosi błąd: duplikat metody
+
+    void f(Object o) {
+        // Wywołanie metody dla typu Object - wypisuje klasę przekazanego obiektu
+        System.out.println("f: Object (" + o.getClass().getSimpleName() + ")");
+    }
+    void f(String s) {
+        // Metoda dla typu String - wypisuje komunikat
+        System.out.println("f: String");
+    }
+
+    // Getter do pobrania wartości licznika
+    public static int getCounter() {
+        return counter;
+    }
+
+    private int x; // prywatna zmienna instancji
+
+    // Konstruktor bezparametrowy - inkrementuje licznik i ustawia x na 12
+    public Thing() {
+        counter++;
+        x = 12;
+    }
+
+    // Konstruktor z argumentem - inkrementuje licznik i ustawia x na podaną wartość
+    Thing(int xx) {
+        counter++;
+        x = xx;
+    }
+
+    public static void main(String... args) {
+        counter++;
+        counter++;
+        Thing t = new Thing();
+
+        // Testowanie przeciążonych metod f()
+        t.f(new Object());       // wywołuje f(Object)
+        t.f("Some string");      // wywołuje f(String)
+        t.f(t);                 // wywołuje f(Object), bo Thing to Object
+        t.f(new int[40]);       // wywołuje f(Object), tablica jest obiektem
+    }
+
+//////////////////////////////////////////////////////////////
+
+    /**
+     * Klasa wewnętrzna imitująca prostą bazę danych (przechowującą licznik w pliku)
+     */
+    private static class DB {
+        private String scheme;
+
+        private String dbFileName = "";
+
+        // Konstruktor ustawia schemat bazy
+        DB(String scheme) {
+            this.scheme = scheme;
+        }
+
+        // Metoda łącząca się z "bazą" i przygotowująca nazwę pliku
+        void connect(String userName, String pass) {
+            dbFileName = scheme + "." + userName + ".db";
+            dbFileName = dbFileName.replace(":", "-");
+        }
+
+        // Odczyt licznika z pliku właściwości
+        public int retrieveCounter() {
+            Properties db = new Properties();
+            try (BufferedReader br = new BufferedReader(new FileReader(dbFileName))) {
+                db.load(br);
+            } catch (FileNotFoundException ignore) {
+                prn("First usage of the program");
+                return storeCounter(0); // jeśli brak pliku, zapisz 0 i zwróć
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            String counterStr = db.getProperty("counter");
+            if (counterStr != null) {
+                int counter = 0;
+                try {
+                    counter = Integer.parseInt(counterStr);
+                } catch (NumberFormatException nfe) {
+                    nfe.printStackTrace();
+                } finally {
+                    return counter;
+                }
+            }
+            return storeCounter(0);
+        }
+
+        // Zapis licznika do pliku właściwości
+        public int storeCounter(int counter) {
+            Properties db = new Properties();
+            db.setProperty("counter", "" + counter);
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter(dbFileName))) {
+                db.store(bw, "Some counter");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return counter;
+        }
+
+        // "Zamknięcie" połączenia (tu tylko reset nazwy pliku)
+        public void close() {
+            dbFileName = "";
+        }
+    }
+}
+
+//-----------------------------------------------------------------//
+// 56: ThreeException.java
+package pl.edu.pw.elka.pag.programowanieObiektowe;
+
+// Definicja własnego wyjątku dziedziczącego po Exception (checked exception)
+public class ThreeException extends Exception {
+
+    // Konstruktor domyślny z komunikatem "???"
+    public ThreeException() {
+        super("???");
+    }
+
+    // Konstruktor pozwalający na przekazanie własnej wiadomości
+    public ThreeException(String message) {
+        super(message);
+    }
+}
+
+//-----------------------------------------------------------------//
+// 57: ThreeExceptionTest.java
+package pl.edu.pw.elka.pag.programowanieObiektowe;
+
+public class ThreeExceptionTest {
+
+    // Program testujący działanie własnego wyjątku ThreeException
+    public static void main(String... args) {
+        int count = 0; // licznik iteracji pętli
+
+        while (true) {
+            try {
+                // Jeśli count jest równe 0, rzucamy wyjątek ThreeException z komunikatem
+                if (count++ == 0) {
+                    throw new ThreeException("count jest równe 0");
+                }
+
+                // Jeśli nie wyrzucamy wyjątku, wypisujemy informację o braku wyjątku
+                System.out.println("bez wyjątku");
+            } 
+            catch (ThreeException e) {
+                // Obsługa wyjątku - wypisujemy informację o wyjątku na standardowe wyjście błędów
+                System.err.println("wyjątek: " + e);
+            } 
+            finally {
+                // Ten blok wykona się zawsze - niezależnie od tego, czy wyjątek został rzucony czy nie
+                System.err.println("zawsze");
+
+                // Warunek przerwania pętli po drugiej iteracji (count == 2)
+                if (count == 2) {
+                    break;
+                }
+            }
+        }
+    }
+}
+
+//-----------------------------------------------------------------//
+// 58: Wartość.java
+package pl.edu.pw.elka.pag.programowanieObiektowe;
+
+import static pl.edu.pw.elka.pag.GeneralUtil.prn;
+
+public class Wartość {
+
+    // Prywatna stała przechowująca wartość, którą zwróci metoda
+    private static final int wartość = 218;
+
+    /**
+     * Metoda statyczna zwracająca stałą wartość.
+     * Dodatkowo wypisuje komunikat o wywołaniu metody.
+     * @param komunikat - tekst pomocniczy wyświetlany podczas wywołania
+     * @return stała wartość
+     */
+    public static int podajWartość(String komunikat) {
+        prn("podajWartość(" + komunikat + ")");  // wypisuje komunikat (metoda prn z GeneralUtil)
+        return wartość;  // zwraca stałą wartość
+    }
+}
+
+//-----------------------------------------------------------------//
+// 59: AbstractBag.java
+package pl.edu.pw.elka.pag.kolekcje;
+
+// Klasa abstrakcyjna implementująca interfejs Bag dla elementów typu Item
+public abstract class AbstractBag<Item> implements Bag<Item> {
+
+    /**
+     * Nadpisanie metody toString() do reprezentacji zawartości worka jako tekst.
+     * Tworzy łańcuch znaków z elementami worka w nawiasach kwadratowych i oddzielonymi spacjami.
+     */
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("[");  // buduje tekst zaczynając od "["
+        for (final Item i : this) {  // iteruje po wszystkich elementach worka (klasa musi implementować Iterable<Item>)
+            sb.append(i).append(" ");  // dodaje element i spację
+        }
+        // Jeśli ostatni znak to spacja, usuwa ją (żeby nie zostawić zbędnej spacji przed "]")
+        if (sb.charAt(sb.length() - 1) == ' ') {
+            sb.delete(sb.length() - 1, sb.length());
+        }
+        sb.append("]");  // dodaje zamykający nawias
+        return sb.toString();  // zwraca gotowy łańcuch znaków
+    }
+}
+
+//-----------------------------------------------------------------//
+// 60: ArrayBag.java
+package pl.edu.pw.elka.pag.kolekcje;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+/**
+ * Implementacja wielozbioru (worka) przechowującego elementy typu Item
+ * przy użyciu tablicy dynamicznej ArrayList.
+ * 
+ * @author kmi
+ * @version 1.0.0 21 czerwca 2020 17:04
+ */
+public class ArrayBag<Item> extends AbstractBag<Item> implements Bag<Item> {
+
+    /**
+     * Bieżący rozmiar wielozbioru, czyli liczba dodanych elementów.
+     */
+    private int size;
+
+    /**
+     * Lista przechowująca elementy wielozbioru.
+     * ArrayList zapewnia dynamiczne zarządzanie pamięcią.
+     */
+    private final List<Item> bagItems = new ArrayList<>();
+
+    /**
+     * Konstruktor tworzący pusty wielozbiór.
+     * Inicjalizuje rozmiar na zero.
+     */
+    public ArrayBag() {
+        size = 0;
+    }
+
+    /**
+     * Zwraca liczbę elementów znajdujących się w wielozbiorze.
+     * 
+     * @return liczba elementów
+     */
+    public int getSize() {
+        return size;
+    }
+
+    /**
+     * Dodaje element do wielozbioru.
+     * Element jest dodawany na koniec listy, rozmiar jest zwiększany.
+     * 
+     * @param item element do dodania
+     */
+    public void add(final Item item) {
+        bagItems.add(item);
+        size++;
+    }
+
+    /**
+     * Zwraca iterator przechodzący po wszystkich elementach wielozbioru.
+     * Dzięki temu można korzystać z pętli for-each.
+     * 
+     * @return iterator elementów typu Item
+     */
+    public Iterator<Item> iterator() {
+        return bagItems.listIterator();
+    }
+
+    /**
+     * Prosty test działania klasy ArrayBag.
+     * Tworzy wielozbiory liczb całkowitych i napisów,
+     * dodaje elementy i wyświetla zawartość oraz iteruje po elementach.
+     * 
+     * @param args nieużywane argumenty
+     */
+    public static void main(final String... args) {
+        final Bag<Integer> b = new ArrayBag<>();
+        System.out.println(b);   // Wyświetla pusty worek []
+        b.add(5);
+        System.out.println(b);   // Wyświetla [5]
+        b.add(15);
+        System.out.println(b);   // Wyświetla [5 15]
+        for (int i : b) {
+            System.out.printf("%d, ", i);  // Wypisuje elementy: 5, 15,
+        }
+        System.out.println();
+
+        Bag<String> bs = new ArrayBag<>();
+        bs.add("Ania"); System.out.println(bs);   // [Ania]
+        bs.add("Kasia"); System.out.println(bs);  // [Ania Kasia]
+        bs.add("Michał"); System.out.println(bs); // [Ania Kasia Michał]
+
+        for (String s : bs) {
+            System.out.printf("%s, ", s);  // Wypisuje elementy: Ania, Kasia, Michał,
+        }
+        System.out.println();
+    }
+}
+
+//-----------------------------------------------------------------//
+// 61: Bag.java
+package pl.edu.pw.elka.pag.kolekcje;
+
+import java.util.Iterator;
+
+/**
+ * Generyczny interfejs wielozbioru (worka).
+ * Wielozbiór pozwala na dodawanie elementów i iterowanie po nich,
+ * ale nie obsługuje usuwania elementów.
+ * 
+ * @param <Item> typ przechowywanych elementów
+ */
+public interface Bag<Item> extends Iterable<Item> {
+
+    /**
+     * Sprawdza, czy wielozbiór jest pusty.
+     * 
+     * @return {@code true} jeśli nie zawiera żadnych elementów, {@code false} w przeciwnym razie
+     */
+    default boolean isEmpty() {
+        return getSize() == 0;
+    }
+    
+    /**
+     * Zwraca liczbę elementów znajdujących się w wielozbiorze.
+     * 
+     * @return liczba elementów w wielozbiorze
+     */
+    int getSize();
+
+    /**
+     * Dodaje element do wielozbioru.
+     * 
+     * @param item element do dodania
+     */
+    void add(final Item item);
+    
+    /**
+     * Zwraca iterator przechodzący przez wszystkie elementy wielozbioru.
+     * Umożliwia iterację, np. w pętli for-each.
+     * 
+     * @return iterator elementów typu Item
+     */
+    Iterator<Item> iterator();
+    
+    /*
+    // Domyślna implementacja metody toString() może być umieszczona
+    // w klasie abstrakcyjnej, np. AbstractBag, ponieważ w interfejsie
+    // nie można dostarczyć implementacji dla toString() z wykorzystaniem iteratora.
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("[");
+        for (final Item i : this) {
+            sb.append(i).append(" ");
+        }
+        if (sb.charAt(sb.length() - 1) == ' ') {
+            sb.delete(sb.length() - 1, sb.length());
+        }
+        sb.append("]");
+        return sb.toString();
+    }
+    */
+}
+
+//-----------------------------------------------------------------//
+// 62: ListBag.java
+package pl.edu.pw.elka.pag.kolekcje;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+/**
+ * Implementacja wielozbioru (worka) bazująca na liście wiązanej.
+ * Elementy przechowywane są w węzłach łańcucha (Linked List).
+ * Dodawanie elementów odbywa się na początek listy.
+ * 
+ * @param <Item> typ przechowywanych elementów
+ */
+public class ListBag<Item> extends AbstractBag<Item> implements Bag<Item> {
+    
+    /**
+     * Liczba elementów aktualnie w wielozbiorze.
+     */
+    private int size;
+
+    /**
+     * Pierwszy element listy (węzeł) reprezentujący wielozbiór.
+     */
+    private Node first;
+
+    /**
+     * Wewnętrzna klasa reprezentująca pojedynczy węzeł listy wiązanej.
+     * Zawiera element typu Item oraz referencję do następnego węzła.
+     */
+    private class Node {
+        Item item = null;   // przechowywany element
+        Node next = null;   // referencja do następnego węzła
+    }
+
+    /**
+     * Konstruktor tworzący pusty wielozbiór.
+     * Inicjalizuje pierwszy węzeł na null i rozmiar na 0.
+     */
+    public ListBag() {
+        first = null;
+        size = 0;
+    }
+
+    /**
+     * Sprawdza, czy wielozbiór jest pusty.
+     * 
+     * @return true jeśli lista jest pusta (first == null), false w przeciwnym wypadku.
+     * Można też było zwrócić size == 0.
+     */
+    @Override
+    public boolean isEmpty() {
+        return first == null;
+    }
+
+    /**
+     * Zwraca liczbę elementów w wielozbiorze.
+     * 
+     * @return liczba elementów (rozmiar listy)
+     */
+    public int getSize() {
+        return size;
+    }
+
+    /**
+     * Dodaje element do wielozbioru.
+     * Nowy element jest dodawany na początek listy wiązanej.
+     * 
+     * @param item element do dodania
+     */
+    public void add(final Item item) {
+        final Node oldFirst = first;  // zapamiętanie starego pierwszego elementu
+        first = new Node();           // utworzenie nowego węzła na początek
+        first.item = item;            // przypisanie elementu do nowego węzła
+        first.next = oldFirst;        // ustawienie referencji na poprzedni pierwszy węzeł
+        size++;                      // zwiększenie rozmiaru
+    }
+
+    /**
+     * Zwraca iterator, który przechodzi przez wszystkie elementy wielozbioru
+     * w kolejności od najnowszego (pierwszego) do najstarszego (ostatniego).
+     * 
+     * @return iterator elementów
+     */
+    public Iterator<Item> iterator() {
+        return new ListIterator();
+    }
+
+    /**
+     * Prywatna klasa iteratora dla ListBag.
+     * Implementuje interfejs Iterator, umożliwiając iterację po elementach listy.
+     */
+    private class ListIterator implements Iterator<Item> {
+        
+        /**
+         * Referencja do aktualnego węzła, na którym stoi iterator.
+         */
+        private Node current = first;
+
+        /**
+         * Sprawdza, czy istnieje kolejny element do iteracji.
+         * 
+         * @return true jeśli current nie jest null, false gdy lista się skończyła
+         */
+        @Override
+        public boolean hasNext() {
+            return current != null;
+        }
+
+        /**
+         * Usuwanie elementów nie jest wspierane przez ten iterator.
+         */
+        @Override
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
+
+        /**
+         * Zwraca kolejny element i przesuwa iterator do przodu.
+         * 
+         * @return kolejny element typu Item
+         * @throws NoSuchElementException jeśli nie ma kolejnego elementu
+         */
+        @Override
+        public Item next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            final Item item = current.item;
+            current = current.next;
+            return item;
+        }
+    }
+
+    /**
+     * Przykładowa metoda testowa - uruchamia prostą demonstrację działania ListBag.
+     * Tworzy dwie kolekcje: z Integerami i Stringami, dodaje do nich elementy i wyświetla.
+     */
+    public static void main(final String... args) {
+        final Bag<Integer> b = new ListBag<>();
+        System.out.println(b);
+        b.add(5);
+        System.out.println(b);
+        b.add(15);
+        System.out.println(b);
+        for (int i : b) {
+            System.out.printf("%d, ", i);
+        }
+        System.out.println();
+
+        Bag<String> bs = new ListBag<>();
+        bs.add("Ania"); System.out.println(bs);
+        bs.add("Kasia"); System.out.println(bs);
+        bs.add("Michał"); System.out.println(bs);
+
+        for (String s : bs) {
+            System.out.printf("%s, ", s);
+        }
+        System.out.println();
+    }
+}
+
+//-----------------------------------------------------------------//
+// 63: SimpleQueue.java
+package pl.edu.pw.elka.pag.kolekcje;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+/**
+ * Prosta implementacja kolejki FIFO oparta na liście wiązanej.
+ * @param <Item> typ elementów przechowywanych w kolejce
+ */
+public class SimpleQueue<Item> implements Iterable<Item> {
+    private int size = 0;    // liczba elementów w kolejce
+    private Node first;      // pierwszy element kolejki (do usuwania)
+    private Node last;       // ostatni element kolejki (do dodawania)
+
+    /**
+     * Reprezentacja pojedynczego elementu kolejki.
+     */
+    private class Node {
+        Item item;           // przechowywany element
+        Node next;           // referencja do następnego elementu
+    }
+
+    /**
+     * Tworzy pustą kolejkę.
+     */
+    public SimpleQueue() {
+        first = null;
+        last = null;
+    }
+
+    /**
+     * Sprawdza, czy kolejka jest pusta.
+     * @return true jeśli kolejka jest pusta, false w przeciwnym razie
+     */
+    public boolean isEmpty() {
+        return first == null;
+    }
+
+    /**
+     * Zwraca liczbę elementów w kolejce.
+     * @return rozmiar kolejki
+     */
+    public int getSize() {
+        return size;
+    }
+
+    /**
+     * Zwraca element na początku kolejki bez jego usuwania.
+     * @return pierwszy element kolejki
+     * @throws RuntimeException jeśli kolejka jest pusta
+     */
+    public Item peek() {
+        if (isEmpty()) {
+            throw new RuntimeException("Queue is empty");
+        }
+        return first.item;
+    }
+
+    /**
+     * Dodaje element na koniec kolejki.
+     * @param item element do dodania
+     */
+    public void enqueue(Item item) {
+        Node x = new Node();
+        x.item = item;
+        if (isEmpty()) {
+            first = x;         // jeśli kolejka pusta, pierwszy i ostatni to ten sam element
+        } else {
+            last.next = x;     // podłącz nowy element na koniec
+        }
+        last = x;              // aktualizuj wskaźnik na ostatni element
+        size++;
+    }
+
+    /**
+     * Usuwa i zwraca pierwszy element kolejki.
+     * @return usunięty element
+     * @throws RuntimeException jeśli kolejka jest pusta
+     */
+    public Item dequeue() {
+        if (isEmpty()) {
+            throw new RuntimeException("Queue is empty");
+        }
+        Item item = first.item;
+        first = first.next;    // przesuwamy wskaźnik pierwszego elementu
+        size--;
+        if (isEmpty()) {
+            last = null;       // jeśli kolejka pusta, zerujemy wskaźnik ostatniego
+        }
+        return item;
+    }
+
+    /**
+     * Zwraca iterator przechodzący po elementach kolejki w kolejności FIFO.
+     * @return iterator po elementach kolejki
+     */
+    @Override
+    public Iterator<Item> iterator() {
+        return new FIFOIterator();
+    }
+
+    /**
+     * Iterator przechodzący po elementach kolejki.
+     */
+    private class FIFOIterator implements Iterator<Item> {
+        private Node current = first;
+
+        /**
+         * Sprawdza, czy jest następny element.
+         * @return true jeśli są jeszcze elementy, false jeśli koniec kolejki
+         */
+        public boolean hasNext() {
+            return current != null;
+        }
+
+        /**
+         * Usuwanie elementów przez iterator jest niewspierane.
+         * @throws UnsupportedOperationException zawsze
+         */
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
+
+        /**
+         * Zwraca kolejny element z kolejki.
+         * @return następny element
+         * @throws NoSuchElementException jeśli nie ma więcej elementów
+         */
+        public Item next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            Item item = current.item;
+            current = current.next;
+            return item;
+        }
+    }
+}
+
+//-----------------------------------------------------------------//
+// 64: SimpleStack.java
+package pl.edu.pw.elka.pag.kolekcje;
+
+import static pl.edu.pw.elka.pag.GeneralUtil.prn;
+
+/**
+ * Prosta implementacja stosu o stałym maksymalnym rozmiarze.
+ * @param <Item> typ elementów przechowywanych na stosie
+ */
+public class SimpleStack<Item> {
+    public static final int maxSize = 4; // maksymalny rozmiar stosu
+
+    /**
+     * Tablica przechowująca elementy stosu.
+     * Rzutowanie jest potrzebne ze względu na ograniczenia generics w Javie.
+     */
+    private final Item[] stack = (Item[]) new Object[maxSize];
+
+    /**
+     * Indeks pierwszej wolnej pozycji na stosie.
+     */
+    private int top = 0;
+
+    /**
+     * Sprawdza, czy stos jest pusty.
+     * @return true jeśli stos jest pusty, false w przeciwnym razie
+     */
+    public boolean isEmpty() {
+        return top == 0;
+    }
+
+    /**
+     * Zwraca aktualną liczbę elementów na stosie.
+     * @return rozmiar stosu
+     */
+    public int size() {
+        return top;
+    }
+
+    /**
+     * Dodaje element na stos.
+     * @param item element do dodania
+     * @return dodany element
+     * @throws StackFullException jeśli stos jest pełny
+     */
+    public Item push(Item item) {
+        if (top == stack.length) {
+            throw new StackFullException("stack is full, maxSize=" + maxSize);
+        }
+        return (stack[top++] = item);
+    }
+
+    /**
+     * Usuwa i zwraca element ze stosu (z jego wierzchołka).
+     * @return usunięty element
+     * @throws StackEmptyException jeśli stos jest pusty
+     */
+    public Item pop() {
+        if (isEmpty()) {
+            throw new StackEmptyException("stack is empty, maxSize=" + maxSize);
+        }
+        Item item = stack[--top];
+        stack[top] = null; // pomaga w sprzątaniu pamięci (unikanie wycieków referencji)
+        return item;
+    }
+
+    /**
+     * Testowa metoda main do demonstracji działania stosu.
+     */
+    public static void main(String[] args) {
+        SimpleStack<String> simpleStack = new SimpleStack<>();
+
+        String[] imiona = { "Ania", "Janek", "Basia", "Tomek" };
+        for (String imię : imiona) {
+            prn("push(%s): %s", imię, simpleStack.push(imię));
+        }
+
+        while (simpleStack.top != 0) {
+            prn("pop(): %s", simpleStack.pop());
+        }
+    }
+}
+
+//-----------------------------------------------------------------//
+// 65: StackEmptyException.java
+// Wyjątek reprezentujący sytuację, gdy stos jest pusty
+// Rozszerza RuntimeException (wyjątek niekontrolowany) - wybór podyktowany tym,
+// że operacje na pustym stosie są raczej błędem programisty niż sytuacją, którą
+// można przewidzieć w normalnym działaniu programu
+package pl.edu.pw.elka.pag.kolekcje;
+
+public class StackEmptyException extends RuntimeException {
+    // Konstruktor przyjmujący wiadomość - pozwala na precyzyjne określenie przyczyny błędu
+    // Dziedziczy konstruktor z RuntimeException, co zapewnia standardową obsługę wyjątków
+    public StackEmptyException(String message) {
+        super(message);  // Przekazanie wiadomości do nadklasy dla spójnego zachowania
+    }
+    
+    // Brak dodatkowych metod - wystarczy standardowa funkcjonalność RuntimeException
+    // Nie dodajemy zbędnej logiki, skupiamy się na semantyce wyjątku
+}
+
+//-----------------------------------------------------------------//
+// 66: StackFullException.java
+// Wyjątek sygnalizujący przepełnienie stosu
+// Dziedziczy po RuntimeException - podobnie jak StackEmptyException,
+// ponieważ przepełnienie stosu jest zwykle wynikiem błędu w logice aplikacji
+// (np. nieoczekiwana ilość danych) zamiast sytuacją, którą należy jawnie obsługiwać
+package pl.edu.pw.elka.pag.kolekcje;
+
+public class StackFullException extends RuntimeException {
+    // Konstruktor przyjmujący szczegółowy opis błędu
+    // Pozwala na przekazanie informacji np. o maksymalnym rozmiarze stosu
+    public StackFullException(String message) {
+        super(message);  // Przekazanie wiadomości do nadklasy RuntimeException
+    }
+    
+    // Celowo nie dodajemy dodatkowych pól ani metod:
+    // 1. Zachowujemy prostotę - wystarczy podstawowa funkcjonalność
+    // 2. Ewentualne dodatkowe informacje można przekazać w message
+    // 3. Spójność z StackEmptyException
+}
+
+//-----------------------------------------------------------------//
+// 67: F1_BardzoZłyPrzykładAplikacjiGraficznej.java
+package pl.edu.pw.elka.pag.podsystemGraficzny;
+
+import java.awt.*;
+
+/**
+ * Przykład antywzorca aplikacji AWT, demonstrujący typowe błędy:
+ * - Brak obsługi zdarzeń (np. zamknięcia okna)
+ * - Sztywno ustawione parametry
+ * - Słabe zarządzanie zasobami
+ * - Brak separacji logiki i widoku
+ * 
+ * @author kmi
+ * @deprecated Klasa służy wyłącznie jako przykład złych praktyk
+ */
+public class F1_BardzoZłyPrzykładAplikacjiGraficznej {
+    /**
+     * Okno główne - pole powinno być prywatne, ale:
+     * 1. Brak final pomimo że nie powinno się zmieniać referencji
+     * 2. Frame jest przestarzałą klasą (lepszy byłby JFrame)
+     */
+    private final Frame f; // Przynajmniej final zapobiega zmianie referencji
+
+    /**
+     * Konstruktor inicjalizujący okno, ale:
+     * - Nie ustawia menedżera układu (LayoutManager)
+     * - Nie obsługuje wyjątków
+     */
+    public F1_BardzoZłyPrzykładAplikacjiGraficznej() {
+        f = new Frame("Hello Out There!");
+        // Brak WindowListener do obsługi zamknięcia okna
+    }
+    
+    /**
+     * Metoda konfigurująca i pokazująca okno, zawierająca wiele problemów:
+     * - Sztywno ustawione wymiary
+     * - Monolityczna konfiguracja
+     * - Brak walidacji
+     */
+    public void launchFrame() {
+        f.setSize(170,170); // Magiczne liczby - powinny być stałymi
+        f.setBackground(Color.blue); // Kolor zakodowany na sztywno
+        f.setVisible(true); // Brak try-catch dla wyjątków graficznych
+        
+        // Najpoważniejszy problem - brak:
+        // f.addWindowListener(...) do obsługi zamknięcia okna
+    }
+    
+    /**
+     * Punkt wejścia - brak obsługi wyjątków
+     * @param args argumenty wejścia (nieużywane)
+     */
+    public static void main(String[] args) {
+        // Brak invokeLater dla bezpieczeństwa wątkowego GUI
+        F1_BardzoZłyPrzykładAplikacjiGraficznej guiWindow = 
+            new F1_BardzoZłyPrzykładAplikacjiGraficznej();
+        guiWindow.launchFrame();
+        
+        // Aplikacja nie będzie się prawidłowo zamykać
+    }
+}
+
+//-----------------------------------------------------------------//
+// 68: F2_JeszczeZłyPrzykładAplikacjiGraficznejAleJużPrzynajmniejSięZamykaStandardowo.java
+package pl.edu.pw.elka.pag.podsystemGraficzny;
+
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+/**
+ * Przykład poprawionej wersji aplikacji graficznej, która:
+ * 1. Poprawnie obsługuje zamknięcie okna
+ * 2. Loguje zdarzenia aktywacji/deaktywacji okna
+ * 
+ * Ale nadal zawiera pewne problemy:
+ * - Używa przestarzałej klasy Frame zamiast JFrame
+ * - Sztywno zakodowane parametry
+ * - System.exit(1) z kodem błędu, co jest niepoprawne dla normalnego zamknięcia
+ * @author kmi
+ */
+public class F2_JeszczeZłyPrzykładAplikacjiGraficznejAleJużPrzynajmniejSięZamykaStandardowo {
+    
+    /**
+     * Okno główne aplikacji.
+     * Plusy:
+     * - Pole oznaczone jako final
+     * Minusy:
+     * - Nadal używa przestarzałego Frame zamiast JFrame
+     */
+    private final Frame f;
+    
+    /**
+     * Konstruktor inicjalizujący okno.
+     * Brakuje:
+     * - Ustawienia LayoutManagera
+     * - Obsługi wyjątków
+     */
+    public F2_JeszczeZłyPrzykładAplikacjiGraficznejAleJużPrzynajmniejSięZamykaStandardowo() {
+        f = new Frame("Hello Out There!");
+    }
+    
+    /**
+     * Metoda konfigurująca i pokazująca okno.
+     * Ulepszenia w stosunku do poprzedniej wersji:
+     * 1. Dodano WindowListener dla obsługi zdarzeń okna
+     * 2. Logowanie zmian stanu okna
+     * 
+     * Pozostałe problemy:
+     * - System.exit(1) powinien być System.exit(0) dla normalnego zamknięcia
+     * - Brak separacji logiki zdarzeń od kodu GUI
+     * - Magiczne liczby w setSize()
+     */
+    public void launchFrame() {
+        f.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent we) {
+                // Błąd: użycie kodu 1 (błąd) zamiast 0 (sukces)
+                System.exit(1); // Powinno być System.exit(0)
+            }
+
+            @Override
+            public void windowActivated(WindowEvent we) {
+                System.out.println("windowActivated");
+            }
+            
+            @Override
+            public void windowDeactivated(WindowEvent we) {
+                System.out.println("windowDeactivated");
+            }
+        });
+        
+        f.setSize(170,170); // Brak stałych dla wymiarów
+        f.setBackground(Color.blue); // Kolor zakodowany na sztywno
+        f.setVisible(true);
+    }
+    
+    /**
+     * Punkt wejścia aplikacji.
+     * Brakuje:
+     * - EventQueue.invokeLater() dla bezpieczeństwa wątkowego
+     * - Obsługi wyjątków
+     * @param args argumenty wejściowe (nieużywane)
+     */
+    public static void main(String[] args) {
+        // Należy użyć EventQueue.invokeLater(() -> { ... });
+        F2_JeszczeZłyPrzykładAplikacjiGraficznejAleJużPrzynajmniejSięZamykaStandardowo guiWindow = 
+            new F2_JeszczeZłyPrzykładAplikacjiGraficznejAleJużPrzynajmniejSięZamykaStandardowo();
+        guiWindow.launchFrame();
+    }
+}
+
+//-----------------------------------------------------------------//
+// 69: F3_JeszczeSłaboAleOtwieranieIZamykanieJużWłaściwe.java
+package pl.edu.pw.elka.pag.podsystemGraficzny;
+
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.lang.reflect.InvocationTargetException;
+
+/**
+ * Przykład aplikacji graficznej z poprawioną obsługą otwierania i zamykania okna,
+ * ale nadal zawierającej istotne problemy implementacyjne.
+ * 
+ * Ulepszenia:
+ * 1. Właściwe użycie EventQueue dla bezpieczeństwa wątkowego
+ * 2. Poprawna obsługa zamknięcia okna
+ * 
+ * Pozostałe problemy:
+ * - Nadmierne i błędne użycie EventQueue (podwójne wywołanie setVisible)
+ * - Niepoprawny kod wyjścia (1 zamiast 0)
+ * - Przestarzała klasa Frame zamiast JFrame
+ * - Sztywno zakodowane parametry
+ * 
+ * @author kmi
+ */
+public class F3_JeszczeSłaboAleOtwieranieIZamykanieJużWłaściwe {
+    private static final int WINDOW_WIDTH = 170;
+    private static final int WINDOW_HEIGHT = 170;
+    
+    /**
+     * Okno główne aplikacji.
+     * Uwagi:
+     * - Pole final poprawne
+     * - Frame jest przestarzałą klasą (należy użyć JFrame)
+     */
+    private final Frame f;
+
+    /**
+     * Konstruktor inicjalizujący okno.
+     * Brakuje:
+     * - Ustawienia LayoutManagera
+     * - Obsługi wyjątków przy tworzeniu komponentów
+     */
+    public F3_JeszczeSłaboAleOtwieranieIZamykanieJużWłaściwe() {
+        f = new Frame("Hello Out There!");
+    }
+
+    /**
+     * Metoda konfigurująca i pokazująca okno.
+     * Problemy:
+     * 1. Podwójne wywołanie setVisible() poprzez invokeLater i invokeAndWait
+     * 2. invokeAndWait blokuje wątek, co jest niepotrzebne w tym przypadku
+     * 3. Kod wyjścia 1 zamiast 0 dla normalnego zamknięcia
+     */
+    public void launchFrame() {
+        // Poprawna obsługa zamknięcia okna (z wyjątkiem kodu wyjścia)
+        f.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent we) {
+                System.exit(1); // Błąd: powinno być System.exit(0)
+            }
+        });
+        
+        f.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+        f.setBackground(Color.blue);
+
+        // BŁĄD: Podwójna inicjalizacja widoczności - tylko jedna jest potrzebna
+        // invokeLater wystarczy w tym przypadku
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                f.setVisible(true);
+            }
+        });
+
+        // NIE POTRZEBNE: invokeAndWait jest zbędne i może powodować problemy
+        try {
+            EventQueue.invokeAndWait(new Runnable() {
+                @Override
+                public void run() {
+                    f.setVisible(true); // Powtórzenie tej samej operacji
+                }
+            });
+        } catch (InterruptedException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Punkt wejścia aplikacji.
+     * Uwagi:
+     * - Brak obsługi wyjątków
+     * - Bezpośrednie wywołanie z main zamiast użycia EventQueue
+     * 
+     * @param args argumenty wejściowe (nieużywane)
+     */
+    public static void main(String[] args) {
+        // Lepsze rozwiązanie: EventQueue.invokeLater(() -> {
+        //     new F3_JeszczeSłaboAleOtwieranieIZamykanieJużWłaściwe().launchFrame();
+        // });
+        F3_JeszczeSłaboAleOtwieranieIZamykanieJużWłaściwe guiWindow = 
+            new F3_JeszczeSłaboAleOtwieranieIZamykanieJużWłaściwe();
+        guiWindow.launchFrame();
+    }
+}
+
+//-----------------------------------------------------------------//
+// 70: F4_WreszcieDziedziczenieZamiastAgregacji.java
+package pl.edu.pw.elka.pag.podsystemGraficzny;
+
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+/**
+ * Przykład poprawnej implementacji aplikacji AWT z wykorzystaniem dziedziczenia.
+ * 
+ * Zalety w stosunku do poprzednich wersji:
+ * 1. Właściwe użycie dziedziczenia (is-a relationship)
+ * 2. Poprawna inicjalizacja GUI w EDT (Event Dispatch Thread)
+ * 3. Lepsza enkapsulacja (brak zbędnego pola Frame)
+ * 
+ * Pozostałe problemy:
+ * 1. Użycie przestarzałej klasy Frame zamiast JFrame
+ * 2. Kod wyjścia 1 zamiast 0 dla normalnego zamknięcia
+ * 3. Sztywno zakodowane parametry okna
+ * 
+ * @author kmi
+ */
+public class F4_WreszcieDziedziczenieZamiastAgregacji extends Frame {
+
+    private static final int WINDOW_WIDTH = 170;
+    private static final int WINDOW_HEIGHT = 170;
+    private static final Color BACKGROUND_COLOR = Color.blue;
+
+    /**
+     * Konstruktor inicjalizujący okno.
+     * Plusy:
+     * - Bezpośrednie dziedziczenie po Frame
+     * - Brak zbędnego pola przechowującego referencję
+     * 
+     * Minusy:
+     * - Brak ustawienia LayoutManagera
+     */
+    public F4_WreszcieDziedziczenieZamiastAgregacji() {
+        super("Hello Out There!");
+    }
+    
+    /**
+     * Metoda konfigurująca i pokazująca okno.
+     * Ulepszenia:
+     * 1. Użycie lambda wyrażenia zamiast anonimowej klasy
+     * 2. Poprawne wywołanie setVisible w EDT
+     * 
+     * Problemy:
+     * 1. System.exit(1) zamiast System.exit(0)
+     */
+    public void launchFrame() {
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent we) {
+                System.exit(1); // Błąd: powinno być System.exit(0)
+            }
+        });
+        
+        setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+        setBackground(BACKGROUND_COLOR);
+        
+        // Poprawne wykonanie w EDT
+        EventQueue.invokeLater(() -> setVisible(true));
+    }
+    
+    /**
+     * Punkt wejścia aplikacji.
+     * Uwagi:
+     * 1. Brak obsługi wyjątków
+     * 2. Bezpośrednie wywołanie z main zamiast użycia EventQueue
+     * 
+     * @param args argumenty wejściowe (nieużywane)
+     */
+    public static void main(String[] args) {
+        // Lepsze rozwiązanie: EventQueue.invokeLater(() -> {
+        //     new F4_WreszcieDziedziczenieZamiastAgregacji().launchFrame();
+        // });
+        F4_WreszcieDziedziczenieZamiastAgregacji guiWindow = 
+            new F4_WreszcieDziedziczenieZamiastAgregacji();
+        guiWindow.launchFrame();
+    }
+}
+
+//-----------------------------------------------------------------//
+// 71: F5_WreszcieRezygnacjaZBezwględnychWymiarów.java
+package pl.edu.pw.elka.pag.podsystemGraficzny;
+
+import java.awt.*; // Importowanie klasy Color i Frame z pakietu AWT, potrzebne do tworzenia komponentów graficznych i okna.
+import java.awt.event.WindowAdapter; // Importowanie klasy WindowAdapter do obsługi zdarzeń okna.
+import java.awt.event.WindowEvent; // Importowanie klasy WindowEvent, używanej do reprezentowania zdarzeń okna.
+
+/**
+ * To jest przykład aplikacji graficznej, która zamyka się w standardowy sposób.
+ * Otwiera się także w polecany sposób. Dziedziczenie po @see java.awt.Frame.
+ * Brak ustalania wymiarów -- pakowanie.
+ *
+ * @author kmi
+ */
+public class F5_WreszcieRezygnacjaZBezwględnychWymiarów extends Frame { // Dziedziczenie po klasie Frame: Frame jest klasą w AWT reprezentującą główne okno aplikacji. Dziedziczenie po niej pozwala na stworzenie własnego, niestandardowego okna.
+
+	/**
+	 * Konstruktor bezparametrowy.
+	 */
+	public F5_WreszcieRezygnacjaZBezwględnychWymiarów() {
+		super("Hello Out There!"); // Wywołanie konstruktora klasy nadrzędnej (Frame) z tytułem okna. Jest to standardowy sposób nadawania tytułu oknu.
+	}
+
+	/**
+	 * Metoda pokazuje okno aplikacji.
+	 */
+	public void launchFrame() {
+		addWindowListener(new WindowAdapter() { // Dodanie słuchacza zdarzeń okna. WindowAdapter to klasa pomocnicza, która implementuje wszystkie metody interfejsu WindowListener z pustymi implementacjami. Pozwala to na nadpisanie tylko tych metod, które nas interesują.
+			public void windowClosing(WindowEvent we) { // Nadpisanie metody windowClosing: Ta metoda jest wywoływana, gdy użytkownik próbuje zamknąć okno (np. klikając przycisk "X").
+				System.exit(1); // Zakończenie działania aplikacji: Argument '1' w System.exit() jest konwencjonalnie używany do sygnalizowania, że program zakończył się z błędem lub w sposób nieprawidłowy, chociaż w tym przypadku oznacza po prostu zamknięcie okna.
+			}
+		});
+
+		setBackground(Color.blue); // Ustawienie koloru tła okna na niebieski: Color.blue to stała predefiniowana w klasie Color.
+		pack(); // Pakowanie komponentów: Metoda pack() automatycznie dostosowuje rozmiar okna do preferowanych rozmiarów jego komponentów. Jest to zalecana praktyka, zamiast ręcznego ustawiania wymiarów, ponieważ zapewnia, że wszystkie komponenty są widoczne i okno ma odpowiednie rozmiary niezależnie od platformy czy rozdzielczości ekranu.
+		EventQueue.invokeLater(() -> setVisible(true)); // Ustawienie widoczności okna w wątku wysyłania zdarzeń (EDT): EventQueue.invokeLater() gwarantuje, że operacje na GUI (takie jak ustawienie widoczności okna) są wykonywane w dedykowanym wątku (Event Dispatch Thread - EDT). Jest to kluczowe dla bezpieczeństwa wątkowego w Swing/AWT i zapobiega potencjalnym problemom z synchronizacją.
+	}
+
+	/**
+	 * Funkcja główna aplikacji.
+	 * @param args nieużywane.
+	 */
+	public static void main(String[] args) {
+		F5_WreszcieRezygnacjaZBezwględnychWymiarów guiWindow = new F5_WreszcieRezygnacjaZBezwględnychWymiarów(); // Utworzenie instancji klasy okna: Tworzymy nowy obiekt naszej klasy Frame, co inicjuje okno.
+		guiWindow.launchFrame(); // Wywołanie metody uruchamiającej okno: Powoduje to wyświetlenie okna na ekranie, skonfigurowanie słuchaczy zdarzeń i ustawienie tła.
+	}
+}
+
+//-----------------------------------------------------------------//
+// 72: F6_PojawiająSięKomponentyGUI.java
+package pl.edu.pw.elka.pag.podsystemGraficzny;
+
+import java.awt.*; // Importowanie klas z pakietu AWT, niezbędnych do tworzenia interfejsu graficznego (Frame, Button, Panel, Color, Toolkit, BorderLayout, GridLayout).
+import java.awt.event.ActionEvent; // Importowanie klasy ActionEvent, reprezentującej zdarzenia akcji, np. kliknięcie przycisku.
+import java.awt.event.ActionListener; // Importowanie interfejsu ActionListener, który musi być zaimplementowany przez klasy reagujące na ActionEvent.
+import java.awt.event.WindowAdapter; // Importowanie klasy WindowAdapter, ułatwiającej obsługę zdarzeń okna.
+import java.awt.event.WindowEvent; // Importowanie klasy WindowEvent, reprezentującej zdarzenia dotyczące okna.
+
+/**
+ * To jest przykład aplikacji graficznej, która zamyka się w standardowy sposób.
+ * Otwiera się także w polecany sposób. Dziedziczenie po @see java.awt.Frame.
+ * Brak bezwzględnego ustalania wymiarów -- pakowanie. Pojawiają się elementy GUI.
+ *
+ * @author kmi
+ */
+public class F6_PojawiająSięKomponentyGUI extends Frame { // Dziedziczenie po klasie Frame: Podobnie jak w poprzednim przykładzie, rozszerzamy klasę Frame, aby stworzyć własne okno aplikacji.
+
+	/**
+	 * Konstruktor bezparametrowy.
+	 */
+	public F6_PojawiająSięKomponentyGUI() {
+		super("Hello Out There!"); // Wywołanie konstruktora klasy nadrzędnej (Frame) z tytułem okna.
+	}
+
+	/**
+	 * Metoda pokazuje okno aplikacji.
+	 */
+	public void launchFrame() {
+		addWindowListener(new WindowAdapter() { // Dodanie słuchacza zdarzeń okna do obsługi zdarzenia zamknięcia.
+			public void windowClosing(WindowEvent we) { // Nadpisanie metody windowClosing, wywoływanej przy próbie zamknięcia okna.
+				System.exit(1); // Zakończenie działania aplikacji. Standardowa praktyka z argumentem '1' dla sygnalizacji zamknięcia, niekoniecznie błędu w tym kontekście.
+			}
+		});
+
+		//Panel p = new Panel(new GridLayout(3,3));// new BorderLayout());
+		Panel p = new Panel(new BorderLayout()); // Utworzenie instancji klasy Panel z menedżerem układu BorderLayout. Panel jest uniwersalnym kontenerem do grupowania komponentów. BorderLayout dzieli kontener na pięć regionów: NORTH, SOUTH, EAST, WEST i CENTER.
+
+		Button ok1; // Deklaracja zmiennej referencyjnej dla przycisku.
+		Panel p1 = new Panel(); // Utworzenie nowego panelu. Panel bez określonego menedżera układu używa FlowLayout (domyślny), który układa komponenty od lewej do prawej.
+		p1.add(ok1 = new Button("Ok")); // Utworzenie przycisku "Ok" i dodanie go do panelu p1. Przypisanie nowo utworzonego przycisku do zmiennej 'ok1' w tej samej linii jest zwięzłe.
+
+		ok1.addActionListener(new ActionListener() { // Dodanie słuchacza akcji do przycisku 'ok1'. ActionListener to interfejs funkcyjny, który definiuje metodę actionPerformed.
+			public void actionPerformed(ActionEvent ae) { // Metoda wywoływana, gdy nastąpi zdarzenie akcji (np. kliknięcie przycisku).
+				if (ae.getActionCommand().equals("Ok")) { // Sprawdzenie komendy akcji. getActionCommand() zwraca tekst etykiety przycisku (domyślnie).
+
+					// Wypisanie priorytetu wątku obsługi zdarzeń: To ilustruje, że wszystkie zdarzenia GUI w AWT/Swing są obsługiwane przez jeden, specjalny wątek – Event Dispatch Thread (EDT). Dbanie o to, aby długotrwałe operacje nie były wykonywane bezpośrednio w EDT, jest kluczowe dla responsywności interfejsu.
+					System.out.println("Prorytet wątku obsługi zdarzeń: " + Thread.currentThread().getPriority());
+
+					((Button)(ae.getSource())).setLabel("Cancel"); // Zmiana etykiety przycisku na "Cancel". ae.getSource() zwraca obiekt, który wygenerował zdarzenie, a rzutowanie na Button jest konieczne do wywołania metody setLabel().
+					//validate(); // validate(): Prosi menedżera układu o ponowne rozmieszczenie komponentów w kontenerze. Jest to potrzebne, gdy komponenty zmieniają swoje rozmiary lub pozycje po inicjalnym rozmieszczeniu.
+					// wypróbuj pack() zamiast validate()
+					pack(); // pack(): Zmienia rozmiar okna tak, aby wszystkie jego komponenty miały swój preferowany rozmiar. Jest to bardziej kompleksowe niż validate(), ponieważ wpływa na rozmiar całego okna, a nie tylko wewnętrzne rozłożenie komponentów. W tym przypadku, ponieważ etykieta przycisku zmienia długość, pack() jest właściwym wyborem, aby okno dostosowało się do nowej, preferowanej szerokości przycisku.
+				} else {
+					((Button)(ae.getSource())).setLabel("Ok"); // Zmiana etykiety przycisku z powrotem na "Ok".
+					//validate();
+					pack(); // Ponowne wywołanie pack() dla dostosowania okna do nowej etykiety.
+					// wypróbuj pack() zamiast validate()
+				}
+			}
+		});
+
+		p.add(p1, BorderLayout.EAST); // Dodanie panelu p1 (zawierającego przycisk "Ok"/"Cancel") do regionu EAST panelu p.
+		p.add(new Button("Anuluj"), BorderLayout.WEST); // Dodanie przycisku "Anuluj" do regionu WEST.
+		p.add(new Button("Anuluj 1"), BorderLayout.NORTH); // Dodanie przycisku "Anuluj 1" do regionu NORTH.
+		p.add(new Button("Anuluj 2"), BorderLayout.SOUTH); // Dodanie przycisku "Anuluj 2" do regionu SOUTH.
+		p.add(new Button("Anuluj 3"), BorderLayout.CENTER); // Dodanie przycisku "Anuluj 3" do regionu CENTER. W BorderLayout, tylko jeden komponent może zająć dany region.
+		p.add(new Button("Anuluj 4")); // Próba dodania kolejnego przycisku bez określenia regionu. W BorderLayout, jeśli nie poda się regionu, komponent zostanie dodany do regionu CENTER. Ponieważ region CENTER jest już zajęty przez "Anuluj 3", ten przycisk faktycznie *zastąpi* poprzedni komponent w centrum, a nie doda się obok. Jest to ważna cecha BorderLayout.
+
+		add(p); // Dodanie panelu 'p' do ramki (naszego obiektu F6_PojawiająSięKomponentyGUI). Domyślny menedżer układu dla Frame to BorderLayout. Jeśli nie określimy regionu, 'p' zostanie dodane do CENTER.
+
+		setBackground(Color.blue); // Ustawienie koloru tła ramki na niebieski.
+		pack(); // Pakowanie komponentów: Ponowne wywołanie pack() po dodaniu wszystkich komponentów do ramki. To zapewnia, że okno ma odpowiedni rozmiar, aby pomieścić wszystkie elementy GUI.
+
+		// Następujące dwie linie kodu dotyczą ustawiania pozycji i rozmiaru okna, ale ostatnia linia nadpisuje poprzednie ustawienia.
+		// Pierwsze setBounds próbuje wyśrodkować okno na ekranie.
+		setBounds((Toolkit.getDefaultToolkit().getScreenSize().width >> 1) - (getSize().width >> 1), // Obliczenie współrzędnej X dla wyśrodkowania okna. '>> 1' to szybki sposób dzielenia przez 2. Toolkit.getDefaultToolkit().getScreenSize() zwraca wymiary ekranu. getSize().width to aktualna szerokość okna po pack().
+				(Toolkit.getDefaultToolkit().getScreenSize().height >> 1) - (getSize().height >> 1), getSize().width, getSize().height); // Obliczenie współrzędnej Y i zachowanie szerokości/wysokości.
+
+		// Ta linia nadpisuje poprzednie wyśrodkowanie i ustawia stałe wymiary.
+		setBounds(100, 100, 200, 200); // Ręczne ustawienie pozycji i rozmiaru okna: Okno zostanie umieszczone w punkcie (100,100) na ekranie i będzie miało rozmiar 200x200 pikseli. Ta linia anuluje efekt poprzedniego wyśrodkowania, co może być błędem lub celowym testem.
+
+		EventQueue.invokeLater(() -> setVisible(true)); // Ustawienie widoczności okna w wątku wysyłania zdarzeń (EDT). Jest to najlepsza praktyka, aby operacje na GUI były wykonywane w bezpieczny sposób.
+	}
+
+	/**
+	 * Funkcja główna aplikacji.
+	 * @param args nieużywane.
+	 */
+	public static void main(String[] args) {
+		// Wypisanie priorytetu głównego wątku: Wątek main ma zazwyczaj domyślny priorytet, który różni się od priorytetu EDT.
+		System.out.println("Prorytet głównego wątku: " + Thread.currentThread().getPriority());
+		F6_PojawiająSięKomponentyGUI guiWindow = new F6_PojawiająSięKomponentyGUI(); // Utworzenie instancji klasy okna.
+		guiWindow.launchFrame(); // Wywołanie metody uruchamiającej okno.
+	}
+}
+
+//-----------------------------------------------------------------//
+// 73: FrameExample.java
+package pl.edu.pw.elka.pag.podsystemGraficzny;
+
+import java.awt.*; // Importowanie klasy java.awt.Frame i java.awt.Color, które są podstawowymi komponentami graficznymi w AWT (Abstract Window Toolkit).
+
+public class FrameExample {
+	final private Frame f; // Deklaracja finalnego i prywatnego pola typu Frame. Słowo kluczowe 'final' oznacza, że raz przypisana wartość do 'f' nie może zostać zmieniona. 'private' ogranicza dostęp do tego pola tylko do wewnątrz tej klasy, co jest dobrą praktyką hermetyzacji.
+
+	public FrameExample() {
+		f = new Frame("Hello Out There!"); // Konstruktor klasy FrameExample. Inicjuje obiekt Frame z podanym tytułem okna. Tworzymy tutaj instancję okna, ale jeszcze go nie wyświetlamy ani nie konfigurujemy.
+	}
+
+	public void launchFrame() {
+		f.setSize(370,370); // Ustawienie rozmiaru okna na 370x370 pikseli. Jest to **bezwzględne** ustawienie rozmiaru, co w profesjonalnych aplikacjach graficznych jest rzadko stosowane, ponieważ nie skaluje się dobrze na różnych rozdzielczościach ekranu i systemach operacyjnych (preferowane jest użycie pack() z menedżerami układu).
+		f.setBackground(Color.blue); // Ustawienie koloru tła okna na niebieski. Color.blue to predefiniowana stała z klasy Color.
+		f.setVisible(true); // Ustawienie widoczności okna na 'true'. Powoduje to wyświetlenie okna na ekranie. Ta operacja jest wykonywana w głównym wątku aplikacji, co w przypadku prostych aplikacji AWT jest tolerowane, ale w bardziej złożonych scenariuszach z Swingiem zaleca się wykonywanie operacji na GUI w Event Dispatch Thread (EDT) za pomocą EventQueue.invokeLater().
+	}
+
+	public static void main(String[] args) { // Metoda main to punkt wejścia każdej aplikacji Javy.
+		FrameExample guiWindow = new FrameExample(); // Utworzenie instancji klasy FrameExample. Inicjalizuje to pole 'f' nowym obiektem Frame.
+		guiWindow.launchFrame(); // Wywołanie metody launchFrame() na utworzonej instancji, co powoduje wyświetlenie skonfigurowanego okna.
+	}
+}
+
+//-----------------------------------------------------------------//
+// 74: GetImage.java
+package pl.edu.pw.elka.pag.podsystemGraficzny;
+
+import java.awt.*; // Importowanie podstawowych klas AWT (Frame, Image, Graphics, Dimension, Toolkit, Color) do tworzenia GUI i obsługi obrazków.
+import java.awt.event.WindowAdapter; // Importowanie klasy WindowAdapter do wygodnej obsługi zdarzeń okna.
+import java.awt.event.WindowEvent; // Importowanie klasy WindowEvent, reprezentującej zdarzenia dotyczące okna.
+import java.io.File; // Importowanie klasy File do sprawdzania istnienia plików na dysku.
+import java.io.IOException; // Importowanie klasy IOException do obsługi wyjątków związanych z operacjami I/O.
+import java.net.URL; // Importowanie klasy URL do obsługi adresów URL (obrazki z internetu).
+
+
+/**
+ * Demonstracja wyświetlania obrazków.
+ * Jest to przykład rozbudowanego komponentu AWT, który zarządza wyświetlaniem obrazków z plików lokalnych lub URL.
+ * Ilustruje ważne aspekty cyklu życia komponentów AWT (addNotify, paint, update) oraz asynchroniczne ładowanie obrazów.
+ * @author Krystian Ignasiak
+ */
+public class GetImage extends Frame { // Dziedziczenie po Frame, co oznacza, że klasa GetImage jest oknem najwyższego poziomu.
+
+	/**
+	 * Obiekt klasy Image, który będzie przechowywał wczytany obrazek.
+	 * Obrazki w AWT są ładowane asynchronicznie, co oznacza, że metoda getImage() zwraca obiekt od razu,
+	 * ale samo ładowanie danych obrazka może trwać w tle.
+	 */
+	private Image img;
+
+	/**
+	 * URL referujący na obrazek w Internecie. Jeśli jest ustawiony jest brany pod uwagę zamiast nazwy pliku.
+	 * Użycie URL pozwala na pobieranie obrazków zdalnie.
+	 */
+	private URL imageURL;
+
+	/**
+	 * Nazwa pliku z obrazkiem (ścieżka do pliku lokalnego lub reprezentacja tekstowa URL).
+	 * Używana do identyfikacji obrazka i jako tytuł ramki.
+	 */
+	private String imageFileName;
+
+	/**
+	 * Statyczny licznik pokazanych obrazków -- licznik otwartych okien.
+	 * 'static' oznacza, że zmienna należy do klasy, a nie do konkretnego obiektu, więc jest wspólna dla wszystkich instancji GetImage.
+	 * Służy do śledzenia, ile okien jest otwartych, aby wiedzieć, kiedy zamknąć aplikację.
+	 */
+	private static int windowCounter;
+
+	/**
+	 * Numer tego obrazka (instancji okna). 'final' oznacza, że wartość jest przypisywana raz i nie może być zmieniona.
+	 * Służy do unikalnej identyfikacji poszczególnych okien.
+	 */
+	private final int imageNumber;
+
+	/**
+	 * Licznik wywołań metody paint. Służy do obserwacji, jak często AWT prosi o odrysowanie komponentu.
+	 * Metoda paint może być wywoływana wielokrotnie, np. po minimalizacji/maksymalizacji okna, zasłonięciu/odsłonięciu, czy zmianie rozmiaru.
+	 */
+	private int paintCallsCounter;
+
+	/**
+	 * Konstruktor tworzący ramkę z obrazkiem z pliku dyskowego.
+	 *
+	 * @param imageFileName nazwa pliku dyskowego (ścieżka względna lub absolutna).
+	 * @throws IllegalArgumentException jeśli plik o podanej nazwie nie istnieje, co jest dobrą praktyką
+	 * do wczesnego sygnalizowania problemów z danymi wejściowymi.
+	 */
+	GetImage(String imageFileName) throws IllegalArgumentException {
+		super(imageFileName); // Wywołanie konstruktora klasy nadrzędnej (Frame) z nazwą pliku jako tytułem okna.
+		this.imageFileName = imageFileName; // Przypisanie nazwy pliku do pola instancji.
+		imageNumber = ++windowCounter; // Inkrementacja statycznego licznika okien i przypisanie go do numeru tego obrazka.
+
+		// Sprawdzenie, czy plik istnieje, zanim spróbujemy go wczytać. To jest ważne dla obsługi błędów.
+		if (!new File(imageFileName).exists()) {
+			throw new IllegalArgumentException("Plik " + imageFileName + " nie istnieje.");
+		}
+
+		initUI(); // Wywołanie wspólnej metody inicjalizującej interfejs użytkownika.
+	}
+
+	/**
+	 * Konstruktor tworzący ramkę z obrazkiem pobieranym z URL.
+	 *
+	 * @param imageURL URL referujący na obrazek w Internecie.
+	 */
+	GetImage(URL imageURL) {
+		super(imageURL.toString()); // Użycie reprezentacji URL jako tytułu okna.
+		this.imageURL = imageURL; // Przypisanie URL do pola instancji.
+		this.imageFileName = imageURL.toString(); // Użycie URL jako "nazwy pliku" dla celów wyświetlania i debugowania.
+		imageNumber = ++windowCounter; // Inkrementacja statycznego licznika okien.
+
+		initUI(); // Wywołanie wspólnej metody inicjalizującej interfejs użytkownika.
+	}
+
+	/**
+	 * Metoda dodaje słuchaczy zdarzeń i zleca pokazanie ramki aplikacji.
+	 * Jest to wspólna część inicjalizacji dla obu konstruktorów, co redukuje duplikację kodu.
+	 */
+	private void initUI() {
+		addWindowListener(new WindowAdapter() { // Dodanie anonimowej klasy wewnętrznej jako słuchacza zdarzeń okna.
+			public void windowClosing(WindowEvent we) { // Nadpisanie metody wywoływanej przy próbie zamknięcia okna.
+				setVisible(false); // Ukrycie bieżącego okna, zamiast natychmiastowego zamykania aplikacji.
+				if (--windowCounter == 0) { // Dekrementacja licznika otwartych okien. Jeśli to było ostatnie okno...
+					System.exit(0); // ...aplikacja zostaje zakończona. Użycie 0 oznacza pomyślne zakończenie.
+				}
+			}
+		});
+
+		// Ustawienie minimalnego rozmiaru okna. Jest to sugestia dla menedżera układu i systemu operacyjnego.
+		this.setMinimumSize(new Dimension(300, 300));
+		// Ustawienie widoczności okna. EventQueue.invokeLater() jest używane do zapewnienia, że operacje na GUI
+		// są wykonywane w Event Dispatch Thread (EDT), co jest najlepszą praktyką w AWT/Swing dla bezpieczeństwa wątkowego.
+		EventQueue.invokeLater(() -> setVisible(true));
+	}
+
+	@Override
+	public void update(Graphics g) {
+		// Domyślna implementacja metody update() w Component czyści obszar komponentu przed wywołaniem paint().
+		// Nadpisanie tej metody w ten sposób (wywołując bezpośrednio paint(g)) zapobiega domyślnemu czyszczeniu.
+		// Może to być przydatne w przypadku animacji, aby uniknąć migotania, ale wymaga ostrożności,
+		// ponieważ nie zawsze jest pożądane, aby komponent nie był czyszczony.
+		paint(g);
+	}
+
+
+	@Override
+	public void addNotify() {
+		super.addNotify(); // Wywołanie metody nadrzędnej. addNotify() jest wywoływane, gdy komponent jest dodawany do natywnego kontenera peer (reprezentacji komponentu w systemie operacyjnym). Jest to odpowiednie miejsce do ładowania zasobów, które wymagają natywnego kontekstu graficznego (np. Toolkit.getImage()).
+
+		// Ładowanie obrazka za pomocą Toolkit.getImage(). Ta metoda ładuje obrazek asynchronicznie.
+		// Oznacza to, że metoda getImage() natychmiast zwraca obiekt Image, ale dane obrazka
+		// są ładowane w tle. Dopóki dane nie zostaną w pełni załadowane, metody takie jak getWidth()
+		// mogą zwracać -1.
+		if (imageURL != null) {
+			img = Toolkit.getDefaultToolkit().getImage(imageURL); // Ładowanie z URL.
+		} else {
+			img = Toolkit.getDefaultToolkit().getImage(imageFileName); // Ładowanie z pliku lokalnego.
+		}
+
+		// Wypisanie nazwy prostej klasy załadowanego obiektu Image.
+		System.out.println(img.getClass().getSimpleName());
+		// Próba pobrania szerokości obrazka. getWidth(this) oznacza, że komponent (this) jest obserwatorem ładowania.
+		// Wartość -1 wskazuje, że obrazek nie został jeszcze w pełni załadowany.
+		System.out.println("addNotify, width = " + img.getWidth(this));
+	}
+
+	@Override
+	public void paint(Graphics g) {
+		// Metoda paint() jest odpowiedzialna za rysowanie komponentu. Jest wywoływana przez AWT/Swing,
+		// gdy komponent musi zostać odrysowany (np. po odkryciu, zmianie rozmiaru, itp.).
+		// NIE NALEŻY wywoływać paint() bezpośrednio, zamiast tego należy wywołać repaint().
+		System.out.printf("paint dla obrazka %s wywołane %d raz%n", imageFileName, ++paintCallsCounter);
+		int x = 6, y = 22; // Pozycja, od której zaczniemy rysować obrazek w oknie. 22 to offset dla paska tytułowego.
+		try {
+			// Rysowanie obrazka. Trzeci argument 'this' oznacza, że bieżący komponent (Frame) jest ImageObserverem,
+			// co pozwala AWT na asynchroniczne rysowanie obrazka w miarę jego ładowania.
+			g.drawImage(img, x, y, this);
+		} catch (NullPointerException npe) {
+			// Obsługa błędu w przypadku, gdy img jest nullem (np. problem z ładowaniem obrazka).
+			System.out.println("null in paint ! (" + imageFileName + ")");
+		}
+
+		// Ustawienie rozmiaru okna na podstawie rozmiaru obrazka plus offsety.
+		// Ważne: getSize() w tym kontekście może zwrócić rozmiar sprzed ustalenia rozmiaru przez obrazek.
+		// Użycie img.getWidth(this) i img.getHeight(this) jest kluczowe, ale pamiętaj, że na początku mogą być -1.
+		// W praktyce, dla dynamicznego skalowania okna do obrazka, lepszym rozwiązaniem byłoby użycie ImageObserver
+		// i wywołanie pack() po zakończeniu ładowania obrazka.
+		setSize(x + img.getWidth(this), y + img.getHeight(this));
+		System.out.println("paint, width = " + img.getWidth(this));
+		//sleep(1000);// Komentarz sugeruje testowanie opóźnienia rysowania, ale jest zakomentowany.
+	}
+
+	/**
+	 * Metoda main to punkt wejścia do aplikacji.
+	 * Demonstracja tworzenia okien z obrazkami z plików lokalnych i z URL.
+	 * @param args nieużywane.
+	 * @throws IOException w przypadku problemów z URL (np. nieprawidłowy format adresu).
+	 */
+	public static void main(String[] args) throws IOException {
+		// Tablica nazw plików graficznych do wczytania z lokalnego systemu plików.
+		String[] graphicFileNames = { "1.gif", "1.jpg", "obrazek3.png" };
+		// Ścieżka do katalogu z zasobami. Ważne jest, aby te pliki faktycznie istniały w tej lokalizacji.
+		String resourceFolder = ".\\resources\\";
+
+		// Pętla iterująca przez nazwy plików graficznych.
+		for (String currentGraphicFileName : graphicFileNames) {
+			try {
+				// Tworzenie nowej instancji GetImage dla każdego pliku, co otwiera osobne okno.
+				new GetImage(resourceFolder + currentGraphicFileName);
+			} catch (IllegalArgumentException iae) {
+				// Obsługa wyjątku, jeśli plik nie istnieje.
+				// Wypisanie sformatowanej wiadomości o braku pliku, z sugestią rozwiązania.
+				// getCanonicalPath() zwraca pełną, kanoniczną ścieżkę do katalogu.
+				System.out.printf("""
+								W katalogu [%s] brakuje pliku %s (%s)
+								Rozwiązanie: wgraj plik %s do tego katalogu%n""",
+						new File(resourceFolder).getCanonicalPath(), currentGraphicFileName,
+						iae.getMessage(), currentGraphicFileName);
+			}
+		}
+
+		// Tworzenie obiektu URL do obrazka z internetu.
+		URL url = new URL("https://dimuro.pl/wp-content/uploads/2021/01/AdobeStock_208129110-D.jpg");
+		// Tworzenie nowej instancji GetImage dla obrazka z URL.
+		new GetImage(url);
+	}
+}
+
+//-----------------------------------------------------------------//
+// 75: JPaintDemo.java
+package pl.edu.pw.elka.pag.podsystemGraficzny;
+
+import javax.swing.*; // Importuje klasy z pakietu Swing, który jest rozszerzeniem AWT i dostarcza bogatszych komponentów GUI.
+import java.awt.*; // Importuje klasy z pakietu AWT, takie jak Graphics, Color, BorderLayout, które są podstawą dla Swing.
+
+
+/*
+ ***************************************************************
+ * Silly Sample program which demonstrates the basic paint
+ * callback mechanism in the AWT.
+ *
+ * Klasa JPaintDemo jest aplikacją Swingową (dziedziczy po JFrame), która demonstruje podstawowy mechanizm rysowania
+ * komponentów GUI w Javie, wykorzystując metody callback (takie jak paintComponent w JSmiley).
+ * Należy zauważyć, że choć komentarz oryginalny wspomina o AWT, to aplikacja jest zaimplementowana w Swingu.
+ ***************************************************************
+ */
+public class JPaintDemo extends JFrame { // JPaintDemo dziedziczy po JFrame, co oznacza, że jest to okno najwyższego poziomu w aplikacji Swing.
+
+    /**
+     * Konstruktor klasy JPaintDemo.
+     * @param title Tytuł, który pojawi się na pasku tytułowym okna.
+     */
+    JPaintDemo(String title) {
+        super(title); // Wywołuje konstruktor klasy nadrzędnej (JFrame), ustawiając tytuł okna.
+
+        // Ustawia domyślną operację wykonywaną po zamknięciu okna przez użytkownika (np. kliknięcie 'X').
+        // DISPOSE_ON_CLOSE oznacza, że okno zostanie zamknięte i jego zasoby zwolnione, ale aplikacja (JVM)
+        // będzie nadal działać, jeśli istnieją inne otwarte okna lub aktywne wątki.
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
+        // Dodaje niestandardowy komponent JSmiley do centralnego regionu okna.
+        // new JSmiley(Color.yellow): Tworzy nową instancję komponentu JSmiley, przekazując żółty kolor jako argument.
+        // BorderLayout.CENTER: JFrame domyślnie używa menedżera układu BorderLayout. Dodanie komponentu
+        // do CENTER sprawi, że zajmie on większość dostępnego miejsca w oknie.
+        add(new JSmiley(Color.yellow), BorderLayout.CENTER);
+
+        // Metoda pack() dostosowuje rozmiar ramki (JFrame) do preferowanych rozmiarów wszystkich jej komponentów.
+        // Jest to najlepsza praktyka w Swing, ponieważ pozwala komponentom na samodzielne określenie optymalnych wymiarów,
+        // zapewniając prawidłowe wyświetlanie na różnych systemach i rozdzielczościach, zamiast sztywnego ustawiania rozmiaru.
+        pack();
+    }
+
+    /**
+     * Główna funkcja aplikacji, punkt wejścia programu.
+     * @param args Argumenty wiersza poleceń (nieużywane w tym przykładzie).
+     */
+    public static void main(String[] args) {
+        // Tworzy nową instancję klasy JPaintDemo z tytułem "Have a nice day!".
+        // W tym momencie okno jest inicjowane, ale jeszcze nie jest widoczne.
+        JPaintDemo pd = new JPaintDemo("Have a nice day!");
+
+        // Ustawia widoczność okna na 'true' (wyświetla okno na ekranie).
+        // SwingUtilities.invokeLater(): Ta metoda jest kluczowa w programowaniu Swing. Gwarantuje,
+        // że wszystkie operacje manipulujące komponentami GUI są wykonywane w Event Dispatch Thread (EDT).
+        // Swing nie jest bezpieczny wątkowo; bezpośrednie modyfikowanie komponentów GUI z innych wątków
+        // niż EDT może prowadzić do nieprzewidywalnych błędów. Użycie invokeLater() zapewnia,
+        // że kod w lambdzie zostanie wykonany w EDT, co jest bezpieczne i zalecane.
+        SwingUtilities.invokeLater(() -> pd.setVisible(true));
+    }
+}
+
+//-----------------------------------------------------------------//
+// 76: JSmiley.java
+package pl.edu.pw.elka.pag.podsystemGraficzny;
+
+import javax.swing.*; // Importuje klasy ze Swing, biblioteki do tworzenia graficznych interfejsów użytkownika.
+import java.awt.*; // Importuje klasy z AWT, podstawowego zestawu narzędzi graficznych.
+
+/**
+ * Komponent, który rysuje uśmiechniętą buźkę na ekranie.
+ * Ta klasa rozszerza JComponent, aby stworzyć własny komponent rysujący.
+ */
+class JSmiley extends JComponent { // Klasa JSmiley dziedziczy po JComponent, co jest standardem dla własnych komponentów rysujących w Swing.
+
+    /**
+     * Konstruktor komponentu JSmiley.
+     * @param faceColor Kolor, którym zostanie wypełniona buźka.
+     */
+    public JSmiley(Color faceColor) {
+        setForeground(faceColor); // Ustawia kolor pierwszoplanowy komponentu, który zostanie użyty do rysowania buźki.
+        setPreferredSize(new Dimension(200, 200)); // Ustala preferowany rozmiar komponentu. Jest to wskazówka dla menedżerów układu.
+        System.out.println("JSmiley constructor, getSize= " + getSize()); // Wyświetla rozmiar komponentu w momencie jego tworzenia. Na tym etapie często jest to (0,0).
+    }
+
+    /**
+     * Metoda wywoływana, gdy komponent jest dodawany do natywnego kontenera.
+     * Jest to część cyklu życia komponentu AWT/Swing.
+     */
+    public void addNotify() {
+        super.addNotify(); // Wywołanie metody z klasy nadrzędnej jest kluczowe dla poprawnej inicjalizacji.
+        System.out.println("JSmiley addNotify, getSize= " + getSize()); // Wyświetla rozmiar po dodaniu komponentu do drzewa hierarchii.
+    }
+
+    // Liczniki śledzące, ile razy wywołano metody paintComponent i paint. Pomocne w debugowaniu i zrozumieniu cyklu rysowania.
+    int paintComponentCounter = 0;
+    int paintCounter = 0;
+
+    /**
+     * Metoda `paint` jest przestarzała w Swingu do własnego rysowania (preferowana jest `paintComponent`).
+     * Jej nadpisanie tutaj służy głównie do logowania i wywołania metody nadrzędnej.
+     * @param g Obiekt Graphics, który pozwala na rysowanie.
+     */
+    public void paint(Graphics g) {
+        System.out.printf("JSmiley, paint called %d times, getSize=(%d,%d)%n", ++paintCounter,
+                getSize().width, getSize().height); // Loguje, ile razy wywołano paint i jaki jest rozmiar komponentu.
+        super.paint(g); // Wywołuje metodę paint z klasy nadrzędnej, co prowadzi do wywołania paintComponent.
+    }
+
+    /*
+     * To jest **główna metoda** do wykonywania niestandardowego rysowania w komponentach Swing.
+     * Swing wywołuje tę metodę, gdy komponent wymaga przerysowania (np. po zmianie rozmiaru, odsłonięciu).
+     * `paintComponent` automatycznie obsługuje podwójne buforowanie, co zapobiega migotaniu obrazu.
+     * Nigdy nie należy wywoływać tej metody bezpośrednio; zamiast tego użyj `repaint()` do wymuszenia przerysowania.
+     */
+    public void paintComponent(Graphics g) {
+        System.out.printf("JSmiley, paintComponent called %d times, getSize=(%d,%d)%n", ++paintComponentCounter,
+                getSize().width, getSize().height); // Loguje wywołania paintComponent i aktualny rozmiar.
+
+        // Dynamiczne pobieranie aktualnych wymiarów komponentu. Jest to ważne, ponieważ komponent może zostać przeskalowany.
+        Dimension size2 = getSize();
+        int d = Math.min(size2.width, size2.height); // Oblicza średnicę buźki, aby była idealnie okrągła w zależności od mniejszego wymiaru komponentu.
+        int ed = d/20; // Oblicza średnicę oczu na podstawie średnicy buźki.
+        int x = (size2.width - d)/2; // Oblicza współrzędną X, aby wyśrodkować buźkę.
+        int y = (size2.height - d)/2; // Oblicza współrzędną Y, aby wyśrodkować buźkę.
+
+        // Rysowanie głowy buźki. Kolor jest pobierany z ustawionego foreground.
+        g.fillOval(x, y, size2.width, size2.height); // Rysuje wypełniony owal/koło dla twarzy. Parametry to współrzędne lewego górnego rogu i wymiary.
+
+        g.setColor(Color.black); // Ustawia kolor rysowania na czarny, dla obramowania i oczu.
+        g.drawOval(x, y, size2.width, size2.height); // Rysuje obramowanie buźki.
+
+        // Rysowanie oczu.
+        g.fillOval(x+d/3-(ed/2), y+d/3-(ed/2), ed, ed); // Rysuje wypełnione koło dla lewego oka.
+        g.fillOval(x+(2*(d/3))-(ed/2), y+d/3-(ed/2), ed, ed); // Rysuje wypełnione koło dla prawego oka.
+
+        // Rysowanie ust.
+        // g.drawArc(x, y, szerokość, wysokość, kąt początkowy, kąt zakresu). Kąt ujemny oznacza rysowanie przeciwnie do ruchu wskazówek zegara.
+        g.drawArc(x+d/4, y+2*(d/5), d/2, d/3, 0, -180); // Rysuje łuk, tworząc uśmiech.
+    }
+}
+
+//-----------------------------------------------------------------//
+// 77: PaintDemo.java
+package pl.edu.pw.elka.pag.podsystemGraficzny;
+
+import java.awt.*; // Importuje klasy z AWT (Abstract Window Toolkit) – podstawowej biblioteki graficznej Javy.
+import java.awt.event.WindowAdapter; // Importuje klasę pomocniczą do obsługi zdarzeń okna.
+import java.awt.event.WindowEvent; // Importuje klasę reprezentującą zdarzenia związane z oknem.
+
+
+/*
+ ***************************************************************
+ * Silly Sample program which demonstrates the basic paint
+ * callback mechanism in the AWT.
+ *
+ * Ta klasa PaintDemo to prosta aplikacja AWT, która demonstruje podstawowy mechanizm rysowania
+ * (callback 'paint') w środowisku AWT.
+ ***************************************************************
+ */
+public class PaintDemo extends Frame { // PaintDemo dziedziczy po klasie Frame, co oznacza, że jest głównym oknem aplikacji AWT.
+
+    /**
+     * Konstruktor klasy PaintDemo.
+     * @param title Tytuł, który pojawi się na pasku tytułowym okna.
+     */
+    PaintDemo(String title) {
+        super(title); // Wywołuje konstruktor klasy nadrzędnej (Frame), ustawiając tytuł okna.
+
+        // Dodaje słuchacza zdarzeń okna, aby obsłużyć jego zamknięcie.
+        addWindowListener(new WindowAdapter() {
+            // Nadpisuje metodę windowClosing, która jest wywoływana, gdy użytkownik próbuje zamknąć okno.
+            public void windowClosing(WindowEvent we) {
+                dispose(); // Zwalnia wszystkie zasoby systemowe używane przez tę ramkę. Aplikacja zakończy się, jeśli to jedyne okno.
+            }
+        });
+        // Dodaje niestandardowy komponent SmileyCanvas do centralnego regionu okna.
+        // new SmileyCanvas(Color.yellow): Tworzy nową instancję naszego rysującego komponentu, przekazując żółty kolor.
+        // BorderLayout.CENTER: Frame domyślnie używa menedżera układu BorderLayout. Komponent zostanie umieszczony na środku.
+        add(new SmileyCanvas(Color.yellow), BorderLayout.CENTER);
+        pack(); // Dostosowuje rozmiar ramki tak, aby pomieścić wszystkie jej komponenty z ich preferowanymi rozmiarami. Jest to zalecana praktyka, by uniknąć sztywnego ustawiania rozmiarów.
+    }
+
+    /**
+     * Główna funkcja aplikacji, punkt wejścia programu.
+     * @param args Argumenty wiersza poleceń (nieużywane w tym przykładzie).
+     */
+    public static void main(String[] args) {
+        PaintDemo pd = new PaintDemo("Have a nice day!"); // Tworzy nową instancję klasy PaintDemo, inicjując okno.
+        // Ustawia widoczność okna na 'true' (wyświetla okno).
+        // EventQueue.invokeLater(): Ta metoda jest używana do zapewnienia, że operacje na GUI
+        // są wykonywane w dedykowanym wątku (Event Dispatch Thread - EDT). W AWT/Swing wszystkie operacje
+        // związane z GUI powinny być wykonywane w EDT, aby zapobiec problemom z synchronizacją i zachować responsywność interfejsu.
+        EventQueue.invokeLater(() -> pd.setVisible(true));
+    }
+}
+
+//-----------------------------------------------------------------//
+// 78: AnonymousClassTest.java
+package pl.edu.pw.elka.pag.programowanieFunkcyjne;
+
+import java.util.Objects; // Importuje klasę Objects, która dostarcza użytecznych metod, np. do porównywania obiektów.
+
+public class AnonymousClassTest {
+    /**
+     * Definicja interfejsu funkcyjnego `Test`.
+     * Adnotacja `@FunctionalInterface` oznacza, że ten interfejs może mieć tylko jedną abstrakcyjną metodę,
+     * co kwalifikuje go do użycia z wyrażeniami lambda.
+     * @param <T> Typ argumentów, które będą porównywane.
+     */
+    @FunctionalInterface
+    private interface Test<T> {
+        /**
+         * Abstrakcyjna metoda do sprawdzania warunku między dwoma argumentami.
+         * @param n Pierwszy argument.
+         * @param m Drugi argument.
+         * @return true, jeśli warunek jest spełniony; w przeciwnym razie false.
+         */
+        boolean check(T n, T m);
+    }
+
+    public static void main(String[] args) {
+        /**
+         * Tworzenie instancji interfejsu `Test` za pomocą **klasy anonimowej**.
+         * Klasy anonimowe to klasy bez nazwy, które implementują interfejs (lub rozszerzają klasę)
+         * i są tworzone oraz inicjowane w jednym wyrażeniu.
+         * Tutaj implementujemy metodę `check` tak, by porównywała obiekty `Integer` pod kątem równości,
+         * używając `Objects.equals()`, co jest bezpiecznym sposobem na unikanie `NullPointerException`.
+         */
+        Test<Integer> test = new Test<>() {
+            @Override // Adnotacja `@Override` wskazuje, że metoda nadpisuje metodę z interfejsu.
+            public boolean check(Integer n, Integer m) {
+                return Objects.equals(n, m); // Porównuje obiekty `n` i `m` w sposób bezpieczny dla wartości null.
+            }
+        };
+
+        /**
+         * Tworzenie instancji interfejsu `Test` za pomocą **wyrażenia lambda**.
+         * Wyrażenia lambda to skrócona forma zapisu klas anonimowych dla interfejsów funkcyjnych.
+         * `(n, m) -> { return n == m; }` jest równoważne implementacji metody `check`.
+         * Tutaj porównywanie odbywa się za pomocą operatora `==`, który dla `Integer`
+         * w pewnych zakresach może działać inaczej (przez porównanie referencji) niż dla prymitywów,
+         * lub korzystać z autoboxingu/unboxingu. Dla małych wartości (od -128 do 127) `Integer` są często
+         * cachowane, więc `==` może dawać oczekiwane wyniki, ale ogólnie `Objects.equals()` jest bezpieczniejsze.
+         */
+        Test t = (n, m) -> { return n == m; } ;
+
+        // Poniżej testowanie zaimplementowanych metod `check` i wyświetlanie wyników.
+        // test.check(2,2) użyje `Objects.equals()`, zwróci true.
+        System.out.println(test.check(2,2));
+        // t.check(2,2) użyje `==`, dla wartości 2, 2 (często cachowanych) zwróci true.
+        System.out.println(t.check(2,2));
+        // test.check(3,2) użyje `Objects.equals()`, zwróci false.
+        System.out.println(test.check(3,2));
+        // t.check(3,2) użyje `==`, dla wartości 3, 2 (również często cachowanych, ale różnych) zwróci false.
+        System.out.println(t.check(3,2));
+    }
+}
+
+//-----------------------------------------------------------------//
+// 79: ArrayAlgorithm.java
+package pl.edu.pw.elka.pag.programowanieFunkcyjne;
+
+import java.util.Objects; // Importuje klasę Objects, potrzebną do bezpiecznego porównywania obiektów.
+
+public class AnonymousClassTest {
+    /**
+     * Interfejs funkcyjny `Test` definiuje pojedynczą abstrakcyjną metodę `check`.
+     * Adnotacja `@FunctionalInterface` oznacza, że może być używany z wyrażeniami lambda.
+     * @param <T> Typ danych, które będą porównywane.
+     */
+    @FunctionalInterface
+    private interface Test<T> {
+        boolean check(T n, T m); // Abstrakcyjna metoda do porównywania dwóch elementów.
+    }
+
+    public static void main(String[] args) {
+        /**
+         * Tworzenie instancji interfejsu `Test` za pomocą **klasy anonimowej**.
+         * Obiekt klasy anonimowej implementuje metodę `check`, używając `Objects.equals()`
+         * do bezpiecznego porównywania obiektów, w tym obsługi wartości `null`.
+         */
+        Test<Integer> test = new Test<>() {
+            @Override // Wskazuje, że metoda `check` nadpisuje metodę z interfejsu.
+            public boolean check(Integer n, Integer m) {
+                return Objects.equals(n, m); // Porównuje obiekty pod kątem równości.
+            }
+        };
+
+        /**
+         * Tworzenie instancji interfejsu `Test` za pomocą **wyrażenia lambda**.
+         * Jest to skrócona forma zapisu klasy anonimowej dla interfejsów funkcyjnych.
+         * Porównanie `n == m` dla typów opakowujących (`Integer`) może prowadzić
+         * do porównywania referencji dla wartości spoza zakresu buforowania (-128 do 127).
+         */
+        Test t = (n, m) -> { return n == m; } ; // Wyrażenie lambda implementujące metodę `check`.
+
+        // Wywołanie metody `check` na instancji `test` (klasy anonimowej) i wyświetlenie wyników.
+        System.out.println(test.check(2,2));
+        System.out.println(t.check(2,2));
+        System.out.println(test.check(3,2));
+        System.out.println(t.check(3,2));
+    }
+}
+
+//-----------------------------------------------------------------//
+// 80: ExampleConstructorReference.java
+package pl.edu.pw.elka.pag.programowanieFunkcyjne;
+
+public class ExampleConstructorReference {
+    /**
+     * Interfejs funkcyjny `Printable`.
+     * Zgodnie z adnotacją `@FunctionalInterface`, może zawierać tylko jedną abstrakcyjną metodę.
+     * Jej przeznaczeniem jest tworzenie obiektów `PrintJob`.
+     */
+    @FunctionalInterface
+    interface Printable {
+        /**
+         * Abstrakcyjna metoda, która ma zwrócić instancję `PrintJob`.
+         * @param o Obiekt, który ma zostać przetworzony przez `PrintJob`.
+         * @return Nowa instancja `PrintJob`.
+         */
+        PrintJob getPrintJob(Object o);
+    }
+
+    /**
+     * Klasa `PrintJob` reprezentująca zadanie drukowania.
+     */
+    static class PrintJob {
+        /**
+         * Konstruktor klasy `PrintJob`.
+         * Wyświetla wiadomość w konsoli, informującą o utworzeniu zadania drukowania i przekazanym obiekcie.
+         * @param o Obiekt przekazany do zadania drukowania.
+         */
+        PrintJob(Object o) {
+            System.out.print("from constructor: " + o); // Wyświetla tekst z konstruktora wraz z przekazanym obiektem.
+        }
+    }
+
+    public static void main(String[] args) {
+        /**
+         * Użycie **referencji do konstruktora** (`PrintJob::new`).
+         * Jest to skrócony sposób implementacji interfejsu funkcyjnego `Printable`.
+         * Zamiast pisać pełne wyrażenie lambda `(o) -> new PrintJob(o)`,
+         * referencja do konstruktora wskazuje, że metoda `getPrintJob` z interfejsu
+         * ma wywołać konstruktor klasy `PrintJob` z przekazanym argumentem.
+         * Kompilator Javy automatycznie dopasowuje sygnatury metod.
+         */
+        Printable p = PrintJob::new;
+
+        // Wywołanie metody `getPrintJob` na obiekcie `p` (który teraz reprezentuje referencję do konstruktora).
+        // To spowoduje wywołanie konstruktora `PrintJob(Object o)` z argumentem "Text",
+        // co z kolei spowoduje wypisanie komunikatu w konsoli.
+        p.getPrintJob("Text");
+    }
+}
+
+//-----------------------------------------------------------------//
+// 81: ExampleLambda.java
+package pl.edu.pw.elka.pag.programowanieFunkcyjne;
+
+public class ExampleLambda {
+    // Interfejs funkcyjny – pojedyncza metoda abstrakcyjna
+    interface Printable {
+        void print(Object o);
+    }
+
+    public static void main(String[] args) {
+        // Wyrażenie lambda przypisane do zmiennej typu Printable – wypisuje na standardowe wyjście
+        Printable pout = (o) -> { System.out.println(o); };
+
+        // Lambda wypisująca na standardowe wyjście błędów
+        Printable perr = (o) -> { System.err.println(o); };
+
+        pout.print("standard output stream");
+        perr.print("standard error stream");
+
+        // Krótsza wersja lambdy – nawiasy klamrowe można pominąć przy pojedynczym wyrażeniu
+        pout = o -> { System.out.println(o); };
+        pout.print("standard output stream 1");
+
+        pout = o -> System.out.println(o); // jeszcze krótsza wersja
+        pout.print("standard output stream 2");
+    }
+}
+
+//-----------------------------------------------------------------//
+// 82: ExampleMethodReference.java
+package pl.edu.pw.elka.pag.programowanieFunkcyjne;
+
+public class ExampleMethodReference {
+
+    // Interfejs funkcyjny – dokładnie jedna metoda abstrakcyjna
+    @FunctionalInterface
+    interface Printable {
+        void print(Object o);
+    }
+
+    // Zwykła metoda instancyjna, wypisująca tekst na standardowe wyjście
+    public void printToStdOut(Object o) {
+        System.out.println("from method: " + o);
+    }
+
+    public static void main(String[] args) {
+        // Tworzenie obiektu klasy, aby móc odwołać się do metody instancyjnej
+        ExampleMethodReference mr = new ExampleMethodReference();
+
+        // Użycie referencji do metody instancyjnej – przypisanie do interfejsu funkcyjnego
+        Printable p = mr::printToStdOut;
+
+        // Wywołanie metody przez interfejs
+        p.print("Text");
+    }
+}
+
+//-----------------------------------------------------------------//
+// 83: ExampleNoLambda.java
+package pl.edu.pw.elka.pag.programowanieFunkcyjne;
+
+public class ExampleNoLambda {
+
+    // Interfejs funkcyjny z jedną metodą abstrakcyjną
+    interface Printable {
+        void print(Object o);
+    }
+
+    public static void main(String[] args) {
+        // Implementacja interfejsu Printable za pomocą klasy anonimowej
+        Printable pout = new Printable() {
+            public void print(Object o) {
+                System.out.println(o); // wypisywanie na standardowe wyjście
+            }
+        };
+
+        // Druga implementacja, wypisująca na standardowe wyjście błędów
+        Printable perr = new Printable() {
+            public void print(Object o) {
+                System.err.println(o); // wypisywanie na standardowe wyjście błędów
+            }
+        };
+
+        // Wywołania metod interfejsu
+        perr.print("standard error stream");
+        pout.print("standard output stream");
+    }
+}
+
+//-----------------------------------------------------------------//
+// 84: ExampleStaticMethodReference.java
+package pl.edu.pw.elka.pag.programowanieFunkcyjne;
+
+public class ExampleStaticMethodReference {
+
+    // Interfejs funkcyjny z jedną metodą abstrakcyjną
+    @FunctionalInterface
+    interface Printable {
+        void print(Object o); // metoda przyjmująca obiekt do wypisania
+    }
+
+    // Statyczna metoda wypisująca tekst na konsolę
+    public static void staticPrint(Object o) {
+        System.out.println("from static method: " + o);
+    }
+
+    public static void main(String[] args) {
+        // Odniesienie do metody statycznej jako implementacja interfejsu
+        Printable p = ExampleStaticMethodReference::staticPrint;
+
+        // Wywołanie metody interfejsu, które przekazuje sterowanie do staticPrint
+        p.print("Text");
+    }
+}
+
+//-----------------------------------------------------------------//
+// 85: ListNumbers.java
+package pl.edu.pw.elka.pag.programowanieFunkcyjne;
+
+/**
+ * Klasa reprezentująca zakres liczb od n do m.
+ */
+public class ListNumbers {
+    public int n; // wartość początkowa zakresu
+    public int m; // wartość końcowa zakresu
+
+    /**
+     * Konstruktor inicjalizujący początek i koniec zakresu.
+     * @param n początek zakresu
+     * @param m koniec zakresu
+     */
+    ListNumbers(int n, int m) {
+        this.n = n;
+        this.m = m;
+    }
+}
+
+
+//-----------------------------------------------------------------//
+// 86: Pair.java
+package pl.edu.pw.elka.pag.programowanieFunkcyjne;
+
+/**
+ * Klasa generyczna reprezentująca parę dwóch obiektów tego samego typu.
+ *
+ * @param <T> typ elementów pary
+ */
+public class Pair<T> {
+    private final T first;  // pierwszy element pary
+    private final T second; // drugi element pary
+
+    /**
+     * Konstruktor domyślny tworzy parę z dwoma wartościami null.
+     */
+    public Pair() {
+        first = null;
+        second = null;
+    }
+
+    /**
+     * Konstruktor tworzy parę z podanymi wartościami.
+     *
+     * @param first pierwszy element
+     * @param second drugi element
+     */
+    public Pair(T first, T second) {
+        this.first = first;
+        this.second = second;
+    }
+
+    /**
+     * Zwraca pierwszy element pary.
+     *
+     * @return pierwszy element
+     */
+    public T getFirst() {
+        return first;
+    }
+
+    /**
+     * Zwraca drugi element pary.
+     *
+     * @return drugi element
+     */
+    public T getSecond() {
+        return second;
+    }
+
+    /**
+     * Przykładowe użycie klasy Pair.
+     */
+    public static void main(String[] args) {
+        Pair<String> p = new Pair<>("Key", "Value");
+        System.out.println(p.getFirst());  // wypisuje: Key
+        System.out.println(p.getSecond()); // wypisuje: Value
+        System.out.println(p.getClass());  // wypisuje: class pl.edu.pw.elka.pag.programowanieFunkcyjne.Pair
+    }
+}
+
+//-----------------------------------------------------------------//
+// 87: TestMiddle.java
+package pl.edu.pw.elka.pag.programowanieFunkcyjne;
+
+public class TestMiddle {
+    public static void main(String[] args) {
+        // Tworzymy tablicę napisów (String)
+        String[] names = {"Marcin", "Krzysztof", "Jan", "Anna"};
+
+        // Można jawnie podać typ generyczny w nawiasach ostrych (tu: String)
+        // ale kompilator może go też wywnioskować sam (tzw. type inference)
+        ArrayAlgorithm.<String>getMiddle(names); // wywołanie nieprzypisane do zmiennej
+
+        // Wywołujemy metodę getMiddle, która zwraca środkowy element tablicy
+        String m = ArrayAlgorithm.getMiddle(names);
+
+        // Wypisujemy wynik
+        System.out.println("middle = " + m);
+    }
+}
+
+
+//-----------------------------------------------------------------//
+// 88: TestPredicate.java
+package pl.edu.pw.elka.pag.programowanieFunkcyjne;
+
+import java.util.function.Predicate;
+
+public class TestPredicate {
+
+    public static void main(String[] args) {
+        main1(args); // Wywołanie pierwszej wersji testu
+        main2(args); // Wywołanie drugiej wersji testu
+    }
+
+    // Prosty test warunku z jednym predykatem
+    public static void main1(String[] args) {
+        ListNumbers nums = new ListNumbers(3, 10); // Obiekt z polami n=3 i m=10
+
+        // Tworzymy predykat, który sprawdza czy n < 5
+        Predicate<ListNumbers> testFirst = num -> num.n < 5;
+
+        // Testujemy obiekt i wypisujemy komunikat jeśli warunek spełniony
+        if (testFirst.test(nums)) {
+            System.out.println("Mniejsze od 5");
+        }
+    }
+
+    // Złożony test z dwoma predykatami i operacją logiczną AND
+    public static void main2(String[] args) {
+        ListNumbers nums = new ListNumbers(3, 10); // Ten sam obiekt
+
+        Predicate<ListNumbers> testFirst = num -> num.n < 5;   // n < 5
+        if (testFirst.test(nums)) {
+            System.out.println("Mniejsze od 5");
+        }
+
+        Predicate<ListNumbers> testSecond = num -> num.m > 5;  // m > 5
+
+        // Łączymy dwa predykaty logicznym AND i testujemy
+        if (testFirst.and(testSecond).test(nums)) {
+            System.out.println("Jest ok");
+        }
+    }
+}
+
+//-----------------------------------------------------------------//
+// 89: ThisInLambdaTest.java
+package pl.edu.pw.elka.pag.programowanieFunkcyjne;
+
+import static pl.edu.pw.elka.pag.GeneralUtil.prn;
+
+public class ThisInLambdaTest {
+    // Funkcyjny interfejs z jedną metodą
+    @FunctionalInterface
+    interface Test {
+        void fun();
+    }
+
+    // Konstruktor klasy ThisInLambdaTest
+    ThisInLambdaTest() {
+        // Tworzymy obiekt klasy anonimowej implementującej interfejs Test
+        Test testAnonymous = new Test() {
+            @Override
+            public void fun() {
+                // 'this' odnosi się do instancji klasy anonimowej
+                prn("this in anonymous class: [%s]", this.toString());
+            }
+        };
+        testAnonymous.fun();
+
+        // Tworzymy wyrażenie lambda przypisane do interfejsu Test
+        Test testLambda = () -> {
+            // 'this' odnosi się do instancji klasy ThisInLambdaTest
+            prn("this in lambda: [%s]", this.toString());
+        };
+        testLambda.fun();
+    }
+
+    // Nadpisana metoda toString — dodaje „aha! :)” do domyślnego opisu obiektu
+    @Override
+    public String toString() {
+        return super.toString() + " aha! :)";
+    }
+
+    // Punkt wejścia programu — tworzy nową instancję klasy
+    public static void main(String[] args) {
+        new ThisInLambdaTest();
+    }
+}
+
+//-----------------------------------------------------------------//
+// 90: Value.java
+package pl.edu.pw.elka.pag.programowanieFunkcyjne;
+
+// Interfejs funkcyjny z jedną metodą abstrakcyjną
+@FunctionalInterface
+public interface Value {
+    double getVal(); // metoda do zaimplementowania (np. przez lambdę)
+
+    // Główna metoda uruchomieniowa – wywołuje dwie wersje main
+    static void main(String[] args) {
+        main1(args);
+        main2(args);
+    }
+
+    // Przykład użycia wyrażenia lambda do implementacji interfejsu Value
+    public static void main1(String[] args) {
+        Value a;
+        a = () -> 100.0; // implementacja metody getVal za pomocą lambdy
+        System.out.println(a.getVal()); // wypisuje: 100.0
+    }
+
+    // Przykład użycia klasy anonimowej do implementacji interfejsu Value
+    public static void main2(String[] args) {
+        Value a = new Value() {
+            public double getVal() {
+                return 100.0;
+            }
+        };
+        System.out.println(a.getVal()); // wypisuje: 100.0
+    }
+}
+
+//-----------------------------------------------------------------//
+// 91: Consumer.java
+package pl.edu.pw.elka.pag.współbieżność;
+
+/**
+ * Interfejs wszelkich konsumentów w problemie <em>producent-konsument</em>.
+ * Definiuje zachowanie konsumenta w systemie współbieżnym.
+ * 
+ * @author kmi
+ */
+public interface Consumer extends Sleepable {
+
+    /**
+     * Metoda wywoływana w celu skonsumowania <em>produktu</em> przez tego konsumenta.
+     * Implementacja powinna określić, jak konsument przetwarza lub pobiera produkt.
+     */
+    void consume();
+}
+
+//-----------------------------------------------------------------//
+// 92: HelloRunner.java
+package pl.edu.pw.elka.pag.współbieżność;
+
+/**
+ * Prosty wątek implementujący interfejs Runnable,
+ * wypisujący kilka razy tekst na standardowe wyjście.
+ * 
+ * @author kmi
+ */
+class HelloRunner implements Runnable {
+    private final int ileRazy;  // ile razy tekst ma być wypisany
+    private final String nazwa; // nazwa wątku (do identyfikacji w wypisywanym tekście)
+
+    /**
+     * Konstruktor inicjalizujący liczbę powtórzeń i nazwę wątku.
+     * 
+     * @param ileRazy liczba powtórzeń wypisywanego tekstu
+     * @param nazwa nazwa wątku do wypisania
+     */
+    HelloRunner(int ileRazy, String nazwa) {
+        this.ileRazy = ileRazy;
+        this.nazwa = nazwa;
+    }
+    
+    /**
+     * Metoda uruchamiana po starcie wątku,
+     * wypisuje na konsolę tekst z nazwą wątku i numerem iteracji.
+     */
+    public void run() {
+        for (int i = 0; i < ileRazy; i++) { // wypisuje tekst ileRazy razy
+            System.out.println("z wątku: " + nazwa + " numer:" + i);
+        }
+        System.out.println("koniec wątku roboczego");
+    }
+}
+
+//-----------------------------------------------------------------//
+// 93: NativeProdCons.java
+package pl.edu.pw.elka.pag.współbieżność;
+
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicInteger;
+
+/**
+ * Producent - konsument, wersja natywna z wykorzystaniem wait i notify.
+ * @author kmi
+ */
+public class NativeProdCons {
+
+    AtomicInteger pudełkoNaProdukt = new AtomicInteger(0);
+
+    NativeProdCons() {
+        new Thread(new Runnable() { // wątek konsumenta
+            public void run() {
+                while (true) {
+                    konsumuj();
+                }
+            }
+        }).start();
+
+        new Thread(new Runnable() { // wątek producenta
+            public void run() {
+                while (true) {
+                    produkuj();
+                }
+            }
+        }).start();
+    }
+
+    synchronized void konsumuj() {
+        // while jest konieczne, ponieważ po wybudzeniu z wait()
+        // wątek musi jeszcze raz sprawdzić warunek (może doszło do "fałszywego wybudzenia")
+        while (pudełkoNaProdukt.get() == 0) {
+            try {
+                wait();
+            } catch (InterruptedException ie) {
+                ie.printStackTrace();
+            }
+        }
+        int produkt = pudełkoNaProdukt.getAndSet(0);
+        System.out.print("Konsumuję " + produkt + "... ");
+        sleeep();
+        System.out.println("...skonsumowałem");
+        notify();
+    }
+
+    synchronized void produkuj() {
+        // analogicznie do konsumuj(), while chroni przed fałszywym wybudzeniem
+        while (pudełkoNaProdukt.get() != 0) {
+            try {
+                wait();
+            } catch (InterruptedException ie) {
+                ie.printStackTrace();
+            }
+        }
+        int produkt = ThreadLocalRandom.current().nextInt(1, 100);
+        System.out.print("Produkuję " + produkt + "... ");
+        sleeep();
+        System.out.println("...wyprodukowałem");
+        pudełkoNaProdukt.set(produkt);
+        notify();
+    }
+
+    void sleeep() {
+        try {
+            Thread.sleep(ThreadLocalRandom.current().nextInt(30, 300));
+        } catch (InterruptedException ie) {
+            ie.printStackTrace();
+        }
+    }
+
+    public static void main(String... args) {
+        new NativeProdCons();
+    }
+}
+
+//-----------------------------------------------------------------//
+// 94: Producer.java
+package pl.edu.pw.elka.pag.współbieżność;
+
+/**
+ * Interfejs wszelkich producentów w problemie <em>producent-konsument</em>.
+ * @author kmi
+ */
+public interface Producer extends Sleepable {
+    /**
+     * Metoda wołana w celu wyprodukowania <em>produktu</em> tego producenta.
+     */
+    void produce();
+}
+
+
+//-----------------------------------------------------------------//
+// 95: Runner.java
+package pl.edu.pw.elka.pag.współbieżność;
+
+import java.util.concurrent.ThreadLocalRandom;
+
+public class Runner implements Runnable {
+    // Flaga sygnalizująca, kiedy zakończyć działanie pętli
+    private boolean timeToQuit = false;
+
+    // Liczba porcji danych przetworzonych przez wątek
+    private int numberOfPortionsOfDataProcessed = 0;
+
+    // Zwraca liczbę przetworzonych porcji danych
+    public int getNumberOfPortionsOfDataProcessed() {
+        return numberOfPortionsOfDataProcessed;
+    }
+
+    @Override
+    public void run() {
+        int n = 0;
+        // Pętla działa dopóki flaga timeToQuit jest fałszywa
+        while (!timeToQuit) {
+            try {
+                // Symulacja przetwarzania - uśpienie wątku na losowy czas
+                Thread.sleep(ThreadLocalRandom.current().nextInt(300, 1300));
+                n++; // inkrementacja licznika po "przetworzeniu" porcji danych
+            } catch (InterruptedException ie) {
+                // W przypadku przerwania wątku, wychodzimy z metody run()
+                return;
+            }
+            System.out.printf("A portion of data has been processed%n");
+        }
+        // Po zakończeniu pętli zapisujemy ilość przetworzonych porcji
+        numberOfPortionsOfDataProcessed = n;
+    }
+
+    // Ustawia flagę kończącą działanie pętli run()
+    public void stopRunning() {
+        timeToQuit = true;
+    }
+}
+
+//-----------------------------------------------------------------//
+// 96: Runner2.java
+package pl.edu.pw.elka.pag.współbieżność;
+
+import java.util.concurrent.ThreadLocalRandom;
+
+/**
+ * Klasa implementująca Runnable, której działanie kontrolowane jest przez pole kicker,
+ * czyli referencję do wątku, który ją uruchomił.
+ * 
+ * Autor: kmi
+ */
+public class Runner2 implements Runnable {
+    /**
+     * Referencja do wątku, który uruchomił tę instancję Runnable.
+     * Pętla w metodzie run działa dopóki kicker jest tym samym wątkiem.
+     */
+    private Thread kicker = null;
+
+    /**
+     * Liczba porcji danych przetworzonych przez wątek.
+     */
+    private int numberOfPortionsOfDataProcessed = 0;
+
+    /**
+     * Zwraca liczbę przetworzonych porcji danych.
+     */
+    public int getNumberOfPortionsOfDataProcessed() {
+        return numberOfPortionsOfDataProcessed;
+    }
+
+    @Override
+    public void run() {
+        int n = 0;
+        // Pętla działa dopóki kicker jest aktualnym wątkiem
+        while (kicker == Thread.currentThread()) {
+            try {
+                // Symulacja przetwarzania - uśpienie na losowy czas
+                Thread.sleep(ThreadLocalRandom.current().nextInt(300, 1300));
+                n++; // inkrementacja licznika przetworzonych porcji danych
+            } catch (InterruptedException ie) {
+                // W przypadku przerwania wątku, wychodzimy z metody run()
+                return;
+            }
+            System.out.printf("A portion of data has been processed%n");
+        }
+        // Po zakończeniu pętli zapisujemy ilość przetworzonych porcji
+        numberOfPortionsOfDataProcessed = n;
+    }
+
+    /**
+     * Metoda sygnalizująca, aby wątek zakończył działanie.
+     * Ustawia kicker na null, przez co warunek w pętli run() przestanie być spełniony.
+     */
+    public void stopRunning() {
+        kicker = null;
+    }
+
+    /**
+     * Zwraca referencję do wątku uruchamiającego tę instancję Runnable.
+     */
+    public Thread getKicker() {
+        return kicker;
+    }
+
+    /**
+     * Ustawia referencję do wątku uruchamiającego tę instancję Runnable.
+     * Powinna być wywołana przed uruchomieniem wątku.
+     */
+    public void setKicker(Thread t) {
+        kicker = t;
+    }
+}
+
+//-----------------------------------------------------------------//
+// 97: SimpleConsumer.java
+package pl.edu.pw.elka.pag.współbieżność;
+
+import java.util.concurrent.BlockingQueue;
+
+/**
+ * Prosty konsument, który konsumuje ciągi znaków z BlockingQueue.
+ * @author kmi
+ */
+public class SimpleConsumer implements Consumer {
+
+    /**
+     * Kolejka, na której odbywa się synchronizacja producenta i konsumenta.
+     */
+    private final BlockingQueue<String> bq;
+
+    /**
+     * Konstruktor prostego konsumenta.
+     * @param bq kolejka, z której konsument pobiera elementy
+     */
+    public SimpleConsumer(BlockingQueue<String> bq) {
+        this.bq = bq;
+    }
+
+    /**
+     * Metoda run – nieprzerwanie wykonuje metodę consume(),
+     * co oznacza, że konsument ciągle czeka i pobiera dane z kolejki.
+     */
+    @Override
+    public void run() {
+        while (true) {
+            consume();
+        }
+    }
+
+    /**
+     * Metoda consume pobiera element z kolejki (operacja blokująca),
+     * symuluje czas konsumowania przez losowe uśpienie,
+     * a następnie wyświetla pobrany ciąg znaków.
+     */
+    @Override
+    public void consume() {
+        try {
+            // Symulacja czasu konsumowania, losowe uśpienie do 1000 ms
+            sleepRandom(1000);
+            // Blokujące pobranie elementu z kolejki (czeka, jeśli kolejka jest pusta)
+            String s = bq.take();
+            System.out.println("consumed: [" + s + "]");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+//-----------------------------------------------------------------//
+// 98: SimpleProducerConsumer.java
+package pl.edu.pw.elka.pag.współbieżność;
+
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+
+/*
+ * Eksperymenty:
+ * 1. zmieniaj parametr konstruktora SimpleProducerConsumer
+ * 2. odkomentuj Thread.yield() w klasach SimpleProducer i SimpleConsumer 
+ *    (w jednej albo w obu jednocześnie)
+ * 3. odkomentuj wywołanie sleeep() w klasach SimpleProducer i SimpleConsumer 
+ *    (w jednej albo w obu jednocześnie)
+ * 4. zmieniaj parametry sleeep()
+ * 5. zmień kolejność wykonania operacji w konstruktorze SimpleProducerConsumer 
+ *    (co pierwsze ? konsument ? producent ?)
+ * 5. wszelkie kombinacje powyższych
+ *
+ * @author kmi
+ */
+public class SimpleProducerConsumer {
+	
+	/**
+	 * Konstruktor tworzy współdzieloną kolejkę o zadanej długości,
+	 * następnie tworzy i uruchamia dwa wątki: producenta i konsumenta,
+	 * które będą komunikować się przez tę kolejkę.
+	 * 
+	 * @param n długość kolejki przechowującej produkty
+	 */
+	public SimpleProducerConsumer(int n) {
+		// Tworzymy kolejkę blokującą o rozmiarze n
+		BlockingQueue<String> abq = new ArrayBlockingQueue<>(n);
+
+		// Tworzymy i uruchamiamy wątek konsumenta, który pobiera dane z kolejki
+		new Thread(new SimpleConsumer(abq)).start();
+
+		// Tworzymy i uruchamiamy wątek producenta, który wkłada dane do kolejki
+		new Thread(new SimpleProducer(abq)).start();
+	}
+
+	/**
+	 * Główna metoda startowa programu, tworzy obiekt SimpleProducerConsumer z kolejką o rozmiarze 10.
+	 * @param args argumenty uruchomieniowe (nieużywane)
+	 */
+	public static void main(String[] args) {
+		new SimpleProducerConsumer(10);
+	}
+}
+
+//-----------------------------------------------------------------//
+// 99: Sleepable.java
+package pl.edu.pw.elka.pag.współbieżność;
+
+import java.util.concurrent.ThreadLocalRandom;
+
+/**
+ * Interfejs dla wątków, które mogą zasypiać na określony czas.
+ * Zawiera metody domyślne do usypiania wątku na losowy lub konkretny czas,
+ * ignorując ewentualne przerwania {@code InterruptedException} bez wypisywania błędu.
+ * 
+ * @author kmi
+ */
+public interface Sleepable extends Runnable {
+
+    /**
+     * Usypia bieżący wątek na losowy czas w zakresie od 0 do t milisekund.
+     * Ignoruje przerwania wątku i nie wyświetla stosu wywołań.
+     * 
+     * @param t maksymalny czas usypiania w milisekundach
+     */
+    default void sleepRandom(long t) {
+        sleep(ThreadLocalRandom.current().nextLong(0, t));
+    }
+
+    /**
+     * Usypia wątek na dokładnie t milisekund.
+     * Ignoruje przerwania wątku i nie wyświetla stosu wywołań.
+     * 
+     * @param t czas usypiania w milisekundach
+     */
+    default void sleep(long t) {
+        try {
+            Thread.sleep(t);
+        } catch (InterruptedException ignore) {
+            // ignorujemy wyjątek, nie pokazujemy żadnego błędu
+        }
+    }
+}
+
+//-----------------------------------------------------------------//
+// 100: ThreadController.java
+package pl.edu.pw.elka.pag.współbieżność;
+
+import java.util.concurrent.ThreadLocalRandom;
+
+/**
+ * Przykład zarządzania wątkiem z wykorzystaniem idiomu zatrzymywania wątku.
+ * Tworzy i kontroluje wątek uruchamiany na obiekcie klasy Runner.
+ * 
+ * @author kmi
+ */
+public class ThreadController {
+
+    /**
+     * Obiekt Runnable, który wykonuje pracę w wątku.
+     */
+    private final Runner r = new Runner();
+
+    /**
+     * Wątek wykonujący zadania na obiekcie Runner.
+     */
+    private final Thread t = new Thread(r);
+
+    /**
+     * Uruchamia wątek.
+     */
+    public void startThread() {
+        t.start();
+    }
+
+    /**
+     * Zatrzymuje wątek wywołując metodę stopRunning na Runnerze,
+     * a następnie czeka na zakończenie wątku metodą join.
+     */
+    public void stopThread() {
+        r.stopRunning();
+        try {
+            t.join();
+        } catch (InterruptedException ignore) {
+            // ignorujemy przerwanie podczas oczekiwania na zakończenie wątku
+        }
+    }
+
+    /**
+     * Zwraca liczbę porcji danych przetworzonych przez wątek.
+     * @return liczba przetworzonych porcji danych
+     */
+    public int getNumberOfPortionsOfDataProcessed() {
+        return r.getNumberOfPortionsOfDataProcessed();
+    }
+
+    /**
+     * Metoda main demonstrująca działanie klasy:
+     * uruchamia wątek, czeka losowy czas (5-8 sekund), zatrzymuje wątek
+     * i wypisuje ilość przetworzonych porcji danych.
+     */
+    public static void main(String... args) {
+        ThreadController tc = new ThreadController();
+
+        tc.startThread();
+        try {
+            Thread.sleep(ThreadLocalRandom.current().nextInt(5000, 8000));
+        } catch (InterruptedException ie) {
+            return;
+        }
+        tc.stopThread();
+
+        System.out.printf("The thread has processed %d portions of data%n", tc.getNumberOfPortionsOfDataProcessed());
+    }
+}
+
+//-----------------------------------------------------------------//
+// 101: ThreadController2.java
+package pl.edu.pw.elka.pag.współbieżność;
+
+import java.util.concurrent.ThreadLocalRandom;
+
+/**
+ * Przykład zarządzania wątkiem z użyciem idiomu zatrzymywania wątku
+ * opartego na sprawdzaniu referencji do wątku (kicker).
+ * 
+ * @author kmi
+ */
+public class ThreadController2 {
+
+    /**
+     * Obiekt Runnable wykonujący zadania w wątku,
+     * który kontroluje zatrzymanie na podstawie referencji do wątku (kicker).
+     */
+    private final Runner2 r = new Runner2();
+
+    /**
+     * Wątek uruchamiający obiekt Runner2.
+     */
+    private final Thread t = new Thread(r);
+
+    /**
+     * Uruchamia wątek, ustawiając w Runner2 referencję do bieżącego wątku,
+     * co umożliwia pętlę w run() działanie dopóki kicker wskazuje na ten wątek.
+     */
+    public void startThread() {
+        r.setKicker(t);
+        t.start();
+    }
+
+    /**
+     * Zatrzymuje wątek poprzez ustawienie referencji kicker na null,
+     * co powoduje zakończenie pętli w metodzie run.
+     * Następnie czeka na zakończenie wątku metodą join().
+     */
+    public void stopThread() {
+        r.setKicker(null);
+        try {
+            t.join();
+        } catch (InterruptedException ignore) {
+            // Ignorujemy przerwanie podczas oczekiwania na zakończenie wątku
+        }
+    }
+
+    /**
+     * Zwraca liczbę porcji danych przetworzonych przez wątek.
+     * 
+     * @return liczba przetworzonych porcji danych
+     */
+    public int getNumberOfPortionsOfDataProcessed() {
+        return r.getNumberOfPortionsOfDataProcessed();
+    }
+
+    /**
+     * Metoda main demonstrująca uruchomienie i zatrzymanie wątku.
+     * Uruchamia wątek, czeka losowy czas 5-8 sekund, zatrzymuje wątek
+     * i wyświetla ile porcji danych zostało przetworzonych.
+     * 
+     * @param args argumenty wiersza poleceń (nieużywane)
+     */
+    public static void main(String... args) {
+        ThreadController2 tc = new ThreadController2();
+
+        tc.startThread();
+
+        try {
+            Thread.sleep(ThreadLocalRandom.current().nextInt(5000, 8000));
+        } catch (InterruptedException ie) {
+            return;
+        }
+
+        tc.stopThread();
+
+        System.out.printf("The thread has processed %d portions of data%n", tc.getNumberOfPortionsOfDataProcessed());
+    }
+}
+
+//-----------------------------------------------------------------//
+// 102: ThreadTester.java
+package pl.edu.pw.elka.pag.współbieżność;
+
+/**
+ * Test uruchamiania dużej liczby wątków realizujących zadania.
+ * Każdy wątek wyświetla komunikaty określoną liczbę razy.
+ * W międzyczasie główny wątek również wyświetla komunikaty.
+ * 
+ * @author kmi
+ */
+public class ThreadTester {
+
+    /**
+     * Metoda główna programu.
+     * Uruchamia dużą liczbę wątków, które wypisują komunikaty,
+     * a następnie wypisuje komunikaty w wątku głównym.
+     * 
+     * @param args argumenty uruchomieniowe (nieużywane)
+     */
+    public static void main(String[] args) {
+        final int liczbaWyświetleńKomunikatu = 500000; // liczba komunikatów do wyświetlenia przez każdy wątek
+        final int liczbaWątków = 50000;                // liczba uruchamianych wątków
+
+        // Utworzenie i uruchomienie wskazanej liczby wątków
+        for (int i = 0; i < liczbaWątków; i++) {
+            HelloRunner r = new HelloRunner(liczbaWyświetleńKomunikatu, "[wątek " + i + "]");
+            Thread t = new Thread(r);
+            t.start();
+        }
+
+        // Wątek główny wypisuje swoje komunikaty
+        for (int i = 0; i < liczbaWyświetleńKomunikatu; i++) {
+            System.out.println("z main " + i);
+        }
+
+        System.out.println("koniec main");
+    }
+}
+
+
+//-----------------------------------------------------------------//
+// 103: GeneralUtil.java
+package pl.edu.pw.elka.pag;
+
+/**
+ * Klasa z ogólnymi, pomocniczymi metodami użytecznymi podczas wykładów.
+ * Zawiera stałe i metody do wygodnego wypisywania znaków i formatowanego tekstu,
+ * a także prostą implementację zegara pomiaru czasu oraz metodę do uśpienia wątku bez obsługi wyjątku.
+ * 
+ * @author kmi
+ * @version 1.1
+ */
+public class GeneralUtil {
+
+	/**
+	 * Stała reprezentująca znak Backspace (kod ASCII 8).
+	 */
+	public static final int BACKSPACE = 0x8;
+
+	/**
+	 * Stała reprezentująca znak Line Feed (kod ASCII 10).
+	 */
+	public static final int LINE_FEED = 0xA;
+
+	/**
+	 * Stała reprezentująca znak Carriage Return (kod ASCII 13).
+	 */
+	public static final int CARRIAGE_RETURN = 0xD;
+
+	/**
+	 * Prywatny konstruktor aby uniemożliwić tworzenie instancji klasy.
+	 */
+	private GeneralUtil() {
+	}
+
+	/**
+	 * Wypisuje jeden znak na standardowe wyjście {@code System.out}.
+	 * @param c znak do wypisania (kod znakowy)
+	 */
+	public static void prc(int c) {
+		System.out.format("%c", c);
+	}
+
+	/**
+	 * Wypisuje znak backspace, który usuwa ostatnio wypisany znak (jeśli to nie był znak nowej linii).
+	 */
+	public static void BS() {
+		System.out.format("%c", BACKSPACE);
+	}
+
+	/**
+	 * Wypisuje znak nowej linii (line feed), czyli {@code '\n'}.
+	 */
+	public static void LF() {
+		System.out.format("%c", LINE_FEED);
+	}
+
+	/**
+	 * Wypisuje znak powrotu karetki (carriage return), który przesuwa kursor na początek linii,
+	 * pozwalając na nadpisanie bieżącej linii.
+	 */
+	public static void CR() {
+		System.out.format("%c", CARRIAGE_RETURN);
+	}
+	
+	/**
+	 * Wypisuje formatowany ciąg znaków na standardowe wyjście {@code System.out}.
+	 * @param format formatowany łańcuch znaków według składni {@link java.util.Formatter}
+	 * @param args argumenty do formatowania
+	 */
+	public static void pr(String format, Object... args) {
+    	System.out.format(format, args);
+    }
+    
+    /**
+     * Wypisuje formatowany ciąg znaków wraz ze znakiem nowej linii na standardowe wyjście.
+     * @param format formatowany łańcuch znaków według składni {@link java.util.Formatter}
+	 * @param args argumenty do formatowania
+     */
+    public static void prn(String format, Object... args) {
+		System.out.format(format + "%n", args);
+    }
+
+	/**
+	 * Wypisuje łańcuch znaków reprezentowany przez podany obiekt wraz ze znakiem nowej linii.
+	 * @param arg obiekt do wypisania (wywoływana jest metoda {@code toString()})
+	 */
+	public static void prn(Object arg) {
+		System.out.format("%s%n", arg);
+	}
+
+	/**
+	 * Wypisuje znak nowej linii na standardowe wyjście.
+	 */
+	public static void prn() {
+		System.out.format("%n");
+	}
+
+	/**
+	 * Usypia bieżący wątek na określoną liczbę milisekund.
+	 * Nie wyrzuca wyjątku {@link InterruptedException}, lecz zwraca informację czy nastąpiło przerwanie snu.
+	 * 
+	 * @param timeToSleep czas snu w milisekundach
+	 * @return {@code true} jeśli wątek został przerwany podczas snu, {@code false} w przeciwnym wypadku
+	 */
+	public static boolean sleep(long timeToSleep) {
+    	try {
+    		Thread.sleep(timeToSleep);
+		} catch (InterruptedException ignore) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Test klasy - demonstracja wypisywania znaków, formatowania oraz działania stopera.
+	 * @param args argumenty programu (nieużywane)
+	 */
+	public static void main(String[] args) {
+		RunningTimeStopwatch rt = new RunningTimeStopwatch();
+		pr("");
+		pr("1 ");
+		pr("test format ");
+		pr("%d ", 33);
+		prn("%d", 12);
+		prn("%d", 21);
+		sleep(750);
+		prn("running time: %d ms", rt.get());
+		int sleepTimeBeforeContinuing = 900;
+		pr("two k than sleep for %d ms than CARRIAGE_RETURN: kk", sleepTimeBeforeContinuing);
+		prc(CARRIAGE_RETURN);
+		sleep(sleepTimeBeforeContinuing);
+		pr("three k then LINE_FEED: kkk");
+		prc(LINE_FEED);
+		pr("five k then BACKSPACE: kkkkk");
+		prc(BACKSPACE);
+	}
+
+	/**
+	 * Prosty stoper do pomiaru czasu wykonywania zadań w milisekundach.
+	 * Tworzy się go tuż przed rozpoczęciem zadania, a po zakończeniu wywołuje metodę {@link #get()}.
+	 * Można również pobrać czas od startu do dowolnego momentu metodą {@link #getSplitTime()}.
+	 */
+	public static final class RunningTimeStopwatch {
+		/**
+		 * Czas startu stopera (w milisekundach od epoki).
+		 */
+		private final long startTime = System.currentTimeMillis();
+		private long stopTime = 0L;
+
+		/**
+		 * Zatrzymuje stoper i zwraca zmierzony czas.
+		 * Metoda może być wywoływana wielokrotnie, ale tylko pierwsze wywołanie ustawia czas stopu.
+		 * @return zmierzony czas wykonania w milisekundach
+		 */
+		public long get() {
+			return stopTime == 0L ? (stopTime = getSplitTime()) : stopTime;
+		}
+
+		/**
+		 * Zwraca czas, który upłynął od momentu startu stopera do chwili obecnej.
+		 * @return czas w milisekundach od startu stopera
+		 */
+		public long getSplitTime() {
+			return Math.abs(System.currentTimeMillis() - startTime);
+		}
+	}
+}

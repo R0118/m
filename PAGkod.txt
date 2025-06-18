@@ -1,0 +1,1737 @@
+---Przykładowe 2 klasy---
+
+public class Employee {  - deklaracja publicznej klasy o nazwie Employee
+String name = ""; - deklaracja pola name typu string (domyślnie pusty ciąg znaków)
+double salary;  - deklaracja pola salary typu double
+LocalDate birthDate; - deklaracja pola birthDate typu LocalDate (data z pakieru java.time)
+String getDetails() {...}  - deklaracja metody getDetails(), zwraca string (pewnie te dane wyżej)
+} 
+public class Manager { 
+String name = ""; 
+double salary; 
+LocalDate birthDate; 
+String department; 
+String getDetails() {...} 
+
+---Przykład dziedziczenia---
+
+public class Employee { 
+String name = ""; 
+double salary; 
+LocalDate birthDate; 
+String getDetails() {...} 
+} 
+public class Manager extends Employee { 
+String department; 
+String getDetails() {...} 
+} 
+public class Engineer extends Employee { 
+String specialization; 
+String getDetails() {...} 
+}
+
+
+
+---Stos sterta---
+
+public class StosSterta { 
+/** Zmienna w obiekcie klasy (na stercie). */
+
+ int a = 6; - zmienna instancyjna, przechowywana na stercie w obiekcie klasy stosSterta
+
+/** * Metoda obliczająca sumę atrybutu {@link #a} i parametru. * @param b drugi składnik sumy do policzenia (na stosie). * @return sumę atrybutu {@link #a} i parametru (na stosie). */
+
+int obliczSumę(int b) { - deklaracja metody, przyjmującej argument typu int i zwracającej int, zmienna i zwrot przechowywane na stosie
+int suma = 0; 
+suma = a + b; 
+return suma; 
+}
+ /** @param args argumenty programu, nieużywane (na stosie). */ 
+public static void main(String[] args) { - standardowa metoda main bedaca punktem wejscia program, tablica argumentów przechowywana na stosie
+StosSterta ss = new StosSterta(); - utworzenie nowego obiektu klasy StosSterta (przechowywanego na stercie), zmienna referencyjna ss przechowywana na stosie i wskazuje na obiekt na stercie.
+int suma = ss.obliczSumę(10); - wywołanie metody obliczSumę na obiekcie ss z argumentem 10
+System.out.println("Suma: " + suma); - print na standardowym wyjsciu
+    } 
+}
+
+---Inicjator statyczny (wykonuje się raz, gdy klasa jest ładowana do pamięci)---
+ 
+class Thing {
+ static private int counter = 0; - statyczna zmienna, współdzielona przez wszystkie instancje klasy Thing
+ static {
+  DB db = new DB("jdbc:sql:counterbase"); - tworzenie połączenia z bazą danych
+  db.connect("user", "pass"); - nawiązywanie połączenia
+  counter = db.retrieveCounter(); - przypisanie zmiennej counter wartości licznika z bazy danych
+  db.close(); - zwolnienie zasobów połączenia z bazą danych
+ }
+ public static int getCounter() { return counter; } - statyczna metoda dostępu do licznika
+ public Thing() { counter++; } - konstruktor zwiększa licznik przy każdym utworzeniu nowego obiektu
+ // …inne pola, metody i funkcje
+}
+
+---Konstruktor - specjalna metoda o nazwie identycznej z nazwą klasy!---
+ class Thing {
+ private int x; - zmienna prywatna dostępna tylko wew. klasy
+ Thing() { x = 12;} - konstruktor domyślny(bezparametrowy), wywoływany gdy tworzymy obiekt przez new Thing()
+ Thing(int xx) { x = xx; } - konstruktor przyjmuje wartość int jako parametr, przypisuje wartość parametru do pola x, wołany gdy tworzymy obiekt przez new Thing(jakaś wartość)
+}
+
+---inicjacja str. 83---
+---metoda this str.88---
+---metody statyczne---
+ 
+class Obliczenia {
+ static int suma(int a, int b) {
+   return a + b;
+ }
+ static int różnica(int a, int b) {
+   return a– b;
+ }
+}
+ int c = Obliczenia.suma(3, 9);
+ int d = Obliczenia.różnica(9, 7);
+
+---wzorzec Singleton - wzorzec programistyczny umozliwiający stworzenie tylko jednego obiektu tej klasy---
+
+class ClassicSingleton {
+ private static final ClassicSingleton instance = new ClassicSingleton(); - private(dostęp tylko wew. klasy), static(tylko jedna instancja, współdzielona przez aplikację), final(nie może być zmieniona po inicjalizacji)
+ private ClassicSingleton() { - prywatny konstruktor, uniemozliwia tworzenie instancji klasy z zewnątrz
+ }
+ public static ClassicSingleton getInstance() { - publiczna metoda statyczna, jedyny sposób na dostęp do singletona
+ return instance;
+ }
+}
+
+---Klasy ENUM---
+
+public enum Kolor {
+ BIAŁY(255, 255, 255), CZERWONY(255, 0, 0); - predefiniowane wartości enum
+ private final int red; - finalne pola przechowujące składowe koloru
+ private final int green;
+ private final int blue;
+ Kolor(int r, int g, int b) { - konstruktor parametrowy, przypisuje wartości do odpowiednich pól
+ this.red = r;
+ this.green = g;
+ this.blue = b;
+ }
+ public int getR() { return red; } - gettery umożliwiające odczyt składowych koloru
+ public int getG() { return green; }
+ public int getB() { return blue; }
+ public String toString() { - nadpisana metoda toString zwracająca czytelną reprezentację koloru
+  return "[" + name() + " (" + getR() + "," + getG() + "," + getB() + ")";
+ }
+}
+
+---Polimorfizm---
+
+public class Employee {
+ public String getDetails() { return "Employee:" + name + ... ; } - klasa bazowa, zawiera metodę getDetails(), która zwraca string z prefiksem Employee
+ }
+ public class Manager extends Employee {
+ public String department;
+ public String getDetails() { return "Manager:" + name + ... ; } - dziedziczy po Employee, dodaje nowe pole, zwraca string z prefiksem Manager
+}
+
+ Employee e = new Employee();
+ e.getDetails();
+
+ e = new Manager();
+ e.getDetails(); - przykłady wywołania
+
+---operator instanceof - sprawdza czy obiekt jest instancją określonej klasy str.97---
+
+---przeciązanie metod str.100---
+
+---metoda super---
+
+class Employee {
+ private String name;
+ private double salary;
+ public String getDetails() {
+  return "Name: " + name + "\nSalary: " + salary;
+ }
+}
+class Manager extends Employee {
+ private String department;
+
+ public String getDetails() {
+ return super.getDetails() + "\nDepartment: " + department; - metoda super wywołuje metodę z klasy nadrzędnej i dodaje informację o dziale
+ }
+}
+
+---super, this---
+public class Manager extends Employee {
+    private String department;
+    
+    // Konstruktor 1: przyjmuje wszystkie parametry
+    public Manager(String name, double salary, String dept) {
+        super(name, salary);  // wywołanie konstruktora klasy Employee
+        department = dept;
+    }
+    
+    // Konstruktor 2: przyjmuje name i dept, ustawia domyślne salary
+    public Manager(String name, String dept) {
+        this(name, 4500.0D, dept);  // wywołanie innego konstruktora tej samej klasy
+    }
+    
+    // Konstruktor 3: przyjmuje tylko dept, ustawia domyślne wartości
+    public Manager(String dept) {
+        super();  // niejawne wywołanie konstruktora bezparametrowego Employee
+        department = dept;
+    }
+}
+ 
+
+---Kolejność i dynamiczne wiązanie---
+
+class Nadklasa {
+    // Inicjalizacja pola instancyjnego - wykona się przed konstruktorem
+    int u = Wartość.podajWartość("Nadklasa.u");
+    
+    // Metoda, która będzie przesłaniana w podklasie
+    void wypisz() {
+        System.out.println("Nadklasa.wypisz()");
+    }
+    
+    // Konstruktor nadklasy
+    Nadklasa() {
+        System.out.println("Nadklasa()");
+        // Wywołanie polimorficzne - w czasie wykonania zostanie wybrana właściwa wersja metody
+        wypisz();
+    }
+    
+    public static void main(String[] args) {
+        // Utworzenie instancji Nadklasy - pokaże kolejność inicjalizacji
+        new Nadklasa();
+    }
+}
+
+class Podklasa extends Nadklasa {
+    // Inicjalizacja pola instancyjnego w podklasie - wykona się po konstruktorze nadklasy
+    int v = Wartość.podajWartość("Podklasa.v");
+    
+    // Przesłonięcie metody z nadklasy
+    @Override
+    void wypisz() {
+        System.out.println("Podklasa.wypisz()");
+    }
+    
+    // Konstruktor podklasy
+    Podklasa() {
+        super(); // Wywołanie konstruktora nadklasy (musi być pierwszą instrukcją)
+        System.out.println("Podklasa()");
+        // Wywołanie polimorficzne
+        wypisz();
+    }
+    
+    public static void main(String[] args) {
+        // Utworzenie instancji Podklasy - pokaże pełną sekwencję inicjalizacji
+        new Podklasa();
+    }
+}
+
+---Klasy abstrakcyjne---
+
+// Abstrakcyjna klasa bazowa dla kształtów
+public abstract class Shape {
+    // Abstrakcyjna metoda do obliczania pola (musi być zaimplementowana w podklasach)
+    public abstract double calculateArea();
+}
+
+// Klasa reprezentująca koło (dziedziczy po Shape)
+public class Circle extends Shape {
+    // Implementacja metody obliczającej pole koła (πr²)
+    public double calculateArea() {
+        return Math.PI * radius * radius; // radius powinien być zadeklarowany
+    }
+}
+
+// Klasa reprezentująca kwadrat (dziedziczy po Shape)
+public class Square extends Shape {
+    // Implementacja metody obliczającej pole kwadratu (a²)
+    public double calculateArea() {
+        return (double) edge * edge; // edge powinien być zadeklarowany
+    }
+}
+
+---interfejsy---
+// Interfejs Flyer definiujący zachowania obiektów latających
+public interface Flyer {
+    // Metoda odpowiadająca za start
+    public void takeOff();
+    
+    // Metoda odpowiadająca za lądowanie
+    public void land();
+    
+    // Metoda odpowiadająca za sam lot
+    public void fly();
+}
+
+// Klasa Airplane implementująca interfejs Flyer (samolot jako obiekt latający)
+public class Airplane implements Flyer {
+    // Implementacja metody startu - zwiększanie mocy silnika
+    public void takeOff() {
+        // zwiększaj moc silnika...
+    }
+    
+    // Implementacja metody lądowania - zmniejszanie mocy silnika
+    public void land() {
+        // zmniejszaj moc silnika...
+    }
+    
+    // Implementacja metody lotu - utrzymywanie stałej mocy
+    public void fly() {
+        // utrzymuj stałą moc...
+    }
+}
+
+---Dziedziczenie i implementowanie---
+
+// Klasa Airport symulująca lotnisko, które zarządza lądowaniem różnych obiektów latających
+public class Airport {
+    public static void main(String[] args) {
+        // Tworzenie instancji lotniska
+        Airport metropolisAirport = new Airport();
+        
+        // Tworzenie różnych obiektów latających:
+        Helicopter c = new Helicopter();      // Śmigłowiec
+        SeaPlane sp = new SeaPlane();         // Wodnosamolot
+        Flyer S = Superman.INSTANCE;          // Superman (wzorzec singleton)
+        
+        // Udzielanie pozwolenia na lądowanie każdemu obiektowi
+        metropolisAirport.setPermissionToLand(c);
+        metropolisAirport.setPermissionToLand(sp);
+        metropolisAirport.setPermissionToLand(S);
+    }
+    
+    // Metoda udzielająca pozwolenia na lądowanie dowolnemu obiektowi implementującemu interfejs Flyer
+    private void setPermissionToLand(Flyer f) {
+        f.land();  // Wywołanie metody land() na przekazanym obiekcie
+    }
+}
+
+---Statyczny import (do grupowania stałych używamy klas i statycznych pól finalnych)--- 
+
+package pl.edu.pw.elka.pag.programowanieObiektowe;
+ 
+public class Stałe {
+ private Stałe() { // bez obiektów tej klasy
+ }
+ public static final double STAŁA_PLANCKA = 6.62606957e-34;
+ public static final double STAŁA_BOLTZMANNA = 1.3806488e-23;
+}
+
+---Klasy zagnieżdżone ten i inne przykłady na stronie 134 i dalej---
+
+// Klasa zewnętrzna (Outer1) zawierająca klasę wewnętrzną (Inner)
+public class Outer1 {
+    private int size;  // Prywatne pole klasy zewnętrznej
+    
+    // Klasa wewnętrzna (non-static inner class) - ma dostęp do pól klasy zewnętrznej
+    public class Inner {
+        public void doStuff() {
+            size++;  // Klasa wewnętrzna ma bezpośredni dostęp do prywatnego pola 'size' klasy zewnętrznej
+        }
+    }
+    
+    // Metoda testująca działanie klasy wewnętrznej
+    public void testTheInner() {
+        Inner i = new Inner();  // Tworzenie instancji klasy wewnętrznej
+        i.doStuff();            // Wywołanie metody klasy wewnętrznej
+    }
+    
+    // Metoda main demonstrująca użycie
+    public static void main(String[] a) {
+        Outer1 o1 = new Outer1();  // Tworzenie instancji klasy zewnętrznej
+        o1.testTheInner();         // Testowanie klasy wewnętrznej
+    }
+}
+
+---Klasy anonimowe---
+
+class MojaKlasa extends java.awt.Frame {
+    // ...
+    
+    // Dodanie słuchacza zdarzeń okna (WindowListener) przy użyciu anonimowej klasy wewnętrznej
+    addWindowListener(new WindowAdapter() {
+        // Przesłonięcie metody windowClosing - wywoływanej przy zamykaniu okna
+        void windowClosing(WindowEvent we) {
+            System.exit(1);  // Zamknięcie aplikacji z kodem wyjścia 1
+        }
+    });
+}
+
+---try-catch-finally---
+
+ try {
+  // kod niebezpieczny
+  } catch(TypWyjątku1 id1) {
+  // obsługa wyjątków typu 1
+  } catch(TypWyjątku2 id2) {
+  // obsługa wyjątków typu 2
+  } catch(TypWyjątku3 id3) {
+  // obsługa wyjątków typu 3
+  } finally {
+  // czynności wykonywane zawsze
+ }
+
+---Wariantowe catch---
+
+// Wersja 1: Oddzielne bloki catch dla każdego typu wyjątku
+catch (IOException ex) {
+    logger.log(ex);   // Logowanie wyjątku
+    throw ex;         // Ponowne rzucenie tego samego wyjątku
+} 
+catch (SQLException ex) {
+    logger.log(ex);   // Logowanie wyjątku
+    throw ex;         // Ponowne rzucenie tego samego wyjątku
+}
+
+// Wersja 2: Złączony blok catch dla wielu typów wyjątków (od Javy 7+)
+catch (IOException|SQLException ex) {
+    logger.log(ex);   // Logowanie wyjątku
+    throw ex;         // Ponowne rzucenie tego samego wyjątku
+}
+
+---Wyjątki---
+
+int count = 0;  // Licznik pętli inicjalizowany wartością 0
+
+// Nieskończona pętla while (będzie przerwana wewnątrz bloku finally)
+while (true) {
+    try {
+        // Sprawdzenie warunku i inkrementacja count (postinkrementacja)
+        if (count++ == 0) {
+            // Rzucenie wyjątku tylko przy pierwszym przejściu pętli (count == 0)
+            throw new ThreeException();
+        }
+        // Ten kod wykona się tylko gdy nie było wyjątku
+        System.out.println("bez wyjątku");
+        
+    } catch (ThreeException e) {
+        // Obsługa wyjątku ThreeException
+        System.err.println("ThreeException");
+        
+    } finally {
+        // Blok finally wykonuje się ZAWSZE, niezależnie od wystąpienia wyjątku
+        System.err.println("zawsze");
+        
+        // Warunek przerwania pętli po drugim przejściu
+        if (count == 2) {
+            break;  // Przerwanie pętli while
+        }
+    }
+}
+
+---Tworzenie tablic---
+
+
+public char[] createArray() {
+    // Tworzenie tablicy znaków o rozmiarze 26 (tyle jest liter w alfabecie angielskim)
+    char[] s = new char[26];
+    
+    // Wypełnianie tablicy literami od 'A' do 'Z'
+    for (int i = 0; i < 26; i++) {
+        // 'A' + 0 = 'A', 'A' + 1 = 'B', ..., 'A' + 25 = 'Z'
+        s[i] = (char)('A' + i);  // Rzutowanie wyniku na typ char
+    }
+    
+    // Zwracanie gotowej tablicy
+    return s;
+}
+
+---System.arraycopy()---
+
+// Metoda arraycopy służy do kopiowania fragmentów tablic
+public static void arraycopy(
+    Object src,    // źródłowa tablica
+    int srcPos,    // pozycja startowa w źródłowej tablicy
+    Object dest,   // docelowa tablica
+    int destPos,   // pozycja startowa w docelowej tablicy
+    int length)    // liczba elementów do skopiowania
+{
+    // Implementacja pominięta - to jest deklaracja metody System.arraycopy
+}
+
+// Przykład użycia System.arraycopy
+int[] mArr = { 1, 2, 3, 4 };        // Tablica źródłowa
+int hold[] = { 10, 9, 8, 7, 6, 5, 4 }; // Tablica docelowa
+
+// Kopiowanie całej tablicy mArr do hold, zaczynając od indeksu 2
+System.arraycopy(mArr, 0, hold, 2, mArr.length);
+
+// Po wykonaniu operacji zawartość tablicy hold będzie wyglądać następująco:
+// { 10, 9, 1, 2, 3, 4, 4 }
+
+---Equals w klasie string---
+
+// Implementacja metody equals dla klasy String
+public boolean equals(Object anObject) {
+    // 1. Sprawdzenie, czy to ten sam obiekt (ta sama referencja)
+    if (this == anObject) {
+        return true;
+    }
+    
+    // 2. Sprawdzenie, czy obiekt jest typu String
+    if (anObject instanceof String) {
+        String aString = (String)anObject;
+        
+        // 3. Sprawdzenie, czy oba stringi używają tego samego kodowania (Latin1 lub UTF16)
+        if (coder() == aString.coder()) {
+            // 4. Porównanie zawartości w zależności od kodowania
+            return isLatin1() 
+                ? StringLatin1.equals(value, aString.value)  // dla Latin1
+                : StringUTF16.equals(value, aString.value); // dla UTF16
+        }
+    }
+    
+    // 5. Zwrócenie false, jeśli obiekt nie jest Stringiem lub kodowanie jest różne
+    return false;
+}
+
+// Implementacja metody equals dla Stringów zakodowanych w Latin1 (w klasie StringLatin1)
+public static boolean equals(byte[] value, byte[] other) {
+    // 1. Sprawdzenie, czy tablice bajtów mają tę samą długość
+    if (value.length == other.length) {
+        // 2. Porównanie bajt po bajcie
+        for (int i = 0; i < value.length; i++) {
+            if (value[i] != other[i]) {
+                return false; // Znaleziono różnicę
+            }
+        }
+        return true; // Wszystkie bajty są identyczne
+    }
+    return false; // Różne długości
+}
+
+---Equals w klasie Long---
+
+// Implementacja metody equals dla klasy Long (opakowującej typ long)
+public boolean equals(Object obj) {
+    // 1. Sprawdzenie czy przekazany obiekt jest typu Long
+    if (obj instanceof Long) {
+        // 2. Porównanie wartości prymitywnej long
+        return value == ((Long)obj).longValue();
+    }
+    // 3. Zwrócenie false jeśli obiekt nie jest typu Long
+    return false;
+}
+
+
+
+
+public class MojaWspaniałaKlasa implements Comparable { // Definicja klasy MojaWspanialaKlasa, która implementuje interfejs Comparable
+    public int compareTo(Object ob) { // Metoda compareTo porównuje bieżący obiekt z innym obiektem tej samej klasy
+        if (this < ob) return -1; // Jeśli wartość bieżącego obiektu jest mniejsza niż obiektu porównywanego, zwróć -1
+        if (this == ob) return 0; // Jeśli wartości są równe, zwróć 0
+        if (this > ob) return 1; // Jeśli wartość bieżącego obiektu jest większa, zwróć 1
+    }
+}
+
+//InputStream Odczyt danych:
+int read() // Odczytuje pojedynczy bajt z wejścia. Zwraca odczytany bajt jako liczbę z zakresu 0-255 lub -1 jeśli osiągnięto koniec strumienia.
+int read(byte[] buffer) //Odczytuje dane do podanej tablicy bajtów (buffer). Zwraca liczbę faktycznie odczytanych bajtów lub -1 jeśli osiągnięto koniec strumienia.
+int read(byte[] buffer, int offset, int length) // dczytuje do tablicy buffer, zaczynając od pozycji offset, próbując odczytać maksymalnie length bajtów. Zwraca liczbę odczytanych bajtów lub -1 jeśli osiągnięto koniec strumienia. 
+
+//InputStream Odczyt danych Inne metody
+void close() //zamyka strumień, zwalnia zasoby
+int available() // zwraca liczbę bajtów możliwych do odczytu bez blokowania
+long skip(long n) // pomija n bajtów w strumieniu
+void mark(int limit) //zapamiętuje bieżącą pozycję do ewentualnego powrotu (reset)
+void reset() //wraca do ostatnio oznaczonej pozycji (mark)
+
+//OutputStream Zapis danych:
+void write(int c) //zapisuje pojedynczy bajt (ostatnie 8 bitów wartości c)
+void write(byte[] buffer) //zapisuje całą tablicę bajtów
+void write(byte[] buffer, int offset, int length) //zapisuje length bajtów z tablicy buffer, zaczynając od offset
+
+//OutputStream Zapis danych Inne metody
+void close() // zamyka strumień, zwalnia zasoby
+void flush() // wymusza zapis bufora do strumienia
+
+//Reader Odczyt danych:
+int read()  // odczytuje pojedynczy znak
+int read(char[] buffer) // odczytuje do tablicy znaków
+int read(char[] buffer, int offset, int length) // odczytuje len znaków do buffer, od pozycji off
+//Reader Odczyt danych Inne metody
+void close() // zamyka strumień
+long skip(long n) // pomija n znaków
+void mark(int limit), void reset() // zapamiętuje pozycję do resetu, wraca do pozycji mark
+
+//Writer Zapis danych:
+void write(int c) // zapisuje pojedynczy znak (kod Unicode)
+void write(char[] buffer) // zapisuje całą tablicę znaków
+void write(char[] buffer, int offset, int length) // zapisuje len znaków z tablicy, od off
+void write(String s) // zapisuje cały String
+void write(String s, int offset, int length) // zapisuje fragment Stringa (od off, len znaków)
+// Writer Zapis danych Inne metody
+void close() // zamyka strumień, zwalnia zasoby
+void flush() // wymusza zapis bufora do strumienia
+
+//Writer i pochodne Przykład
+FileInputStream fis = new FileInputStream("plik.txt"); // Otwieranie pliku do odczytu bajtowego
+BufferedInputStream bis = new BufferedInputStream(fis);// Buforowanie odczytu w celu zwiększenia wydajności
+InputStreamReader isr = new InputStreamReader(bis);// Konwersja bajtów na znaki zgodnie z domyślnym kodowaniem
+LineNumberReader lnr = new LineNumberReader(isr);// Czytanie linii tekstu z pliku oraz numerowanie linii
+String line = null;
+while ((line = lnr.readLine()) != null) {// Pętla czytająca kolejne linie do końca pliku
+    System.out.println("linia nr " + lnr.getLineNumber()  + " [" + line + "]");  // Wyświetlenie numeru linii oraz jej treści
+}
+
+//klasyczny try with resource 
+String readFirstLineFromFile(String path) throws IOException { // Metoda odczytuje pierwszą linię tekstu z pliku wskazanego przez path.
+    BufferedReader br = new BufferedReader(new FileReader(path));  // Tworzy BufferedReader do wydajnego czytania znaków z pliku
+    try {
+        return br.readLine(); // Zwraca pierwszą linię tekstu z pliku lub null jeśli plik pusty
+    } finally {
+        if (br != null) {
+            br.close(); // Zawsze zamyka BufferedReader po zakończeniu czytania (nawet w przypadku wyjątku)
+        }
+    }
+}
+
+//polecany try with resource
+String readFirstLineFromFile(String path) throws IOException {
+    try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+        return br.readLine();
+    }// br.close() wywoła się automatycznie
+}
+// Interfejsy zamykające zasoby dla try with resource
+interface java.lang.AutoCloseable {
+    public void close() throws Exception;// ogólny interfejs do zamykania
+}
+interface java.io.Closeable extends AutoCloseable {
+    public void close() throws IOException;// do zamykania strumieni IO
+}
+
+//Napisz program
+// Typu copy – kopiujący pliki
+// Zmierz czasy kopiowania dużego pliku
+// >50…500MB
+// Wykorzystaj odczyt i zapis w porcjach jednobajtowych, stubajtowych i większych, będących potęgami dwójki i nie
+// Wykorzystaj strumienie buforowane i niebuforowane
+// Także kanały (pakiet java.nio)
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+public class programTypucopy {
+    public static void main(String[] args) throws Exception {
+        // Podaj nazwę pliku źródłowego i docelowego jako argumenty
+        String source = args[0];
+        String target = args[1];
+
+        long start = System.currentTimeMillis(); // zapamiętaj czas startu
+
+        FileInputStream in = new FileInputStream(source);
+        FileOutputStream out = new FileOutputStream(target);
+
+        int bajt;
+        while ((bajt = in.read()) != -1) { // czytaj jeden bajt
+            out.write(bajt); // zapisz jeden bajt
+        }
+
+        in.close();
+        out.close();
+
+        long end = System.currentTimeMillis(); // zapamiętaj czas końca
+        System.out.println("Czas kopiowania: " + (end - start) + " ms");
+    }
+}
+// Napisz program
+// Typu dir (ls) – listing zawartości katalogu
+// Wypisz atrybuty plików
+// Klasa java.io.File, podstawowe: rozmiary, daty, prawa odczytu/zapisu/wykonania itd.
+// Klasa java.nio.file.Files, wszystkie jakie są dostępne i istnieją w  używanym systemie plików
+import java.io.File;
+public class ProstyDir {
+    public static void main(String[] args) {
+        // Jeśli nie podano katalogu, użyj bieżącego
+        String dirName = args.length > 0 ? args[0] : ".";
+        File dir = new File(dirName);
+
+        // Wypisz pliki z katalogu
+        for (File f : dir.listFiles()) {
+            System.out.println(
+                (f.isDirectory() ? "[KAT] " : "[PLIK] ") +
+                f.getName() +
+                " | rozmiar: " + f.length() +
+                " | czy czytelny: " + f.canRead() +
+                " | czy zapisywalny: " + f.canWrite() +
+                " | czy wykonywalny: " + f.canExecute()
+            );
+        }
+    }
+}
+
+// Napisz program
+// Czytający plik tekstowy i wypisujący każde słowo w osobnym wierszu
+// Tokenizacja – podział na tokeny (całostki) do analizy składniowej albo semantycznej
+// java.io.StreamTokenizer
+// Odczyt wierszowy i String.split() albo StringTokenizer
+// java.util.Scanner
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+public class czytaniepliku {
+    public static void main(String[] args) throws FileNotFoundException {
+        // Podaj nazwę pliku jako pierwszy argument, np. "tekst.txt"
+        File file = new File(args[0]);
+        Scanner scanner = new Scanner(file);
+
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            String[] words = line.split("\\s+"); // dzieli linię na słowa (tokeny)
+            for (String word : words) {
+                if (!word.isEmpty()) {
+                    System.out.println(word);
+                }
+            }
+        }
+        scanner.close();
+    }
+}
+
+//Wielozbiór przykład
+public class Bag<ItemType> implements Iterable<ItemType> {
+    private int size;      // liczba elementów w worku
+    private Node first;    // pierwszy węzeł listy jednokierunkowej
+
+    // Wewnętrzna klasa węzła listy
+    private class Node {
+        ItemType item = null; // przechowywana wartość
+        Node next = null;     // referencja do następnego węzła
+    }
+
+    // Konstruktor - tworzy pusty worek
+    public Bag() {
+        first = null;
+        size = 0;
+    }
+
+    // Czy worek jest pusty?
+    public boolean isEmpty() {
+        return first == null; // lub return size == 0;
+    }
+
+    // Zwraca liczbę elementów
+    public int getSize() { return size; }
+
+    // Dodaje element do worka (na początek listy)
+    public void add(ItemType item) {
+        Node oldFirst = first;     // zapisz dotychczasowy pierwszy węzeł
+        first = new Node();        // nowy węzeł staje się pierwszy
+        first.item = item;         // przypisz wartość
+        first.next = oldFirst;     // stary pierwszy staje się drugim
+        size++;                    // zwiększ licznik elementów
+    }
+
+    // Zwraca iterator po worku (po wszystkich elementach)
+    public Iterator<ItemType> iterator() {
+        return new ListIterator();
+    }
+
+    // Wewnętrzny iterator po elementach worka
+    private class ListIterator implements Iterator<ItemType> {
+        private Node current = first; // aktualny węzeł
+
+        public boolean hasNext() {
+            return current != null; // czy są jeszcze elementy?
+        }
+
+        public void remove() {
+            throw new UnsupportedOperationException(); // usuwanie nieobsługiwane
+        }
+
+        public ItemType next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException(); // brak elementów
+            }
+            ItemType item = current.item; // pobierz wartość
+            current = current.next;       // przejdź do następnego
+            return item;
+        }
+    }
+}
+
+// Klasa Bag Jest parametryzowaną kolekcją obiektów
+public static void main(String... a) {
+    // Tworzy nowy, pusty worek na liczby całkowite
+    Bag<Integer> b = new Bag<>();
+    System.out.println(b); // wypisuje referencję do worka (domyślny toString)
+    b.add(Integer.valueOf(5)); // dodaje liczbę 5 do worka
+    System.out.println(b); // znów wypisuje referencję do worka (nie zawartość!)
+}
+
+// Parametryzacja kolekcji strona 208 
+
+//Notacja diamentowa
+// Tworzenie listy ArrayList z określonym typem generycznym
+ArrayList<SomeClass> aList = new ArrayList<SomeClass>(); // starszy zapis (przed Java 7)
+ArrayList<SomeClass> aList = new ArrayList<>();          // nowszy zapis - typ wywnioskowany (od Java 7)
+
+// Tworzenie mapy, gdzie kluczem jest String, a wartością lista Stringów
+Map<String, List<String>> słowa = new HashMap<String, List<String>>(); // starszy zapis (przed Java 7)
+Map<String, List<String>> słowa = new HashMap<>();     
+
+//Parametryzacja (generics) przykład
+public interface List<E> {
+    void add(E e);                // dodaje element do listy
+    Iterator<E> iterator();       // zwraca iterator po elementach listy
+}
+
+public interface Iterator<E> {
+    E next();                     // zwraca kolejny element
+    boolean hasNext();            // sprawdza, czy są kolejne elementy
+}
+
+// Użycie listy i iteratora:
+List<Integer> l = new AList<>();  // utworzenie listy typu Integer (AList musi implementować List)
+
+// Sumowanie wszystkich elementów listy
+int sum(List<Integer> l) {
+    int result = 0;
+    for (Integer i : l) {        // korzysta z iteratora, umożliwia foreach
+        result += i;
+    }
+    return result;
+}
+
+// Przykład metod z różnymi wariantami typów generycznych w kolekcjach
+
+// 1. Przyjmuje tylko kolekcje typu Collection<Object>
+void printCollection(Collection<Object> c) {
+    for (Object o : c) { 
+        System.out.println(o); 
+    }
+}
+
+// 2. Przyjmuje kolekcję dowolnego typu (typ nieznany - wildcard)
+void printCollection(Collection<?> c) {
+    for (Object o : c) { 
+        System.out.println(o); 
+    }
+}
+
+// 3. Przyjmuje kolekcję typu Manager lub dowolnego podtypu Manager (np. Director extends Manager)
+void printCollection(Collection<? extends Manager> c) {
+    for (Object o : c) { 
+        System.out.println(o); 
+    }
+}
+
+// 4. Przyjmuje kolekcję typu Manager lub dowolnego nadtypu Manager (np. Object, Employee jeśli Manager extends Employee)
+void printCollection(Collection<? super Manager> c) {
+    for (Object o : c) { 
+        System.out.println(o); 
+    }
+}
+
+//Auto- opakowanie/odpakowanie
+Float f = Float.valueOf(4.4f); 
+float g = f; // autoodpakowanie: g = 4.4f
+
+Integer i = 1; 
+Integer j = i; 
+i++; // i = 2, j = 1
+
+// Czy i == j ?
+// Odpowiedź: NIE, ponieważ po i++ i wskazuje na nowy obiekt (2), a j nadal na stary (1).
+
+Integer j = 300, i = 300;
+// Czy j == i ?
+// Odpowiedź: NIE, ponieważ liczby spoza zakresu cache (-128..127) to różne obiekty, więc j != i (porównanie referencji).
+
+Integer j = 20, i = 20;
+// Czy j == i ?
+// Odpowiedź: TAK, ponieważ liczby w zakresie cache (-128..127) są cache’owane i wskazują na ten sam obiekt, więc j == i.
+
+//Kolejka
+public class SimpleQueue<ItemType> implements Iterable<ItemType> {
+    private int size = 0;      // Liczba elementów w kolejce
+    private Node first;        // Referencja do pierwszego elementu (początek kolejki)
+    private Node last;         // Referencja do ostatniego elementu (koniec kolejki)
+
+    // Wewnętrzna klasa reprezentująca węzeł listy
+    private class Node {
+        ItemType item;        // Przechowywana wartość
+        Node next;            // Referencja do następnego węzła
+    }
+
+    // Konstruktor – tworzy pustą kolejkę
+    public SimpleQueue() {
+        first = null;
+        last = null;
+    }
+
+    // Sprawdza, czy kolejka jest pusta
+    public boolean isEmpty() {
+        return first == null;
+    }
+
+    // Zwraca liczbę elementów w kolejce
+    public int getSize() {
+        return size;
+    }
+
+    // Zwraca pierwszy element kolejki bez usuwania (podgląd)
+    public ItemType peek() {
+        if (isEmpty()) {
+            throw new RuntimeException("Queue is empty"); // rzuca wyjątek, gdy kolejka pusta
+        }
+        return first.item;
+    }
+
+    // Dodaje nowy element na koniec kolejki
+    public void enqueue(ItemType item) {
+        Node x = new Node();   // tworzy nowy węzeł
+        x.item = item;         // ustawia wartość
+        if (isEmpty()) {
+            first = x;         // jeśli kolejka pusta, pierwszy = nowy węzeł
+            last = x;          // i ostatni też
+        } else {
+            last.next = x;     // dołącza nowy węzeł na końcu
+            last = x;          // aktualizuje referencję last
+        }
+        size++;                // zwiększa licznik elementów
+    }
+
+    // Usuwa i zwraca pierwszy element kolejki
+    public ItemType dequeue() {
+        if (isEmpty()) {
+            throw new RuntimeException("Queue is empty"); // wyjątek, gdy pusta
+        }
+        ItemType item = first.item; // pobiera wartość pierwszego elementu
+        first = first.next;         // przesuwa początek na następny węzeł
+        size--;                     // zmniejsza licznik elementów
+        if (isEmpty()) {
+            last = null; // czyści referencję last, gdy kolejka staje się pusta
+        }
+        return item;                // zwraca usunięty element
+    }
+
+    // Zwraca iterator przechodzący przez elementy kolejki w kolejności FIFO
+    public Iterator<ItemType> iterator() {
+        return new FIFOIterator();
+    }
+
+    // Wewnętrzny iterator dla SimpleQueue
+    private class FIFOIterator implements Iterator<ItemType> {
+        private Node current = first; // zaczyna od początku kolejki
+
+        // Sprawdza, czy są jeszcze elementy do przejścia
+        public boolean hasNext() {
+            return current != null;
+        }
+
+        // Usuwanie przez iterator nie jest obsługiwane
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
+
+        // Zwraca kolejny element i przechodzi do następnego
+        public ItemType next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException(); // wyjątek, gdy brak elementów
+            }
+            ItemType item = current.item; // pobiera wartość bieżącego węzła
+            current = current.next;       // przechodzi do następnego
+            return item;
+        }
+    }
+}
+
+//Stos
+public class SimpleStack<ItemType> {
+    public static final int maxSize = 4; // Maksymalny rozmiar stosu
+
+    // Tablica przechowująca elementy stosu (cast wymagany przez ograniczenia Javy)
+    private ItemType[] stack = (ItemType[]) new Object[maxSize];
+    //private ItemType[] stack = new ItemType[maxSize]; // to niedozwolona konstrukcja
+
+    private int top = 0; // konwencja: indeks pierwszej wolnej komórki
+
+    // Sprawdza, czy stos jest pusty
+    public boolean isEmpty() {
+        return top == 0;
+    }
+
+    // Zwraca liczbę elementów na stosie
+    public int size() {
+        return top;
+    }
+
+    // Dodaje element na stos (na szczyt)
+    public void push(ItemType item) {
+        if (top == stack.length) {
+            throw new StackFullException("stack is full, maxSize=" + maxSize); // wyjątek: stos pełny
+        }
+        stack[top++] = item; // dodaje element i zwiększa indeks top
+    }
+
+    // Zdejmuje element ze stosu (ze szczytu) i go zwraca
+    public ItemType pop() {
+        if (isEmpty()) {
+            throw new StackEmptyException("stack is empty, maxSize=" + maxSize); // wyjątek: stos pusty
+        }
+        ItemType item = stack[--top]; // zmniejsza indeks top i pobiera element
+        stack[top] = null; // czyści referencję (pomaga GC)
+        return item;
+    }
+}
+
+// hashCode() w klasie String
+public int hashCode() {
+    int h = hash; // pobiera zapamiętaną wartość hash (cache)
+    if (h == 0 && value.length > 0) { // jeśli hash nie został jeszcze obliczony i wartość nie jest pusta
+        for (byte v : value) {        // dla każdego bajtu w tablicy value
+            h = 31 * h + (v & 0xff); // mnoży aktualny hash przez 31 i dodaje bajt (jako nieujemny int)
+        }
+        hash = h; // zapamiętuje obliczony hash (cache)
+    }
+    return h; // zwraca hash
+}
+
+
+//Interfejs java.util.Collection
+
+// Dodaje element do kolekcji. Zwraca true, jeśli kolekcja się zmieniła.
+boolean add(E e);
+// Dodaje wszystkie elementy z podanej kolekcji do tej kolekcji.
+boolean addAll(Collection<? extends E> c);
+
+// Zwraca true, jeśli kolekcja jest pusta.
+boolean isEmpty();
+// Zwraca liczbę elementów w kolekcji.
+int size();
+
+// Usuwa wszystkie elementy z kolekcji.
+void clear();
+// Usuwa jedno wystąpienie podanego obiektu (jeśli istnieje). Zwraca true, jeśli element został usunięty.
+boolean remove(Object o);
+// Usuwa wszystkie elementy, które są obecne w podanej kolekcji.
+boolean removeAll(Collection<?> c);
+// Zachowuje tylko te elementy, które są obecne w podanej kolekcji i usuwa pozostałe.
+boolean retainAll(Collection<?> c);
+// Usuwa wszystkie elementy spełniające podany warunek (predykat).
+boolean removeIf(Predicate<? super E> filter);
+
+// Zwraca true, jeśli kolekcja zawiera podany obiekt.
+boolean contains(Object o);
+// Zwraca true, jeśli kolekcja zawiera wszystkie elementy z podanej kolekcji.
+boolean containsAll(Collection<?> c);
+
+// Zwraca iterator po elementach kolekcji.
+Iterator<E> iterator();
+// Zwraca równoległy stream elementów kolekcji (do przetwarzania równoległego).
+Stream<E> parallelStream();
+// Zwraca sekwencyjny stream elementów kolekcji.
+Stream<E> stream();
+
+// Zwraca tablicę zawierającą wszystkie elementy kolekcji.
+Object[] toArray();
+// Zwraca tablicę określonego typu, utworzoną przez generator, zawierającą wszystkie elementy kolekcji.
+<T> T[] toArray(IntFunction<T[]> generator);
+// Zwraca tablicę zawierającą wszystkie elementy kolekcji, typu zgodnego z typem podanej tablicy.
+<T> T[] toArray(T[] a);
+
+
+//Uruchamianie aplikacji okienkowej
+import java.awt.*; // Importujemy pakiet AWT, który umożliwia tworzenie graficznych interfejsów użytkownika
+public class FrameExample {
+    final private Frame f; // Deklarujemy prywatne, ostateczne pole typu Frame (okno)
+
+    public FrameExample() {
+        // Konstruktor klasy - wywoływany przy tworzeniu obiektu FrameExample
+        f = new Frame("Hello Out There!"); // Tworzymy nowe okno z tytułem "Hello Out There!"
+    }
+
+    public void launchFrame() {
+        f.setSize(170,170); // Ustawiamy rozmiar okna na 170x170 pikseli
+        f.setBackground(Color.blue); // Ustawiamy kolor tła okna na niebieski
+        f.setVisible(true); // Sprawiamy, że okno staje się widoczne na ekranie
+    }
+
+    public static void main(String[] args) {
+        // Metoda główna - punkt wejścia programu
+        FrameExample guiWindow = new FrameExample(); // Tworzymy nowy obiekt FrameExample (okno)
+        guiWindow.launchFrame(); // Wywołujemy metodę, która pokazuje okno na ekranie
+    }
+}
+
+//Przykład – metoda paint()
+public void paint(Graphics g) {
+    // Pobieramy rozmiar okna (szerokość i wysokość)
+    Dimension size = getSize();
+
+    // Ustalamy średnicę koła jako mniejszy z wymiarów okna (żeby zmieściło się w całości)
+    int d = Math.min(size.width, size.height);
+
+    // Ustalamy średnicę "oka" jako 1/20 średnicy głównego koła
+    int ed = d / 20;
+
+    // Obliczamy współrzędne x, y, żeby koło było wycentrowane
+    int x = (size.width - d) / 2;
+    int y = (size.height - d) / 2;
+
+    // Rysujemy wypełnione niebieskie koło (twarz)
+    g.fillOval(x, y, d, d);
+
+    // Ustawiamy kolor na czarny
+    g.setColor(Color.black);
+
+    // Rysujemy kontur koła (ramka twarzy)
+    g.drawOval(x, y, d, d);
+
+    // Rysujemy lewe oko (czarne kółko)
+    g.fillOval(x + d/3 - (ed/2), y + d/3 - (ed/2), ed, ed);
+
+    // Rysujemy prawe oko (czarne kółko)
+    g.fillOval(x + (2 * (d/3)) - (ed/2), y + d/3 - (ed/2), ed, ed);
+
+    // Rysujemy uśmiech (łuk skierowany do dołu)
+    g.drawArc(x + d/4, y + 2*(d/5), d/2, d/3, 0, -180);
+}
+
+
+//Metoda update()
+//Realizacja metody update() w klasie Component
+public void update(Graphics g) {
+    paint(g);
+}
+
+//Realizacja metody update() w klasie Container
+public void update(Graphics g) {
+    if (isShowing()) { // Sprawdzamy, czy kontener jest widoczny na ekranie
+        if (!(peer instanceof LightweightPeer)) { // Jeśli to nie jest "lekki" komponent
+            g.clearRect(0, 0, width, height); // Czyścimy całą powierzchnię kontenera (na przezroczysto, domyślny kolor tła)
+        }
+        paint(g); // Rysujemy zawartość kontenera
+    }
+}
+
+//Realizacja metody update() w klasie Canvas
+public void update(Graphics g) {
+    g.clearRect(0, 0, width, height); // Czyścimy cały obszar canvasu (ustawiamy na kolor tła)
+    paint(g); // Rysujemy ponownie całą zawartość
+}
+
+//Praca z obrazkami, klasa Imag
+public class GetImage extends Frame {
+    //dodane rzeczy 
+    // Zmienna do przechowywania obrazu
+    private Image img;
+    // Nazwa pliku obrazka
+    private String imageFileName;
+    // Dodatkowa zmienna używana w obsłudze wyjątków (niezdefiniowana w kodzie, więc trzeba ją dodać)
+    private int n = 0;
+
+    //orginalne
+    // Konstruktor klasy GetImage, przyjmuje nazwę pliku obrazka
+    GetImage(String imageFileName) {
+        this.imageFileName = imageFileName; // Zapamiętaj nazwę pliku obrazka
+        // Sprawia, że okno zostanie pokazane na ekranie po zakończeniu konstrukcji
+        EventQueue.invokeLater(() -> setVisible(true));
+    }
+
+    // Specjalna metoda wywoływana gdy okno jest tworzone na ekranie
+    public void addNotify() {
+        super.addNotify(); // Wywołaj wersję tej metody z klasy Frame
+        // Wczytaj obrazek z podanej nazwy pliku do zmiennej img
+        img = Toolkit.getDefaultToolkit().getImage(imageFileName);
+    }
+
+    // Metoda wywoływana automatycznie, gdy okno wymaga narysowania (np. po pokazaniu, zmianie rozmiaru)
+    public void paint(Graphics g) {
+        try {
+            // Narysuj obrazek w lewym górnym rogu okna
+            g.drawImage(img, 0, 0, this);
+        } catch (NullPointerException npe) {
+            // Jeśli obrazek nie został załadowany i jest null, wypisz komunikat do konsoli
+            System.out.println("null w paint ! (n=" + n + ")");
+        }
+    }
+
+    // Metoda główna - punkt startowy programu
+    public static void main(String[] args) {
+        // Utwórz nowe okno klasy GetImage, podając nazwę pliku obrazka do wyświetlenia
+        new GetImage("resource\\1.gif");
+    }
+}
+
+//imageUpdate w klasie Component
+public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
+    int rate = -1; // Zmienna określająca, po ilu milisekundach nastąpi ponowne odrysowanie obrazu (-1 = brak odświeżenia na razie)
+
+    // Jeśli obraz jest już w całości załadowany (ALLBITS) lub załadowano kolejną klatkę animacji (FRAMEBITS)
+    if ((infoflags & (FRAMEBITS | ALLBITS)) != 0) {
+        rate = 0; // Odśwież od razu
+    } 
+    // Jeśli części obrazu są już dostępne (SOMEBITS)
+    else if ((infoflags & SOMEBITS) != 0) {
+        if (isInc) { // Sprawdzamy, czy tryb inkrementalny jest włączony
+            rate = incRate; // Ustawiamy czas odświeżania na wartość inkrementalną
+            if (rate < 0) {
+                rate = 0; // Ale jeśli wartość jest ujemna, ustawiamy 0 (odśwież od razu)
+            }
+        }
+    }
+
+    // Jeśli należy odświeżyć obraz, wywołujemy repaint (odświeżenie fragmentu okna)
+    if (rate >= 0) {
+        repaint(rate, 0, 0, width, height); // Odśwież fragment okna o podanym rozmiarze po upłynięciu rate ms
+    }
+
+    // Zwracamy true, jeśli obraz nie jest jeszcze w pełni załadowany i nie został przerwany (ABORT)
+    return (infoflags & (ALLBITS | ABORT)) == 0;
+}
+
+//Wątki w Javie
+public class ThreadTester {
+    public static void main(String args[]) {
+        // Tworzymy obiekt klasy HelloRunner (to nasz własny "kod wątku")
+        HelloRunner r = new HelloRunner();
+        // Tworzymy nowy wątek, przekazując mu nasz obiekt HelloRunner
+        Thread t = new Thread(r);
+        // Uruchamiamy nowy wątek (startuje metoda run() z HelloRunner)
+        t.start();
+    }
+}
+
+// Klasa HelloRunner implementuje interfejs Runnable, czyli zawiera kod, który ma być wykonany w osobnym wątku
+class HelloRunner implements Runnable {
+    private int i; // Zmienna do liczenia
+
+    // Metoda run() - to właśnie ona zostanie wykonana przez wątek
+    public void run() {
+        // Pętla wykona się 5 razy (i od 0 do 4)
+        for (i = 0; i < 5; i++) {
+            // Wyświetli na konsoli napis "Hello" i numer aktualnego obiegu pętli
+            System.out.println("Hello " + i);
+        }
+    }
+}
+
+//kolejkowanie wątków
+// Pobieramy aktualny priorytet wątku (liczba od 1 do 10)
+int cpr = Thread.currentThread().getPriority();
+
+// Jeśli priorytet jest mniejszy niż maksymalny...
+if (cpr < Thread.MAX_PRIORITY) {
+    // ...zwiększamy priorytet bieżącego wątku o 1
+    Thread.currentThread().setPriority(cpr + 1);
+}
+
+// ... (ważne czynności)
+
+// Po zakończeniu ważnych czynności przywracamy poprzedni priorytet,
+// ale tylko jeśli wcześniej był mniejszy od maksymalnego
+if (cpr < Thread.MAX_PRIORITY) {
+    Thread.currentThread().setPriority(cpr);
+}
+
+//Zakończenie działania wątku
+// Klasa Runner implementuje interfejs Runnable, czyli może być uruchamiana w osobnym wątku
+public class Runner implements Runnable
+{
+    // Flaga (zmienna), która mówi czy wątek ma się zakończyć
+    private boolean timeToQuit = false;
+
+    // Kod, który będzie wykonywany przez wątek
+    public void run() {
+        // Pętla będzie działać tak długo, jak timeToQuit jest fałszem (czyli dopóki nie chcemy zakończyć wątku)
+        while (!timeToQuit) {
+            // ... tutaj można umieścić zadania do wykonania w wątku
+        }
+        // Gdy pętla się skończy, możemy ustawić obiekt w odpowiednim, spójnym stanie
+        // (np. posprzątać zasoby, wyzerować licznik itp.)
+    }
+
+    // Metoda umożliwiająca zasygnalizowanie wątkowi, że ma się zakończyć
+    public void stopRunning() {
+        timeToQuit = true;
+    }
+}
+
+// Klasa ThreadController zarządza wątkiem Runner
+public class ThreadController
+{
+    // Tworzymy obiekt Runner (nasze zadanie do wykonania w wątku)
+    private Runner r = new Runner();
+    // Tworzymy wątek, przekazując mu nasz obiekt Runner
+    private Thread t = new Thread(r);
+
+    // Metoda do uruchomienia wątku (startuje wykonywanie run() w Runner)
+    public void startThread() {
+        t.start();
+    }
+
+    // Metoda do zatrzymania wątku (wysyła sygnał przez stopRunning)
+    public void stopThread() {
+        r.stopRunning();
+    }
+}
+
+//Zakończenie działania wątku 2
+
+// Klasa Runner2 implementuje interfejs Runnable, więc może być "zadaniem" dla wątku
+public class Runner2 implements Runnable {
+    // Zmienna kicker będzie wskazywać na "wątek sterujący"
+    private Thread kicker = null;
+
+    // Metoda setKicker pozwala ustawić referencję do aktualnego wątku
+    public void setKicker(Thread t) {
+        kicker = t;
+    }
+
+    // Metoda getKicker pozwala pobrać aktualną referencję do wątku kicker
+    public Thread getKicker() {
+        return kicker;
+    }
+
+    // Kod wykonywany przez wątek
+    public void run() {
+        // Pętla wykonuje się dopóki kicker NIE wskazuje na bieżący wątek
+        while (kicker != Thread.currentThread()) {
+            // ... tutaj umieszczamy zadania do wykonania w wątku
+        }
+        // Gdy pętla się skończy, można ustawić obiekt w odpowiednim, spójnym stanie
+        // (np. posprzątać zasoby, wyzerować licznik itp.)
+    }
+
+    // Metoda, która zatrzymuje wątek: ustawia kicker na null
+    public void stopRunning() {
+        kicker = null;
+    }
+}
+
+// Klasa ThreadController2 zarządza wątkiem Runner2
+public class ThreadController2 {
+    // Tworzymy obiekt Runner2 (nasze zadanie dla wątku)
+    private Runner2 r = new Runner2();
+    // Tworzymy nowy wątek, przekazując mu nasz obiekt Runner2
+    private Thread t = new Thread(r);
+
+    // Metoda uruchamiająca wątek
+    public void startThread() {
+        r.setKicker(t); // ustawiamy kicker na nasz wątek t
+        t.start();      // uruchamiamy wątek
+    }
+
+    // Metoda zatrzymująca wątek
+    public void stopThread() {
+        r.stopRunning(); // ustawia kicker na null, co powoduje wyjście z pętli
+    }
+}
+
+// Programowanie funkcyjne w Javie
+// Zwykły sposób
+public class ExampleNoLambda {
+
+    // Definiujemy interfejs Printable z jedną metodą print
+    interface Printable {
+        public void print(Object o);
+    }
+
+    public static void main(String[] args) {
+        // Tworzymy anonimową klasę, która wypisuje na standardowe wyjście (System.out)
+        Printable pout = new Printable() {
+            public void print(Object o) {
+                System.out.println(o);
+            }
+        };
+
+        // Tworzymy anonimową klasę, która wypisuje na standardowy błąd (System.err)
+        Printable perr = new Printable() {
+            public void print(Object o) {
+                System.err.println(o);
+            }
+        };
+
+        // Wywołujemy metodę print, która wypisuje tekst na standardowy błąd (czerwony tekst)
+        perr.print("standard error stream");
+
+        // Wywołujemy metodę print, która wypisuje tekst na standardowe wyjście (zwykły tekst)
+        pout.print("standard output stream");
+    }
+}
+
+// Programowanie funkcyjne w Javie
+// Z wyrażeniem lambda
+public class ExampleLambda {
+
+    // Definiujemy interfejs funkcyjny Printable z jedną metodą print
+    interface Printable {
+        public void print(Object o);
+    }
+
+    public static void main(String[] args) {
+        // Tworzymy obiekt pout za pomocą wyrażenia lambda:
+        // (o) -> { System.out.println(o); }
+        // To znaczy: dla każdego obiektu o, wypisz go na standardowe wyjście
+        Printable pout = (o) -> { System.out.println(o); };
+
+        // Tworzymy obiekt perr za pomocą wyrażenia lambda:
+        // Dla każdego obiektu o, wypisz go na standardowe wyjście błędów
+        Printable perr = (o) -> { System.err.println(o); };
+
+        // Wywołujemy print na pout - wypisuje na standardowe wyjście
+        pout.print("standard output stream");
+
+        // Wywołujemy print na perr - wypisuje na standardowe wyjście błędów (zwykle czerwony tekst)
+        perr.print("standard error stream");
+
+        // Możemy przypisać do pout inne wyrażenie lambda
+        // Tutaj zapisujemy lambdę bez nawiasów wokół parametru (można, gdy jest jeden parametr)
+        pout = o -> { System.out.println(o); };
+        pout.print("standard output stream 1");
+
+        // Możemy też pominąć nawiasy klamrowe i średnik, jeśli ciało wyrażenia to jedna linia
+        pout = o -> System.out.println(o);
+        pout.print("standard output stream 2");
+    }
+}
+
+//Interfejs funkcyjny
+//przyklad 1
+@FunctionalInterface // Adnotacja oznacza, że interfejs ma tylko jedną metodę abstrakcyjną (można używać lambd)
+public interface Value {
+    // Jedyna metoda abstrakcyjna w interfejsie
+    double getVal();
+
+    // Przykład użycia wyrażenia lambda z tym interfejsem
+    public static void main1(String[] args) {
+        Value a;
+        // Przypisujemy do a wyrażenie lambda, które zwraca 100.0
+        a = () -> 100.0;
+        // Wywołujemy metodę getVal() i wypisujemy wynik (powinno być 100.0)
+        System.out.println(a.getVal());
+    }
+
+    // Przykład użycia anonimowej klasy wewnętrznej
+    public static void main2(String[] args) {
+        // Tworzymy obiekt anonimowej klasy, która implementuje Value i zwraca 100.0
+        Value a = new Value() {
+            public double getVal() {
+                return 100.0;
+            }
+        };
+        // Wywołujemy metodę getVal() i wypisujemy wynik (powinno być 100.0)
+        System.out.println(a.getVal());
+    }
+}
+
+//Interfejs funkcyjny
+//przyklad 2
+public class AnonymousClassTest {
+
+    // Interfejs funkcyjny z jedną metodą abstrakcyjną
+    @FunctionalInterface
+    private interface Test<T> {
+        boolean check(T n, T m);
+    }
+
+    public static void main(String[] args) {
+        // Anonimowa klasa: implementacja interfejsu Test dla Integer,
+        // używa metody Objects.equals, która sprawdza równość wartości
+        Test<Integer> test = new Test<>() {
+            @Override
+            public boolean check(Integer n, Integer m) {
+                return Objects.equals(n, m);
+            }
+        };
+
+        // Wyrażenie lambda: zwraca true, jeśli referencje są takie same (nie wartości!)
+        // (dla Integer działa jak == dla wartości od -128 do 127, dalej może nie)
+        Test<Integer> t = (n, m) -> { return n == m; };
+
+        // Sprawdzamy, czy 2 i 2 są równe — dla obu przypadków true
+        System.out.println(test.check(2, 2)); // true — sprawdza wartości
+        System.out.println(t.check(2, 2));    // true — porównuje referencje, tu zadziała
+
+        // Sprawdzamy, czy 3 i 2 są równe — false w obu przypadkach
+        System.out.println(test.check(3, 2)); // false
+        System.out.println(t.check(3, 2));    // false
+    }
+}
+
+//this w lambdzie
+public class ThisInLambdaTest {
+    // Interfejs funkcyjny z jedną metodą bezargumentową
+    @FunctionalInterface
+    interface Test {
+        void fun();
+    }
+
+    // Konstruktor klasy ThisInLambdaTest
+    ThisInLambdaTest() {
+        // Anonimowa klasa implementująca Test
+        Test testAnonymous = new Test() {
+            @Override
+            public void fun() {
+                // W anonimowej klasie 'this' odnosi się do instancji tej anonimowej klasy
+                prn("this in anonymous class: [%s]", this.toString());
+            }
+        };
+        testAnonymous.fun();
+
+        // Wyrażenie lambda implementujące Test
+        Test testLambda = () -> {
+            // W lambdzie 'this' odnosi się do instancji klasy otaczającej, czyli ThisInLambdaTest
+            prn("this in lambda: [%s]", this.toString());
+        };
+        testLambda.fun();
+    }
+
+    // Pomocnicza metoda do wypisywania (formatowanie jak w printf)
+    void prn(String fmt, Object... args) {
+        System.out.println(String.format(fmt, args));
+    }
+
+    // Metoda main do uruchomienia przykładu
+    public static void main(String[] args) {
+        new ThisInLambdaTest();
+    }
+}
+
+//W funkcjonale Predicate 
+// Domyślna metoda and(): łączy dwa predykaty za pomocą operatora logicznego AND
+default Predicate<T> and(Predicate<? super T> other) {
+    Objects.requireNonNull(other); // Upewnia się, że drugi predykat nie jest null
+    // Zwraca nowy predykat: dla danego t zwraca true, jeśli oba predykaty są true
+    return (t) -> test(t) && other.test(t);
+}
+
+// Domyślna metoda or(): łączy dwa predykaty za pomocą operatora logicznego OR
+default Predicate<T> or(Predicate<? super T> other) {
+    Objects.requireNonNull(other); // Upewnia się, że drugi predykat nie jest null
+    // Zwraca nowy predykat: dla danego t zwraca true, jeśli przynajmniej jeden z predykatów jest true
+    return (t) -> test(t) || other.test(t);
+}
+
+//Zastosowanie predykatu
+import java.util.function.Predicate;
+public class TestPredicate {
+    // Przykład użycia predykatu w najprostszej wersji
+    public static void main1(String[] args) {
+        ListNumbers nums = new ListNumbers(3, 10);
+        // Tworzymy predykat: sprawdza, czy pole n w obiekcie nums jest mniejsze od 5
+        Predicate<ListNumbers> testFirst = num -> num.n < 5;
+        if (testFirst.test(nums)) {
+            System.out.println("Mniejsze od 5");
+        }
+    }
+
+    // Przykład użycia dwóch predykatów i ich połączenia
+    public static void main2(String[] args) {
+        ListNumbers nums = new ListNumbers(3, 10);
+        // Pierwszy predykat: sprawdza, czy n < 5
+        Predicate<ListNumbers> testFirst = num -> num.n < 5;
+        if (testFirst.test(nums)) {
+            System.out.println("Mniejsze od 5");
+        }
+        // Drugi predykat: sprawdza, czy m > 5
+        Predicate<ListNumbers> testSecond = num -> num.m > 5;
+        // Łączymy predykaty: AND - oba warunki muszą być spełnione
+        if (testFirst.and(testSecond).test(nums)) {
+            System.out.println("Jest ok");
+        }
+    }
+}
+public class ListNumbers {
+    public int n;
+    public int m;
+
+    // Konstruktor - ustawia wartości n i m przy tworzeniu obiektu
+    ListNumbers(int n, int m) {
+        this.n = n;
+        this.m = m;
+    }
+}
+
+//O parametryzacji
+public class Pair<T> {
+    // Prywatne pola przechowujące dwa elementy pary
+    private T first;
+    private T second;
+
+    // Konstruktor domyślny: oba elementy są ustawione na null
+    public Pair() {
+        first = null;
+        second = null;
+    }
+
+    // Konstruktor z parametrami: ustawia oba elementy pary
+    public Pair(T f, T s) {
+        first = f;
+        second = s;
+    }
+
+    // Zwraca pierwszy element pary
+    public T getFirst() {
+        return first;
+    }
+
+    // Zwraca drugi element pary
+    public T getSecond() {
+        return second;
+    }
+
+    // Ustawia pierwszy element pary
+    public void setFirst(T f) {
+        first = f;
+    }
+
+    // Ustawia drugi element pary
+    public void setSecond(T s) {
+        second = s;
+    }
+
+    // Przykład użycia klasy Pair
+    public static void main(String[] args) {
+        Pair<String> p = new Pair<>("Key", "Value");
+        System.out.println(p.getFirst());   // Wypisze: Key
+        System.out.println(p.getSecond());  // Wypisze: Value
+        System.out.println(p.getClass());   // Wypisze: class Pair
+    }
+}
+  
+// Metoda minmax: znajduje minimalny i maksymalny element w tablicy Stringów
+public class ArrayAlgorithm {
+    public static Pair<String> minmax(String[] tab) {
+        if (tab == null || tab.length == 0)
+            return null; // Zwraca null, jeśli tablica jest pusta lub null
+
+        String min = tab[0];
+        String max = tab[0];
+        // Przechodzi przez tablicę i znajduje min oraz max (leksykalnie)
+        for (int i = 1; i < tab.length; ++i) {
+            if (min.compareTo(tab[i]) > 0) min = tab[i];
+            if (max.compareTo(tab[i]) < 0) max = tab[i];
+        }
+        return new Pair<>(min, max);
+    }
+
+    public static void main(String[] args) {
+        String[] names = {"Marcin", "Krzysztof", "Jan", "Anna"};
+        Pair<String> mm = ArrayAlgorithm.minmax(names);
+        System.out.println("min = " + mm.getFirst());
+        System.out.println("max = " + mm.getSecond());
+    }
+}
+
+//getMiddle 
+//Notacja diamentowa informuje o generycznym charakterze metody
+public static <T> T getMiddle(T... tab) {
+    // Zwracamy środkowy element tablicy (tab.length >> 1 to to samo co tab.length / 2)
+    return tab[tab.length >> 1];
+}
+public class TestMiddle {
+    public static void main(String[] args) {
+        String[] names = {"Marcin", "Krzysztof", "Jan", "Anna"};
+
+        // Można jawnie podać typ w nawiasach ostrych, ale zwykle nie jest to konieczne:
+        ArrayAlgorithm.<String>getMiddle(names);
+
+        // Najczęściej typ jest wywnioskowany automatycznie:
+        String m = ArrayAlgorithm.getMiddle(names);
+
+        System.out.println("middle = " + m); // Wypisze: middle = Jan
+    }
+}
+
+// minMax2
+// Tylko obiekty klas implementujących interfejs Comparable będą pasować 
+// extends oznacza, że T musi być podtypem typu granicznego
+// T może być klasą lub interfejsem
+
+public static <T extends Comparable> Pair<T> minmax2(T[] tab) {
+    // Sprawdzamy, czy tablica jest nullem lub pusta — jeśli tak, zwracamy null
+    if (tab == null || tab.length == 0) return null;
+
+    // Ustawiamy pierwszy element jako początkowe min i max
+    T min = tab[0];
+    T max = tab[0];
+
+    // Przechodzimy przez pozostałe elementy tablicy
+    for (int i = 1; i < tab.length; ++i) {
+        // Jeśli obecny element jest mniejszy od aktualnego min, ustawiamy nowe min
+        if (min.compareTo(tab[i]) > 0) min = tab[i];
+        // Jeśli obecny element jest większy od aktualnego max, ustawiamy nowe max
+        if (max.compareTo(tab[i]) < 0) max = tab[i];
+    }
+    // Zwracamy nową parę z minimalnym i maksymalnym elementem
+    return new Pair<T>(min, max);
+}
+
+//Referencja do metody
+public class ExampleMethodReference {
+    // Interfejs funkcyjny z jedną metodą
+    @FunctionalInterface
+    interface Printable {
+        void print(Object o);
+    }
+
+    // Zwykła metoda instancyjna, która wypisuje tekst na standardowym wyjściu
+    public void printToStdOut(Object o) {
+        System.out.println("from method: " + o);
+    }
+
+    public static void main(String[] args) {
+        // Tworzymy instancję klasy ExampleMethodReference
+        ExampleMethodReference mr = new ExampleMethodReference();
+
+        // Używamy referencji do metody: mr::printToStdOut
+        // To oznacza: użyj metody printToStdOut z obiektu mr jako implementacji Printable
+        Printable p = mr::printToStdOut;
+
+        // Wywołanie p.print("Text") spowoduje wywołanie mr.printToStdOut("Text")
+        p.print("Text"); // Output: from method: Text
+    }
+}
+
+//Referencja do metody statycznej
+public class ExampleStaticMethodReference {
+    // Interfejs funkcyjny z jedną metodą
+    @FunctionalInterface
+    interface Printable {
+        void print(Object o);
+    }
+
+    // Statyczna metoda, która wypisuje tekst na standardowym wyjściu
+    public static void staticPrint(Object o) {
+        System.out.println("from static method: " + o);
+    }
+
+    public static void main(String[] args) {
+        // Referencja do metody statycznej: ExampleStaticMethodReference::staticPrint
+        // Oznacza: użyj metody staticPrint jako implementacji Printable
+        Printable p = ExampleStaticMethodReference::staticPrint;
+
+        // Wywołanie p.print("Text") spowoduje wywołanie staticPrint("Text")
+        p.print("Text"); // Output: from static method: Text
+    }
+}
+
+//Referencja do konstruktora
+public class ExampleConstructorReference {
+    // Interfejs funkcyjny z jedną metodą, która zwraca PrintJob
+    @FunctionalInterface
+    interface Printable {
+        PrintJob getPrintJob(Object o);
+    }
+
+    // Klasa PrintJob z konstruktorem przyjmującym Object
+    static class PrintJob {
+        PrintJob(Object o) {
+            System.out.print("from constructor: " + o);
+        }
+    }
+
+    public static void main(String[] args) {
+        // Referencja do konstruktora: PrintJob::new
+        // Oznacza: użyj konstruktora PrintJob jako implementacji interfejsu Printable
+        Printable p = PrintJob::new;
+
+        // Wywołanie p.getPrintJob("Text") utworzy nowy PrintJob("Text")
+        p.getPrintJob("Text"); // Output: from constructor: Text
+    }
+}
